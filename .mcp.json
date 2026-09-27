@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "akmanos": {
+      "url": "https://akmanos.com/api/mcp"
+    },
+    "twenty-first": {
+      "url": "https://21st.dev/api/mcp",
+      "headers": {
+        "Authorization": "Bearer PASTE_YOUR_21ST_API_KEY_HERE"
+      }
+    }
+  }
+}
