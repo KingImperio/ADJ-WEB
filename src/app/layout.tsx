@@ -43,6 +43,7 @@ const jsonLd = {
     addressRegion: "Lagos State",
     addressCountry: "NG",
   },
+  areaServed: ["Igbe Lara", "Agunfoye", "Oreta", "Igbogbo", "Elepe", "Ikorodu"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

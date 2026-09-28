@@ -55,7 +55,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(program.name, program.slug)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(program.faqs)) }} />
-      <PageHero eyebrow={program.exam} title={program.name} sub={program.hero.sub} pills={program.hero.highlights} />
+      <PageHero eyebrow={`${program.exam} — ${program.name}`} title={program.hero.headline} sub={program.hero.sub} pills={program.hero.highlights} />
 
       <section className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-14 px-4 py-14">
