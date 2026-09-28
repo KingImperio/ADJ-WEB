@@ -36,8 +36,8 @@ export function SiteHeader() {
   };
 
   return (
-    <div className="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-md">
-      <div className="mx-auto max-w-6xl px-4 py-2">
+    <div className="sticky top-0 z-50">
+      <div className="mx-auto max-w-6xl px-4 pt-3">
         <Navbar
           showSignIn={false}
           onNavSelect={go}
