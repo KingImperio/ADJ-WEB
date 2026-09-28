@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { nav, site } from "@/lib/site";
@@ -9,10 +10,13 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-cobalt font-display text-sm font-bold text-white">
-              {site.short}
-            </span>
-            <span className="font-display text-sm font-bold text-white">{site.name}</span>
+            <Image
+              src="/adj-logo.png"
+              alt={`${site.name} logo`}
+              width={1405}
+              height={768}
+              className="h-10 w-auto rounded-md"
+            />
           </div>
           <p className="mt-3 text-sm leading-relaxed text-slate-400">{site.description}</p>
         </div>

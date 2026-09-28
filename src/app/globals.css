@@ -16,6 +16,10 @@
   --color-gold-soft: var(--gold-soft);
   --color-ink: var(--ink);
   --color-panel: var(--panel);
+  --color-chart-muted: var(--chart-muted);
+  --color-chart-card-bg: var(--chart-card-bg);
+  --color-chart-metric-bg: var(--chart-metric-bg);
+  --color-surface: var(--surface);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -52,6 +56,24 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 /* ADJ brand: dark-first. Light mode intentionally mirrors dark. */
@@ -140,4 +162,18 @@
   html {
     @apply font-sans;
   }
+}
+
+/* AkmanOS blocks — component-scoped tokens (dark site: dark values win).
+   Source: GFA Studio AkmanOS (https://akmanos.com). */
+[data-component="statistic-cards"],
+[data-component="testimonial-card"] {
+  --chart-muted: #a1a1aa;
+  --chart-card-bg: #14161c;
+  --chart-metric-bg: #1e2230;
+  --surface: #141a30;
+  --testimonial-bg: #0e1120;
+  --testimonial-fg: #f5f5f5;
+  --testimonial-muted: #a1a1aa;
+  color: var(--foreground);
 }

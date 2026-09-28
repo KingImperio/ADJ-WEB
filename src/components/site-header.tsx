@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -13,10 +14,15 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-cobalt font-display text-sm font-bold text-white">
-            {site.short}
-          </span>
-          <span className="leading-tight">
+          <Image
+            src="/adj-logo.png"
+            alt={`${site.name} logo`}
+            width={1405}
+            height={768}
+            priority
+            className="h-10 w-auto rounded-md"
+          />
+          <span className="hidden leading-tight min-[420px]:block">
             <span className="block font-display text-sm font-bold text-white">{site.name}</span>
             <span className="block text-[11px] uppercase tracking-widest text-gold">{site.tagline}</span>
           </span>

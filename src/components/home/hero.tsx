@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, MapPin, MonitorSmartphone, Handshake } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { Marquee } from "@/components/ui/marquee";
 import { Badge } from "@/components/ui/badge";
 import { exams, site } from "@/lib/site";
 
@@ -52,15 +53,18 @@ export function Hero() {
             <MonitorSmartphone className="h-4 w-4 text-gold" /> Physical classes + live online groups
           </span>
         </div>
-        <div className="mt-10 flex flex-wrap gap-2">
-          {exams.map((exam) => (
-            <span
-              key={exam}
-              className="rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 font-mono text-xs tracking-wide text-slate-200"
-            >
-              {exam}
-            </span>
-          ))}
+        {/* Exams ticker — Magic UI marquee (21st-ecosystem block, MIT) */}
+        <div className="relative mt-10 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <Marquee pauseOnHover className="[--duration:32s]">
+            {exams.map((exam) => (
+              <span
+                key={exam}
+                className="mx-1 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 font-mono text-xs tracking-wide text-slate-200"
+              >
+                {exam}
+              </span>
+            ))}
+          </Marquee>
         </div>
       </div>
     </section>

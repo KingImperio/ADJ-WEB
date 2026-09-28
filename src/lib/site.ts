@@ -79,21 +79,19 @@ export const services = [
   },
 ];
 
-/* TODO: confirm real figures with ADJ before launch */
-export const stats = [
-  { value: "500+", label: "Candidates coached" },
-  { value: "9", label: "Exams we prepare you for" },
-  { value: "2", label: "Ways to learn — physical & online" },
-  { value: "100%", label: "Focus on exams & admissions" },
-];
+/* Stats band is rendered by the AkmanOS statistic-cards block —
+   figures live in src/components/statistic-cards/constants.ts.
+   TODO: confirm every number with ADJ before launch. */
 
-/* DEMO — replace with real student stories once gathered. */
+/* DEMO — replace with real student stories (and real portraits in
+   public/testimonials/) once gathered. */
 export const testimonials = [
   {
     quote:
       "The CBT drills changed everything. By my third mock I was finishing with time to spare — JAMB felt like just another practice session.",
     name: "Demo Student",
     detail: "JAMB candidate, Igbe-Laara",
+    imageSrc: "/testimonials/demo-1.svg",
     demo: true,
   },
   {
@@ -101,6 +99,7 @@ export const testimonials = [
       "I joined the weekend group class for WAEC and the past-question marathons made the real papers look familiar. My sciences came out strong.",
     name: "Demo Student",
     detail: "WAEC candidate, Igbogbo",
+    imageSrc: "/testimonials/demo-2.svg",
     demo: true,
   },
   {
@@ -108,6 +107,7 @@ export const testimonials = [
       "They walked me from UTME through post-UTME screening to admission. My parents always knew exactly what the next step was.",
     name: "Demo Parent",
     detail: "Parent, Elepe",
+    imageSrc: "/testimonials/demo-3.svg",
     demo: true,
   },
 ];
