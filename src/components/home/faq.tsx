@@ -1,8 +1,5 @@
-import { MapPin, MonitorSmartphone, GraduationCap, BadgeCheck, MessageCircle, Globe } from "lucide-react";
-import { BouncyAccordionList } from "@/components/bouncy-accordion";
+import { FaqBlock } from "@/components/sections/faq-block";
 import { faqs } from "@/lib/site";
-
-const icons = [MapPin, MonitorSmartphone, GraduationCap, BadgeCheck, MessageCircle, Globe];
 
 export function Faq() {
   return (
@@ -14,19 +11,8 @@ export function Faq() {
         <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
           Everything you need to know before you visit.
         </h2>
-        <div className="mt-8" data-faq>
-          <BouncyAccordionList
-            defaultValue="q-0"
-            items={faqs.map((f, i) => {
-              const LucideIcon = icons[i % icons.length];
-              return {
-                id: `q-${i}`,
-                title: f.q,
-                description: f.a,
-                icon: <LucideIcon className="h-4 w-4" />,
-              };
-            })}
-          />
+        <div className="mt-8">
+          <FaqBlock faqs={faqs} />
         </div>
       </div>
     </section>
