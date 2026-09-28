@@ -3,13 +3,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { nav, site } from "@/lib/site";
+import { navAnchors, navRoutes, site } from "@/lib/site";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+  const links = onHome ? navAnchors : navRoutes;
+  const consultHref = onHome ? "#contact" : "/contact";
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4">
@@ -27,8 +33,8 @@ export function SiteHeader() {
             <span className="block text-[11px] uppercase tracking-widest text-gold">{site.tagline}</span>
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 lg:flex">
-          {nav.map((item) => (
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+          {links.map((item) => (
             <Link key={item.href} href={item.href} className="text-sm text-slate-300 transition-colors hover:text-white">
               {item.label}
             </Link>
@@ -36,7 +42,7 @@ export function SiteHeader() {
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
           <Link
-            href="#contact"
+            href={consultHref}
             className={buttonVariants({
               variant: "outline",
               size: "sm",
@@ -65,7 +71,7 @@ export function SiteHeader() {
           />
           <SheetContent side="right" className="border-white/10 bg-panel">
             <div className="mt-8 flex flex-col gap-1">
-              {nav.map((item) => (
+              {links.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -85,7 +91,7 @@ export function SiteHeader() {
                   WhatsApp us
                 </a>
                 <Link
-                  href="#contact"
+                  href={consultHref}
                   onClick={() => setOpen(false)}
                   className={buttonVariants({
                     variant: "outline",

@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { nav, site } from "@/lib/site";
+import { navRoutes, site } from "@/lib/site";
+import { programs } from "@/lib/programs";
 
 export function SiteFooter() {
   return (
@@ -23,7 +24,7 @@ export function SiteFooter() {
         <div>
           <p className="font-display text-xs font-bold uppercase tracking-widest text-gold">Explore</p>
           <div className="mt-3 flex flex-col gap-2">
-            {nav.map((item) => (
+            {navRoutes.map((item) => (
               <Link key={item.href} href={item.href} className="text-sm text-slate-400 hover:text-white">
                 {item.label}
               </Link>
@@ -33,11 +34,11 @@ export function SiteFooter() {
         <div>
           <p className="font-display text-xs font-bold uppercase tracking-widest text-gold">Programmes</p>
           <div className="mt-3 flex flex-col gap-2 text-sm text-slate-400">
-            <span>JAMB / UTME Mastery</span>
-            <span>WAEC · NECO · GCE</span>
-            <span>JUPEB & Direct Entry</span>
-            <span>IELTS · TOEFL · SAT · GRE</span>
-            <span>Admission Processing</span>
+            {programs.map((p) => (
+              <Link key={p.slug} href={`/programs/${p.slug}`} className="hover:text-white">
+                {p.name}
+              </Link>
+            ))}
           </div>
         </div>
         <div>
