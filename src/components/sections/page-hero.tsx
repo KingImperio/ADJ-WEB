@@ -19,7 +19,7 @@ export function PageHero({
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(60rem_30rem_at_20%_-10%,rgba(45,82,232,0.35),transparent),radial-gradient(40rem_24rem_at_90%_10%,rgba(206,126,27,0.12),transparent)]"
       />
-      <div className="relative mx-auto max-w-6xl px-4 pb-12 pt-14 sm:pt-20">
+      <div className="relative mx-auto max-w-6xl px-4 pb-12 -mt-20 pt-[136px] sm:-mt-[88px] sm:pt-[168px]">
         <nav aria-label="Breadcrumb" className="mb-5 flex items-center gap-2 text-xs text-slate-500">
           <Link href="/" className="hover:text-white">
             Home

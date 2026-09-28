@@ -13,7 +13,7 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(60rem_30rem_at_20%_-10%,rgba(45,82,232,0.35),transparent),radial-gradient(40rem_24rem_at_90%_10%,rgba(245,158,11,0.14),transparent)]"
       />
-      <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-16 sm:pt-24">
+      <div className="relative mx-auto max-w-6xl px-4 pb-14 -mt-20 pt-36 sm:-mt-[88px] sm:pt-44">
         <Badge className="border-gold/40 bg-gold/10 text-gold hover:bg-gold/15">
           <Handshake className="mr-1.5 h-3.5 w-3.5" />
           In partnership with {site.partner.name}
