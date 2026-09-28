@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { StatisticCards } from "@/components/statistic-cards";
 import { TestimonialCard } from "@/components/testimonial-card";
@@ -41,30 +40,6 @@ export function Results() {
               imageAlt={`Portrait placeholder for ${t.name}`}
             />
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function CbtBand() {
-  return (
-    <section className="border-t border-white/10">
-      <div className="mx-auto max-w-6xl px-4 py-16">
-        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-panel p-8 opacity-80 sm:p-12">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-            Train like it&apos;s exam day
-          </p>
-          <h2 className="mt-3 max-w-2xl font-display text-3xl font-bold text-slate-300 sm:text-4xl">
-            Timed CBT drills on our own practice platform.
-          </h2>
-          <p className="mt-3 max-w-2xl text-slate-500">
-            ADJ candidates don&apos;t just study — they rehearse. Our EduQuest CBT platform will serve timed questions,
-            instant scoring and performance tracking, so the real JAMB interface feels like home.
-          </p>
-          <span className="mt-6 inline-flex cursor-not-allowed items-center gap-1.5 rounded-lg bg-white/5 px-4 py-2.5 font-display text-sm font-bold text-slate-500">
-            Practice platform — coming soon <ArrowUpRight className="h-4 w-4" />
-          </span>
         </div>
       </div>
     </section>
