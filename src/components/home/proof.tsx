@@ -7,7 +7,7 @@ import { testimonials } from "@/lib/site";
    Figures: src/components/statistic-cards/constants.ts (demo, TODO confirm). */
 export function Stats() {
   return (
-    <section className="border-t border-white/10">
+    <section className="border-t border-zinc-200">
       <div className="mx-auto max-w-6xl px-4 py-14">
         <StatisticCards />
       </div>
@@ -18,14 +18,14 @@ export function Stats() {
 /* Results — AkmanOS testimonial-card blocks wired to ADJ stories. */
 export function Results() {
   return (
-    <section id="results" className="scroll-mt-20 border-t border-white/10 bg-[#0a0e1c]">
+    <section id="results" className="scroll-mt-20 border-t border-zinc-200 bg-zinc-50">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
         <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-gold">Student stories</p>
         <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
-          <h2 className="max-w-xl font-display text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="max-w-xl font-display text-3xl font-bold text-zinc-900 sm:text-4xl">
             Results our candidates carry into admission season.
           </h2>
-          <Badge variant="outline" className="border-white/20 text-slate-400">
+          <Badge variant="outline" className="border-zinc-300 text-zinc-500">
             Sample stories — real results coming soon
           </Badge>
         </div>

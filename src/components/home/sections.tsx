@@ -12,7 +12,7 @@ const strip: ProgramSlug[] = ["jamb", "waec", "neco", "jupeb", "international", 
 export function ServicesStrip() {
   const cards = strip.map((slug) => getProgram(slug)).filter((p) => p !== undefined);
   return (
-    <section id="services" className="scroll-mt-20 border-t border-white/10 bg-[#0a0e1c]">
+    <section id="services" className="scroll-mt-20 border-t border-zinc-200 bg-zinc-50">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
         <SectionHeading
           eyebrow="What we do"
@@ -34,7 +34,7 @@ export function ServicesStrip() {
 
 export function TutorialsSection() {
   return (
-    <section id="tutorials" className="scroll-mt-20 border-t border-white/10">
+    <section id="tutorials" className="scroll-mt-20 border-t border-zinc-200">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
         <SectionHeading
           eyebrow="Group tutorials"
@@ -42,18 +42,18 @@ export function TutorialsSection() {
           lede="Same tutors, same rigour, same drills. Every session is a group session."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-panel p-6">
+          <div className="rounded-2xl border border-zinc-200 bg-white p-6">
             <Building2 className="h-6 w-6 text-gold" />
-            <h3 className="pt-2 font-display text-xl font-bold text-white">Physical group classes</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-400">
+            <h3 className="pt-2 font-display text-xl font-bold text-zinc-900">Physical group classes</h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
               Evening and weekend cohorts at our Laara centre — serving {site.partner.serves.join(", ")} and
               surrounding communities.
             </p>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-panel p-6">
+          <div className="rounded-2xl border border-zinc-200 bg-white p-6">
             <Wifi className="h-6 w-6 text-gold" />
-            <h3 className="pt-2 font-display text-xl font-bold text-white">Live online group tutorials</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-400">
+            <h3 className="pt-2 font-display text-xl font-bold text-zinc-900">Live online group tutorials</h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
               Scheduled live sessions with notes after every lesson and the same timed drills as physical cohorts.
             </p>
           </div>
@@ -65,7 +65,7 @@ export function TutorialsSection() {
 
 export function AboutCompact() {
   return (
-    <section id="about" className="scroll-mt-20 border-t border-white/10 bg-[#0a0e1c]">
+    <section id="about" className="scroll-mt-20 border-t border-zinc-200 bg-zinc-50">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
         <SectionHeading
           eyebrow="Who we are"
@@ -82,7 +82,7 @@ export function AboutCompact() {
 
 export function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-20 border-t border-white/10">
+    <section id="contact" className="scroll-mt-20 border-t border-zinc-200">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:py-20 lg:grid-cols-5">
         <div className="lg:col-span-3">
           <SectionHeading
@@ -90,7 +90,7 @@ export function ContactSection() {
             title="Tell us where you are. We'll map the way forward."
             lede="Fill this in and it opens WhatsApp with your message ready — or walk into the office."
           />
-          <div className="mt-6 rounded-2xl border border-white/10 bg-panel p-5 sm:p-7">
+          <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5 sm:p-7">
             <ConsultationForm />
           </div>
         </div>

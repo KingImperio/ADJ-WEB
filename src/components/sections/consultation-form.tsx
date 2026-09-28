@@ -26,19 +26,19 @@ export function ConsultationForm() {
     <div className="grid gap-4 sm:grid-cols-2">
       <div className="grid gap-1.5">
         <Label htmlFor="bk-name">Your name</Label>
-        <Input id="bk-name" placeholder="e.g. Adaeze Okafor" value={name} onChange={(e) => setName(e.target.value)} className="border-white/15 bg-ink" />
+        <Input id="bk-name" placeholder="e.g. Adaeze Okafor" value={name} onChange={(e) => setName(e.target.value)} className="border-zinc-200 bg-white" />
       </div>
       <div className="grid gap-1.5">
         <Label htmlFor="bk-phone">Phone / WhatsApp number</Label>
-        <Input id="bk-phone" placeholder="e.g. 0803 ..." value={phone} onChange={(e) => setPhone(e.target.value)} className="border-white/15 bg-ink" />
+        <Input id="bk-phone" placeholder="e.g. 0803 ..." value={phone} onChange={(e) => setPhone(e.target.value)} className="border-zinc-200 bg-white" />
       </div>
       <div className="grid gap-1.5">
         <Label>What do you need help with?</Label>
         <Select value={interest} onValueChange={(v) => setInterest(v ?? "")}>
-          <SelectTrigger className="border-white/15 bg-ink">
+          <SelectTrigger className="border-zinc-200 bg-white">
             <SelectValue placeholder="Choose a programme" />
           </SelectTrigger>
-          <SelectContent className="border-white/15 bg-panel">
+          <SelectContent className="border-zinc-200 bg-white">
             {interests.map((o) => (
               <SelectItem key={o} value={o}>
                 {o}
@@ -50,10 +50,10 @@ export function ConsultationForm() {
       <div className="grid gap-1.5">
         <Label>Preferred mode</Label>
         <Select value={mode} onValueChange={(v) => setMode(v ?? "Physical class")}>
-          <SelectTrigger className="border-white/15 bg-ink">
+          <SelectTrigger className="border-zinc-200 bg-white">
             <SelectValue />
           </SelectTrigger>
-          <SelectContent className="border-white/15 bg-panel">
+          <SelectContent className="border-zinc-200 bg-white">
             <SelectItem value="Physical class">Physical class (Laara)</SelectItem>
             <SelectItem value="Online class">Live online group</SelectItem>
             <SelectItem value="Not sure yet">Not sure yet</SelectItem>
@@ -62,7 +62,7 @@ export function ConsultationForm() {
       </div>
       <div className="grid gap-1.5 sm:col-span-2">
         <Label htmlFor="bk-note">Anything we should know? (optional)</Label>
-        <Textarea id="bk-note" rows={3} placeholder="e.g. Writing JAMB next year, weak in Physics…" value={note} onChange={(e) => setNote(e.target.value)} className="border-white/15 bg-ink" />
+        <Textarea id="bk-note" rows={3} placeholder="e.g. Writing JAMB next year, weak in Physics…" value={note} onChange={(e) => setNote(e.target.value)} className="border-zinc-200 bg-white" />
       </div>
       <div className="sm:col-span-2">
         <a
@@ -73,7 +73,7 @@ export function ConsultationForm() {
         >
           <Send className="mr-2 h-4 w-4" /> Send via WhatsApp
         </a>
-        <p className="mt-3 text-xs text-slate-500" role="status">
+        <p className="mt-3 text-xs text-zinc-500" role="status">
           Online booking with automatic follow-up is coming soon — for now your message lands directly with our
           counsellors on WhatsApp.
         </p>

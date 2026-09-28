@@ -14,9 +14,9 @@ export function ProgramFacts({ program }: { program: Program }) {
       <SectionHeading eyebrow="Quick facts" title="At a glance." />
       <dl className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {facts.map((fact) => (
-          <div key={fact.label} className="rounded-xl border border-white/10 bg-panel p-4">
-            <dt className="font-mono text-[11px] uppercase tracking-widest text-slate-500">{fact.label}</dt>
-            <dd className="mt-1 text-sm font-semibold text-white">{fact.value}</dd>
+          <div key={fact.label} className="rounded-xl border border-zinc-200 bg-white p-4">
+            <dt className="font-mono text-[11px] uppercase tracking-widest text-zinc-500">{fact.label}</dt>
+            <dd className="mt-1 text-sm font-semibold text-zinc-900">{fact.value}</dd>
           </div>
         ))}
       </dl>
@@ -30,7 +30,7 @@ export function Audience({ program }: { program: Program }) {
       <SectionHeading eyebrow="Who this is for" title="Built for students like yours." />
       <ul className="mt-6 space-y-2.5">
         {program.whoFor.map((item) => (
-          <li key={item} className="flex items-start gap-2.5 text-sm text-slate-300 sm:text-base">
+          <li key={item} className="flex items-start gap-2.5 text-sm text-zinc-600 sm:text-base">
             <Check className="mt-1 h-4 w-4 shrink-0 text-gold" />
             {item}
           </li>
@@ -46,7 +46,7 @@ export function Outcomes({ program }: { program: Program }) {
       <SectionHeading eyebrow="Outcomes" title="What the student walks out able to do." lede="Concrete abilities — never pass-rate claims." />
       <ul className="mt-6 space-y-2.5">
         {program.outcomes.map((item) => (
-          <li key={item} className="flex items-start gap-2.5 text-sm text-slate-300 sm:text-base">
+          <li key={item} className="flex items-start gap-2.5 text-sm text-zinc-600 sm:text-base">
             <Check className="mt-1 h-4 w-4 shrink-0 text-gold" />
             {item}
           </li>

@@ -13,9 +13,9 @@ export function FormatPolicy() {
   return (
     <ul className="grid gap-3 sm:grid-cols-2">
       {policies.map((policy) => (
-        <li key={policy} className="flex items-start gap-3 rounded-xl border border-white/10 bg-panel p-4">
+        <li key={policy} className="flex items-start gap-3 rounded-xl border border-zinc-200 bg-white p-4">
           <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-          <span className="text-sm text-slate-300">
+          <span className="text-sm text-zinc-600">
             <Badge variant="outline" className="mr-2 border-gold/40 bg-gold/10 text-[11px] text-gold">
               {labels[policy] ?? "Policy"}
             </Badge>

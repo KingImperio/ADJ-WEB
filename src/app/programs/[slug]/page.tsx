@@ -57,7 +57,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(program.faqs)) }} />
       <PageHero eyebrow={`${program.exam} — ${program.name}`} title={program.hero.headline} sub={program.hero.sub} pills={program.hero.highlights} />
 
-      <section className="border-t border-white/10">
+      <section className="border-t border-zinc-200">
         <div className="mx-auto flex max-w-6xl flex-col gap-14 px-4 py-14">
           <Audience program={program} />
           <ProgramFacts program={program} />
@@ -68,7 +68,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
           <Disclaimer program={program} />
           <RelatedPrograms program={program} />
           <div>
-            <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">Programme questions.</h2>
+            <h2 className="font-display text-2xl font-bold text-zinc-900 sm:text-3xl">Programme questions.</h2>
             <div className="mt-6 max-w-3xl">
               <FaqBlock faqs={program.faqs} />
             </div>

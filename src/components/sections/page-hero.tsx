@@ -15,27 +15,23 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60rem_30rem_at_20%_-10%,rgba(45,82,232,0.35),transparent),radial-gradient(40rem_24rem_at_90%_10%,rgba(206,126,27,0.12),transparent)]"
-      />
       <div className="relative mx-auto max-w-6xl px-4 pb-12 -mt-20 pt-[136px] sm:-mt-[88px] sm:pt-[168px]">
-        <nav aria-label="Breadcrumb" className="mb-5 flex items-center gap-2 text-xs text-slate-500">
-          <Link href="/" className="hover:text-white">
+        <nav aria-label="Breadcrumb" className="mb-5 flex items-center gap-2 text-xs text-zinc-500">
+          <Link href="/" className="hover:text-zinc-900">
             Home
           </Link>
           <span aria-hidden>/</span>
-          <span className="text-slate-300">{eyebrow}</span>
+          <span className="text-zinc-600">{eyebrow}</span>
         </nav>
         <p className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-gold">{eyebrow}</p>
-        <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl">
+        <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-zinc-900 sm:text-5xl">
           {title}
         </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">{sub}</p>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600">{sub}</p>
         {pills && pills.length > 0 ? (
           <div className="mt-6 flex flex-wrap gap-2">
             {pills.map((pill) => (
-              <Badge key={pill} variant="outline" className="border-white/15 bg-white/5 font-mono text-xs text-slate-200">
+              <Badge key={pill} variant="outline" className="border-zinc-200 bg-zinc-100 font-mono text-xs text-zinc-700">
                 {pill}
               </Badge>
             ))}

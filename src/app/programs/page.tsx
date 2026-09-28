@@ -32,7 +32,7 @@ export default function ProgramsPage() {
         pills={["Physical in Laara", "Live online groups", "Group sessions only"]}
       />
 
-      <section className="border-t border-white/10">
+      <section className="border-t border-zinc-200">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-14">
           {groups.map((group) => (
             <div key={group.title}>
@@ -49,7 +49,7 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-[#0a0e1c]">
+      <section className="border-t border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <SectionHeading eyebrow="Standing rules" title="How every programme runs." />
           <div className="mt-6">
@@ -58,17 +58,17 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      <div className="relative border-t border-white/10 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+      <div className="relative border-t border-zinc-200 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
         <Marquee pauseOnHover className="[--duration:32s]">
           {exams.map((exam) => (
-            <span key={exam} className="mx-1 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 font-mono text-xs tracking-wide text-slate-200">
+            <span key={exam} className="mx-1 rounded-full border border-zinc-200 bg-zinc-100 px-3.5 py-1.5 font-mono text-xs tracking-wide text-zinc-700">
               {exam}
             </span>
           ))}
         </Marquee>
       </div>
 
-      <section className="border-t border-white/10">
+      <section className="border-t border-zinc-200">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading eyebrow="Track record" title="Figures across programmes." />
@@ -80,7 +80,7 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-[#0a0e1c]">
+      <section className="border-t border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-3xl px-4 py-14">
           <SectionHeading eyebrow="Choosing" title="Which programme is yours?" />
           <div className="mt-8">

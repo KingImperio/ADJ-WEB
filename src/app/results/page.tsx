@@ -36,7 +36,7 @@ export default function ResultsPage() {
         sub="Scores, admissions and the stories behind them — every figure below is labelled sample until real consented results replace it."
       />
 
-      <section className="border-t border-white/10">
+      <section className="border-t border-zinc-200">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading eyebrow="Track record" title="The stats wall." />
@@ -52,7 +52,7 @@ export default function ResultsPage() {
             <Badge variant="outline" className="border-gold/40 bg-gold/10 text-[11px] text-gold">
               Sample stories
             </Badge>
-            <p className="mt-2 text-sm leading-relaxed text-slate-300">
+            <p className="mt-2 text-sm leading-relaxed text-zinc-600">
               These figures and stories are placeholders illustrating the outcomes our programmes target. Real,
               consented results — names, exams, scores — replace them as each admission season concludes.
             </p>
@@ -60,7 +60,7 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-[#0a0e1c]">
+      <section className="border-t border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <SectionHeading eyebrow="Stories" title="In their own words." />
           <div className="mt-8">
@@ -69,18 +69,18 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10">
+      <section className="border-t border-zinc-200">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <SectionHeading eyebrow="Results table" title="Scannable results." lede="Real, consented rows land here. Until then, the table waits — we don't invent scores." />
           {results.length === 0 ? (
-            <p className="mt-6 rounded-xl border border-dashed border-white/15 p-6 text-sm text-slate-500">
+            <p className="mt-6 rounded-xl border border-dashed border-zinc-200 p-6 text-sm text-zinc-500">
               No published result rows yet. Detailed, consented records are shown during consultation.
             </p>
           ) : (
-            <div className="mt-6 overflow-x-auto rounded-xl border border-white/10">
+            <div className="mt-6 overflow-x-auto rounded-xl border border-zinc-200">
               <table className="w-full min-w-[640px] text-left text-sm">
                 <thead>
-                  <tr className="border-b border-white/10 font-mono text-[11px] uppercase tracking-widest text-slate-500">
+                  <tr className="border-b border-zinc-200 font-mono text-[11px] uppercase tracking-widest text-zinc-500">
                     <th className="px-4 py-3">Candidate</th>
                     <th className="px-4 py-3">Exam</th>
                     <th className="px-4 py-3">Year</th>
@@ -91,8 +91,8 @@ export default function ResultsPage() {
                 </thead>
                 <tbody>
                   {results.map((row) => (
-                    <tr key={`${row.name}-${row.exam}-${row.year}`} className="border-b border-white/5 text-slate-300">
-                      <td className="px-4 py-3 font-semibold text-white">{row.name}</td>
+                    <tr key={`${row.name}-${row.exam}-${row.year}`} className="border-b border-zinc-100 text-zinc-600">
+                      <td className="px-4 py-3 font-semibold text-zinc-900">{row.name}</td>
                       <td className="px-4 py-3">{row.exam}</td>
                       <td className="px-4 py-3">{row.year}</td>
                       <td className="px-4 py-3 font-mono text-gold">{row.score}</td>
@@ -104,9 +104,9 @@ export default function ResultsPage() {
               </table>
             </div>
           )}
-          <div className="mt-6 rounded-2xl border border-white/10 bg-panel p-5">
-            <p className="text-sm leading-relaxed text-slate-400">
-              What these numbers do <span className="font-semibold text-white">not</span> claim: individual results
+          <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
+            <p className="text-sm leading-relaxed text-zinc-500">
+              What these numbers do <span className="font-semibold text-zinc-900">not</span> claim: individual results
               vary with attendance, starting level and effort, and no admission is ever guaranteed. That honesty is
               part of the preparation.
             </p>
@@ -114,7 +114,7 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-[#0a0e1c]">
+      <section className="border-t border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <SectionHeading eyebrow="Where results come from" title="The programmes behind them." />
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -123,7 +123,7 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10">
+      <section className="border-t border-zinc-200">
         <div className="mx-auto max-w-3xl px-4 py-14">
           <SectionHeading eyebrow="Trust" title="Fair questions." />
           <div className="mt-8">

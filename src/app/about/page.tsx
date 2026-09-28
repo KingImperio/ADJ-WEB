@@ -23,17 +23,17 @@ export default function AboutPage() {
         sub="An exam-prep and admissions consultancy built for Igbe-Laara, Igbogbo and environs — the same quality of preparation available anywhere in Lagos, without leaving the community."
       />
 
-      <section className="border-t border-white/10">
+      <section className="border-t border-zinc-200">
         <div className="mx-auto max-w-3xl px-4 py-14">
           <SectionHeading eyebrow="Our story" title="Why ADJ exists." />
           {story.paragraphs.length > 0 ? (
             story.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 24)} className="mt-4 text-sm leading-relaxed text-slate-300 sm:text-base">
+              <p key={paragraph.slice(0, 24)} className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base">
                 {paragraph}
               </p>
             ))
           ) : (
-            <p className="mt-4 rounded-xl border border-dashed border-white/15 p-5 text-sm text-slate-500">
+            <p className="mt-4 rounded-xl border border-dashed border-zinc-200 p-5 text-sm text-zinc-500">
               Founding story, year and founders — [OWNER: to be supplied]. What we can say today: ADJ exists so
               candidates from Igbe-Laara and environs get top-tier exam preparation without leaving the community.
             </p>
@@ -41,7 +41,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-[#0a0e1c]">
+      <section className="border-t border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <SectionHeading eyebrow="Partnership" title="With Greater Heights Tutorial Center." />
           <div className="mt-6 rounded-2xl border border-cobalt/40 bg-cobalt/5 p-6 sm:p-8">
@@ -49,16 +49,16 @@ export default function AboutPage() {
               <Handshake className="mr-1.5 h-3.5 w-3.5" />
               In partnership with {site.partner.name}
             </Badge>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-600 sm:text-base">
               Our tutorial partner at {site.partner.area} extends our group cohorts and delivers international exam
               preparation — IELTS, TOEFL, SAT and GRE — without any candidate leaving the community.
             </p>
           </div>
           <div className="mt-6">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-slate-500">Areas served</p>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-zinc-500">Areas served</p>
             <div className="mt-2 flex flex-wrap gap-2">
               {site.partner.serves.map((area) => (
-                <Badge key={area} variant="outline" className="border-white/15 bg-white/5 text-slate-200">
+                <Badge key={area} variant="outline" className="border-zinc-200 bg-zinc-100 text-zinc-700">
                   {area}
                 </Badge>
               ))}
@@ -67,35 +67,35 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10">
+      <section className="border-t border-zinc-200">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <SectionHeading eyebrow="Values" title="What we won't compromise." />
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {values.map((value) => (
-              <div key={value.title} className="rounded-2xl border border-white/10 bg-panel p-6">
-                <h3 className="font-display text-lg font-bold text-white">{value.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">{value.copy}</p>
+              <div key={value.title} className="rounded-2xl border border-zinc-200 bg-white p-6">
+                <h3 className="font-display text-lg font-bold text-zinc-900">{value.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-500">{value.copy}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-[#0a0e1c]">
+      <section className="border-t border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <SectionHeading eyebrow="Team" title="The tutors behind the results." />
           {team.length > 0 ? (
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {team.map((member) => (
-                <div key={member.name} className="rounded-2xl border border-white/10 bg-panel p-6">
-                  <h3 className="font-display text-lg font-bold text-white">{member.name}</h3>
+                <div key={member.name} className="rounded-2xl border border-zinc-200 bg-white p-6">
+                  <h3 className="font-display text-lg font-bold text-zinc-900">{member.name}</h3>
                   <p className="text-sm text-gold">{member.role}</p>
-                  <p className="mt-1 text-xs text-slate-500">{member.subjects}</p>
+                  <p className="mt-1 text-xs text-zinc-500">{member.subjects}</p>
                 </div>
               ))}
             </div>
           ) : (
-            <p className="mt-6 rounded-xl border border-dashed border-white/15 p-6 text-sm text-slate-500">
+            <p className="mt-6 rounded-xl border border-dashed border-zinc-200 p-6 text-sm text-zinc-500">
               Tutor names, roles, subjects and photos — [OWNER: to be supplied]. No bios are invented here.
             </p>
           )}
@@ -104,7 +104,7 @@ export default function AboutPage() {
               {timeline.map((item) => (
                 <li key={item.year} className="flex gap-4 text-sm">
                   <span className="w-16 shrink-0 font-mono font-bold text-gold">{item.year}</span>
-                  <span className="text-slate-300">{item.event}</span>
+                  <span className="text-zinc-600">{item.event}</span>
                 </li>
               ))}
             </ol>
@@ -112,7 +112,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10">
+      <section className="border-t border-zinc-200">
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 lg:grid-cols-2">
           <div>
             <SectionHeading eyebrow="Visit" title="Find us in Laara." lede={site.hours} />

@@ -8,10 +8,10 @@ export function Process({ program }: { program: Program }) {
       <SectionHeading eyebrow="Process" title="From first call to exam-ready." />
       <ol className="mt-6 grid gap-4 md:grid-cols-5">
         {program.process.map((step, i) => (
-          <li key={step.step} className="rounded-2xl border border-white/10 bg-panel p-5">
+          <li key={step.step} className="rounded-2xl border border-zinc-200 bg-white p-5">
             <p className="font-display text-2xl font-bold text-gold">{i + 1}</p>
-            <p className="mt-1 font-display text-sm font-bold text-white">{step.step}</p>
-            <p className="mt-1 text-xs leading-relaxed text-slate-400">{step.detail}</p>
+            <p className="mt-1 font-display text-sm font-bold text-zinc-900">{step.step}</p>
+            <p className="mt-1 text-xs leading-relaxed text-zinc-500">{step.detail}</p>
           </li>
         ))}
       </ol>
@@ -46,7 +46,7 @@ export function Disclaimer({ program }: { program: Program }) {
       <Badge variant="outline" className="border-gold/40 bg-gold/10 text-[11px] text-gold">
         {item.label}
       </Badge>
-      <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.copy}</p>
+      <p className="mt-2 text-sm leading-relaxed text-zinc-600">{item.copy}</p>
     </div>
   );
 }
