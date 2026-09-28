@@ -82,8 +82,8 @@
   --panel: #0c1020;
   --cobalt: #2d52e8;
   --cobalt-deep: #1e3fcc;
-  --gold: #f59e0b;
-  --gold-soft: #fbbf24;
+  --gold: #ce7e1b;
+  --gold-soft: #eea63c;
   --background: #080b14;
   --foreground: #f4f6fd;
   --card: #0c1020;
@@ -167,7 +167,9 @@
 /* AkmanOS blocks — component-scoped tokens (dark site: dark values win).
    Source: GFA Studio AkmanOS (https://akmanos.com). */
 [data-component="statistic-cards"],
-[data-component="testimonial-card"] {
+[data-component="testimonial-card"],
+[data-component="bouncy-accordion"],
+[data-component="animated-text"] {
   --chart-muted: #a1a1aa;
   --chart-card-bg: #14161c;
   --chart-metric-bg: #1e2230;

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, MapPin, MonitorSmartphone, Handshake } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Marquee } from "@/components/ui/marquee";
+import { AnimatedText } from "@/components/animated-text";
 import { Badge } from "@/components/ui/badge";
 import { exams, site } from "@/lib/site";
 
@@ -18,8 +19,14 @@ export function Hero() {
           In partnership with {site.partner.name}
         </Badge>
         <h1 className="mt-5 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl">
-          Pass JAMB, WAEC &amp; NECO — <span className="text-gold">then secure your admission.</span>
+          Pass JAMB, WAEC &amp; NECO —
         </h1>
+        {/* Gold headline line — AkmanOS animated-text (looping typewriter) */}
+        <AnimatedText
+          text="then secure your admission."
+          className="max-w-3xl"
+          textClassName="font-display text-4xl font-bold leading-[1.05] tracking-tight text-gold sm:text-6xl"
+        />
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
           {site.name} coaches secondary school students, school leavers and candidates across Ikorodu through every
           external exam that matters — with physical group classes in Laara, live online tutorials, and admission

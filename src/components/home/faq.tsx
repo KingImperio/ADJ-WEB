@@ -1,5 +1,8 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { MapPin, MonitorSmartphone, GraduationCap, BadgeCheck, MessageCircle, Globe } from "lucide-react";
+import { BouncyAccordionList } from "@/components/bouncy-accordion";
 import { faqs } from "@/lib/site";
+
+const icons = [MapPin, MonitorSmartphone, GraduationCap, BadgeCheck, MessageCircle, Globe];
 
 export function Faq() {
   return (
@@ -11,16 +14,20 @@ export function Faq() {
         <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
           Everything you need to know before you visit.
         </h2>
-        <Accordion className="mt-8">
-          {faqs.map((f, i) => (
-            <AccordionItem key={f.q} value={`q-${i}`} className="border-white/10">
-              <AccordionTrigger className="text-left font-display text-base font-semibold text-white hover:text-gold">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-slate-400">{f.a}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="mt-8" data-faq>
+          <BouncyAccordionList
+            defaultValue="q-0"
+            items={faqs.map((f, i) => {
+              const LucideIcon = icons[i % icons.length];
+              return {
+                id: `q-${i}`,
+                title: f.q,
+                description: f.a,
+                icon: <LucideIcon className="h-4 w-4" />,
+              };
+            })}
+          />
+        </div>
       </div>
     </section>
   );
