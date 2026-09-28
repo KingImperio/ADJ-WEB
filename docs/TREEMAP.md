@@ -19,9 +19,13 @@ ADJ-WEB/
 │   │   ├── page.tsx          # homepage: Hero + Stats + Results + Faq
 │   │   └── globals.css       # Tailwind v4 theme + shadcn tokens + AkmanOS scopes
 │   ├── components/
-│   │   ├── ui/               # shadcn primitives (5, all in use)
-│   │   │   ├── badge, button, separator, sheet
+│   │   ├── ui/               # shadcn primitives (4, all in use)
+│   │   │   ├── badge, button, separator
 │   │   │   └── marquee.tsx   # Magic UI (21st ecosystem), hero exams ticker
+│   │   ├── navbar/           # (*) AkmanOS → site header (mega menu + drawer)
+│   │   │   ├── navbar.tsx + mega-menu-panel.tsx + navbar-mobile-drawer.tsx
+│   │   │   ├── use-navbar-mega-menu.ts + nav-badge.tsx + types.ts + index.ts
+│   │   │   └── constants.ts  # ADJ menu data (ids double as route keys)
 │   │   ├── statistic-cards/  # (*) AkmanOS → Stats band
 │   │   │   ├── statistic-cards.tsx + growth-badge.tsx + index.ts
 │   │   │   └── constants.ts  # ADJ figures (DEMO/TODO)
@@ -40,7 +44,7 @@ ADJ-WEB/
 │   │   │   ├── hero.tsx      # headline, CTAs, marquee ticker
 │   │   │   ├── proof.tsx     # Stats + Results
 │   │   │   └── faq.tsx       # bouncy accordion wired to site.ts faqs
-│   │   ├── site-header.tsx   # sticky nav + mobile sheet + CTAs
+│   │   ├── site-header.tsx   # sticky shell rendering AkmanOS Navbar (+route lookup)
 │   │   └── site-footer.tsx   # nav, programmes, contact, partnership note
 │   └── lib/
 │       ├── site.ts           # ALL business facts (TODO = need real value)
