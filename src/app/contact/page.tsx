@@ -1,0 +1,98 @@
+import type { Metadata } from "next";
+import { Phone, Mail, MessageCircle } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { PageHero } from "@/components/sections/page-hero";
+import { SectionHeading } from "@/components/sections/section-heading";
+import { ConsultationForm } from "@/components/sections/consultation-form";
+import { LocationBlock } from "@/components/sections/location-block";
+import { FaqBlock } from "@/components/sections/faq-block";
+import { ProgramCta } from "@/components/sections/program-cta";
+import { bookingExpectations, contactFaqs, site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Book a free consultation — ADJ Educational Consultants, Ikorodu",
+  description: "Book a free consultation with ADJ Educational Consultants in Igbe-Laara, Ikorodu. Call, WhatsApp, or send the form — physical and online group classes.",
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Contact"
+        title="Tell us where your child is. We'll tell you exactly what comes next."
+        sub="First consultation is free — assessment, programme recommendation and fee confirmation before any commitment."
+      />
+
+      <section id="contact" className="scroll-mt-20 border-t border-zinc-200">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 lg:grid-cols-5">
+          <div className="lg:col-span-3">
+            <SectionHeading eyebrow="Free consultation" title="Book in under a minute." />
+            <Card className="mt-6">
+              <CardContent className="pt-6">
+                <ConsultationForm />
+              </CardContent>
+            </Card>
+          </div>
+          <div className="flex flex-col gap-4 lg:col-span-2">
+            <SectionHeading eyebrow="Prefer to just talk?" title="Three taps." />
+            <a href={site.phoneHref} className={buttonVariants({ size: "lg", className: "bg-cobalt font-semibold text-white hover:bg-cobalt-deep" })}>
+              <Phone className="mr-2 h-4 w-4" /> {site.phoneDisplay}
+            </a>
+            <a
+              href={site.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className={buttonVariants({ size: "lg", className: "bg-gold font-semibold text-zinc-900 hover:bg-gold-soft" })}
+            >
+              <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp us
+            </a>
+            <a
+              href={`mailto:${site.email}`}
+              className={buttonVariants({ size: "lg", variant: "outline", className: "border-zinc-300 bg-transparent text-zinc-900 hover:bg-zinc-100" })}
+            >
+              <Mail className="mr-2 h-4 w-4" /> {site.email}
+            </a>
+            <LocationBlock />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-zinc-200 bg-zinc-50">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <SectionHeading eyebrow="What happens next" title="Three steps, no surprises." />
+          <ol className="mt-8 grid gap-4 md:grid-cols-3">
+            {bookingExpectations.map((step, i) => (
+              <Card key={step}>
+                <CardContent className="pt-6">
+                  <p className="font-display text-3xl font-bold text-gold">{i + 1}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-600">{step}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </ol>
+          <div className="mt-6 flex flex-wrap items-center gap-2">
+            <Badge variant="outline" className="border-gold/40 bg-gold/10 text-gold">
+              Fees confirmed during consultation
+            </Badge>
+            <p className="text-sm text-zinc-500">
+              We don&apos;t publish fees, and we don&apos;t ask for commitment before you&apos;ve seen the plan.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-zinc-200">
+        <div className="mx-auto max-w-3xl px-4 py-14">
+          <SectionHeading eyebrow="Before you visit" title="Contact questions, answered." />
+          <div className="mt-8">
+            <FaqBlock faqs={contactFaqs} />
+          </div>
+        </div>
+      </section>
+
+      <ProgramCta headline="Ready when you are." detail="Message, call, or walk in — the first conversation is free." />
+    </>
+  );
+}
