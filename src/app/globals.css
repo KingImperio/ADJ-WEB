@@ -14,6 +14,8 @@
   --color-cobalt-deep: var(--cobalt-deep);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  --color-rust: var(--rust);
+  --color-espresso: var(--espresso);
   --color-ink: var(--ink);
   --color-panel: var(--panel);
   --color-chart-muted: var(--chart-muted);
@@ -79,20 +81,25 @@
 
 /* ADJ brand: light-first (AkmanOS light core). .dark kept coherent but unused —
    the site is intentionally locked to light until a dark theme is designed. */
+/* Brand palette — read from the owner's palette image (deep navy, ocean,
+   sky, ice, tan-orange, rust, espresso). Cobalt + bronze roles now carry the
+   new blues and oranges; every bg-cobalt/text-gold class follows automatically. */
 :root {
   --ink: #080b14;
   --panel: #ffffff;
-  --cobalt: #2d52e8;
-  --cobalt-deep: #1e3fcc;
-  --gold: #ce7e1b;
-  --gold-soft: #eea63c;
+  --cobalt: #2e6e9e;
+  --cobalt-deep: #1e3a5f;
+  --gold: #d97e2b;
+  --gold-soft: #f0b25c;
+  --rust: #b45a2d;
+  --espresso: #2e1f18;
   --background: #faf9f7;
   --foreground: #1c1917;
   --card: #ffffff;
   --card-foreground: #171717;
   --popover: #ffffff;
   --popover-foreground: #171717;
-  --primary: #2d52e8;
+  --primary: #2e6e9e;
   --primary-foreground: #ffffff;
   --secondary: #f4f4f5;
   --secondary-foreground: #171717;
@@ -103,21 +110,21 @@
   --destructive: #dc2626;
   --border: #e4e4e7;
   --input: #d4d4d8;
-  --ring: #2d52e8;
-  --chart-1: #2d52e8;
-  --chart-2: #ce7e1b;
+  --ring: #2e6e9e;
+  --chart-1: #2e6e9e;
+  --chart-2: #d97e2b;
   --chart-3: #16a34a;
   --chart-4: #f4622a;
   --chart-5: #71717a;
   --radius: 0.625rem;
   --sidebar: #ffffff;
   --sidebar-foreground: #171717;
-  --sidebar-primary: #2d52e8;
+  --sidebar-primary: #2e6e9e;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f4f4f5;
   --sidebar-accent-foreground: #171717;
   --sidebar-border: #e4e4e7;
-  --sidebar-ring: #2d52e8;
+  --sidebar-ring: #2e6e9e;
 }
 
 /* AkmanOS theme core (dark). Only active if `dark` is put back on <html>. */
@@ -132,16 +139,16 @@
   --card-foreground: #fafafa;
   --popover: #14161c;
   --popover-foreground: #fafafa;
-  --primary: #2d52e8;
+  --primary: #2e6e9e;
   --primary-foreground: #ffffff;
   --secondary: #1e2230;
   --secondary-foreground: #fafafa;
   --muted: #1e2230;
   --muted-foreground: #a1a1aa;
-  --accent: #ce7e1b;
+  --accent: #d97e2b;
   --accent-foreground: #09090b;
   --input: #2a2f3a;
-  --ring: #2d52e8;
+  --ring: #2e6e9e;
 }
 
 @layer base {
