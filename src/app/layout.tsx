@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { site } from "@/lib/site";
 
-const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
-const grotesk = Space_Grotesk({ variable: "--font-display", subsets: ["latin"] });
+const inter = localFont({
+  src: "../../public/fonts/inter-latin.woff2",
+  variable: "--font-sans",
+  weight: "100 900",
+  display: "swap",
+});
+const grotesk = localFont({
+  src: "../../public/fonts/space-grotesk-latin.woff2",
+  variable: "--font-display",
+  weight: "300 700",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
