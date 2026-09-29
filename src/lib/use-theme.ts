@@ -31,6 +31,7 @@ export function useTheme() {
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === "lagoon" || stored === "royal" || stored === "emerald" || stored === "sand") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- mount gate: keeps SSR/hydration identical, then applies stored theme
       setTheme(stored);
       document.documentElement.setAttribute("data-theme", stored);
     }
