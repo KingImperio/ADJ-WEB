@@ -81,7 +81,7 @@ export default function Home() {
 
       {/* 3 — Services strip */}
       <section id="services" className="scroll-mt-20 border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 py-14">
           <SectionHeading eyebrow="What we do" title="Every external exam, handled in one place." lede="Six programmes, one roof — pick yours or browse them all." />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {cards.map((program) => (
@@ -109,7 +109,7 @@ export default function Home() {
 
       {/* 5 — Tutorials: shadcn cards */}
       <section id="tutorials" className="scroll-mt-20 border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 py-14">
           <SectionHeading eyebrow="Group tutorials" title="Learn in Laara — or join live from anywhere." lede="Same tutors, same rigour, same drills. Every session is a group session." />
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             <Card>
@@ -137,7 +137,7 @@ export default function Home() {
 
       {/* 6 — Results: AkmanOS testimonial-cards */}
       <section id="results" className="scroll-mt-20 border-t border-zinc-200">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 py-14">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading eyebrow="Student stories" title="Results our candidates carry into admission season." />
             <SampleBadge label="Sample stories — real results coming soon" />
@@ -152,7 +152,7 @@ export default function Home() {
 
       {/* 7 — About compact */}
       <section id="about" className="scroll-mt-20 border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 py-14">
           <SectionHeading
             eyebrow="Who we are"
             title="An Ikorodu consultancy that stays past results day."
@@ -166,7 +166,7 @@ export default function Home() {
 
       {/* 8 — FAQ: AkmanOS bouncy-accordion */}
       <section id="faq" className="scroll-mt-20 border-t border-zinc-200">
-        <div className="mx-auto max-w-3xl px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-4 py-14">
           <SectionHeading eyebrow="Questions parents ask us" title="Everything you need to know before you visit." />
           <div className="mt-8">
             <FaqBlock faqs={faqs} />
@@ -176,7 +176,7 @@ export default function Home() {
 
       {/* 9 — Contact: shadcn form primitives */}
       <section id="contact" className="scroll-mt-20 border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:py-20 lg:grid-cols-5">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <SectionHeading
               eyebrow="Free consultation"

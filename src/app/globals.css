@@ -79,12 +79,15 @@
   }
 }
 
-/* ADJ brand: light-first (AkmanOS light core). .dark kept coherent but unused —
-   the site is intentionally locked to light until a dark theme is designed. */
-/* Brand palette — read from the owner's palette image (deep navy, ocean,
-   sky, ice, tan-orange, rust, espresso). Cobalt + bronze roles now carry the
-   new blues and oranges; every bg-cobalt/text-gold class follows automatically. */
-:root {
+/* ADJ themes — light-first, switched via `data-theme` on <html> (see lib/use-theme).
+   lagoon  = owner's palette image (ocean/navy/tan-orange/rust/espresso) — default
+   royal   = vibrant cobalt + bronze on ivory, charcoal text
+   emerald = cobalt + emerald bridge + bronze on sage-tinted canvas
+   sand    = camel/tan-forward warmth, dusty blue + bronze
+   Only accent + canvas tokens move per theme; zinc neutrals stay constant so
+   every page keeps contrast. .dark retained below but inactive. */
+:root,
+[data-theme="lagoon"] {
   --ink: #080b14;
   --panel: #ffffff;
   --cobalt: #2e6e9e;
@@ -125,6 +128,68 @@
   --sidebar-accent-foreground: #171717;
   --sidebar-border: #e4e4e7;
   --sidebar-ring: #2e6e9e;
+}
+
+[data-theme="royal"] {
+  --cobalt: #0047ab;
+  --cobalt-deep: #002f6c;
+  --gold: #b27a24;
+  --gold-soft: #d9a94e;
+  --rust: #a34a24;
+  --espresso: #2b2118;
+  --background: #fffdf7;
+  --primary: #0047ab;
+  --ring: #0047ab;
+  --chart-1: #0047ab;
+  --chart-2: #b27a24;
+  --sidebar-primary: #0047ab;
+  --sidebar-ring: #0047ab;
+}
+
+[data-theme="emerald"] {
+  --cobalt: #2456a6;
+  --cobalt-deep: #173f63;
+  --gold: #b27a24;
+  --gold-soft: #d9a94e;
+  --rust: #a34a24;
+  --espresso: #22301f;
+  --background: #f6faf7;
+  --primary: #2456a6;
+  --ring: #2456a6;
+  --chart-1: #2456a6;
+  --chart-2: #b27a24;
+  --chart-3: #1e7a4f;
+  --sidebar-primary: #2456a6;
+  --sidebar-ring: #2456a6;
+}
+
+/* Emerald + sand tint their alternating surfaces; cards stay white. */
+[data-theme="emerald"] .bg-zinc-50 {
+  background-color: #edf3ed;
+}
+[data-theme="emerald"] .bg-zinc-100 {
+  background-color: #e2ece2;
+}
+
+[data-theme="sand"] {
+  --cobalt: #2e6e9e;
+  --cobalt-deep: #1e3a5f;
+  --gold: #c08a3e;
+  --gold-soft: #e3b96f;
+  --rust: #a34a24;
+  --espresso: #2e1f18;
+  --background: #faf6ef;
+  --secondary: #f3ede1;
+  --muted: #f3ede1;
+  --accent: #f3ede1;
+  --sidebar-accent: #f3ede1;
+}
+
+[data-theme="sand"] .bg-zinc-50 {
+  background-color: #f3ede1;
+}
+[data-theme="sand"] .bg-zinc-100 {
+  background-color: #ece4d3;
 }
 
 /* AkmanOS theme core (dark). Only active if `dark` is put back on <html>. */
