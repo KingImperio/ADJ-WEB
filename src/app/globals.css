@@ -61,106 +61,157 @@
   --radius-4xl: calc(var(--radius) * 2.6);
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-  @keyframes marquee {
+  --animate-gradient: gradient 15s ease infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
+  --animate-reveal: reveal 0.6s ease-out forwards;
+  --animate-count-up: countUp 1s ease-out forwards;
+}
+
+@keyframes marquee {
   from {
     transform: translateX(0);
-    }
+  }
   to {
     transform: translateX(calc(-100% - var(--gap)));
-    }
   }
-  @keyframes marquee-vertical {
+}
+@keyframes marquee-vertical {
   from {
     transform: translateY(0);
-    }
+  }
   to {
     transform: translateY(calc(-100% - var(--gap)));
-    }
+  }
+}
+
+/* Gradient animation for hero */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating animation for cards */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Soft pulse for buttons */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Reveal animation for scroll effects */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Number counting animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 /* ADJ themes — light-first, switched via `data-theme` on <html> (see lib/use-theme).
-   lagoon  = owner's palette image (ocean/navy/tan-orange/rust/espresso) — default
-   royal   = vibrant cobalt + bronze on ivory, charcoal text
-   emerald = cobalt + emerald bridge + bronze on sage-tinted canvas
-   sand    = camel/tan-forward warmth, dusty blue + bronze
+   lagoon  = Modern vibrant palette (cobalt blue + gold + emerald) - default
+   royal   = Deep royal blue + bright gold on crisp white
+   emerald = Fresh emerald + gold on soft sage
+   sand    = Warm terracotta + gold on cream
    Only accent + canvas tokens move per theme; zinc neutrals stay constant so
    every page keeps contrast. .dark retained below but inactive. */
 :root,
 [data-theme="lagoon"] {
   --ink: #080b14;
   --panel: #ffffff;
-  --cobalt: #2e6e9e;
-  --cobalt-deep: #1e3a5f;
-  --gold: #d97e2b;
-  --gold-soft: #f0b25c;
-  --rust: #b45a2d;
-  --espresso: #2e1f18;
-  --background: #faf9f7;
-  --foreground: #1c1917;
-  --card: #ffffff;
-  --card-foreground: #171717;
-  --popover: #ffffff;
-  --popover-foreground: #171717;
-  --primary: #2e6e9e;
-  --primary-foreground: #ffffff;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #171717;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --accent: #f4f4f5;
-  --accent-foreground: #171717;
-  --destructive: #dc2626;
-  --border: #e4e4e7;
-  --input: #d4d4d8;
-  --ring: #2e6e9e;
-  --chart-1: #2e6e9e;
-  --chart-2: #d97e2b;
-  --chart-3: #16a34a;
-  --chart-4: #f4622a;
-  --chart-5: #71717a;
-  --radius: 0.625rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #171717;
-  --sidebar-primary: #2e6e9e;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f4f4f5;
-  --sidebar-accent-foreground: #171717;
-  --sidebar-border: #e4e4e7;
-  --sidebar-ring: #2e6e9e;
+  --cobalt: #2563EB;
+  --cobalt-deep: #1D4ED8;
+  --gold: #F5B800;
+  --gold-soft: #FCD34D;
+  --rust: #EA580C;
+  --espresso: #1E1B16;
+  --background: #F8FAFC;
+  --foreground: #1E293B;
+  --card: #FFFFFF;
+  --card-foreground: #1E293B;
+  --popover: #FFFFFF;
+  --popover-foreground: #1E293B;
+  --primary: #2563EB;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #1E293B;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #F5B800;
+  --accent-foreground: #1E293B;
+  --destructive: #EF4444;
+  --border: #E2E8F0;
+  --input: #CBD5E1;
+  --ring: #2563EB;
+  --chart-1: #2563EB;
+  --chart-2: #F5B800;
+  --chart-3: #10B981;
+  --chart-4: #EA580C;
+  --chart-5: #64748B;
+  --radius: 0.75rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1E293B;
+  --sidebar-primary: #2563EB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #1E293B;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #2563EB;
 }
 
 [data-theme="royal"] {
-  --cobalt: #0047ab;
-  --cobalt-deep: #002f6c;
-  --gold: #b27a24;
-  --gold-soft: #d9a94e;
-  --rust: #a34a24;
-  --espresso: #2b2118;
-  --background: #fffdf7;
-  --primary: #0047ab;
-  --ring: #0047ab;
-  --chart-1: #0047ab;
-  --chart-2: #b27a24;
-  --sidebar-primary: #0047ab;
-  --sidebar-ring: #0047ab;
+  --cobalt: #4F46E5;
+  --cobalt-deep: #4338CA;
+  --gold: #F5B800;
+  --gold-soft: #FCD34D;
+  --rust: #EA580C;
+  --espresso: #1E1B16;
+  --background: #FFFFFF;
+  --primary: #4F46E5;
+  --ring: #4F46E5;
+  --chart-1: #4F46E5;
+  --chart-2: #F5B800;
+  --sidebar-primary: #4F46E5;
+  --sidebar-ring: #4F46E5;
 }
 
 [data-theme="emerald"] {
-  --cobalt: #2456a6;
-  --cobalt-deep: #173f63;
-  --gold: #b27a24;
-  --gold-soft: #d9a94e;
-  --rust: #a34a24;
-  --espresso: #22301f;
-  --background: #f6faf7;
-  --primary: #2456a6;
-  --ring: #2456a6;
-  --chart-1: #2456a6;
-  --chart-2: #b27a24;
-  --chart-3: #1e7a4f;
-  --sidebar-primary: #2456a6;
-  --sidebar-ring: #2456a6;
+  --cobalt: #059669;
+  --cobalt-deep: #047857;
+  --gold: #F5B800;
+  --gold-soft: #FCD34D;
+  --rust: #EA580C;
+  --espresso: #065F46;
+  --background: #F0FDF4;
+  --primary: #059669;
+  --ring: #059669;
+  --chart-1: #059669;
+  --chart-2: #F5B800;
+  --chart-3: #10B981;
+  --sidebar-primary: #059669;
+  --sidebar-ring: #059669;
 }
 
 /* Emerald + sand tint their alternating surfaces; cards stay white. */
@@ -172,17 +223,17 @@
 }
 
 [data-theme="sand"] {
-  --cobalt: #2e6e9e;
-  --cobalt-deep: #1e3a5f;
-  --gold: #c08a3e;
-  --gold-soft: #e3b96f;
-  --rust: #a34a24;
-  --espresso: #2e1f18;
-  --background: #faf6ef;
-  --secondary: #f3ede1;
-  --muted: #f3ede1;
-  --accent: #f3ede1;
-  --sidebar-accent: #f3ede1;
+  --cobalt: #1E40AF;
+  --cobalt-deep: #1E3A8A;
+  --gold: #F5B800;
+  --gold-soft: #FCD34D;
+  --rust: #EA580C;
+  --espresso: #1E1B16;
+  --background: #FFFBEB;
+  --secondary: #FEF3C7;
+  --muted: #FEF3C7;
+  --accent: #FDE68A;
+  --sidebar-accent: #FDE68A;
 }
 
 [data-theme="sand"] .bg-zinc-50 {
@@ -259,4 +310,75 @@
   --testimonial-bg: #0e1120;
   --testimonial-fg: #f5f5f5;
   --testimonial-muted: #a1a1aa;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  /* Glass effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Modern shadow utilities */
+  .shadow-modern {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .shadow-modern-lg {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+  }
+  
+  .shadow-glow-gold {
+    box-shadow: 0 0 20px rgba(245, 184, 0, 0.3);
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--cobalt) 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #F5B800 0%, #FCD34D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Adire pattern overlay */
+  .adire-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F5B800' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Hover lift effect */
+  .hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button squish effect */
+  .btn-squish {
+    transition: transform 0.1s ease;
+  }
+  .btn-squish:active {
+    transform: scale(0.98);
+  }
 }
