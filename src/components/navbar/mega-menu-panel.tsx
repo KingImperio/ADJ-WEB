@@ -1,7 +1,8 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
+import { useMountedReducedMotion } from "@/lib/use-mounted-motion";
 import { cn } from "@/lib/cn";
 import { SPRING_PANEL, SPRING_PRESS } from "@/lib/motion-ease";
 import type { NavMegaItem } from "./types";
@@ -17,7 +18,7 @@ export function MegaMenuPanel({
   onLinkClick,
   onFeaturedClick,
 }: MegaMenuPanelProps) {
-  const reduceMotion = useReducedMotion() ?? false;
+  const reduceMotion = useMountedReducedMotion();
 
   return (
     <motion.div

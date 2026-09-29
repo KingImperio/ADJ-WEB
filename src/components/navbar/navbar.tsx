@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { useMountedReducedMotion } from "@/lib/use-mounted-motion";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { SPRING_PANEL } from "@/lib/motion-ease";
@@ -63,7 +64,7 @@ export function Navbar({
   onCta,
   className,
 }: NavbarProps) {
-  const reduceMotion = useReducedMotion() ?? false;
+  const reduceMotion = useMountedReducedMotion();
   const {
     openMegaId,
     mobileOpen,

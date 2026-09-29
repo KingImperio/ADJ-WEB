@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { PageBackdrop } from "@/components/page-backdrop";
 import { site } from "@/lib/site";
 
 const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
@@ -52,10 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${grotesk.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <PageBackdrop />
-        <SiteHeader />
         <main className="flex-1">{children}</main>
-        <SiteFooter />
       </body>
     </html>
   );

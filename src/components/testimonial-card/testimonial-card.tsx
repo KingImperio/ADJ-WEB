@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "motion/react";
+import { motion, type Variants } from "motion/react";
+import { useMountedReducedMotion } from "@/lib/use-mounted-motion";
 import { cn } from "@/lib/cn";
 import {
   DEFAULT_TESTIMONIAL_IMAGE_ALT,
@@ -31,7 +32,7 @@ export function TestimonialCard({
   imageAlt = DEFAULT_TESTIMONIAL_IMAGE_ALT,
   className,
 }: TestimonialCardProps) {
-  const reduceMotion = useReducedMotion() ?? false;
+  const reduceMotion = useMountedReducedMotion();
 
   const containerVariants: Variants = {
     hidden: {},

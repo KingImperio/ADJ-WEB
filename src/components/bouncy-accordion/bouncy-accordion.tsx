@@ -3,7 +3,6 @@
 
 import {
   motion,
-  useReducedMotion,
   type Transition,
 } from "motion/react";
 import {
@@ -26,6 +25,7 @@ import {
 import { Icon } from "@/components/icons/icon";
 import { cn } from "@/lib/cn";
 import { EASE_OUT } from "@/lib/motion-ease";
+import { useMountedReducedMotion } from "@/lib/use-mounted-motion";
 import {
   BOUNCY_ACCORDION_DEFAULT_VALUE,
   BOUNCY_ACCORDION_ITEMS,
@@ -282,7 +282,7 @@ export function BouncyAccordionList({
   className,
   classNames,
 }: BouncyAccordionListProps) {
-  const reduce = useReducedMotion();
+  const reduce = useMountedReducedMotion();
   const baseId = useId();
   const [activeValue, setActiveValue] = useControllableAccordionValue({
     value,

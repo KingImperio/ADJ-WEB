@@ -2,7 +2,8 @@
 
 /* eslint-disable react-hooks/set-state-in-effect -- vendored AkmanOS source (verbatim); the synchronous set covers reduced-motion + loop-reset cases */
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
+import { useMountedReducedMotion } from "@/lib/use-mounted-motion";
 import { useEffect, useMemo, useState } from "react";
 import { cn } from "@/lib/cn";
 import {
@@ -32,7 +33,7 @@ export function AnimatedText({
   className,
   textClassName,
 }: AnimatedTextProps) {
-  const reduceMotion = useReducedMotion() ?? false;
+  const reduceMotion = useMountedReducedMotion();
   const chars = useMemo(() => text.split(""), [text]);
   const [visibleCount, setVisibleCount] = useState(
     reduceMotion ? chars.length : 0,

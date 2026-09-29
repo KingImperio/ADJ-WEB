@@ -1,23 +1,26 @@
-import { Hero } from "@/components/home/hero";
-import { Stats, Results } from "@/components/home/proof";
-import { Faq } from "@/components/home/faq";
-import { ServicesStrip, TutorialsSection, AboutCompact, ContactSection } from "@/components/home/sections";
-import { TrustBand } from "@/components/sections/trust-band";
-import { ProgramCta } from "@/components/sections/program-cta";
+"use client";
 
+import { useRouter } from "next/navigation";
+import { Navbar } from "@/components/navbar";
+import { resolveNavHref } from "@/lib/nav";
+import { site } from "@/lib/site";
+
+/* Temporary stub while the site is rebuilt exclusively from AkmanOS + shadcn
+   blocks. Pages compose blocks and pass data — no hand-written components. */
 export default function Home() {
+  const router = useRouter();
+  const go = (itemId: string, linkId?: string) => {
+    const href = resolveNavHref(itemId, linkId);
+    if (href) router.push(href);
+  };
   return (
-    <>
-      <Hero />
-      <TrustBand />
-      <ServicesStrip />
-      <Stats />
-      <TutorialsSection />
-      <Results />
-      <AboutCompact />
-      <Faq />
-      <ContactSection />
-      <ProgramCta headline="Ready when you are." detail="Message, call, or walk in — the first conversation is free." />
-    </>
+    <div className="mx-auto w-full max-w-6xl px-4">
+      <div className="pt-3">
+        <Navbar showSignIn={false} onNavSelect={go} onCta={() => router.push("/contact")} logoAlt={`${site.name} logo`} />
+      </div>
+      <p className="py-24 text-center font-mono text-sm tracking-wide text-zinc-500">
+        ADJ Educational Consultants — rebuilding from AkmanOS + shadcn blocks.
+      </p>
+    </div>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { useMountedReducedMotion } from "@/lib/use-mounted-motion";
 import { ChevronDown, Search } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { SPRING_PANEL } from "@/lib/motion-ease";
@@ -42,7 +43,7 @@ export function NavbarMobileDrawer({
   onLinkClick,
   onMobileExpandedChange,
 }: NavbarMobileDrawerProps) {
-  const reduceMotion = useReducedMotion() ?? false;
+  const reduceMotion = useMountedReducedMotion();
 
   return (
     <AnimatePresence>
