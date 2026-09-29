@@ -81,10 +81,15 @@ export function TestimonialCard({
   return (
     <motion.article
       data-component="testimonial-card"
-      initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 12, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={reduceMotion ? { duration: 0 } : TESTIMONIAL_PANEL_SPRING}
-      className={cn("w-full rounded-3xl bg-[var(--testimonial-bg)] p-5 sm:p-6 md:p-8", className)}
+      whileHover={{ 
+        scale: 1.01, 
+        boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+        transition: { duration: 0.3 }
+      }}
+      className={cn("w-full rounded-3xl bg-[var(--testimonial-bg)] p-5 sm:p-6 md:p-8 border border-cobalt/10", className)}
     >
       <motion.div
         className="flex flex-col gap-5 sm:flex-row sm:items-stretch sm:gap-6 md:gap-8"
@@ -100,11 +105,12 @@ export function TestimonialCard({
           <motion.img
             src={imageSrc}
             alt={imageAlt}
-            className="aspect-[4/3] w-full object-cover sm:aspect-auto sm:h-full sm:min-h-[12.5rem] md:min-h-[14rem]"
+            className="aspect-[4/3] w-full object-cover sm:aspect-auto sm:h-full sm:min-h-[12.5rem] md:min-h-[14rem] rounded-2xl"
             draggable={false}
-            initial={reduceMotion ? false : { scale: 1.06 }}
-            animate={{ scale: 1 }}
+            initial={reduceMotion ? false : { scale: 1.06, opacity: 0.8 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={reduceMotion ? { duration: 0 } : { ...TESTIMONIAL_ENTER_SPRING, delay: 0.08 }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           />
         </motion.div>
 
