@@ -1134,5 +1134,96 @@
         ]
       }
     ]
+  },
+  "cbt": {
+    "h1": "Timed CBT Practice Lab: Exam-Hall Conditions Before Exam Day",
+    "lead": "Overcome computer anxiety and pacing problems. Practice inside our dedicated desktop terminal suite calibrated exactly to official testing interfaces.",
+    "sections": [
+      {
+        "title": "Why the Lab Exists",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Total cognitive conditioning under stressful simulated testing conditions identical to the official JAMB testing protocol."
+          },
+          {
+            "t": "list",
+            "v": [
+              "Exact 8-key keyboard navigation practice",
+              "Immediate score breakdown & review",
+              "Weak-subject question clustering"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Speed & Accuracy Drills in the Laara Computer Lab",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Transition from manual pen-and-paper mastery to computerized operational agility inside our dedicated Greater Heights partner lab."
+          },
+          {
+            "t": "list",
+            "v": [
+              "Elimination of mouse reliance: drill keyboard shortcuts (A, B, C, D, N, P, S).",
+              "Sub-40-second problem-solving metrics for calculation-heavy disciplines.",
+              "Real-time heatmaps identifying syllabus weak points on student dashboard."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Full-Scale Timed Mock Marathons",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Pressure-test psychological conditioning to eradicate test anxiety and panic stalls."
+          },
+          {
+            "t": "list",
+            "v": [
+              "Bi-weekly Saturday mock marathons running 180 questions in exactly 120 minutes.",
+              "Post-mock one-on-one strategy review with seasoned ADJ Lead Examiners."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "The Facility Behind the Terminals",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "ADJ Educational Consultants conducts its rigorous CBT simulation tracks and physical cohorts in strategic collaboration with Greater Heights Tutorial Center at Banana Estate / Laara, Ikorodu."
+          },
+          {
+            "t": "list",
+            "v": [
+              "Low-latency offline LAN servers guaranteeing zero test interruptions or disconnects.",
+              "Dual industrial solar inverters and standby generators preventing power dips during timed runs.",
+              "Ergonomic seating environment mirroring the pristine conditions of federal university test halls.",
+              "Strict invigilation enforcing JAMB code of conduct, timing protocols, and exam composure."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Book Your Lab Slot",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Take a complimentary 90-minute timed mock in our Laara CBT lab. Receive an immediate breakdown of your speed per subject, syllabus deficiency gaps, and a confirmed assessment of your course eligibility."
+          },
+          {
+            "t": "h3",
+            "v": "Weekly Mock Access"
+          },
+          {
+            "t": "p",
+            "v": "No consultation fee required. Physical and online slots available."
+          }
+        ]
+      }
+    ]
   }
 }

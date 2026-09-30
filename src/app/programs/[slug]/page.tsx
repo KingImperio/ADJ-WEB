@@ -17,9 +17,10 @@ type Page = { h1: string; lead: string; sections: Section[] };
 /* NECO shares the WAEC & NECO screen — the reference merges the two exams. */
 const pages_: Record<string, Page> = { ...(pages as unknown as Record<string, Page>), neco: pages.waec as unknown as Page };
 
-const list = ["jamb", "waec", "neco", "jupeb", "international", "admissions"];
+const list = ["jamb", "waec", "neco", "jupeb", "international", "admissions", "cbt"];
 const stats: Record<string, string[]> = {
   jamb: ["342 / 400", "Made Median", "87%"],
+  cbt: ["180 Qs", "Made Median", "120 min"],
   waec: ["9 A1s", "Made Median", "4.2 hrs"],
   jupeb: ["14 Pts", "Made Median", "78%"],
   international: ["Band 8.0+", "Target Median", "1400+"],
@@ -27,6 +28,7 @@ const stats: Record<string, string[]> = {
 };
 const statLabels: Record<string, string[]> = {
   jamb: ["Made Median", "Average Improvement", "Pass Rate Benchmarking"],
+  cbt: ["Per Mock Marathon", "Average Improvement", "Timed Conditions"],
   waec: ["Made Median", "Average Improvement", "Weekly Lab Hours"],
   jupeb: ["Made Median", "Average Improvement", "Pass Rate Benchmarking"],
   international: ["Target Band", "Average Improvement", "Target SAT"],

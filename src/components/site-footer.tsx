@@ -1,7 +1,17 @@
 import Link from "next/link";
 import { Icon } from "@/components/icon";
 import { site } from "@/lib/site";
-import { programs } from "@/lib/programs";
+
+/* Live programme links only — every href below resolves to a built route.
+   (Legacy slugs gce/tutorials redirect; see next.config.ts.) */
+const programmeLinks = [
+  { label: "JAMB UTME Clinic", href: "/programs/jamb" },
+  { label: "WAEC & NECO Intensive", href: "/programs/waec" },
+  { label: "JUPEB Direct Entry", href: "/programs/jupeb" },
+  { label: "International Examinations", href: "/programs/international" },
+  { label: "Admissions Processing", href: "/programs/admissions" },
+  { label: "Timed CBT Practice Lab", href: "/programs/cbt" },
+];
 
 /* Navy footer per the Stitch system: 5-col grid (brand spans 2) then a legal
    bar. `text-on-primary-container` is Stitch's muted-on-navy text. */
@@ -38,13 +48,13 @@ export function SiteFooter() {
           <div className="space-y-3">
             <h4 className="text-label-md tracking-wider text-secondary-fixed uppercase">Programs</h4>
             <ul className="space-y-2 text-body-sm">
-              {programs.slice(0, 5).map((p) => (
-                <li key={p.slug}>
+              {programmeLinks.map((p) => (
+                <li key={p.href}>
                   <Link
-                    href={`/programs/${p.slug}`}
+                    href={p.href}
                     className="text-on-primary-container transition-colors hover:text-on-primary hover:underline"
                   >
-                    {p.name}
+                    {p.label}
                   </Link>
                 </li>
               ))}

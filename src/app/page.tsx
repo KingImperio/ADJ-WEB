@@ -228,7 +228,7 @@ export default function Home() {
                 <div className="mt-6 flex items-center justify-between border-t border-outline-variant/60 pt-6">
                   <span className="text-label-sm font-bold text-primary">{t.foot}</span>
                   <Link
-                    href={t.slug === "cbt" ? "/contact" : `/programs/${t.slug}`}
+                    href={`/programs/${t.slug}`}
                     className={`rounded px-3 py-1.5 text-label-sm font-bold transition-colors ${
                       t.cta === "Enroll"
                         ? "bg-secondary text-on-secondary hover:bg-on-secondary-container"

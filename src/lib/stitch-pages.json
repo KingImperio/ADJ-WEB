@@ -257,52 +257,6 @@
     "lead": "At ADJ Educational Consultants, we measure success not by unverified self-reporting, but by physical matriculation credentials. Every score presented below is documented with official JAMB CAPS placement, validated first-sitting WAEC/NECO certificates, and actual university registration numbers.",
     "sections": [
       {
-        "title": "Matriculation Wall of Fame",
-        "blocks": [
-          {
-            "t": "p",
-            "v": "Students mentored directly at our Banana Estate / Laara study halls in Ikorodu."
-          },
-          {
-            "t": "h3",
-            "v": "Favour Balogun"
-          },
-          {
-            "t": "h3",
-            "v": "Babatunde Adeleke"
-          },
-          {
-            "t": "h3",
-            "v": "Tunde Oladipupo"
-          },
-          {
-            "t": "h3",
-            "v": "Oluwaseun Enitan"
-          },
-          {
-            "t": "h3",
-            "v": "Chisom Nnamdi"
-          },
-          {
-            "t": "h3",
-            "v": "Mariam Lawal"
-          },
-          {
-            "t": "h3",
-            "v": "Kehinde Bakare"
-          }
-        ]
-      },
-      {
-        "title": "What Ikorodu Parents and Candidates Say",
-        "blocks": [
-          {
-            "t": "p",
-            "v": "Real feedback from families in Banana Estate, Igbe-Laara, and Agunfoye regarding our coaching rigor and transparent admissions follow-through."
-          }
-        ]
-      },
-      {
         "title": "The ADJ Integrity Guarantee: Zero Fabricated Records",
         "blocks": [
           {
@@ -310,15 +264,87 @@
             "v": "In an educational climate plagued by altered screenshots and fraudulent marketing, ADJ Educational Consultants stands on physical accountability. Every registration number, JAMB CAPS admission slip, and WAEC certificate displayed on this wall is archived and available for in-person parent inspection at our Laara center."
           }
         ]
+      }
+    ],
+    "wall": [
+      {
+        "name": "Favour Balogun",
+        "badge": "JAMB / UTME",
+        "tone": "emerald",
+        "area": "Igbogbo Alum",
+        "perf": "UTME: 326 \u2014 English 78 \u00b7 Physics 84 \u00b7 Chem 81 \u00b7 Bio 83",
+        "place": "Medicine & Surgery (MBBS), University of Lagos (UNILAG)",
+        "reg": "Reg ADJ/2024/UTME-041 \u00b7 1st Batch Merit List"
       },
       {
-        "title": "Ready to Write Your Matriculation Success Story?",
-        "blocks": [
-          {
-            "t": "p",
-            "v": "Schedule a Free Diagnostic Assessment & Admission Strategy Session at our Igbe-Laara Center."
-          }
-        ]
+        "name": "Babatunde Adeleke",
+        "badge": "JAMB / UTME",
+        "tone": "emerald",
+        "area": "Banana Estate, Laara",
+        "perf": "UTME: 342 \u2014 Maths 92 \u00b7 Physics 89 \u00b7 Chem 85 \u00b7 Eng 76",
+        "place": "Mechanical Engineering, University of Lagos (UNILAG)",
+        "reg": "Reg ADJ/2024/UTME-009 \u00b7 Department Top 2%"
+      },
+      {
+        "name": "Tunde Oladipupo",
+        "badge": "JUPEB / DIRECT ENTRY",
+        "tone": "indigo",
+        "area": "Igbe-Laara, Ikorodu",
+        "perf": "JUPEB: 15 Points \u2014 Government A \u00b7 Lit-in-English A \u00b7 CRS A",
+        "place": "Faculty of Law (LL.B, 200L), Lagos State University (LASU)",
+        "reg": "Reg ADJ/2023/JPB-014 \u00b7 Direct 200L Matriculant"
+      },
+      {
+        "name": "Oluwaseun Enitan",
+        "badge": "CAPS MARKETPLACE RE-ROUTE",
+        "tone": "amber",
+        "area": "Oreta Road, Ikorodu",
+        "perf": "UTME: 281 \u2014 strategic aggregate defense via ADJ desk",
+        "place": "Systems Engineering, University of Lagos (UNILAG)",
+        "reg": "Reg ADJ/2024/CON-088 \u00b7 Change of Course Success"
+      },
+      {
+        "name": "Chisom Nnamdi",
+        "badge": "WAEC / NECO",
+        "tone": "navy",
+        "area": "Elepe Alum",
+        "perf": "WAEC: 8 Distinctions \u2014 A1 in Further Maths, Maths, Chem, Physics",
+        "place": "Computer Science, Fed. Univ. of Tech. Akure (FUTA)",
+        "reg": "Reg ADJ/2023/WAC-112 \u00b7 100% Distinction Track"
+      },
+      {
+        "name": "Mariam Lawal",
+        "badge": "JUPEB / DIRECT ENTRY",
+        "tone": "indigo",
+        "area": "Elepe Alum, Ikorodu",
+        "perf": "JUPEB: 14 Points \u2014 Biology A \u00b7 Chemistry A \u00b7 Physics B",
+        "place": "Faculty of Pharmacy, Obafemi Awolowo University (OAU)",
+        "reg": "Reg ADJ/2023/JPB-039 \u00b7 Direct 200L Faculty Entry"
+      },
+      {
+        "name": "Kehinde Bakare",
+        "badge": "ADMISSIONS RECTIFICATION",
+        "tone": "neutral",
+        "area": "Agunfoye Alum",
+        "perf": "O-Level Blending Resolved \u2014 WAEC & NECO combination cleared on JAMB CAPS",
+        "place": "International Relations, Obafemi Awolowo University (OAU)",
+        "reg": "Reg ADJ/2023/REC-002 \u00b7 Full Matriculation Secured"
+      }
+    ],
+    "testis": [
+      {
+        "quote": "What distinguishes ADJ from tutorial centers in Ikorodu is the absolute discipline. If my son was five minutes late, I received an SMS. Their weekly diagnostic mock exams left no room for complacency. When his UTME result came out at 342, we knew every naira spent at the Laara center was an investment that delivered.",
+        "initials": "FA",
+        "name": "Mrs. F. Adeleke",
+        "detail": "Parent of Babatunde Adeleke (Mechanical Engineering, UNILAG)",
+        "area": "Resident, Banana Estate, Off Igbe Road"
+      },
+      {
+        "quote": "We had spent two consecutive years falling victim to fake admission promises from agents. ADJ took over our daughter's case, sat us down, and explained the exact cutoff quota system for LASU Law. Through their JUPEB program, she scored 15 points and entered 200 Level directly without stress.",
+        "initials": "GO",
+        "name": "Mr. G. Ogunsanya",
+        "detail": "Parent of Tunde Oladipupo (200L Law, LASU)",
+        "area": "Agunfoye-Igbogbo Axis, Ikorodu"
       }
     ]
   },
