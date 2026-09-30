@@ -1,0 +1,195 @@
+{
+  "pillars": [
+    {
+      "icon": "groups",
+      "title": "Strict Group-Only Learning",
+      "copy": "No solitary shortcuts or isolation. Group-paced momentum creates peer accountability, healthy intellectual competition, and shared masterclasses.",
+      "tag": "Collective Momentum",
+      "tagIcon": "trending_up",
+      "tone": "primary"
+    },
+    {
+      "icon": "assignment_turned_in",
+      "title": "Follow-Through Past Results Day",
+      "copy": "High scores mean nothing if you are not admitted. We advise on Post-UTME cutoff patterns, O-Level combination blending, and CAPS approval until matriculation.",
+      "tag": "Coaching Until Matriculation",
+      "tagIcon": "verified_user",
+      "tone": "secondary"
+    },
+    {
+      "icon": "shield",
+      "title": "Honest Scope & Zero Gimmicks",
+      "copy": "No fake scholarship guarantees, no counterfeit \u201cspecial centers\u201d, and no unvetted promises. We believe in transparent, merit-driven Nigerian and overseas preparation.",
+      "tag": "Ethical Integrity",
+      "tagIcon": "check_circle",
+      "tone": "primary"
+    },
+    {
+      "icon": "contact_support",
+      "title": "Free First Diagnostic Consultation",
+      "copy": "Walk into our Banana Estate / Laara center or join our online diagnostic assessment session. We review your past attempts and formulate a customized syllabus roadmap for free.",
+      "tag": "100% Free Consultation",
+      "tagIcon": "arrow_forward",
+      "tone": "secondary"
+    }
+  ],
+  "tracks": [
+    {
+      "badge": "JAMB / UTME",
+      "side": "Intensive Drills",
+      "title": "JAMB UTME Clinic",
+      "desc": "Systematic subject combination mastery, time-management protocols, Novel drill sessions, and continuous timed weekly CBT trials.",
+      "bullets": [
+        "Four-subject mastery curriculum",
+        "Weekly Friday 400-mark mock examinations",
+        "Novel & Comprehension dissection"
+      ],
+      "foot": "Morning & Evening Batches",
+      "cta": "Enroll",
+      "slug": "jamb",
+      "tone": "emerald"
+    },
+    {
+      "badge": "WAEC / NECO",
+      "side": "O-Level Solidification",
+      "title": "WAEC & NECO Intensive",
+      "desc": "Deep theory answer structuring, practical laboratory prep for Sciences, and past-question marathons spanning 15 consecutive exam cycles.",
+      "bullets": [
+        "Science, Commercial & Arts breakdowns",
+        "Step-by-step marking scheme alignment",
+        "Alternative-to-Practical workshops"
+      ],
+      "foot": "School Leavers & Resitters",
+      "cta": "Enroll",
+      "slug": "waec",
+      "tone": "navy"
+    },
+    {
+      "badge": "JUPEB / DIRECT ENTRY",
+      "side": "Skip 100 Level",
+      "title": "JUPEB Direct Entry",
+      "desc": "The premier 200L university admissions shortcut. Intensive 9-month syllabus coverage in Physics, Chem, Bio, Govt, Literature, and Economics.",
+      "bullets": [
+        "Direct 200-Level admission into UNILAG, UI, etc.",
+        "A-Level standard tutorial faculty",
+        "Continuous assessment points monitoring"
+      ],
+      "foot": "9-Month Comprehensive",
+      "cta": "Enroll",
+      "slug": "jupeb",
+      "tone": "indigo"
+    },
+    {
+      "badge": "IELTS / SAT / GRE",
+      "side": "Global Study",
+      "title": "International Examinations",
+      "desc": "Specialized coaching for students aiming for US, UK, Canada, and European universities. Focus on Band 8.0+ in IELTS and 1400+ on digital SAT.",
+      "bullets": [
+        "Acoustic listening practice & oral drills",
+        "Digital SAT adaptive testing drills",
+        "Statement of Purpose guidance"
+      ],
+      "foot": "Flexible Weekend Formats",
+      "cta": "Enroll",
+      "slug": "international",
+      "tone": "amber"
+    },
+    {
+      "badge": "CAPS & CUTOFFS",
+      "side": "Strategic Advisory",
+      "title": "University Admissions Advisory",
+      "desc": "Prevent the heartbreaking error of selecting unaccredited combinations or missing catchment quotas. We manage your JAMB CAPS until green matriculation.",
+      "bullets": [
+        "Federal & State Catchment calibration",
+        "Change of institution & course vetting",
+        "Direct clearance troubleshooting"
+      ],
+      "foot": "Personal 1-on-1 Guidance",
+      "cta": "Consult",
+      "slug": "admissions",
+      "tone": "neutral"
+    },
+    {
+      "badge": "SIMULATION LAB",
+      "side": "Physical In-Center",
+      "title": "Timed CBT Practice Lab",
+      "desc": "Overcome computer anxiety and pacing problems. Practice inside our dedicated desktop terminal suite calibrated exactly to official testing interfaces.",
+      "bullets": [
+        "Exact 8-key keyboard navigation practice",
+        "Immediate score breakdown & review",
+        "Weak-subject question clustering"
+      ],
+      "foot": "Weekly Mock Access",
+      "cta": "Book Slot",
+      "slug": "cbt",
+      "tone": "emerald"
+    }
+  ],
+  "catchments": [
+    "Igbe-Laara Main Hub",
+    "Igbogbo Corridor",
+    "Elepe Axis",
+    "Agunfoye Neighborhood",
+    "Oreta & Offin Coastal"
+  ],
+  "directions": [
+    {
+      "from": "From Igbogbo:",
+      "copy": "Take direct bike or tricycle to Laara Bus Stop. Turn into Banana Estate road opposite the Central Mosque."
+    },
+    {
+      "from": "From Elepe / Ijede Road:",
+      "copy": "Connect through Igbe Road bypass directly into Laara junction."
+    },
+    {
+      "from": "Live Digital Stream:",
+      "copy": "Students outside Ikorodu can join our interactive 1080p Zoom group classes with downloadable class whiteboard notes."
+    }
+  ],
+  "metrics": [
+    {
+      "value": "94%",
+      "label": "UTME 250+ Rate",
+      "accent": "secondary"
+    },
+    {
+      "value": "100%",
+      "label": "Group Rigor",
+      "accent": "primary"
+    },
+    {
+      "value": "Matric",
+      "label": "Coached Thru",
+      "accent": "tertiary"
+    }
+  ],
+  "results": [
+    {
+      "badge": "UTME SCORE: 326",
+      "tag": "Admitted 2024",
+      "quote": "Before ADJ, I spent two years stuck at 210 with self-study. Their CBT lab drills eliminated my timing anxiety, and Mr. Daniel personally guided my change of course to Medicine at UNILAG. I am now in my second year.",
+      "initials": "FB",
+      "name": "Favour Balogun",
+      "detail": "Medicine & Surgery, UNILAG (Igbogbo Alum)",
+      "tone": "emerald"
+    },
+    {
+      "badge": "JUPEB: 14 POINTS",
+      "tag": "Direct Entry",
+      "quote": "The group-only lectures kept all of us awake. No student was left behind during tough Organic Chemistry derivations. Gaining 200 Level Direct Entry to LASU Law without retaking JAMB was the best decision my parents made.",
+      "initials": "TO",
+      "name": "Tunde Oladipupo",
+      "detail": "Faculty of Law, LASU (Igbe-Laara)",
+      "tone": "indigo"
+    },
+    {
+      "badge": "PARENT ENDORSEMENT",
+      "tag": "Elepe Resident",
+      "quote": "What sets ADJ apart from every other tutorial in Ikorodu is honesty. When other centers were demanding exorbitant sums for \u201cassurance\u201d, ADJ clearly mapped out my daughter\u2019s OAU catchment standing and she got in on pure merit.",
+      "initials": "EA",
+      "name": "Mrs. E. Adeleke",
+      "detail": "Mother of Mechanical Eng. Scholar, OAU",
+      "tone": "amber"
+    }
+  ]
+}

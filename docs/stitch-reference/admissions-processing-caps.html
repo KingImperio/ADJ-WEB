@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admissions Processing &amp; CAPS Advisory | ADJ Educational Consultants</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Source Serif 4 -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim from theme -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#d6e3ff",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#005236",
+            "secondary-container": "#98f6c5",
+            "tertiary-fixed": "#ffdcc3",
+            "on-secondary-container": "#00734d",
+            "background": "#faf8ff",
+            "surface-dim": "#d2d9f4",
+            "surface-tint": "#455f88",
+            "on-surface": "#131b2e",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "tertiary": "#361900",
+            "primary-fixed-dim": "#adc7f7",
+            "surface-bright": "#faf8ff",
+            "secondary-fixed-dim": "#7cd9aa",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "secondary-fixed": "#98f6c5",
+            "tertiary-container": "#552b00",
+            "surface": "#faf8ff",
+            "surface-variant": "#dae2fd",
+            "on-secondary-fixed": "#002113",
+            "primary-container": "#1a365d",
+            "surface-container": "#eaedff",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-container": "#eb851c",
+            "inverse-primary": "#adc7f7",
+            "on-tertiary-fixed": "#2f1500",
+            "on-primary-container": "#86a0cd",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-background": "#131b2e",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#283044",
+            "outline": "#74777f",
+            "on-primary-fixed-variant": "#2d476f",
+            "primary": "#002045",
+            "error": "#ba1a1a",
+            "on-surface-variant": "#43474e",
+            "inverse-on-surface": "#eef0ff",
+            "secondary": "#006c48",
+            "on-primary-fixed": "#001b3c",
+            "outline-variant": "#c4c6cf",
+            "surface-container-high": "#e2e7ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.25rem",
+            "margin": "1rem",
+            "space-xxl": "4rem",
+            "space-lg": "1.5rem",
+            "gutter-desktop": "2rem",
+            "space-md": "1rem",
+            "margin-desktop": "4rem",
+            "space-xl": "2.5rem",
+            "margin-tablet": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["\"Source Serif 4\""],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["\"Source Serif 4\""],
+            "display-lg": ["\"Source Serif 4\""],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["\"Source Serif 4\""],
+            "headline-lg": ["\"Source Serif 4\""],
+            "headline-md": ["\"Source Serif 4\""]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display-lg-mobile": ["34px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-lg": ["52px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-md": ["26px", { "lineHeight": "34px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TOP BAR: Pre-Header Catchment Indicator Banner -->
+<div class="bg-primary text-on-primary text-label-sm font-label-sm py-2 px-4 border-b border-outline-variant/30">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+<div class="flex items-center gap-2 text-on-primary/90">
+<span class="material-symbols-outlined text-secondary-fixed text-base" data-icon="location_on">location_on</span>
+<span>Physical Diagnostic Center: Off Igbe Road, Banana Estate / Laara Junction, Ikorodu, Lagos State</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center gap-1.5 text-secondary-fixed">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+          2024/2025 JAMB CAPS Advisory Portal Active
+        </span>
+<span class="text-outline-variant">|</span>
+<span class="flex items-center gap-1 text-on-primary/80">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+          Mon–Sat: 8:00 AM – 6:00 PM
+        </span>
+</div>
+</div>
+</div>
+<!-- SHARED COMPONENT: TopNavBar -->
+<!-- Executing style_* from Shared Components JSON:
+       style_component_shape: docked full-width top-0 sticky z-50
+       style_separation_logic: border-b border-outline-variant dark:border-outline bg-surface dark:bg-primary-container
+       style_shadows_and_elevation: shadow-sm dark:shadow-none
+       style_shell_layout: w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20
+       Active item mapping: 'Programmes' is active for this route (/programs/admissions)
+  -->
+<header class="docked full-width top-0 sticky z-50 border-b border-outline-variant bg-surface shadow-sm">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+<!-- Brand Logo Anchor -->
+<a class="flex items-center gap-3 group" href="/">
+<div class="w-11 h-11 bg-primary text-on-primary flex items-center justify-center rounded font-headline-sm font-bold shadow-sm">
+          ADJ
+        </div>
+<div>
+<span class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight block">ADJ Educational Consultants</span>
+<span class="text-label-sm font-label-sm text-secondary tracking-wider uppercase block">Coaching Until Matriculation</span>
+</div>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center space-x-8">
+<!-- Home (Inactive) -->
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors text-label-md font-label-md" href="/">
+          Home
+        </a>
+<!-- Programmes (Active: strict adherence to style_active_navigation) -->
+<a class="border-b-2 border-secondary text-secondary font-bold pb-1 text-label-md font-label-md" href="/programmes">
+          Programmes
+        </a>
+<!-- Results (Inactive) -->
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors text-label-md font-label-md" href="/results">
+          Results
+        </a>
+<!-- About Us (Inactive) -->
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors text-label-md font-label-md" href="/about">
+          About Us
+        </a>
+<!-- Contact (Inactive) -->
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors text-label-md font-label-md" href="/contact">
+          Contact
+        </a>
+</nav>
+<!-- Trailing Action Buttons -->
+<div class="flex items-center gap-3">
+<!-- Call / WhatsApp Action (Secondary) -->
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 border border-outline-variant bg-surface-container-lowest text-primary text-label-md font-label-md rounded hover:bg-surface-container-high transition-all duration-200 active:scale-95" href="https://wa.me/2348000000000" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-secondary text-base" data-icon="call">call</span>
+<span>Call / WhatsApp</span>
+</a>
+<!-- Book Free Consultation (Trailing Primary Action) -->
+<a class="inline-flex items-center gap-2 px-4 py-2.5 bg-primary text-on-primary rounded text-label-md font-label-md font-semibold hover:bg-primary-container transition-all duration-200 shadow-sm active:scale-95" href="#audit-booking">
+<span class="material-symbols-outlined text-secondary-fixed text-base" data-icon="schedule">schedule</span>
+<span>Book Free Consultation</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT CANVAS -->
+<main class="w-full">
+<!-- HERO SECTION -->
+<section class="bg-surface-container-low border-b border-outline-variant/60 pt-10 pb-16 lg:pb-20 relative overflow-hidden">
+<!-- Collegiate Geometric Watermark / Grid Pattern Accent -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#002045_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- Breadcrumb & Tag Cluster -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+<nav aria-label="Breadcrumb" class="flex items-center space-x-2 text-label-sm font-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="/">Home</a>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="/programmes">Programmes</a>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-bold">Admissions Processing &amp; CAPS Advisory</span>
+</nav>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed-variant border border-secondary/30 text-label-sm font-label-sm uppercase tracking-wider font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Strategic Mentorship from Results Day to Matriculation
+          </div>
+</div>
+<!-- Main Headline and Subtitle Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-8">
+<h1 class="text-display-lg font-display-lg text-primary tracking-tight mb-6">
+              Admissions Processing &amp; CAPS Guidance: Coaching Until Matriculation
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl leading-relaxed mb-8">
+              High JAMB scores alone don't guarantee admission. Our strategic admissions counseling navigates Post-UTME screening, JAMB CAPS marketplace transfers, catchment area quotas, and O-Level subject blending so you never lose your deserved seat.
+            </p>
+<!-- Dual Primary CTAs -->
+<div class="flex flex-wrap items-center gap-4 mb-10">
+<a class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-secondary text-on-secondary rounded text-label-lg font-label-lg font-semibold hover:bg-on-secondary-container transition-all shadow-sm active:scale-95" href="#audit-booking">
+<span class="material-symbols-outlined text-lg" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span>Book Free Admissions Audit</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 border border-outline-variant bg-surface-container-lowest text-primary rounded text-label-lg font-label-lg font-semibold hover:bg-surface-container-high hover:border-primary transition-all active:scale-95" href="#quick-calculator">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="rule">rule</span>
+<span>Verify Course &amp; Subject Combination</span>
+</a>
+</div>
+<!-- Landmark Grounding Anchor -->
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-3 py-2 rounded border border-outline-variant/50 w-fit">
+<span class="material-symbols-outlined text-secondary text-base" data-icon="pin_drop">pin_drop</span>
+<span>Serving families across <strong>Banana Estate, Igbe-Laara, Igbogbo, Elepe, and Agunfoye</strong></span>
+</div>
+</div>
+<!-- Hero High-Contrast Key Metrics Stack -->
+<div class="lg:col-span-4 bg-surface-container-lowest border border-outline-variant p-6 rounded-xl shadow-sm">
+<div class="border-b border-outline-variant/60 pb-4 mb-5">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-secondary font-bold block mb-1">Empirical Track Record</span>
+<h2 class="text-headline-sm font-headline-sm text-primary">Uncompromising Admission Integrity</h2>
+</div>
+<div class="space-y-6">
+<!-- Metric 1 -->
+<div class="pl-4 border-l-[3px] border-secondary">
+<div class="text-display-lg-mobile font-display-lg text-primary font-bold tracking-tight">89.4%</div>
+<div class="text-label-md font-label-md text-on-surface font-semibold">First-Choice Placement Rate</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">UNILAG, LASU, UI, OAU, FUTA departmental quota qualifiers.</p>
+</div>
+<!-- Metric 2 -->
+<div class="pl-4 border-l-[3px] border-secondary">
+<div class="text-display-lg-mobile font-display-lg text-primary font-bold tracking-tight">100%</div>
+<div class="text-label-md font-label-md text-on-surface font-semibold">Verified CAPS Approvals</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Zero forfeit of offer letters from missed system deadlines.</p>
+</div>
+<!-- Metric 3 -->
+<div class="pl-4 border-l-[3px] border-tertiary-container">
+<div class="text-display-lg-mobile font-display-lg text-tertiary font-bold tracking-tight">0%</div>
+<div class="text-label-md font-label-md text-on-surface font-semibold">Gimmicks / Strictly Merit Advisory</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Pure regulatory compliance through JAMB Brochure and Federal Guidelines.</p>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/40 flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Coaching until Matriculation register closes</span>
+<span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 1: THE 5 PITFALLS THAT DISQUALIFY HIGH-SCORING CANDIDATES -->
+<section class="py-16 lg:py-24 bg-surface max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-3xl mb-12">
+<div class="inline-flex items-center gap-1.5 text-label-sm font-label-sm font-bold text-error uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-base" data-icon="warning">warning</span>
+<span>Systemic Screening Realities</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight mb-4">
+          The 5 Hidden Pitfalls That Disqualify 270+ JAMB Candidates
+        </h2>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+          Every admission cycle in Lagos State, thousands of ambitious scholars score well above 250 in the UTME yet end up without admission. The shortfall is rarely academic capacity—it is procedural and regulatory disqualification.
+        </p>
+</div>
+<!-- Bento Grid for 5 Pitfalls -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Pitfall 1: Catchment & Quota Misalignment (Spans 2 columns on lg) -->
+<div class="lg:col-span-2 bg-surface-container-lowest border border-outline-variant p-6 lg:p-8 rounded-xl hover:border-outline transition-all shadow-sm">
+<div class="flex items-start justify-between mb-4">
+<span class="px-2.5 py-1 rounded bg-error-container text-on-error-container text-label-sm font-label-sm font-bold uppercase">
+              Pitfall 01 • Quota Ignorance
+            </span>
+<span class="material-symbols-outlined text-error text-2xl" data-icon="pie_chart">pie_chart</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3">
+            Catchment &amp; Federal Quota Misalignment
+          </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">
+            Federal universities distribute admissions via: <strong>45% National Merit</strong>, <strong>35% Catchment Area</strong>, and <strong>20% Educationally Less Developed States (ELDS)</strong>. Applying to institutions like UNILORIN or UNIBEN as an applicant from Lagos/Ogun without hitting pure national merit thresholds immediately surrenders your slot to local catchment candidates.
+          </p>
+<div class="bg-surface-container-low p-3.5 rounded border border-outline-variant/60 text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary">ADJ Strategic Safeguard:</span> We cross-map candidate origin against institutional catchment criteria before JAMB change of institution locks down.
+          </div>
+</div>
+<!-- Pitfall 2: Subject Combination Mismatches -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl hover:border-outline transition-all shadow-sm">
+<div class="flex items-start justify-between mb-4">
+<span class="px-2.5 py-1 rounded bg-error-container text-on-error-container text-label-sm font-label-sm font-bold uppercase">
+              Pitfall 02 • Faculty Clash
+            </span>
+<span class="material-symbols-outlined text-error text-2xl" data-icon="swap_horiz">swap_horiz</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3">
+            Subject Combination Nuances
+          </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+            Faculty requirements differ subtly across institutions. For instance, UNILAG Accounting strictly rejects Commerce in place of Economics, while LASU permits particular commercial substitutions. A candidate scoring 290 with the wrong 4-subject combination faces immediate automated disqualification.
+          </p>
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant/60 text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary">Safeguard:</span> Line-by-line JAMB Interactive e-Brochure (IBASS) verification.
+          </div>
+</div>
+<!-- Pitfall 3: Ignored JAMB CAPS Marketplace -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl hover:border-outline transition-all shadow-sm">
+<div class="flex items-start justify-between mb-4">
+<span class="px-2.5 py-1 rounded bg-error-container text-on-error-container text-label-sm font-label-sm font-bold uppercase">
+              Pitfall 03 • System Timeouts
+            </span>
+<span class="material-symbols-outlined text-error text-2xl" data-icon="hourglass_disabled">hourglass_disabled</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3">
+            Ignored JAMB CAPS Marketplace
+          </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+            When candidates miss the departmental cutoff, universities often transfer them into allied courses via the CAPS marketplace. You have a strict 72 to 120-hour window to review and accept transfer proposals. Ignoring or misinterpreting this portal action results in permanent forfeiture.
+          </p>
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant/60 text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary">Safeguard:</span> Weekly profile audit and immediate SMS/WhatsApp prompt to parents upon CAPS status updates.
+          </div>
+</div>
+<!-- Pitfall 4: O-Level Deficiencies & Blending Errors -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl hover:border-outline transition-all shadow-sm">
+<div class="flex items-start justify-between mb-4">
+<span class="px-2.5 py-1 rounded bg-error-container text-on-error-container text-label-sm font-label-sm font-bold uppercase">
+              Pitfall 04 • Multi-Sitting Rules
+            </span>
+<span class="material-symbols-outlined text-error text-2xl" data-icon="merge_type">merge_type</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3">
+            O-Level Blending &amp; Sitting Penalties
+          </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+            Blending WAEC and NECO is widely permitted, but premier faculties (e.g. UNILAG College of Medicine) strictly mandate ONE sitting with 5 distinctions. Combining sittings without assessing individual school weighting deduction equations leads to sudden rejection at the physical clearance phase.
+          </p>
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant/60 text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary">Safeguard:</span> Physical screening audit of statement of results prior to registration.
+          </div>
+</div>
+<!-- Pitfall 5: Post-UTME Aggregate Miscalculations -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl hover:border-outline transition-all shadow-sm">
+<div class="flex items-start justify-between mb-4">
+<span class="px-2.5 py-1 rounded bg-error-container text-on-error-container text-label-sm font-label-sm font-bold uppercase">
+              Pitfall 05 • Mathematical Oversight
+            </span>
+<span class="material-symbols-outlined text-error text-2xl" data-icon="calculate">calculate</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3">
+            Underestimating Aggregate Formulas
+          </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+            Different institutions execute radically distinct composite weighting metrics: UNILAG uses 50% UTME + 30% Post-UTME CBT + 20% O-Level; LASU executes a pure 50:50 O-level point system alongside UTME score. Misunderstanding this causes candidates to falsely overestimate their competitive footing.
+          </p>
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant/60 text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary">Safeguard:</span> Exact composite simulation using current academic year university formulas.
+          </div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: STEP-BY-STEP STRATEGIC COUNSELING PROCESS -->
+<section class="py-16 lg:py-24 bg-surface-container-low border-y border-outline-variant/60">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-secondary font-bold block mb-2">The Structured Pathway</span>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight mb-4">
+            Our 5-Stage Matriculation Lifecycle Protocol
+          </h2>
+<p class="text-body-md font-body-md text-on-surface-variant">
+            From initial score appraisal to the moment your clearance dossier is stamped at the academic affairs office, we actively govern every stage of the admissions pipeline.
+          </p>
+</div>
+<!-- 5-Step Process Timeline / Card Matrix -->
+<div class="space-y-6">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 lg:p-8 rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+<div class="flex items-start gap-4 lg:w-2/3">
+<div class="w-12 h-12 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-headline-sm flex-shrink-0">
+                01
+              </div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant text-label-sm font-label-sm font-bold">PRE-SCREENING</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Timeline: Immediate Post-UTME Release</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Brochure &amp; Realistic Target Institution Matching</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                  We analyze the candidate's exact raw score against 5-year historic departmental cut-offs. If a 248 is insufficient for Pharmacy at UNILAG, we execute a rapid, data-backed institutional reassignment to institutions where that score guarantees a merit-list position.
+                </p>
+</div>
+</div>
+<div class="md:w-1/3 flex flex-col items-start md:items-end justify-center border-t md:border-t-0 md:border-l border-outline-variant/60 pt-4 md:pt-0 md:pl-6 w-full">
+<span class="text-label-sm font-label-sm text-secondary font-bold">Deliverable:</span>
+<span class="text-body-sm font-body-sm font-semibold text-primary text-left md:text-right">Risk-Weighted Institutional Target Dossier</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 lg:p-8 rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+<div class="flex items-start gap-4 lg:w-2/3">
+<div class="w-12 h-12 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-headline-sm flex-shrink-0">
+                02
+              </div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-bold">EXAMINATION MASTERY</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Timeline: Screening Application Windows</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">School-Specific Post-UTME Mock CBT Drills</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                  We run tailored computer-based screening drills mirroring individual university test patterns: UNILAG’s 30-minute 40-question speed endurance; OAU’s specialized Aptitude Test; and UI’s strict departmental problem sets at our Banana Estate lab.
+                </p>
+</div>
+</div>
+<div class="md:w-1/3 flex flex-col items-start md:items-end justify-center border-t md:border-t-0 md:border-l border-outline-variant/60 pt-4 md:pt-0 md:pl-6 w-full">
+<span class="text-label-sm font-label-sm text-secondary font-bold">Deliverable:</span>
+<span class="text-body-sm font-body-sm font-semibold text-primary text-left md:text-right">Institution-Calibrated CBT Mastery Report</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 lg:p-8 rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+<div class="flex items-start gap-4 lg:w-2/3">
+<div class="w-12 h-12 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-headline-sm flex-shrink-0">
+                03
+              </div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant text-label-sm font-label-sm font-bold">CAPS RADAR</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Timeline: Continuous Admission Rounds</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Daily JAMB CAPS Central Monitoring</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                  Admissions officers update candidates at irregular hours. Our academic planning desk conducts daily status tracking: from "Not Admitted" to "Recommended", "Approved", and "Accepted", verifying that your O-level upload was never silently dropped by JAMB system syncs.
+                </p>
+</div>
+</div>
+<div class="md:w-1/3 flex flex-col items-start md:items-end justify-center border-t md:border-t-0 md:border-l border-outline-variant/60 pt-4 md:pt-0 md:pl-6 w-full">
+<span class="text-label-sm font-label-sm text-secondary font-bold">Deliverable:</span>
+<span class="text-body-sm font-body-sm font-semibold text-primary text-left md:text-right">Zero-Lag Status Alerts via WhatsApp/SMS</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 lg:p-8 rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+<div class="flex items-start gap-4 lg:w-2/3">
+<div class="w-12 h-12 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-headline-sm flex-shrink-0">
+                04
+              </div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant text-label-sm font-label-sm font-bold">CONTINGENCY &amp; RESCUE</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Timeline: Supplementary &amp; Transfer Windows</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Remedial Action &amp; Program Transfer Advisory</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                  If primary departmental cutoffs shift upward due to anomalous national scores, we trigger immediate program transfer strategies within the same institution or transition the candidate into accredited Direct Entry (JUPEB) pipelines to prevent sitting out a gap year.
+                </p>
+</div>
+</div>
+<div class="md:w-1/3 flex flex-col items-start md:items-end justify-center border-t md:border-t-0 md:border-l border-outline-variant/60 pt-4 md:pt-0 md:pl-6 w-full">
+<span class="text-label-sm font-label-sm text-secondary font-bold">Deliverable:</span>
+<span class="text-body-sm font-body-sm font-semibold text-primary text-left md:text-right">Immediate Supplementary Placement Action</span>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 lg:p-8 rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+<div class="flex items-start gap-4 lg:w-2/3">
+<div class="w-12 h-12 rounded bg-secondary text-on-secondary flex items-center justify-center font-bold text-headline-sm flex-shrink-0">
+                05
+              </div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm font-bold">FINAL CLEARANCE</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Timeline: Matriculation Ceremony</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Final Clearance &amp; Matriculation Follow-Through</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                  Our contract does not end at CAPS acceptance. We assist with screening document dossiers (original JAMB admission letter, attestation letters, local government identification certificates, clinic medical screenings) until matriculation number assignment.
+                </p>
+</div>
+</div>
+<div class="md:w-1/3 flex flex-col items-start md:items-end justify-center border-t md:border-t-0 md:border-l border-outline-variant/60 pt-4 md:pt-0 md:pl-6 w-full">
+<span class="text-label-sm font-label-sm text-secondary font-bold">Deliverable:</span>
+<span class="text-body-sm font-body-sm font-semibold text-secondary text-left md:text-right">Verified University Matriculation Number</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: UNIVERSITY PROFILING & CATCHMENT INTELLIGENCE -->
+<section class="py-16 lg:py-24 bg-surface max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-secondary font-bold block mb-2">Southwest Regional Intelligence</span>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight">
+            Institutional Nuances &amp; Quota Architecture
+          </h2>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-md mt-4 md:mt-0">
+          Decisions made specifically for scholars in Ikorodu targeting premier Southwest federal and state universities.
+        </p>
+</div>
+<!-- University Intelligence Cards Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- CARD 1: UNILAG -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 lg:p-8 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between border-b border-outline-variant/60 pb-4 mb-4">
+<div>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-bold bg-[#EFF6FF] text-[#1A365D] border border-[#1A365D]/30 uppercase">Federal • Lagos</span>
+<h3 class="text-headline-sm font-headline-sm text-primary mt-2">University of Lagos (UNILAG)</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-body-sm">
+                UL
+              </div>
+</div>
+<div class="space-y-4 mb-6">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase font-semibold">Catchment Catch States:</span>
+<p class="text-body-sm font-body-sm text-on-surface font-medium">Lagos, Ogun, Osun, Oyo, Ondo, Ekiti</p>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase font-semibold">Aggregate Formula:</span>
+<div class="bg-surface-container-low p-2.5 rounded font-mono text-body-sm text-primary font-semibold mt-1">
+                  (UTME / 8) + (Post-UTME / 1) + (O-Level / 5) = 100%
+                </div>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase font-semibold">Key Advisory Note:</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  O-Level points strictly calculated on 5 core subjects: A1=4.0, B2=3.6, B3=3.2, C4=2.8, C5=2.4, C6=2.0. Single-sitting candidates are heavily favored in cut-off ties.
+                </p>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-bold">ADJ Direct Placement History</span>
+<span class="text-primary font-semibold">142 Scholars (2023)</span>
+</div>
+</div>
+<!-- CARD 2: LASU -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 lg:p-8 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between border-b border-outline-variant/60 pb-4 mb-4">
+<div>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-bold bg-[#ECFDF5] text-[#0D7A53] border border-[#0D7A53]/30 uppercase">State • Ojo / Epe</span>
+<h3 class="text-headline-sm font-headline-sm text-primary mt-2">Lagos State University (LASU)</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary font-bold text-body-sm">
+                LU
+              </div>
+</div>
+<div class="space-y-4 mb-6">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase font-semibold">Catchment &amp; Indigeneship:</span>
+<p class="text-body-sm font-body-sm text-on-surface font-medium">Lagos State Indigeneship Verification (IIVC) Required</p>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase font-semibold">Aggregate Formula:</span>
+<div class="bg-surface-container-low p-2.5 rounded font-mono text-body-sm text-primary font-semibold mt-1">
+                  (UTME / 8) + (O-Level Point Calculation / 2) = 100%
+                </div>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase font-semibold">Key Advisory Note:</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  LASU conducts NO physical Post-UTME exam. Admissions are awarded 100% on composite O-Level and JAMB points. Non-indigenes face a 15–20% higher cut-off across Law, Medicine, and Nursing.
+                </p>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-bold">ADJ Direct Placement History</span>
+<span class="text-primary font-semibold">218 Scholars (2023)</span>
+</div>
+</div>
+<!-- CARD 3: UI & OAU -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 lg:p-8 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between border-b border-outline-variant/60 pb-4 mb-4">
+<div>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-bold bg-[#FEF3C7] text-[#B45309] border border-[#B45309]/30 uppercase">Federal • First Gen</span>
+<h3 class="text-headline-sm font-headline-sm text-primary mt-2">UI (Ibadan) &amp; OAU (Ile-Ife)</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-body-sm">
+                UI
+              </div>
+</div>
+<div class="space-y-4 mb-6">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase font-semibold">Catchment Dynamic:</span>
+<p class="text-body-sm font-body-sm text-on-surface font-medium">Ultra-Competitive Merit &amp; Regional Quotas</p>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase font-semibold">Weighting System:</span>
+<div class="bg-surface-container-low p-2.5 rounded font-mono text-body-sm text-primary font-semibold mt-1">
+                  50% UTME + 50% Post-UTME (OAU Aptitude)
+                </div>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase font-semibold">Key Advisory Note:</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  UI does not consider second-choice candidates under any circumstance. OAU rigorously checks subject alignment with JAMB Syllabus. Inaccurate subject mapping cannot be corrected post-application.
+                </p>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-bold">ADJ Direct Placement History</span>
+<span class="text-primary font-semibold">87 Scholars (2023)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: INTERACTIVE DIAGNOSTIC ADMISSIONS AUDIT BOOKING & CALCULATOR -->
+<section class="py-16 lg:py-24 bg-surface-container-low border-t border-outline-variant/60 relative" id="audit-booking">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Context, Trust Signals & Head of Planning Bio -->
+<div class="lg:col-span-5">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary-fixed/50 text-on-secondary-fixed-variant text-label-sm font-label-sm font-bold uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined text-base" data-icon="clinical_notes">clinical_notes</span>
+              1-on-1 Academic Audit
+            </div>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight mb-4">
+              Reserve Your Free Diagnostic Admissions Audit
+            </h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6 leading-relaxed">
+              Meet directly with our Head of Academic Planning either in-person at our Banana Estate / Laara Centre in Ikorodu or via live Zoom. We will analyze your UTME score, evaluate your O-Level combinations, and present a risk-calculated institutional roadmap.
+            </p>
+<div class="bg-surface-container-lowest border border-outline-variant p-5 rounded-xl mb-6 shadow-sm">
+<h4 class="text-headline-sm font-headline-sm text-primary mb-3">Audit Protocol Covers:</h4>
+<ul class="space-y-2.5 text-body-sm font-body-sm text-on-surface">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5" data-icon="check_circle">check_circle</span>
+<span><strong>Aggregate Score Calculation:</strong> UNILAG, LASU, UI exact point breakdown.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5" data-icon="check_circle">check_circle</span>
+<span><strong>CAPS Readiness Audit:</strong> Verification of O-Level upload on the JAMB central server.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5" data-icon="check_circle">check_circle</span>
+<span><strong>Change of Course Evaluation:</strong> Identifying high-probability supplementary departments.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5" data-icon="check_circle">check_circle</span>
+<span><strong>Catchment Quota Review:</strong> Validating state-of-origin certificate legitimacy.</span>
+</li>
+</ul>
+</div>
+<!-- Physical Consultation Center Card -->
+<div class="p-4 bg-primary text-on-primary rounded-xl flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-lowest/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary-fixed text-2xl" data-icon="apartment">apartment</span>
+</div>
+<div class="text-body-sm font-body-sm">
+<div class="font-bold text-on-primary">Banana Estate Diagnostic Lab</div>
+<div class="text-on-primary-container text-xs mt-0.5">Off Igbe Road, Banana Estate / Laara Junction, Ikorodu, Lagos State.</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Diagnostic Intake Form -->
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant p-6 lg:p-10 rounded-xl shadow-md">
+<div class="border-b border-outline-variant/60 pb-4 mb-6 flex items-center justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Candidate Assessment Submission</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Confidential review under our Admissions Processing Advisory Policy.</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="fact_check">fact_check</span>
+</div>
+<form class="space-y-5" id="auditForm" onsubmit="event.preventDefault(); alert('Audit Dossier Received. An ADJ Senior Academic Counselor will contact you within 2 hours to confirm your consultation schedule.');">
+<!-- Row 1: Candidate / Parent Name & Phone -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1" for="fullName">
+                    Student or Parent Full Name *
+                  </label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded px-3.5 py-2.5 text-body-sm font-body-sm text-on-surface focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="fullName" placeholder="e.g. Babatunde Adeleke" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1" for="phone">
+                    WhatsApp Phone Number *
+                  </label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded px-3.5 py-2.5 text-body-sm font-body-sm text-on-surface focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="phone" placeholder="e.g. 0803 123 4567" required="" type="tel"/>
+</div>
+</div>
+<!-- Row 2: UTME Score & O-Level Sittings -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1" for="utmeScore">
+                    JAMB UTME Score (Raw) *
+                  </label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded px-3.5 py-2.5 text-body-sm font-body-sm text-on-surface focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="utmeScore" max="400" min="100" placeholder="e.g. 268" required="" type="number"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1" for="oLevelSittings">
+                    O-Level Sittings *
+                  </label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded px-3.5 py-2.5 text-body-sm font-body-sm text-on-surface focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="oLevelSittings" required="">
+<option value="">Select Sitting Status</option>
+<option value="1">1 Sitting (WAEC or NECO only)</option>
+<option value="2">2 Sittings (WAEC + NECO Combined)</option>
+<option value="awaiting">Awaiting Results (2024 Exam)</option>
+</select>
+</div>
+</div>
+<!-- Row 3: Target Institution & Intended Course -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1" for="targetInstitution">
+                    First Choice Institution *
+                  </label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded px-3.5 py-2.5 text-body-sm font-body-sm text-on-surface focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="targetInstitution" required="">
+<option value="">Select University</option>
+<option value="UNILAG">University of Lagos (UNILAG)</option>
+<option value="LASU">Lagos State University (LASU)</option>
+<option value="UI">University of Ibadan (UI)</option>
+<option value="OAU">Obafemi Awolowo University (OAU)</option>
+<option value="FUTA">Federal University of Technology Akure (FUTA)</option>
+<option value="OOU">Olabisi Onabanjo University (OOU)</option>
+<option value="OTHER">Other Institution</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1" for="targetCourse">
+                    Target Course of Study *
+                  </label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded px-3.5 py-2.5 text-body-sm font-body-sm text-on-surface focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="targetCourse" placeholder="e.g. Nursing Science / Law / Computer Sci" required="" type="text"/>
+</div>
+</div>
+<!-- Row 4: State of Origin & Preferred Counseling Venue -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1" for="stateOfOrigin">
+                    State of Origin (For Quota Audit) *
+                  </label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded px-3.5 py-2.5 text-body-sm font-body-sm text-on-surface focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="stateOfOrigin" placeholder="e.g. Lagos, Ogun, Osun, Edo" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1" for="venue">
+                    Consultation Venue *
+                  </label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded px-3.5 py-2.5 text-body-sm font-body-sm text-on-surface focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="venue" required="">
+<option value="in_person">In-Person: Banana Estate / Laara Centre, Ikorodu</option>
+<option value="zoom">Virtual: Live Zoom Video Session</option>
+<option value="phone">Direct WhatsApp Audio Consultation</option>
+</select>
+</div>
+</div>
+<!-- CAPS Upload Status Checkbox -->
+<div class="p-3.5 bg-surface-container rounded border border-outline-variant/60 flex items-start gap-3">
+<input class="mt-1 rounded text-primary focus:ring-primary" id="capsStatus" type="checkbox"/>
+<label class="text-body-sm font-body-sm text-on-surface" for="capsStatus">
+                  I have already uploaded my O-level result to the JAMB CAPS portal at an accredited CBT Centre (Greater Heights / ADJ lab).
+                </label>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-4 bg-primary text-on-primary rounded text-label-lg font-label-lg font-bold hover:bg-primary-container transition-all shadow-sm flex items-center justify-center gap-2 active:scale-98" type="submit">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="calendar_month">calendar_month</span>
+<span>Submit Dossier &amp; Confirm Diagnostic Session</span>
+</button>
+<div class="text-center text-label-sm font-label-sm text-on-surface-variant flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="lock">lock</span>
+<span>Strictly Merit-Based Advisory • Compliant with JAMB CAPS National Policy</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- COMMUNITY REPUTATION ANCHOR: LOCAL TESTIMONIALS -->
+<section class="py-16 bg-surface max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-outline-variant/60">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-secondary font-bold block mb-2">Verified Admissions Proof</span>
+<h2 class="text-headline-md font-headline-md text-primary">From Ikorodu Secondary Schools to University Matriculation</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl shadow-sm flex flex-col justify-between">
+<p class="text-body-sm font-body-sm text-on-surface-variant italic mb-6">
+            "I scored 274 in JAMB and thought I had lost UNILAG Computer Science when the first merit cutoff came out at 281. ADJ immediately guided my CAPS marketplace acceptance into Systems Engineering within 48 hours. I matriculated without a gap year."
+          </p>
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant/50">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-md">
+              OE
+            </div>
+<div>
+<div class="text-label-md font-label-md font-bold text-primary">Oluwaseun Enitan</div>
+<div class="text-label-sm font-label-sm text-secondary">UNILAG Engineering • Alum, Igbe-Laara</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl shadow-sm flex flex-col justify-between">
+<p class="text-body-sm font-body-sm text-on-surface-variant italic mb-6">
+            "Navigating the Lagos Indigeneship Verification (IIVC) for LASU Law was overwhelming for our family. The ADJ team vetted every ancestral document and calculated my aggregate points accurately. Today my daughter is in 300 Level Law."
+          </p>
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant/50">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-label-md">
+              PA
+            </div>
+<div>
+<div class="text-label-md font-label-md font-bold text-primary">Mrs. F. Adekoya (Parent)</div>
+<div class="text-label-sm font-label-sm text-secondary">LASU Faculty of Law • Banana Estate, Ikorodu</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl shadow-sm flex flex-col justify-between">
+<p class="text-body-sm font-body-sm text-on-surface-variant italic mb-6">
+            "My WAEC and NECO combination had an issue with English and Literature sitting policies at UI. ADJ caught the anomaly during my Free Admissions Audit and redirected me to OAU where my exact point aggregate ranked in the top 5% of merit."
+          </p>
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant/50">
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center font-bold text-label-md">
+              KB
+            </div>
+<div>
+<div class="text-label-md font-label-md font-bold text-primary">Kehinde Bakare</div>
+<div class="text-label-sm font-label-sm text-secondary">OAU International Relations • Igbogbo-Bayeku</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SHARED COMPONENT: Footer -->
+<!-- Executing style_* from Shared Components JSON:
+       style_bg_color: bg-primary dark:bg-inverse-surface
+       style_primary_color: text-on-primary dark:text-inverse-on-surface
+       style_brand_logo: text-headline-md font-headline-md font-bold text-on-primary dark:text-inverse-on-surface tracking-tight
+       style_separation_logic: border-t border-outline-variant dark:border-outline
+       style_shell_layout: w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16
+       Mandatory Content: Copyright text and links verbatim from JSON.
+  -->
+<footer class="bg-primary text-on-primary border-t border-outline-variant full-width">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+<!-- Top Grid: Brand & Categorized Links verbatim from JSON array -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-outline-variant/30">
+<!-- Brand Summary Column -->
+<div class="lg:col-span-2">
+<div class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight mb-3">
+            ADJ Educational Consultants
+          </div>
+<p class="text-body-sm font-body-sm text-on-primary-container max-w-sm mb-6 leading-relaxed">
+            Off Igbe Road, Banana Estate / Laara, Ikorodu, Lagos State. Institutional coaching, Post-UTME clinics, and JAMB CAPS admissions governance until matriculation.
+          </p>
+<div class="flex items-center gap-3 text-label-sm font-label-sm text-on-primary-container">
+<span class="material-symbols-outlined text-secondary-fixed text-base" data-icon="verified_user">verified_user</span>
+<span>Registered Academic Advisory Center • Partner: Greater Heights</span>
+</div>
+</div>
+<!-- Links Column 1: Academic Programmes -->
+<div>
+<h4 class="text-label-md font-label-md font-bold text-secondary-fixed uppercase tracking-wider mb-4">
+            Examination Prep
+          </h4>
+<ul class="space-y-2.5">
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/programmes/jamb">
+                JAMB UTME Clinic
+              </a>
+</li>
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/programmes/waec">
+                WAEC &amp; NECO Intensive
+              </a>
+</li>
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/programmes/jupeb">
+                JUPEB Direct Entry
+              </a>
+</li>
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/programmes/ielts">
+                IELTS &amp; SAT Prep
+              </a>
+</li>
+</ul>
+</div>
+<!-- Links Column 2: Catchment Areas & Facilities -->
+<div>
+<h4 class="text-label-md font-label-md font-bold text-secondary-fixed uppercase tracking-wider mb-4">
+            Centers &amp; Catchment
+          </h4>
+<ul class="space-y-2.5">
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/catchment/igbe-laara">
+                Catchment: Igbe-Laara
+              </a>
+</li>
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/catchment/igbogbo-elepe">
+                Catchment: Igbogbo &amp; Elepe
+              </a>
+</li>
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/catchment/agunfoye-oreta">
+                Catchment: Agunfoye &amp; Oreta
+              </a>
+</li>
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/partners/greater-heights">
+                Partner: Greater Heights Tutorial Center
+              </a>
+</li>
+</ul>
+</div>
+<!-- Links Column 3: Institutional Regulatory & Policies -->
+<div>
+<h4 class="text-label-md font-label-md font-bold text-secondary-fixed uppercase tracking-wider mb-4">
+            Admissions Governance
+          </h4>
+<ul class="space-y-2.5">
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/facilities/cbt-lab">
+                CBT Practice Lab
+              </a>
+</li>
+<li>
+<a class="text-secondary-fixed font-semibold underline text-body-sm font-body-sm" href="/admissions-policy">
+                Admissions Processing Policy
+              </a>
+</li>
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/disclaimer">
+                Terms &amp; Group-Only Scope Disclaimer
+              </a>
+</li>
+<li>
+<a class="text-on-primary-container hover:text-on-primary text-body-sm font-body-sm transition-colors" href="/privacy">
+                Privacy Policy
+              </a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar: Exact Copyright Text from JSON -->
+<div class="pt-8 flex flex-col md:flex-row items-center justify-between text-body-sm font-body-sm text-on-primary-container gap-4">
+<p class="text-center md:text-left">
+          © 2024 ADJ Educational Consultants. Off Igbe Road, Banana Estate / Laara, Ikorodu, Lagos. Coaching Until Matriculation. All rights reserved.
+        </p>
+<div class="flex items-center gap-4 text-label-sm font-label-sm">
+<span>Official JAMB CAPS Support Partner</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span>Ikorodu Division</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -23,6 +23,49 @@
   --color-chart-metric-bg: var(--chart-metric-bg);
   --color-chart-bg: var(--chart-bg);
   --color-surface: var(--surface);
+  /* Material 3 ramp — every name Stitch's HTML uses, mapped so Tailwind emits
+     the matching utility (`bg-surface-low`, `text-on-primary`, etc.). */
+  --color-primary-container: var(--primary-container);
+  --color-on-primary: var(--on-primary);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary: var(--on-secondary);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-secondary-fixed: var(--secondary-fixed);
+  --color-secondary-fixed-dim: var(--secondary-fixed-dim);
+  --color-on-secondary-fixed: var(--on-secondary-fixed);
+  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
+  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
+  --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
+  --color-surface-lowest: var(--surface-lowest);
+  --color-surface-low: var(--surface-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-high: var(--surface-high);
+  --color-surface-highest: var(--surface-highest);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-variant: var(--surface-variant);
+  --color-surface-tint: var(--surface-tint);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-inverse-primary: var(--inverse-primary);
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -79,141 +122,169 @@
   }
 }
 
-/* ADJ themes — light-first, switched via `data-theme` on <html> (see lib/use-theme).
-   lagoon  = owner's palette image (ocean/navy/tan-orange/rust/espresso) — default
-   royal   = vibrant cobalt + bronze on ivory, charcoal text
-   emerald = cobalt + emerald bridge + bronze on sage-tinted canvas
-   sand    = camel/tan-forward warmth, dusty blue + bronze
-   Only accent + canvas tokens move per theme; zinc neutrals stay constant so
-   every page keeps contrast. .dark retained below but inactive. */
-:root,
-[data-theme="lagoon"] {
-  --ink: #080b14;
-  --panel: #ffffff;
-  --cobalt: #2e6e9e;
-  --cobalt-deep: #1e3a5f;
-  --gold: #d97e2b;
-  --gold-soft: #f0b25c;
-  --rust: #b45a2d;
-  --espresso: #2e1f18;
-  --background: #faf9f7;
-  --foreground: #1c1917;
+/* ── ADJ design tokens ────────────────────────────────────────────────────
+   Source of truth: Stitch project 4716569519546531997, design theme seeded
+   from customColor #1a365d. Mirrors the Material 3 ramp Stitch emits, with
+   the compound type scale and 2/4/8px radii the DESIGN.md specifies.
+   Full rationale: docs/STITCH-DESIGN-SYSTEM.md                             */
+:root {
+  /* Material 3 ramp */
+  --primary: #002045;
+  --primary-foreground: #ffffff;
+  --primary-container: #1a365d;
+  --on-primary: #ffffff;
+  --on-primary-container: #86a0cd;
+  --primary-fixed: #d6e3ff;
+  --primary-fixed-dim: #adc7f7;
+  --on-primary-fixed: #001b3c;
+  --on-primary-fixed-variant: #2d476f;
+  --secondary: #006c48;
+  --secondary-foreground: #ffffff;
+  --secondary-container: #98f6c5;
+  --on-secondary: #ffffff;
+  --on-secondary-container: #00734d;
+  --secondary-fixed: #98f6c5;
+  --secondary-fixed-dim: #7cd9aa;
+  --on-secondary-fixed: #002113;
+  --on-secondary-fixed-variant: #005236;
+  --tertiary: #361900;
+  --tertiary-foreground: #ffffff;
+  --tertiary-container: #552b00;
+  --on-tertiary: #ffffff;
+  --on-tertiary-container: #eb851c;
+  --tertiary-fixed: #ffdcc3;
+  --tertiary-fixed-dim: #ffb77d;
+  --on-tertiary-fixed: #2f1500;
+  --on-tertiary-fixed-variant: #6e3900;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+  --inverse-surface: #283044;
+  --inverse-on-surface: #eef0ff;
+  --inverse-primary: #adc7f7;
+  --surface-tint: #455f88;
+
+  /* Surfaces — lavender-tinted, not neutral gray */
+  --background: #faf8ff;
+  --foreground: #131b2e;
+  --surface: #faf8ff;
+  --on-surface: #131b2e;
+  --surface-lowest: #ffffff;
+  --surface-low: #f2f3ff;
+  --surface-container: #eaedff;
+  --surface-high: #e2e7ff;
+  --surface-highest: #dae2fd;
+  --surface-dim: #d2d9f4;
+  --surface-bright: #faf8ff;
+  --surface-variant: #dae2fd;
+  --muted: #f2f3ff;
+  --muted-foreground: #43474e;
+  --accent: #e2e7ff;
+  --accent-foreground: #002045;
+  --on-surface-variant: #43474e;
+  --outline: #74777f;
+  --border: #c4c6cf;
+  --input: #c4c6cf;
+  --ring: #1a365d;
+  --destructive: #ba1a1a;
+  --destructive-foreground: #ffffff;
+
   --card: #ffffff;
-  --card-foreground: #171717;
+  --card-foreground: #131b2e;
   --popover: #ffffff;
-  --popover-foreground: #171717;
-  --primary: #2e6e9e;
-  --primary-foreground: #ffffff;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #171717;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --accent: #f4f4f5;
-  --accent-foreground: #171717;
-  --destructive: #dc2626;
-  --border: #e4e4e7;
-  --input: #d4d4d8;
-  --ring: #2e6e9e;
-  --chart-1: #2e6e9e;
-  --chart-2: #d97e2b;
-  --chart-3: #16a34a;
-  --chart-4: #f4622a;
-  --chart-5: #71717a;
-  --radius: 0.625rem;
+  --popover-foreground: #131b2e;
+
+  /* Legacy aliases — pre-Stitch pages still reference these. Pointed at the
+     navy/emerald/gold ramp so old sections stay on-brand mid-migration. */
+  --ink: #131b2e;
+  --panel: #ffffff;
+  --cobalt: #002045;
+  --cobalt-deep: #1a365d;
+  --gold: #eb851c;
+  --gold-soft: #ffdcc3;
+  --rust: #552b00;
+  --espresso: #361900;
+
+  --chart-1: #1a365d;
+  --chart-2: #006c48;
+  --chart-3: #eb851c;
+  --chart-4: #98f6c5;
+  --chart-5: #74777f;
+
+  /* Stitch specifies flat 2/4/8px corners — deliberately not pills. */
+  --radius: 0.25rem;
+
   --sidebar: #ffffff;
-  --sidebar-foreground: #171717;
-  --sidebar-primary: #2e6e9e;
+  --sidebar-foreground: #131b2e;
+  --sidebar-primary: #1a365d;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f4f4f5;
-  --sidebar-accent-foreground: #171717;
-  --sidebar-border: #e4e4e7;
-  --sidebar-ring: #2e6e9e;
+  --sidebar-accent: #e2e7ff;
+  --sidebar-accent-foreground: #002045;
+  --sidebar-border: #c4c6cf;
+  --sidebar-ring: #1a365d;
 }
 
-[data-theme="royal"] {
-  --cobalt: #0047ab;
-  --cobalt-deep: #002f6c;
-  --gold: #b27a24;
-  --gold-soft: #d9a94e;
-  --rust: #a34a24;
-  --espresso: #2b2118;
-  --background: #fffdf7;
-  --primary: #0047ab;
-  --ring: #0047ab;
-  --chart-1: #0047ab;
-  --chart-2: #b27a24;
-  --sidebar-primary: #0047ab;
-  --sidebar-ring: #0047ab;
-}
+/* Compound type scale. Stitch writes `text-headline-lg font-headline-lg`;
+   Tailwind v4 wants the size in the font-size namespace, so declare each
+   step once here and use it as either `text-*` or `font-*`. */
+@theme {
+  --text-display-lg: 52px;
+  --text-display-lg--line-height: 60px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
 
-[data-theme="emerald"] {
-  --cobalt: #2456a6;
-  --cobalt-deep: #173f63;
-  --gold: #b27a24;
-  --gold-soft: #d9a94e;
-  --rust: #a34a24;
-  --espresso: #22301f;
-  --background: #f6faf7;
-  --primary: #2456a6;
-  --ring: #2456a6;
-  --chart-1: #2456a6;
-  --chart-2: #b27a24;
-  --chart-3: #1e7a4f;
-  --sidebar-primary: #2456a6;
-  --sidebar-ring: #2456a6;
-}
+  --text-display-lg-mobile: 34px;
+  --text-display-lg-mobile--line-height: 40px;
+  --text-display-lg-mobile--letter-spacing: -0.01em;
+  --text-display-lg-mobile--font-weight: 700;
 
-/* Emerald + sand tint their alternating surfaces; cards stay white. */
-[data-theme="emerald"] .bg-zinc-50 {
-  background-color: #edf3ed;
-}
-[data-theme="emerald"] .bg-zinc-100 {
-  background-color: #e2ece2;
-}
+  --text-headline-lg: 38px;
+  --text-headline-lg--line-height: 46px;
+  --text-headline-lg--letter-spacing: -0.015em;
+  --text-headline-lg--font-weight: 700;
 
-[data-theme="sand"] {
-  --cobalt: #2e6e9e;
-  --cobalt-deep: #1e3a5f;
-  --gold: #c08a3e;
-  --gold-soft: #e3b96f;
-  --rust: #a34a24;
-  --espresso: #2e1f18;
-  --background: #faf6ef;
-  --secondary: #f3ede1;
-  --muted: #f3ede1;
-  --accent: #f3ede1;
-  --sidebar-accent: #f3ede1;
-}
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 34px;
+  --text-headline-lg-mobile--letter-spacing: -0.01em;
+  --text-headline-lg-mobile--font-weight: 700;
 
-[data-theme="sand"] .bg-zinc-50 {
-  background-color: #f3ede1;
-}
-[data-theme="sand"] .bg-zinc-100 {
-  background-color: #ece4d3;
-}
+  --text-headline-md: 26px;
+  --text-headline-md--line-height: 34px;
+  --text-headline-md--font-weight: 600;
 
-/* AkmanOS theme core (dark). Only active if `dark` is put back on <html>. */
-.dark {
-  color-scheme: dark;
-  --background: #09090b;
-  --foreground: #fafafa;
-  --border: #27272a;
-  --surface: #18181b;
-  --chart-muted: #a1a1aa;
-  --card: #14161c;
-  --card-foreground: #fafafa;
-  --popover: #14161c;
-  --popover-foreground: #fafafa;
-  --primary: #2e6e9e;
-  --primary-foreground: #ffffff;
-  --secondary: #1e2230;
-  --secondary-foreground: #fafafa;
-  --muted: #1e2230;
-  --muted-foreground: #a1a1aa;
-  --accent: #d97e2b;
-  --accent-foreground: #09090b;
-  --input: #2a2f3a;
-  --ring: #2e6e9e;
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-sm--font-weight: 600;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+
+  --text-label-lg: 14px;
+  --text-label-lg--line-height: 20px;
+  --text-label-lg--letter-spacing: 0.01em;
+  --text-label-lg--font-weight: 600;
+
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.02em;
+  --text-label-md--font-weight: 600;
+
+  --text-label-sm: 11px;
+  --text-label-sm--line-height: 14px;
+  --text-label-sm--letter-spacing: 0.04em;
+  --text-label-sm--font-weight: 700;
+
+  /* Stitch radii: 2px badges, 4px controls, 8px cards. */
+  --radius-xs: 0.125rem;
+  --radius-DEFAULT: 0.25rem;
+  --radius-md: 0.375rem;
 }
 
 @layer base {
@@ -222,10 +293,35 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
   html {
     @apply font-sans;
   }
+  /* Source Serif 4 carries every heading in the Stitch system. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), Georgia, serif;
+    color: var(--primary);
+  }
+}
+
+/* Material Symbols Outlined — the icon font Stitch's screens use. */
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined", var(--font-symbols);
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "liga";
 }
 
 /* AkmanOS blocks — component-scoped tokens, light defaults with dark overrides.

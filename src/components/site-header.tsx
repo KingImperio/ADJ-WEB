@@ -1,52 +1,93 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { Navbar } from "@/components/navbar";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { resolveNavHref } from "@/lib/nav";
-import { THEMES, useTheme, type ThemeId } from "@/lib/use-theme";
+import Link from "next/link";
+import { Icon } from "@/components/icon";
 import { site } from "@/lib/site";
 
-/* Theme switcher: shadcn Select in the navbar block's `trailing` slot. */
-function ThemeSwitcher() {
-  const { theme, select } = useTheme();
-  return (
-    <Select value={theme} onValueChange={(v) => select(v as ThemeId)}>
-      <SelectTrigger aria-label="Color theme" className="h-9 w-[132px] border-transparent bg-transparent text-xs">
-        <SelectValue />
-      </SelectTrigger>
-      <SelectContent>
-        {THEMES.map((t) => (
-          <SelectItem key={t.id} value={t.id}>
-            <span className="flex items-center gap-2 text-xs">
-              <span className="size-3 rounded-full border border-black/10" style={{ backgroundColor: t.dot }} />
-              {t.label}
-            </span>
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-  );
-}
+/* Two-tier header per the Stitch system: a dark navy utility strip carrying
+   hours/address/phone, then a sticky white nav with the brand crest, section
+   links and the two conversion CTAs. */
+const links = [
+  { label: "Programmes", href: "/programs" },
+  { label: "Results", href: "/results" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
 
-/* Header: AkmanOS navbar block + route lookup. Sticky positioning only. */
 export function SiteHeader() {
-  const router = useRouter();
-  const go = (itemId: string, linkId?: string) => {
-    const href = resolveNavHref(itemId, linkId);
-    if (href) router.push(href);
-  };
   return (
-    <div className="sticky top-0 z-50">
-      <div className="mx-auto max-w-6xl px-4 pt-3 pb-3">
-        <Navbar
-          showSignIn={false}
-          onNavSelect={go}
-          onCta={() => router.push("/contact")}
-          logoAlt={`${site.name} logo`}
-          trailing={<ThemeSwitcher />}
-        />
+    <>
+      <div className="w-full border-b border-outline-variant/30 bg-primary px-4 py-2.5 text-label-md text-surface">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 md:flex-row">
+          <div className="flex min-w-0 flex-wrap items-center gap-x-2 text-center md:flex-nowrap md:text-left">
+            <span className="inline-flex shrink-0 items-center gap-1 text-secondary-fixed">
+              <Icon name="schedule" className="text-[16px]" />
+              <span>{site.hours}</span>
+            </span>
+            <span className="hidden text-outline-variant sm:inline">|</span>
+            <span className="inline-flex min-w-0 items-center gap-1 text-surface-variant">
+              <Icon name="location_on" className="shrink-0 text-[16px] text-secondary-fixed" />
+              <span>
+                {site.address.line1} / Laara, Ikorodu (Walking distance from Laara Bus Stop &amp;
+                Central Mosque)
+              </span>
+            </span>
+          </div>
+          <div className="flex shrink-0 items-center gap-4">
+            <span className="hidden items-center gap-1.5 font-semibold text-secondary-fixed sm:inline-flex">
+              <Icon name="call" className="animate-pulse text-[16px]" />
+              <span>WhatsApp &amp; Calls: Active</span>
+            </span>
+            <a href={site.phoneHref} className="text-xs font-bold text-surface hover:underline">
+              {site.phoneDisplay}
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <nav className="sticky top-0 z-50 w-full border-b border-outline-variant bg-surface shadow-sm">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link href="/" className="flex items-center gap-3">
+            <span className="flex h-11 w-11 items-center justify-center rounded border border-secondary/40 bg-primary text-secondary-fixed shadow-sm">
+              <Icon name="school" className="text-2xl font-bold" />
+            </span>
+            <span className="flex flex-col">
+              <span className="font-display text-headline-sm leading-none font-bold tracking-tight text-primary">
+                {site.name}
+              </span>
+              <span className="mt-0.5 text-label-sm tracking-widest text-secondary uppercase">
+                Ikorodu Center of Academic Excellence
+              </span>
+            </span>
+          </Link>
+
+          <div className="hidden items-center gap-8 lg:flex">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="font-medium text-label-lg text-on-surface-variant transition-colors hover:text-primary"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <a
+              href={site.whatsapp}
+              className="hidden items-center gap-1.5 rounded bg-surface-container-high px-3 py-2 text-label-md text-primary transition-colors hover:bg-surface-container-highest sm:inline-flex"
+            >
+              <Icon name="chat" className="text-[18px]" />
+              <span>Call / WhatsApp</span>
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded bg-primary px-4 py-2.5 text-label-md font-semibold text-on-primary shadow-sm transition-all hover:bg-primary-container active:scale-95"
+            >
+              Book Free Consultation
+            </Link>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 }

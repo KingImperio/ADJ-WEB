@@ -3,32 +3,39 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { themeInitScript } from "@/lib/use-theme";
 import { site } from "@/lib/site";
 
-const inter = localFont({
-  src: "../../public/fonts/inter-latin.woff2",
+/* Fonts per the Stitch design system: Source Serif 4 for every heading,
+   Plus Jakarta Sans for body/UI, Material Symbols Outlined for icons.
+   Self-hosted latin subsets — see docs/STITCH-DESIGN-SYSTEM.md. */
+const jakarta = localFont({
+  src: "../../public/fonts/plus-jakarta-sans-latin.woff2",
   variable: "--font-sans",
-  weight: "100 900",
+  weight: "400 800",
   display: "swap",
 });
-const grotesk = localFont({
-  src: "../../public/fonts/space-grotesk-latin.woff2",
+const serif = localFont({
+  src: "../../public/fonts/source-serif-4-latin.woff2",
   variable: "--font-display",
-  weight: "300 700",
+  weight: "400 700",
   display: "swap",
+});
+const symbols = localFont({
+  src: "../../public/fonts/material-symbols-outlined.woff2",
+  variable: "--font-symbols",
+  display: "block",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: `${site.name} | ${site.tagline}`,
     template: `%s | ${site.short} Educational Consultants`,
   },
   description: site.description,
   metadataBase: new URL(site.url),
   icons: { icon: "/adj-icon.png", apple: "/adj-icon.png" },
   openGraph: {
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} | ${site.tagline}`,
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -54,19 +61,16 @@ const jsonLd = {
     addressRegion: "Lagos State",
     addressCountry: "NG",
   },
-  areaServed: ["Igbe Lara", "Agunfoye", "Oreta", "Igbogbo", "Elepe", "Ikorodu"],
+  areaServed: ["Igbe-Laara", "Agunfoye", "Oreta", "Igbogbo", "Elepe", "Ikorodu"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${grotesk.variable} h-full antialiased`}>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+    <html lang="en" className={`${jakarta.variable} ${serif.variable} ${symbols.variable}`}>
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main>{children}</main>
         <SiteFooter />
       </body>
     </html>

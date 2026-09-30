@@ -1,0 +1,956 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Programmes Overview | ADJ Educational Consultants</title>
+<!-- Google Fonts for Design System -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,600&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#eb851c",
+            "surface": "#faf8ff",
+            "tertiary-fixed": "#ffdcc3",
+            "secondary-fixed": "#98f6c5",
+            "primary-container": "#1a365d",
+            "inverse-surface": "#283044",
+            "primary-fixed": "#d6e3ff",
+            "surface-tint": "#455f88",
+            "on-primary-fixed-variant": "#2d476f",
+            "on-primary-fixed": "#001b3c",
+            "secondary": "#006c48",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary-container": "#00734d",
+            "outline-variant": "#c4c6cf",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "tertiary-container": "#552b00",
+            "surface-container-low": "#f2f3ff",
+            "primary-fixed-dim": "#adc7f7",
+            "inverse-primary": "#adc7f7",
+            "on-secondary": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-bright": "#faf8ff",
+            "on-tertiary-fixed": "#2f1500",
+            "surface-dim": "#d2d9f4",
+            "inverse-on-surface": "#eef0ff",
+            "primary": "#002045",
+            "secondary-container": "#98f6c5",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-secondary-fixed": "#002113",
+            "on-surface-variant": "#43474e",
+            "tertiary": "#361900",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "error-container": "#ffdad6",
+            "on-surface": "#131b2e",
+            "on-error": "#ffffff",
+            "background": "#faf8ff",
+            "outline": "#74777f",
+            "surface-container": "#eaedff",
+            "on-primary-container": "#86a0cd",
+            "secondary-fixed-dim": "#7cd9aa",
+            "on-background": "#131b2e",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "gutter-desktop": "2rem",
+            "gutter": "1.25rem",
+            "space-lg": "1.5rem",
+            "space-xxl": "4rem",
+            "space-md": "1rem",
+            "margin-tablet": "2rem",
+            "margin-desktop": "4rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["\"Source Serif 4\""],
+            "headline-lg-mobile": ["\"Source Serif 4\""],
+            "label-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["\"Source Serif 4\""],
+            "headline-lg": ["\"Source Serif 4\""],
+            "headline-md": ["\"Source Serif 4\""],
+            "headline-sm": ["\"Source Serif 4\""],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg-mobile": ["34px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-lg": ["52px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-md": ["26px", { "lineHeight": "34px", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md min-h-screen flex flex-col">
+<!-- TOP UTILITY / COMMUNITY ANNOUNCEMENT BAR -->
+<div class="bg-primary text-on-primary py-2 px-4 text-xs font-label-md">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+<div class="flex items-center gap-2 tracking-wide">
+<span class="inline-flex items-center justify-center p-0.5 rounded bg-secondary text-on-secondary">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+</span>
+<span>Physical Center: Banana Estate / Laara, Off Igbe Road, Ikorodu, Lagos (Greater Heights Tutorial Partner)</span>
+</div>
+<div class="flex items-center gap-4 text-secondary-fixed">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>Harmattan 2025 Admissions Cohort Open</span>
+</span>
+<span class="hidden md:inline text-outline-variant">|</span>
+<a class="flex items-center gap-1 hover:text-on-primary transition-colors" href="tel:+2348000000000">
+<span class="material-symbols-outlined text-[15px]">call</span>
+<span>Helpdesk: +234 813 492 8820</span>
+</a>
+</div>
+</div>
+</div>
+<!-- SHARED COMPONENT: TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-outline bg-surface dark:bg-primary-container shadow-sm dark:shadow-none">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+<!-- Logo Branding -->
+<a class="flex items-center gap-3 group" href="/home">
+<div class="w-10 h-10 rounded bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-2xl text-secondary-fixed">school</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary tracking-tight">ADJ Educational Consultants</span>
+<span class="text-[11px] font-label-sm tracking-widest text-secondary font-bold">COACHING UNTIL MATRICULATION</span>
+</div>
+</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-medium transition-colors" href="/home">Home</a>
+<!-- ACTIVE STATE: Programmes -->
+<a class="border-b-2 border-secondary text-secondary dark:text-secondary-fixed font-bold pb-1" href="/programs">Programmes</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-medium transition-colors" href="/results">Results</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-medium transition-colors" href="/about">About Us</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-medium transition-colors" href="/contact">Contact</a>
+</nav>
+<!-- Action Cluster -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded text-label-md font-label-md text-primary hover:bg-surface-container-high transition-all" href="https://wa.me/2348134928820" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-secondary">chat</span>
+<span>Call / WhatsApp</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded bg-primary text-on-primary hover:bg-primary-container text-label-md font-label-md font-bold shadow-sm transition-all duration-200 active:scale-95" href="#consultation">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Book Free Consultation</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN PAGE CANVAS -->
+<main class="flex-grow">
+<!-- PAGE HERO & EDITORIAL BANNER -->
+<section class="bg-surface-container-low border-b border-outline-variant py-12 md:py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary-container/50 border border-secondary text-on-secondary-container text-label-sm font-label-sm uppercase mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              2025 Academic Syllabus &amp; Examination Frameworks
+            </div>
+<h1 class="text-headline-lg-mobile md:text-display-lg font-headline-lg-mobile md:font-display-lg text-primary tracking-tight mb-4">
+              Academic Pathways &amp; Exam Preparation Tracks
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed mb-6">
+              Rigorous, curriculum-aligned preparatory tracks for physical group lectures in Igbe-Laara, Ikorodu, complemented by live high-interaction online cohorts for matriculation excellence across Nigerian and international tertiary boards.
+            </p>
+<div class="flex flex-wrap items-center gap-4 text-label-md font-label-md text-on-surface-variant">
+<span class="inline-flex items-center gap-1 text-primary font-bold">
+<span class="material-symbols-outlined text-secondary text-base">verified</span> 100% Syllabus Coverage Guarantee
+              </span>
+<span class="inline-flex items-center gap-1 text-primary font-bold">
+<span class="material-symbols-outlined text-secondary text-base">computer</span> In-House 40-Seat CBT Practice Center
+              </span>
+<span class="inline-flex items-center gap-1 text-primary font-bold">
+<span class="material-symbols-outlined text-secondary text-base">groups</span> Small Group Learning (Max 22 Scholars)
+              </span>
+</div>
+</div>
+<!-- Hero Metric Billboard Card -->
+<div class="lg:col-span-4 bg-surface-container-lowest border border-outline-variant p-6 rounded shadow-sm">
+<div class="border-l-4 border-secondary pl-4 mb-4">
+<span class="text-label-sm font-label-sm text-outline tracking-wider uppercase">Institutional Record</span>
+<div class="text-3xl font-extrabold text-primary font-body-md mt-1">89.4%</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">First-Choice Matriculation Rate (2021–2024 cohorts)</p>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded border border-outline-variant text-body-sm text-on-surface-variant space-y-2">
+<div class="flex items-center justify-between text-xs">
+<span class="font-medium text-primary">JAMB UTME Top Score:</span>
+<span class="font-bold text-secondary">348 / 400</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-medium text-primary">JUPEB Direct Entry Pass Rate:</span>
+<span class="font-bold text-secondary">14.2 / 16 Points Avg</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-medium text-primary">WAEC 5+ Credits (Inc. Eng &amp; Math):</span>
+<span class="font-bold text-secondary">98.1%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE PROGRAM FILTER SELECTOR -->
+<section class="py-6 border-b border-outline-variant bg-surface sticky top-20 z-40 shadow-sm backdrop-blur-sm bg-surface/95">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 overflow-x-auto w-full pb-2 sm:pb-0" id="filterContainer">
+<button class="filter-btn active px-4 py-2 rounded text-label-md font-label-md font-bold transition-all bg-primary text-on-primary" onclick="filterTracks('all')">
+              All Tracks (6)
+            </button>
+<button class="filter-btn px-4 py-2 rounded text-label-md font-label-md font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-high border border-outline-variant transition-all" onclick="filterTracks('secondary')">
+              Secondary &amp; O-Level
+            </button>
+<button class="filter-btn px-4 py-2 rounded text-label-md font-label-md font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-high border border-outline-variant transition-all" onclick="filterTracks('university')">
+              University Entry (UTME / JUPEB)
+            </button>
+<button class="filter-btn px-4 py-2 rounded text-label-md font-label-md font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-high border border-outline-variant transition-all" onclick="filterTracks('international')">
+              International (IELTS / SAT)
+            </button>
+<button class="filter-btn px-4 py-2 rounded text-label-md font-label-md font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-high border border-outline-variant transition-all" onclick="filterTracks('admissions')">
+              Admissions &amp; CBT Lab
+            </button>
+</div>
+<div class="text-xs text-outline font-label-sm whitespace-nowrap hidden lg:block">
+            Showing <span class="font-bold text-primary" id="displayedCount">6</span> Academic Tracks
+          </div>
+</div>
+</div>
+</section>
+<!-- 6 COMPREHENSIVE TRACK CARDS SECTION -->
+<section class="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="trackCardsGrid">
+<!-- CARD 1: JAMB / UTME CLINIC -->
+<article class="track-card bg-surface-container-lowest border border-outline-variant rounded p-6 flex flex-col justify-between hover:shadow-md transition-shadow relative" data-category="university">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm tracking-wide bg-emerald-50 text-secondary border border-secondary font-bold uppercase">
+                JAMB / UTME CLINIC
+              </span>
+<span class="text-xs font-label-md text-outline">Track #01</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">UTME 300+ Masterclass Clinic</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">
+              Systematic syllabus mastery focused on cross-subject synergy, past questions dissection from 2000–2024, and daily timed computer simulations.
+            </p>
+<div class="space-y-3 mb-6 border-t border-surface-container py-4">
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>4-Subject Synergy:</strong> English Use + 3 core combinations (Engineering, Medical, Social Science, Arts).</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Daily CBT Drills:</strong> In-house 40-seat timed lab calibrating pacing to under 42 seconds per question.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>24-Year Question Archive:</strong> Exhaustive pattern analysis for recurring JAMB psychometric question traps.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Recommended Literature Review:</strong> Line-by-line critical breakdown of the prescribed compulsory novel.</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/60">
+<div class="flex items-center justify-between text-xs text-outline mb-3 font-label-md">
+<span>Schedules: Morning &amp; Evening Cohorts</span>
+<span class="text-secondary font-semibold">Physical &amp; Online</span>
+</div>
+<a class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded bg-primary text-on-primary hover:bg-primary-container text-label-md font-label-md font-bold transition-all" href="#consultation">
+<span>Enroll for UTME Clinic</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- CARD 2: WAEC & NECO SENIOR SCHOOL INTENSIVE -->
+<article class="track-card bg-surface-container-lowest border border-outline-variant rounded p-6 flex flex-col justify-between hover:shadow-md transition-shadow relative" data-category="secondary">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm tracking-wide bg-blue-50 text-primary border border-primary-container font-bold uppercase">
+                WAEC &amp; NECO INTENSIVE
+              </span>
+<span class="text-xs font-label-md text-outline">Track #02</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Senior School Certificate Mastery</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">
+              Exhaustive preparation for May/June SSCE school candidates and Nov/Dec GCE private candidates targeting 8-9 Distinction (A1/B2) profiles.
+            </p>
+<div class="space-y-3 mb-6 border-t border-surface-container py-4">
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Examiner Marking Guide Dissection:</strong> Insider rubrics for WAEC Chief Examiner reporting expectations.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Practical Science Wet Labs:</strong> Hands-on Physics mechanics, Chemistry titration, and Biology specimens.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Essay Writing &amp; English Lexis:</strong> Guided structure for narrative, argumentative, formal speech, and summary writing.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>General Mathematics Clinic:</strong> Proof-based step marks mastery and speed mental arithmetic.</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/60">
+<div class="flex items-center justify-between text-xs text-outline mb-3 font-label-md">
+<span>Schedules: Mon-Thu + Sat Mock Labs</span>
+<span class="text-secondary font-semibold">Center Physical Lab</span>
+</div>
+<a class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded bg-primary text-on-primary hover:bg-primary-container text-label-md font-label-md font-bold transition-all" href="#consultation">
+<span>Join WAEC/NECO Track</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- CARD 3: JUPEB DIRECT ENTRY FOUNDATION -->
+<article class="track-card bg-surface-container-lowest border border-outline-variant rounded p-6 flex flex-col justify-between hover:shadow-md transition-shadow relative" data-category="university">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm tracking-wide bg-indigo-50 text-indigo-900 border border-indigo-700 font-bold uppercase">
+                JUPEB DIRECT ENTRY
+              </span>
+<span class="text-xs font-label-md text-outline">Track #03</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Direct 200-Level University Admission</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">
+              A comprehensive 9 to 10-month intensive advanced curriculum granting direct admission into 200-level university faculties without UTME retakes.
+            </p>
+<div class="space-y-3 mb-6 border-t border-surface-container py-4">
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>University Syllabus Parallel:</strong> Equivalent to Nigerian federal university 100L curricula.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Target Faculties:</strong> Medicine &amp; Surgery, Law, Mechanical/Civil Engineering, Computer Science, and Accounting.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>3 Core Subject Triads:</strong> Specialized combinations (e.g. BCM: Bio-Chem-Math or CRS-Lit-Gov).</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Continuous Assessment (CA):</strong> Bi-weekly university-graded mid-term tests and terminal moderation.</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/60">
+<div class="flex items-center justify-between text-xs text-outline mb-3 font-label-md">
+<span>Duration: 9-10 Months Full-Time</span>
+<span class="text-secondary font-semibold">Strict Physical Attendance</span>
+</div>
+<a class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded bg-primary text-on-primary hover:bg-primary-container text-label-md font-label-md font-bold transition-all" href="#consultation">
+<span>Apply for JUPEB Cohort</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- CARD 4: INTERNATIONAL EXAMS HUB -->
+<article class="track-card bg-surface-container-lowest border border-outline-variant rounded p-6 flex flex-col justify-between hover:shadow-md transition-shadow relative" data-category="international">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm tracking-wide bg-amber-50 text-amber-900 border border-amber-600 font-bold uppercase">
+                IELTS &amp; SAT DIGITAL
+              </span>
+<span class="text-xs font-label-md text-outline">Track #04</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Global Testing &amp; Scholarship Hub</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">
+              Expert mentorship for scholars targeting US/UK/Canadian Ivy and Russell Group admissions with standardized test benchmarks.
+            </p>
+<div class="space-y-3 mb-6 border-t border-surface-container py-4">
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Digital SAT Mastery:</strong> Multistage adaptive testing strategies, Desmos calculator techniques, and 1500+ score targets.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>IELTS Band 8.0+ Coaching:</strong> Speaking accent clarity, Task 2 lexical cohesion, and Academic reading skim algorithms.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>TOEFL iBT &amp; GRE Modules:</strong> Dedicated modules for post-graduate and immigration candidates.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Official Test Center Registration:</strong> Assisted booking and verified documentation assistance.</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/60">
+<div class="flex items-center justify-between text-xs text-outline mb-3 font-label-md">
+<span>Format: 8-Week Intensive Sprints</span>
+<span class="text-secondary font-semibold">Hybrid / Live Online</span>
+</div>
+<a class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded bg-primary text-on-primary hover:bg-primary-container text-label-md font-label-md font-bold transition-all" href="#consultation">
+<span>Register for Global Hub</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- CARD 5: COMPREHENSIVE ADMISSION PROCESSING -->
+<article class="track-card bg-surface-container-lowest border border-outline-variant rounded p-6 flex flex-col justify-between hover:shadow-md transition-shadow relative" data-category="admissions">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm tracking-wide bg-surface-container-high text-primary border border-outline font-bold uppercase">
+                ADMISSION PROCESSING
+              </span>
+<span class="text-xs font-label-md text-outline">Track #05</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Strategic CAPS &amp; Catchment Advisory</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">
+              Post-UTME guidance, JAMB Central Admission Processing System (CAPS) monitoring, O-Level blending, and quota system positioning.
+            </p>
+<div class="space-y-3 mb-6 border-t border-surface-container py-4">
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Catchment Area Optimization:</strong> Leverage federal and state institutional quota algorithms (e.g. UNILAG, LASU, OAU).</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Post-UTME Screening Drills:</strong> School-specific screening past paper banks and faculty interviews.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>JAMB CAPS Live Surveillance:</strong> Daily status tracking (Marketplace, Recommended, Approved, Accepted).</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>O-Level Combination Auditing:</strong> Verification of subject credits against JAMB brochure requirements to avoid invalidation.</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/60">
+<div class="flex items-center justify-between text-xs text-outline mb-3 font-label-md">
+<span>Duration: Until Final Matriculation</span>
+<span class="text-secondary font-semibold">1-on-1 Academic Advisory</span>
+</div>
+<a class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded bg-primary text-on-primary hover:bg-primary-container text-label-md font-label-md font-bold transition-all" href="#consultation">
+<span>Initiate Admission Advisory</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- CARD 6: CBT MOCK EXAM LAB -->
+<article class="track-card bg-surface-container-lowest border border-outline-variant rounded p-6 flex flex-col justify-between hover:shadow-md transition-shadow relative" data-category="admissions">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm tracking-wide bg-emerald-50 text-secondary border border-secondary font-bold uppercase">
+                CBT PRACTICE LAB
+              </span>
+<span class="text-xs font-label-md text-outline">Track #06</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Simulated Testing &amp; Analytics Lab</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">
+              Physical high-speed computer testing lab reproducing the exact 8-key keyboard interface, countdown timers, and psychometric pacing of JAMB.
+            </p>
+<div class="space-y-3 mb-6 border-t border-surface-container py-4">
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Exact Hardware Simulation:</strong> Nine-key navigation terminals with zero mouse requirement options.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Pacing Analytics Dashboard:</strong> Granular diagnostic report pinpointing topic-by-topic speed and hesitation.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Uninterrupted Solar Power:</strong> 100% uptime with dedicated backup solar-inverter arrays for steady mocks.</span>
+</div>
+<div class="flex items-start gap-2.5 text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Weekly All-Ikorodu League Table:</strong> Comparative benchmarking against 500+ local candidates.</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/60">
+<div class="flex items-center justify-between text-xs text-outline mb-3 font-label-md">
+<span>Access: Daily Practice Vouchers</span>
+<span class="text-secondary font-semibold">Physical Lab Igbe-Laara</span>
+</div>
+<a class="w-full inline-flex justify-center items-center gap-2 py-2.5 px-4 rounded bg-primary text-on-primary hover:bg-primary-container text-label-md font-label-md font-bold transition-all" href="#consultation">
+<span>Book CBT Practice Slot</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION 5: LEARNING MODALITIES COMPARISON TABLE -->
+<section class="py-16 bg-surface-container-low border-t border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<span class="text-label-sm font-label-sm text-secondary font-bold tracking-widest uppercase">Pedagogical Framework</span>
+<h2 class="text-headline-lg font-headline-lg text-primary mt-1">Learning Modalities Comparison</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+            Choose between structured on-premise immersion in Banana Estate, Ikorodu or live tutor-led remote cohorts built for focused learners.
+          </p>
+</div>
+<div class="bg-surface-container-lowest rounded border border-outline-variant overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary text-on-primary text-label-md font-label-md">
+<th class="py-4 px-6 border-b border-primary-container font-semibold">Evaluation Criteria</th>
+<th class="py-4 px-6 border-b border-primary-container font-semibold bg-primary-container/80">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">apartment</span>
+<span>Physical Group Classes</span>
+</div>
+<span class="text-[11px] font-normal text-on-primary-container block mt-0.5">Banana Estate / Laara Centre (Greater Heights Partner)</span>
+</th>
+<th class="py-4 px-6 border-b border-primary-container font-semibold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">videocam</span>
+<span>Live Online Interactive Cohorts</span>
+</div>
+<span class="text-[11px] font-normal text-on-primary-container block mt-0.5">Google Classroom &amp; Zoom with Dedicated Archive</span>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-body-sm font-body-sm">
+<tr>
+<td class="py-4 px-6 font-semibold text-primary bg-surface/50">Primary Location &amp; Catchment</td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    Off Igbe Road, Banana Estate / Laara, Ikorodu. Direct access for students from Igbogbo, Elepe, Agunfoye, and Oreta.
+                  </td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    Accessible anywhere with an internet-connected tablet or PC; optimized for low-bandwidth cellular data.
+                  </td>
+</tr>
+<tr>
+<td class="py-4 px-6 font-semibold text-primary bg-surface/50">Class Size &amp; Scholar Supervision</td>
+<td class="py-4 px-6 text-on-surface-variant">
+<span class="inline-flex items-center gap-1 font-bold text-secondary">
+<span class="material-symbols-outlined text-[16px]">done</span> Maximum 22 scholars per hall
+                    </span>
+<p class="text-xs text-outline mt-1">Supervised desk discipline and mobile phone locking during lecture hours.</p>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">
+<span class="inline-flex items-center gap-1 font-bold text-secondary">
+<span class="material-symbols-outlined text-[16px]">done</span> Maximum 28 scholars per live stream
+                    </span>
+<p class="text-xs text-outline mt-1">Weekly attendance tracking and mandatory video participation checks.</p>
+</td>
+</tr>
+<tr>
+<td class="py-4 px-6 font-semibold text-primary bg-surface/50">Practical Science &amp; Experiments</td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    Full access to wet chemistry apparatus, biological specimens, optical benches, and physics mechanics rigs.
+                  </td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    Digital simulated virtual experiments with high-definition video apparatus guides and real-time calculation reviews.
+                  </td>
+</tr>
+<tr>
+<td class="py-4 px-6 font-semibold text-primary bg-surface/50">CBT Simulation Experience</td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    Daily in-lab terminal drills on authentic JAMB 8-key terminals with exam hall noise conditioning.
+                  </td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    Cloud-based browser mock software with identical question bank, automated grading, and timed alerts.
+                  </td>
+</tr>
+<tr>
+<td class="py-4 px-6 font-semibold text-primary bg-surface/50">Missed Class Archive</td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    Physical printed lecture notes provided by center tutor; weekend recap clinics available on Saturdays.
+                  </td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    24/7 video recording access stored on Google Classroom portal with downloadable annotated PDFs.
+                  </td>
+</tr>
+<tr>
+<td class="py-4 px-6 font-semibold text-primary bg-surface/50">Weekly Parent Accountability Reports</td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    Physical report card issuance and Bi-weekly SMS/WhatsApp test performance report to parents.
+                  </td>
+<td class="py-4 px-6 text-on-surface-variant">
+                    Automated weekly email report with test scores, screen attendance, and assignment completion flags.
+                  </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: THE ADJ ACADEMIC CALENDAR & INTAKE COHORTS -->
+<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+<div>
+<span class="text-label-sm font-label-sm text-secondary font-bold tracking-widest uppercase">Structured Roadmaps</span>
+<h2 class="text-headline-lg font-headline-lg text-primary mt-1">Academic Calendar &amp; Intake Batches</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2 max-w-2xl">
+            Planned milestone dates ensure scholars cover the exhaustive secondary curriculum with minimum 6 weeks reserved purely for past papers and speed drills.
+          </p>
+</div>
+<div class="mt-4 md:mt-0">
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container border border-outline-variant text-label-md font-label-md text-primary">
+<span class="material-symbols-outlined text-secondary text-base">event_available</span>
+            Session 2024 / 2025 Calendar Active
+          </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- COHORT 1: HARMATTAN COMPREHENSIVE -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-6 relative flex flex-col justify-between">
+<div class="absolute -top-3 left-6 bg-primary text-on-primary text-[10px] font-label-sm uppercase px-2.5 py-0.5 rounded tracking-wider">
+            Most Recommended
+          </div>
+<div>
+<div class="flex items-center justify-between mt-2 mb-4">
+<h3 class="text-headline-sm font-headline-sm text-primary">Harmattan Comprehensive</h3>
+<span class="text-xs font-label-md text-secondary font-bold">6-Month Pathway</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              Full foundational lecture coverage starting with primary principles across all four subjects. Built for high aggregate targets (UTME 280+).
+            </p>
+<div class="space-y-2.5 text-body-sm text-on-surface mb-6 bg-surface-container-low p-4 rounded border border-outline-variant">
+<div class="flex justify-between text-xs">
+<span class="text-outline">Registration Closes:</span>
+<span class="font-bold text-primary">September 30</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-outline">Classes Commence:</span>
+<span class="font-bold text-primary">October 7</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-outline">Mock Examinations:</span>
+<span class="font-bold text-secondary">February (4 Weeks)</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-outline">Ideal For:</span>
+<span class="font-semibold text-primary">First-Time UTME &amp; SS3</span>
+</div>
+</div>
+</div>
+<a class="w-full text-center py-2 px-4 rounded border border-primary text-primary hover:bg-primary hover:text-on-primary text-label-md font-label-md font-bold transition-all" href="#consultation">
+            Secure Seat in Harmattan
+          </a>
+</div>
+<!-- COHORT 2: RAIN REVISION SPRINT -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-headline-sm font-headline-sm text-primary">Rain Accelerated Sprint</h3>
+<span class="text-xs font-label-md text-outline font-bold">14-Week Pathway</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              Paced revision track targeting high-yield subject concepts, heavy question solving, formula memorization tricks, and past exam trends.
+            </p>
+<div class="space-y-2.5 text-body-sm text-on-surface mb-6 bg-surface-container-low p-4 rounded border border-outline-variant">
+<div class="flex justify-between text-xs">
+<span class="text-outline">Registration Closes:</span>
+<span class="font-bold text-primary">January 10</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-outline">Classes Commence:</span>
+<span class="font-bold text-primary">January 15</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-outline">Mock Examinations:</span>
+<span class="font-bold text-secondary">March (Bi-weekly)</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-outline">Ideal For:</span>
+<span class="font-semibold text-primary">UTME Retakers &amp; GCE</span>
+</div>
+</div>
+</div>
+<a class="w-full text-center py-2 px-4 rounded border border-primary text-primary hover:bg-primary hover:text-on-primary text-label-md font-label-md font-bold transition-all" href="#consultation">
+            Secure Seat in Rain Sprint
+          </a>
+</div>
+<!-- COHORT 3: CRASH MOCK DRILL BATCH -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-headline-sm font-headline-sm text-primary">Crash Mock Drill Batch</h3>
+<span class="text-xs font-label-md text-amber-700 font-bold">4-Week Intensive</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+              Pure exam condition rehearsal for the final month before official exams. Zero introductory lectures—pure timed drills and error rectifications.
+            </p>
+<div class="space-y-2.5 text-body-sm text-on-surface mb-6 bg-surface-container-low p-4 rounded border border-outline-variant">
+<div class="flex justify-between text-xs">
+<span class="text-outline">Registration Closes:</span>
+<span class="font-bold text-primary">March 15</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-outline">Drills Commence:</span>
+<span class="font-bold text-primary">March 22</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-outline">CBT Lab Hours:</span>
+<span class="font-bold text-secondary">3 Hours Daily</span>
+</div>
+<div class="flex justify-between text-xs">
+<span class="text-outline">Ideal For:</span>
+<span class="font-semibold text-primary">Final Countdown Polishing</span>
+</div>
+</div>
+</div>
+<a class="w-full text-center py-2 px-4 rounded border border-primary text-primary hover:bg-primary hover:text-on-primary text-label-md font-label-md font-bold transition-all" href="#consultation">
+            Secure Seat in Crash Mock
+          </a>
+</div>
+</div>
+</section>
+<!-- SECTION 7: DIAGNOSTIC CONSULTATION BOOKING CTA -->
+<section class="py-16 bg-surface-container-highest/60 border-t border-outline-variant" id="consultation">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-primary text-on-primary rounded-xl overflow-hidden shadow-lg border border-outline-variant">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 md:p-12">
+<div class="lg:col-span-7 flex flex-col justify-between">
+<div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary text-on-secondary text-label-sm font-label-sm uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined text-[16px]">psychology</span> Free Academic Evaluation
+                </span>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-primary mb-4 leading-tight">
+                  Unsure Which Exam Track Matches Your Goal?
+                </h2>
+<p class="text-body-md font-body-md text-on-primary-container mb-6 max-w-xl">
+                  Book a free 20-minute diagnostic session with our Head of Academic Planning in Banana Estate / Laara or virtually. We audit past report cards, diagnose weak subject topics, and formulate a realistic path toward university matriculation.
+                </p>
+<div class="space-y-3 mb-8">
+<div class="flex items-center gap-3 text-body-sm">
+<span class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-xs font-bold text-on-secondary">1</span>
+<span>Complimentary 25-question diagnostic test (JAMB or WAEC standard).</span>
+</div>
+<div class="flex items-center gap-3 text-body-sm">
+<span class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-xs font-bold text-on-secondary">2</span>
+<span>Realistic Nigerian university catchment quota assessment.</span>
+</div>
+<div class="flex items-center gap-3 text-body-sm">
+<span class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-xs font-bold text-on-secondary">3</span>
+<span>Customized weekly lecture &amp; CBT practice itinerary.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 text-xs text-on-primary-container">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary-fixed text-base">pin_drop</span> Igbe-Laara Center, Ikorodu
+                </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary-fixed text-base">lock</span> Zero Obligation / 100% Free
+                </span>
+</div>
+</div>
+<!-- Booking Interactive Form -->
+<div class="lg:col-span-5 bg-surface-container-lowest text-on-surface p-6 sm:p-8 rounded-lg shadow-md border border-outline-variant">
+<h3 class="text-headline-sm font-headline-sm text-primary mb-1">Request Free Consultation</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">Enter candidate details. Our counseling team calls within 4 business hours.</p>
+<form class="space-y-4" onsubmit="handleConsultationSubmit(event)">
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1">Scholar or Parent Full Name *</label>
+<input class="w-full px-3.5 py-2.5 rounded bg-surface-container-low border border-outline-variant text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-colors" placeholder="e.g. Adeyemi Adeleke" required="" type="text">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1">WhatsApp Phone *</label>
+<input class="w-full px-3.5 py-2.5 rounded bg-surface-container-low border border-outline-variant text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-colors" placeholder="0813 000 0000" required="" type="tel">
+</div>
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1">Preferred Modality</label>
+<select class="w-full px-3.5 py-2.5 rounded bg-surface-container-low border border-outline-variant text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-colors">
+<option>Physical (Igbe-Laara)</option>
+<option>Live Online Cohort</option>
+<option>Undecided / Need Advice</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1">Primary Exam Target</label>
+<select class="w-full px-3.5 py-2.5 rounded bg-surface-container-low border border-outline-variant text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-colors">
+<option>JAMB UTME Masterclass (2025)</option>
+<option>WAEC &amp; NECO Senior School Certificate</option>
+<option>JUPEB Direct Entry Foundation (200L)</option>
+<option>Digital SAT / IELTS Hub</option>
+<option>CBT Mock Exam Lab Practice Access</option>
+<option>Comprehensive Admission &amp; CAPS Processing</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-primary mb-1">Candidate Current Level / School</label>
+<input class="w-full px-3.5 py-2.5 rounded bg-surface-container-low border border-outline-variant text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-colors" placeholder="e.g. SS3 Scholar or Secondary Leaver in Igbogbo" type="text">
+</div>
+<button class="w-full py-3 px-4 rounded bg-secondary text-on-secondary hover:bg-on-secondary-container text-label-md font-label-md font-bold shadow transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 mt-2" type="submit">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Confirm Free Appointment</span>
+</button>
+</form>
+<div class="hidden mt-4 p-3 bg-secondary-container text-on-secondary-container rounded text-xs font-medium text-center" id="formSuccessMessage">
+                Consultation request sent successfully! A counselor will reach out via WhatsApp shortly.
+              </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SHARED COMPONENT: Footer -->
+<footer class="full-width border-t border-outline-variant dark:border-outline bg-primary dark:bg-inverse-surface text-on-primary dark:text-inverse-on-surface flat no shadows transition-colors duration-150 ease-in-out">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+<!-- Brand Summary Column -->
+<div class="lg:col-span-2">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded bg-surface flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl text-secondary">school</span>
+</div>
+<span class="text-headline-md font-headline-md font-bold text-on-primary dark:text-inverse-on-surface tracking-tight">ADJ Educational Consultants</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-primary-container dark:text-surface-variant max-w-sm mb-6 leading-relaxed">
+            Ikorodu’s premier preparatory academy dedicated to rigorous examination excellence, CAPS admission optimization, and high-stakes university transition.
+          </p>
+<div class="flex flex-col gap-2 text-xs text-on-primary-container">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-base">location_on</span>
+              Banana Estate / Laara, Off Igbe Road, Ikorodu, Lagos
+            </span>
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-base">call</span>
+              Direct Inquiries: +234 813 492 8820 / +234 802 000 0000
+            </span>
+</div>
+</div>
+<!-- Academic Tracks Column -->
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-primary mb-4 text-base">Preparatory Tracks</h4>
+<ul class="space-y-2">
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/programs#jamb">JAMB UTME Clinic</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/programs#waec">WAEC &amp; NECO Intensive</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/programs#jupeb">JUPEB Direct Entry</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/programs#ielts">IELTS &amp; SAT Prep</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/programs#cbt">CBT Practice Lab</a></li>
+</ul>
+</div>
+<!-- Catchment & Community Areas Column -->
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-primary mb-4 text-base">Community Catchment</h4>
+<ul class="space-y-2">
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="#">Catchment: Igbe-Laara</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="#">Catchment: Igbogbo &amp; Elepe</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="#">Catchment: Agunfoye &amp; Oreta</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="#">Partner: Greater Heights Tutorial Center</a></li>
+</ul>
+</div>
+<!-- Institutional Policies Column -->
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-primary mb-4 text-base">Institutional Policies</h4>
+<ul class="space-y-2">
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="#">Admissions Processing Policy</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="#">Terms &amp; Group-Only Scope Disclaimer</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Legal Strip -->
+<div class="pt-8 border-t border-primary-container flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-on-primary-container">
+<p class="text-body-sm font-body-sm">
+          © 2024 ADJ Educational Consultants. Off Igbe Road, Banana Estate / Laara, Ikorodu, Lagos. Coaching Until Matriculation. All rights reserved.
+        </p>
+<div class="flex items-center gap-6">
+<span class="inline-flex items-center gap-1.5 text-secondary-fixed">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span> Registered Educational Entity Lagos State
+          </span>
+</div>
+</div>
+</div>
+</footer>
+<!-- LIGHTWEIGHT INTERACTIVITY SCRIPT -->
+<script>
+    function filterTracks(category) {
+      const cards = document.querySelectorAll('.track-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      let count = 0;
+
+      // Update button styling
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+        btn.classList.add('text-on-surface-variant', 'border', 'border-outline-variant', 'font-medium');
+      });
+
+      // Highlight active button
+      event.target.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+      event.target.classList.remove('text-on-surface-variant', 'border', 'border-outline-variant', 'font-medium');
+
+      // Filter cards
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'flex';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Update counter
+      const countEl = document.getElementById('displayedCount');
+      if (countEl) countEl.innerText = count;
+    }
+
+    function handleConsultationSubmit(e) {
+      e.preventDefault();
+      const successEl = document.getElementById('formSuccessMessage');
+      if (successEl) {
+        successEl.classList.remove('hidden');
+        e.target.reset();
+      }
+    }
+  </script>
+</body></html>

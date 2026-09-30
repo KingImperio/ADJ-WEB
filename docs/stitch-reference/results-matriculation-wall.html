@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Results &amp; Matriculation Wall | ADJ Educational Consultants</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#006c48",
+            "secondary-fixed-dim": "#7cd9aa",
+            "outline": "#74777f",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#86a0cd",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "on-primary-fixed": "#001b3c",
+            "on-secondary-fixed": "#002113",
+            "secondary-fixed": "#98f6c5",
+            "secondary-container": "#98f6c5",
+            "background": "#faf8ff",
+            "tertiary-container": "#552b00",
+            "on-surface-variant": "#43474e",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "surface": "#faf8ff",
+            "on-tertiary-container": "#eb851c",
+            "inverse-primary": "#adc7f7",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-surface": "#131b2e",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#455f88",
+            "tertiary": "#361900",
+            "tertiary-fixed": "#ffdcc3",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#dae2fd",
+            "on-tertiary-fixed": "#2f1500",
+            "on-error-container": "#93000a",
+            "surface-container": "#eaedff",
+            "on-error": "#ffffff",
+            "on-background": "#131b2e",
+            "surface-container-high": "#e2e7ff",
+            "surface-container-low": "#f2f3ff",
+            "on-secondary-container": "#00734d",
+            "inverse-on-surface": "#eef0ff",
+            "primary-fixed-dim": "#adc7f7",
+            "primary": "#002045",
+            "outline-variant": "#c4c6cf",
+            "primary-fixed": "#d6e3ff",
+            "surface-variant": "#dae2fd",
+            "inverse-surface": "#283044",
+            "on-secondary-fixed-variant": "#005236",
+            "on-primary-fixed-variant": "#2d476f",
+            "surface-bright": "#faf8ff",
+            "primary-container": "#1a365d",
+            "surface-dim": "#d2d9f4"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "space-xxl": "4rem",
+            "margin-desktop": "4rem",
+            "margin-tablet": "2rem",
+            "gutter": "1.25rem",
+            "gutter-desktop": "2rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["\"Source Serif 4\""],
+            "display-lg-mobile": ["\"Source Serif 4\""],
+            "display-lg": ["\"Source Serif 4\""],
+            "headline-lg": ["\"Source Serif 4\""],
+            "headline-lg-mobile": ["\"Source Serif 4\""],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["\"Source Serif 4\""],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "headline-md": ["26px", {"lineHeight": "34px", "fontWeight": "600"}],
+            "display-lg-mobile": ["34px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "display-lg": ["52px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-lg": ["38px", {"lineHeight": "46px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar (Shared Component) -->
+<header class="docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-outline bg-surface dark:bg-primary-container shadow-sm dark:shadow-none">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="school">school</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary tracking-tight">ADJ Educational Consultants</span>
+<span class="text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+            Igbe-Laara, Ikorodu
+          </span>
+</div>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-medium transition-colors text-label-lg font-label-lg transition-all duration-200 ease-in-out active:scale-95" href="/">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-medium transition-colors text-label-lg font-label-lg transition-all duration-200 ease-in-out active:scale-95" href="/programmes">Programmes</a>
+<a class="border-b-2 border-secondary text-secondary dark:text-secondary-fixed font-bold pb-1 text-label-lg font-label-lg transition-all duration-200 ease-in-out active:scale-95" href="/results">Results</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-medium transition-colors text-label-lg font-label-lg transition-all duration-200 ease-in-out active:scale-95" href="/about">About Us</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary font-medium transition-colors text-label-lg font-label-lg transition-all duration-200 ease-in-out active:scale-95" href="/contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="hidden lg:flex items-center gap-2 text-label-md font-label-md text-primary hover:text-secondary transition-colors" href="tel:+2348000000000">
+<span class="material-symbols-outlined text-base" data-icon="call">call</span>
+<span>Call / WhatsApp</span>
+</a>
+<a class="bg-primary hover:bg-primary-container text-on-primary px-5 py-2.5 rounded-lg text-label-md font-label-md font-semibold transition-all duration-200 ease-in-out active:scale-95 shadow-sm flex items-center gap-2" href="#diagnostic-lead">
+<span class="material-symbols-outlined text-base" data-icon="schedule">schedule</span>
+<span>Book Free Consultation</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative bg-surface-container-low pt-12 pb-16 border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Breadcrumb and Verified Tag -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant">
+<span>Home</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-semibold">Results &amp; Matriculation Wall</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/30 border border-secondary text-secondary text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-sm" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>100% Verifiable on JAMB CAPS &amp; Institutional Portals</span>
+</div>
+</div>
+<div class="max-w-4xl">
+<h1 class="text-display-lg font-display-lg text-primary tracking-tight mb-4">
+          Verifiable Results: From Igbe-Laara to Nigeria's Premier Universities
+        </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed mb-10">
+          At ADJ Educational Consultants, we measure success not by unverified self-reporting, but by physical matriculation credentials. Every score presented below is documented with official JAMB CAPS placement, validated first-sitting WAEC/NECO certificates, and actual university registration numbers.
+        </p>
+</div>
+<!-- Aggregate Impact Metrics Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm">
+<div class="border-l-4 border-secondary pl-4 py-1">
+<div class="text-3xl font-bold font-body-lg text-primary tracking-tight">89.4%</div>
+<div class="text-label-sm font-label-sm text-outline mt-1">FIRST-CHOICE PLACEMENT RATE</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">UNILAG, LASU, UI, OAU, FUTA</div>
+</div>
+<div class="border-l-4 border-secondary pl-4 py-1">
+<div class="text-3xl font-bold font-body-lg text-primary tracking-tight">348</div>
+<div class="text-label-sm font-label-sm text-outline mt-1">TOP UTME SCORE (2024)</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Physical printout verified</div>
+</div>
+<div class="border-l-4 border-secondary pl-4 py-1">
+<div class="text-3xl font-bold font-body-lg text-primary tracking-tight">14.2 / 16</div>
+<div class="text-label-sm font-label-sm text-outline mt-1">AVERAGE JUPEB SCORE</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Direct Entry into 200 Level</div>
+</div>
+<div class="border-l-4 border-secondary pl-4 py-1">
+<div class="text-3xl font-bold font-body-lg text-primary tracking-tight">98.1%</div>
+<div class="text-label-sm font-label-sm text-outline mt-1">WAEC &amp; NECO PASS RATE</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">5+ Credits incl. Maths &amp; Eng.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Filter Tabs -->
+<section class="sticky top-20 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant py-4">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center overflow-x-auto w-full md:w-auto pb-2 md:pb-0 gap-2 scrollbar-none" id="filter-tab-container">
+<button class="filter-btn active px-4 py-2 rounded-lg text-label-md font-label-md transition-all duration-150 bg-primary text-on-primary font-bold shadow-sm" data-category="all">
+          All Results
+        </button>
+<button class="filter-btn px-4 py-2 rounded-lg text-label-md font-label-md transition-all duration-150 bg-surface-container hover:bg-surface-container-high text-on-surface font-medium" data-category="jamb">
+          JAMB 300+ Club
+        </button>
+<button class="filter-btn px-4 py-2 rounded-lg text-label-md font-label-md transition-all duration-150 bg-surface-container hover:bg-surface-container-high text-on-surface font-medium" data-category="jupeb">
+          JUPEB 200L Direct Entry
+        </button>
+<button class="filter-btn px-4 py-2 rounded-lg text-label-md font-label-md transition-all duration-150 bg-surface-container hover:bg-surface-container-high text-on-surface font-medium" data-category="waec">
+          WAEC 7+ Distinctions
+        </button>
+<button class="filter-btn px-4 py-2 rounded-lg text-label-md font-label-md transition-all duration-150 bg-surface-container hover:bg-surface-container-high text-on-surface font-medium" data-category="premier">
+          Premier Admissions (UNILAG/LASU/UI)
+        </button>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="check_circle">check_circle</span>
+<span>Audited by Greater Heights Tutorial Partner Center</span>
+</div>
+</div>
+</section>
+<!-- Matriculation Wall of Fame Grid -->
+<section class="py-16 bg-surface">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-end justify-between mb-8">
+<div>
+<span class="text-label-md font-label-md text-secondary font-bold tracking-wider uppercase">Class of 2023 / 2024 Honor Roll</span>
+<h2 class="text-headline-lg font-headline-lg text-primary mt-1">Matriculation Wall of Fame</h2>
+</div>
+<p class="hidden sm:block text-body-sm font-body-sm text-on-surface-variant max-w-sm text-right">
+          Students mentored directly at our Banana Estate / Laara study halls in Ikorodu.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="wall-grid">
+<!-- Candidate 1: Favour Balogun -->
+<div class="student-card jamb premier bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm hover:border-outline hover:shadow-md transition-all flex flex-col justify-between" data-category="jamb premier">
+<div>
+<div class="flex items-start justify-between mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] border border-[#0D7A53] text-[#0D7A53]">
+                JAMB / UTME
+              </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="verified">verified</span>
+                CAPS Approved
+              </span>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<img class="w-14 h-14 rounded-full object-cover border border-outline-variant" data-alt="A dignified close-up portrait of a young Nigerian female student smiling warmly, dressed in crisp academic attire, soft natural window lighting, clean academic collegiate setting with books and institutional framing, photorealistic and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBICJ6Yq9mSivrmA9tntESN5EZrcLb--ci-ezywCNl9oJmD0a8mVNf9SoM7RhGUVp7L8jucR3golZ-Pm0gJzC4rhBMccnVydNb6mP2mppW1eUbWXshQ103xPgyg2zszZvVAncmTDn6cvBXES4UB0QtqWXfcQoSpOsCKRI2BTeH_vBFiPA1I0ly0DlaOBNWWgvwhR2NXkiLP17YhOBo5ztO_A7R0SSMnExGO655aOlhD6sEfqbWqlxA4"/>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Favour Balogun</h3>
+<span class="text-label-sm font-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                  Igbogbo Alum
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 mb-4">
+<div class="text-label-sm font-label-sm text-outline">EXAM PERFORMANCE</div>
+<div class="text-headline-md font-headline-md text-primary font-bold">UTME: 326</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">English: 78 | Physics: 84 | Chem: 81 | Bio: 83</div>
+</div>
+<div class="border-t border-outline-variant pt-3">
+<div class="text-label-sm font-label-sm text-outline">MATRICULATION PLACEMENT</div>
+<div class="text-body-md font-body-md font-bold text-primary mt-0.5">Medicine &amp; Surgery (MBBS)</div>
+<div class="text-body-sm font-body-sm text-secondary font-medium">University of Lagos (UNILAG)</div>
+</div>
+</div>
+<div class="mt-6 pt-3 border-t border-outline-variant flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Reg: ADJ/2024/UTME-041</span>
+<span class="text-secondary font-semibold">1st Batch Merit List</span>
+</div>
+</div>
+<!-- Candidate 2: Babatunde Adeleke -->
+<div class="student-card jamb premier bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm hover:border-outline hover:shadow-md transition-all flex flex-col justify-between" data-category="jamb premier">
+<div>
+<div class="flex items-start justify-between mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] border border-[#0D7A53] text-[#0D7A53]">
+                JAMB / UTME
+              </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="verified">verified</span>
+                Verified Score
+              </span>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<img class="w-14 h-14 rounded-full object-cover border border-outline-variant" data-alt="A focused young Nigerian male scholar wearing a navy buttoned collared shirt, confident expression, situated in a modern collegiate study center with warm ambient lighting, deep blues and crisp whites in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf6T2ZXtm8iWiFAqS1uYyxAOkoSCJAF-K8tbePd3ytBYQbfVfNL9X-_6NJ6jaEWFTzWJ3RtC0M8dPiQAG3NH3brkEJpXi_ScDuJ2ewZuSLE2TIXQO6Ff2RoFbsl1N-k5_AMry1bPLSgdqQXuxLRs0gdPHNWvF4SGzGZZJjeqj5kUfg7NQn2_ueMZ6VjrpGT8IB0w1AKISJeg_1OQopOjx9EyVf13bvK7BM0fXuV8WXyF-gyQNBJv-6"/>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Babatunde Adeleke</h3>
+<span class="text-label-sm font-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                  Banana Estate, Laara
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 mb-4">
+<div class="text-label-sm font-label-sm text-outline">EXAM PERFORMANCE</div>
+<div class="text-headline-md font-headline-md text-primary font-bold">UTME: 342</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">Maths: 92 | Physics: 89 | Chem: 85 | Eng: 76</div>
+</div>
+<div class="border-t border-outline-variant pt-3">
+<div class="text-label-sm font-label-sm text-outline">MATRICULATION PLACEMENT</div>
+<div class="text-body-md font-body-md font-bold text-primary mt-0.5">Mechanical Engineering</div>
+<div class="text-body-sm font-body-sm text-secondary font-medium">University of Lagos (UNILAG)</div>
+</div>
+</div>
+<div class="mt-6 pt-3 border-t border-outline-variant flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Reg: ADJ/2024/UTME-009</span>
+<span class="text-secondary font-semibold">Department Top 2%</span>
+</div>
+</div>
+<!-- Candidate 3: Tunde Oladipupo -->
+<div class="student-card jupeb premier bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm hover:border-outline hover:shadow-md transition-all flex flex-col justify-between" data-category="jupeb premier">
+<div>
+<div class="flex items-start justify-between mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#EEF2FF] border border-[#3730A3] text-[#3730A3]">
+                JUPEB / DIRECT ENTRY
+              </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="verified">verified</span>
+                Direct Entry Validated
+              </span>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<img class="w-14 h-14 rounded-full object-cover border border-outline-variant" data-alt="A portrait of a disciplined Nigerian young man wearing structured collegiate attire, standing with composure against an educational library backdrop with warm golden-hour rim light and rich academic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVz2T9AM-ULBacK3YDZHKQtdbh1GMhUDpDkm8GJLMqNI9YkbiVLaf_31VhmQqcJmE0jBBOuTBuYwVXLjQ1GSvJQbDyzR_DqSW0gLmgAk1X6xoUucdEzIHYuI_PnjYSqqxLl6M-B1cNIrlySRq1lb7ivN6VZkGf4HefkdYc-txY6mABzhopzCd7jN-lbposoKqnBarE-xdA19KcplvoTzSVKMFUQuQF_728kXkuee66yyk6IMWE62kc"/>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Tunde Oladipupo</h3>
+<span class="text-label-sm font-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                  Igbe-Laara, Ikorodu
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 mb-4">
+<div class="text-label-sm font-label-sm text-outline">EXAM PERFORMANCE</div>
+<div class="text-headline-md font-headline-md text-primary font-bold">JUPEB: 15 Points</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">Government: A | Lit-in-English: A | CRS: A</div>
+</div>
+<div class="border-t border-outline-variant pt-3">
+<div class="text-label-sm font-label-sm text-outline">MATRICULATION PLACEMENT</div>
+<div class="text-body-md font-body-md font-bold text-primary mt-0.5">Faculty of Law (LL.B, 200L)</div>
+<div class="text-body-sm font-body-sm text-secondary font-medium">Lagos State University (LASU)</div>
+</div>
+</div>
+<div class="mt-6 pt-3 border-t border-outline-variant flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Reg: ADJ/2023/JPB-014</span>
+<span class="text-secondary font-semibold">Direct 200L Matriculant</span>
+</div>
+</div>
+<!-- Candidate 4: Oluwaseun Enitan -->
+<div class="student-card jamb premier bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm hover:border-outline hover:shadow-md transition-all flex flex-col justify-between" data-category="jamb premier">
+<div>
+<div class="flex items-start justify-between mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] border border-[#0D7A53] text-[#0D7A53]">
+                CAPS MARKETPLACE RE-ROUTE
+              </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="verified">verified</span>
+                Admissions Strategy
+              </span>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<img class="w-14 h-14 rounded-full object-cover border border-outline-variant" data-alt="A smart and confident Nigerian female student smiling, captured indoors in high resolution with soft natural diffused studio lighting, wearing professional collegiate blue shirt, sharp editorial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVpfrGcJpGjueHtEoAL-tu_-7Ded1WEseyVeJxHlIEVBeWaTA9ladFHumSfF9l18MwJMUnHhT-8XnoHOSbmLQt2AA51b-mutg7z3CaLmGDJiECDfT2-fx4hyLs8ZA32blhrI6jEATqkwbCrx0_58eGngsjfBK7Aa79O7ZQbt-sW6QRRIHwx9wXYhUnIzR-ax9tjDoAZnZ09pYFyr2CD2okGFrgEKTIw7sk_heNJmIHUFYd1NUdTaiJ"/>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Oluwaseun Enitan</h3>
+<span class="text-label-sm font-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                  Oreta Road, Ikorodu
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 mb-4">
+<div class="text-label-sm font-label-sm text-outline">EXAM PERFORMANCE</div>
+<div class="text-headline-md font-headline-md text-primary font-bold">UTME: 281</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">Strategic aggregate defense via ADJ desk</div>
+</div>
+<div class="border-t border-outline-variant pt-3">
+<div class="text-label-sm font-label-sm text-outline">MATRICULATION PLACEMENT</div>
+<div class="text-body-md font-body-md font-bold text-primary mt-0.5">Systems Engineering</div>
+<div class="text-body-sm font-body-sm text-secondary font-medium">University of Lagos (UNILAG)</div>
+</div>
+</div>
+<div class="mt-6 pt-3 border-t border-outline-variant flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Reg: ADJ/2024/CON-088</span>
+<span class="text-secondary font-semibold">Change of Course Success</span>
+</div>
+</div>
+<!-- Candidate 5: Chisom Nnamdi -->
+<div class="student-card waec premier bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm hover:border-outline hover:shadow-md transition-all flex flex-col justify-between" data-category="waec premier">
+<div>
+<div class="flex items-start justify-between mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#EFF6FF] border border-[#1A365D] text-[#1A365D]">
+                WAEC / NECO
+              </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="verified">verified</span>
+                First Sitting
+              </span>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<img class="w-14 h-14 rounded-full object-cover border border-outline-variant" data-alt="An articulate young West African male student in sharp formal wear standing beside a university seminar room, bright daylight, clean modern collegiate background, serene yet highly accomplished mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdsAumDScO8xxwuzY79vhXncutjV7cxvPHSd-0pgkHw0G7KAFF5p0H7ZPxT32AmAZV-yvJP0J5HvXk45WH4UYeiiGAnGvy047TGi-skTby2HUK1iKFt36ncjOGXouXRo6Mw5FvpS18IcrUY3xS0lN830cU2aG1iFgvZSb7og5iM8B3BvnprAFHHSBMTnCgo-c7Mq5KyqH0Y8GQYJbMXNu9uydrH-y_LwsZ2SLn8psqsVzu3_Sl3CGn"/>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Chisom Nnamdi</h3>
+<span class="text-label-sm font-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                  Elepe Alum
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 mb-4">
+<div class="text-label-sm font-label-sm text-outline">EXAM PERFORMANCE</div>
+<div class="text-headline-md font-headline-md text-primary font-bold">WAEC: 8 Distinctions</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">A1 in Further Maths, Maths, Chem, Physics</div>
+</div>
+<div class="border-t border-outline-variant pt-3">
+<div class="text-label-sm font-label-sm text-outline">MATRICULATION PLACEMENT</div>
+<div class="text-body-md font-body-md font-bold text-primary mt-0.5">Computer Science</div>
+<div class="text-body-sm font-body-sm text-secondary font-medium">Fed. Univ. of Tech. Akure (FUTA)</div>
+</div>
+</div>
+<div class="mt-6 pt-3 border-t border-outline-variant flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Reg: ADJ/2023/WAC-112</span>
+<span class="text-secondary font-semibold">100% Distinction Track</span>
+</div>
+</div>
+<!-- Candidate 6: Mariam Lawal -->
+<div class="student-card jupeb premier bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm hover:border-outline hover:shadow-md transition-all flex flex-col justify-between" data-category="jupeb premier">
+<div>
+<div class="flex items-start justify-between mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#EEF2FF] border border-[#3730A3] text-[#3730A3]">
+                JUPEB / DIRECT ENTRY
+              </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="verified">verified</span>
+                OAU Confirmed
+              </span>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<img class="w-14 h-14 rounded-full object-cover border border-outline-variant" data-alt="A young Nigerian female undergraduate in bright clean attire with a focused, cheerful demeanor, standing on an educational campus pathway with lush green trees and academic buildings in the background, sharp cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEYhM-KOfkaXsnljjqFctz3zf1M_rR0gCN6AVUop35woqXsIfEarj12L0tqZRX-S8DF3SQe4v2Ia81pOas-6mqcpUu-KPTqT-zxDlW5F3N9T5XLdxSP31l2XeTzVgnc6kP6HbeniflDRYwbgjCahW6IHxVqNlmEhUuuoXjCFVcVev6baZTeABVu0UTQHAmQZznCLJ2LgNGKQd7wIPGiersXwb6NOynWH8QV2cafQ-VpGI74MxOiAGo"/>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Mariam Lawal</h3>
+<span class="text-label-sm font-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                  Elepe Alum, Ikorodu
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 mb-4">
+<div class="text-label-sm font-label-sm text-outline">EXAM PERFORMANCE</div>
+<div class="text-headline-md font-headline-md text-primary font-bold">JUPEB: 14 Points</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">Biology: A | Chemistry: A | Physics: B</div>
+</div>
+<div class="border-t border-outline-variant pt-3">
+<div class="text-label-sm font-label-sm text-outline">MATRICULATION PLACEMENT</div>
+<div class="text-body-md font-body-md font-bold text-primary mt-0.5">Faculty of Pharmacy</div>
+<div class="text-body-sm font-body-sm text-secondary font-medium">Obafemi Awolowo University (OAU)</div>
+</div>
+</div>
+<div class="mt-6 pt-3 border-t border-outline-variant flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Reg: ADJ/2023/JPB-039</span>
+<span class="text-secondary font-semibold">Direct 200L Faculty Entry</span>
+</div>
+</div>
+<!-- Candidate 7: Kehinde Bakare -->
+<div class="student-card premier bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm hover:border-outline hover:shadow-md transition-all flex flex-col justify-between" data-category="premier">
+<div>
+<div class="flex items-start justify-between mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-sm font-label-sm bg-[#EFF6FF] border border-[#1A365D] text-[#1A365D]">
+                ADMISSIONS RECTIFICATION
+              </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="verified">verified</span>
+                O-Level Rectification
+              </span>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<img class="w-14 h-14 rounded-full object-cover border border-outline-variant" data-alt="A professional portrait of an ambitious Nigerian male university student holding books, natural sunlight illumination, standing in front of traditional collegiate stone pillars, crisp clarity and confident posture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA81Aj79YtvU7qGTKiMCXLoJU4NaErCn1yTe-zNqzwvkqhj1cCBSsAtD8PyrG8UGunXH_wSg3X0glpRcMWAk6xTAp5HQFd7taRcVKLCwAnDhYubTwxsHT4VquXQwRbPaJq_HcL4HyJlDp6evGrMVTBNvT_HTHiTdWj-wrX84wcXU8YfZ21AM4Lajf4HZtqyS2F9UD1RUDXNZMBS9iJNC-zAJAg3zMmUqewCheUyc01gtNeU1vOjfsaX"/>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Kehinde Bakare</h3>
+<span class="text-label-sm font-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                  Agunfoye Alum
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 mb-4">
+<div class="text-label-sm font-label-sm text-outline">SPECIAL ADVOCACY</div>
+<div class="text-headline-md font-headline-md text-primary font-bold">O-Level Blending Resolved</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-1">WAEC &amp; NECO combination cleared on JAMB CAPS</div>
+</div>
+<div class="border-t border-outline-variant pt-3">
+<div class="text-label-sm font-label-sm text-outline">MATRICULATION PLACEMENT</div>
+<div class="text-body-md font-body-md font-bold text-primary mt-0.5">International Relations</div>
+<div class="text-body-sm font-body-sm text-secondary font-medium">Obafemi Awolowo University (OAU)</div>
+</div>
+</div>
+<div class="mt-6 pt-3 border-t border-outline-variant flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Reg: ADJ/2023/REC-002</span>
+<span class="text-secondary font-semibold">Full Matriculation Secured</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- In-Depth Parent & Candidate Testimonials -->
+<section class="py-16 bg-surface-container-low border-y border-outline-variant">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-2xl mb-12">
+<span class="text-label-md font-label-md text-secondary font-bold tracking-wider uppercase">Local Proof &amp; Accountability</span>
+<h2 class="text-headline-lg font-headline-lg text-primary mt-1">What Ikorodu Parents and Candidates Say</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+          Real feedback from families in Banana Estate, Igbe-Laara, and Agunfoye regarding our coaching rigor and transparent admissions follow-through.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Parent Testimonial 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-[#D97706] mb-4">
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-headline-sm text-body-lg text-primary italic mb-6">
+              "What distinguishes ADJ from tutorial centers in Ikorodu is the absolute discipline. If my son was five minutes late, I received an SMS. Their weekly diagnostic mock exams left no room for complacency. When his UTME result came out at 342, we knew every naira spent at the Laara center was an investment that delivered."
+            </p>
+</div>
+<div class="flex items-center gap-4 pt-6 border-t border-outline-variant">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center text-lg">
+              FA
+            </div>
+<div>
+<div class="text-body-md font-body-md font-bold text-primary">Mrs. F. Adeleke</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Parent of Babatunde Adeleke (Mechanical Engineering, UNILAG)</div>
+<div class="text-label-sm font-label-sm text-secondary font-medium flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="home_pin">home_pin</span>
+                Resident, Banana Estate, Off Igbe Road
+              </div>
+</div>
+</div>
+</div>
+<!-- Parent Testimonial 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-[#D97706] mb-4">
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-headline-sm text-body-lg text-primary italic mb-6">
+              "We had spent two consecutive years falling victim to fake admission promises from agents. ADJ took over our daughter's case, sat us down, and explained the exact cutoff quota system for LASU Law. Through their JUPEB program, she scored 15 points and entered 200 Level directly without stress."
+            </p>
+</div>
+<div class="flex items-center gap-4 pt-6 border-t border-outline-variant">
+<div class="w-12 h-12 rounded-full bg-secondary text-on-secondary font-bold flex items-center justify-center text-lg">
+              GO
+            </div>
+<div>
+<div class="text-body-md font-body-md font-bold text-primary">Mr. G. Ogunsanya</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Parent of Tunde Oladipupo (200L Law, LASU)</div>
+<div class="text-label-sm font-label-sm text-secondary font-medium flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="home_pin">home_pin</span>
+                Agunfoye-Igbogbo Axis, Ikorodu
+              </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Integrity Guarantee Section -->
+<section class="py-16 bg-surface">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-primary text-on-primary rounded-2xl p-8 lg:p-12 relative overflow-hidden shadow-md">
+<div class="relative z-10 max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary text-on-secondary text-label-sm font-label-sm uppercase tracking-wider mb-4 font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+            ADJ Institutional Policy
+          </div>
+<h2 class="text-headline-lg font-headline-lg text-on-primary mb-4">
+            The ADJ Integrity Guarantee: Zero Fabricated Records
+          </h2>
+<p class="text-body-md font-body-md text-on-primary-container leading-relaxed mb-6">
+            In an educational climate plagued by altered screenshots and fraudulent marketing, ADJ Educational Consultants stands on physical accountability. Every registration number, JAMB CAPS admission slip, and WAEC certificate displayed on this wall is archived and available for in-person parent inspection at our Laara center.
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-outline-variant/30">
+<div>
+<div class="flex items-center gap-2 text-secondary-fixed text-label-lg font-label-lg font-bold">
+<span class="material-symbols-outlined text-lg" data-icon="fact_check">fact_check</span>
+                Physical Ledger
+              </div>
+<p class="text-body-sm font-body-sm text-surface-variant mt-1">Available at Banana Estate office for parental scrutiny.</p>
+</div>
+<div>
+<div class="flex items-center gap-2 text-secondary-fixed text-label-lg font-label-lg font-bold">
+<span class="material-symbols-outlined text-lg" data-icon="person_check">person_check</span>
+                Direct Mentorship
+              </div>
+<p class="text-body-sm font-body-sm text-surface-variant mt-1">Taught strictly by our vetted full-time resident tutors.</p>
+</div>
+<div>
+<div class="flex items-center gap-2 text-secondary-fixed text-label-lg font-label-lg font-bold">
+<span class="material-symbols-outlined text-lg" data-icon="account_balance">account_balance</span>
+                Direct Entry Verification
+              </div>
+<p class="text-body-sm font-body-sm text-surface-variant mt-1">Direct tie-in to official Joint Universities Preliminary board.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section: Diagnostic Assessment Lead Form -->
+<section class="py-16 bg-surface-container" id="diagnostic-lead">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-8 lg:p-10 shadow-sm">
+<div class="text-center max-w-xl mx-auto mb-8">
+<span class="text-label-md font-label-md text-secondary font-bold tracking-wider uppercase">Next Admission Cycle</span>
+<h2 class="text-headline-lg font-headline-lg text-primary mt-1">
+            Ready to Write Your Matriculation Success Story?
+          </h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+            Schedule a Free Diagnostic Assessment &amp; Admission Strategy Session at our Igbe-Laara Center.
+          </p>
+</div>
+<form class="space-y-6" onsubmit="event.preventDefault(); alert('Assessment booked! Our senior academic counselor will reach out via WhatsApp within 2 hours.');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<label class="block text-label-sm font-label-sm text-on-surface uppercase font-bold mb-2" for="student-name">Student Full Name</label>
+<input class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-4 py-3 text-body-md text-on-surface focus:bg-white focus:border-primary focus:ring-0 focus:outline-none transition-colors" id="student-name" placeholder="e.g. Babatunde Adeyemi" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-on-surface uppercase font-bold mb-2" for="parent-whatsapp">Parent / Guardian WhatsApp Number</label>
+<input class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-4 py-3 text-body-md text-on-surface focus:bg-white focus:border-primary focus:ring-0 focus:outline-none transition-colors" id="parent-whatsapp" placeholder="080 1234 5678" required="" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<label class="block text-label-sm font-label-sm text-on-surface uppercase font-bold mb-2" for="target-exam">Target Academic Programme</label>
+<select class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-4 py-3 text-body-md text-on-surface focus:bg-white focus:border-primary focus:ring-0 focus:outline-none transition-colors" id="target-exam">
+<option value="jamb">JAMB UTME Comprehensive Clinic</option>
+<option value="waec">WAEC / NECO Intensive Masterclass</option>
+<option value="jupeb">JUPEB 200L Direct Entry Programme</option>
+<option value="ielts">IELTS / SAT International Placement</option>
+<option value="caps">JAMB CAPS Remediation &amp; Subject Blending</option>
+</select>
+</div>
+<div>
+<label class="block text-label-sm font-label-sm text-on-surface uppercase font-bold mb-2" for="target-institution">Target Course &amp; University</label>
+<input class="w-full bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-4 py-3 text-body-md text-on-surface focus:bg-white focus:border-primary focus:ring-0 focus:outline-none transition-colors" id="target-institution" placeholder="e.g. Nursing at UNILAG or Law at LASU" required="" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 text-secondary rounded border-outline-variant focus:ring-0" id="local-consent" type="checkbox"/>
+<label class="text-body-sm font-body-sm text-on-surface-variant" for="local-consent">
+              I agree to receive the mock assessment schedule and diagnostic feedback via WhatsApp.
+            </label>
+</div>
+<div class="text-center pt-2">
+<button class="w-full sm:w-auto px-8 py-3.5 bg-secondary hover:bg-[#0A5C3E] text-on-secondary rounded-lg font-label-lg font-label-lg font-bold shadow-md hover:shadow-lg transition-all duration-200 ease-in-out active:scale-95" type="submit">
+              Confirm Diagnostic Assessment Session
+            </button>
+<p class="text-label-sm font-label-sm text-outline mt-3">
+              Venue: ADJ Study Center, Off Igbe Road, Banana Estate / Laara, Ikorodu.
+            </p>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="full-width border-t border-outline-variant dark:border-outline bg-primary dark:bg-inverse-surface text-on-primary dark:text-inverse-on-surface flat no shadows">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div class="space-y-4">
+<span class="text-headline-md font-headline-md font-bold text-on-primary dark:text-inverse-on-surface tracking-tight">ADJ Educational Consultants</span>
+<p class="text-on-primary-container dark:text-surface-variant text-body-sm font-body-sm">
+            Empowering students across Ikorodu with rigorous tutorial drills, certified CBT lab simulations, and disciplined university admission follow-through.
+          </p>
+<div class="text-label-sm font-label-sm text-secondary-fixed">
+            Coaching Until Matriculation.
+          </div>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-primary mb-4">Core Programmes</h3>
+<ul class="space-y-2.5">
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/programmes/jamb">JAMB UTME Clinic</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/programmes/waec">WAEC &amp; NECO Intensive</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/programmes/jupeb">JUPEB Direct Entry</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/programmes/ielts">IELTS &amp; SAT Prep</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-primary mb-4">Catchment &amp; Facilities</h3>
+<ul class="space-y-2.5">
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/centers/igbe-laara">Catchment: Igbe-Laara</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/centers/igbogbo-elepe">Catchment: Igbogbo &amp; Elepe</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/centers/agunfoye-oreta">Catchment: Agunfoye &amp; Oreta</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/partners/greater-heights">Partner: Greater Heights Tutorial Center</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/cbt-lab">CBT Practice Lab</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-primary mb-4">Integrity &amp; Policies</h3>
+<ul class="space-y-2.5">
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/policies/admissions">Admissions Processing Policy</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/disclaimer">Terms &amp; Group-Only Scope Disclaimer</a></li>
+<li><a class="text-on-primary-container dark:text-surface-variant hover:text-on-primary dark:hover:text-inverse-on-surface text-body-sm font-body-sm transition-colors hover:underline" href="/privacy">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/30 text-center md:flex md:justify-between md:text-left text-body-sm font-body-sm text-on-primary-container">
+<div>
+          © 2024 ADJ Educational Consultants. Off Igbe Road, Banana Estate / Laara, Ikorodu, Lagos. Coaching Until Matriculation. All rights reserved.
+        </div>
+<div class="mt-4 md:mt-0 flex justify-center space-x-6">
+<span class="inline-flex items-center gap-1 text-secondary-fixed">
+<span class="material-symbols-outlined text-xs" data-icon="domain">domain</span>
+            Ikorodu Division Hub
+          </span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const studentCards = document.querySelectorAll('.student-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active', 'bg-primary', 'text-on-primary', 'font-bold', 'shadow-sm');
+            btn.classList.add('bg-surface-container', 'hover:bg-surface-container-high', 'text-on-surface', 'font-medium');
+          });
+
+          button.classList.add('active', 'bg-primary', 'text-on-primary', 'font-bold', 'shadow-sm');
+          button.classList.remove('bg-surface-container', 'hover:bg-surface-container-high', 'text-on-surface', 'font-medium');
+
+          const category = button.getAttribute('data-category');
+
+          studentCards.forEach(card => {
+            if (category === 'all') {
+              card.style.display = 'flex';
+            } else {
+              const cardCategories = card.getAttribute('data-category') || '';
+              if (cardCategories.includes(category)) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body></html>
