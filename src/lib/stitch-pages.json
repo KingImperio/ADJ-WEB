@@ -1,0 +1,413 @@
+{
+  "programmes": {
+    "h1": "Academic Pathways & Exam Preparation Tracks",
+    "lead": "Rigorous, curriculum-aligned preparatory tracks for physical group lectures in Igbe-Laara, Ikorodu, complemented by live high-interaction online cohorts for matriculation excellence across Nigerian and international tertiary boards.",
+    "sections": [
+      {
+        "title": "Learning Modalities Comparison",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Choose between structured on-premise immersion in Banana Estate, Ikorodu or live tutor-led remote cohorts built for focused learners."
+          },
+          {
+            "t": "table",
+            "v": {
+              "head": [
+                "Evaluation Criteria",
+                "Physical Group Classes Banana Estate / Laara Centre (Greater Heights Partner)",
+                "Live Online Interactive Cohorts Google Classroom & Zoom with Dedicated Archive"
+              ],
+              "rows": [
+                [
+                  "Primary Location & Catchment",
+                  "Off Igbe Road, Banana Estate / Laara, Ikorodu. Direct access for students from Igbogbo, Elepe, Agunfoye, and Oreta.",
+                  "Accessible anywhere with an internet-connected tablet or PC; optimized for low-bandwidth cellular data."
+                ],
+                [
+                  "Class Size & Scholar Supervision",
+                  "Maximum 22 scholars per hall Supervised desk discipline and mobile phone locking during lecture hours.",
+                  "Maximum 28 scholars per live stream Weekly attendance tracking and mandatory video participation checks."
+                ],
+                [
+                  "Practical Science & Experiments",
+                  "Full access to wet chemistry apparatus, biological specimens, optical benches, and physics mechanics rigs.",
+                  "Digital simulated virtual experiments with high-definition video apparatus guides and real-time calculation reviews."
+                ],
+                [
+                  "CBT Simulation Experience",
+                  "Daily in-lab terminal drills on authentic JAMB 8-key terminals with exam hall noise conditioning.",
+                  "Cloud-based browser mock software with identical question bank, automated grading, and timed alerts."
+                ],
+                [
+                  "Missed Class Archive",
+                  "Physical printed lecture notes provided by center tutor; weekend recap clinics available on Saturdays.",
+                  "24/7 video recording access stored on Google Classroom portal with downloadable annotated PDFs."
+                ],
+                [
+                  "Weekly Parent Accountability Reports",
+                  "Physical report card issuance and Bi-weekly SMS/WhatsApp test performance report to parents.",
+                  "Automated weekly email report with test scores, screen attendance, and assignment completion flags."
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "title": "Academic Calendar & Intake Batches",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Planned milestone dates ensure scholars cover the exhaustive secondary curriculum with minimum 6 weeks reserved purely for past papers and speed drills."
+          },
+          {
+            "t": "h3",
+            "v": "Harmattan Comprehensive"
+          },
+          {
+            "t": "p",
+            "v": "Full foundational lecture coverage starting with primary principles across all four subjects. Built for high aggregate targets (UTME 280+)."
+          },
+          {
+            "t": "h3",
+            "v": "Rain Accelerated Sprint"
+          },
+          {
+            "t": "p",
+            "v": "Paced revision track targeting high-yield subject concepts, heavy question solving, formula memorization tricks, and past exam trends."
+          },
+          {
+            "t": "h3",
+            "v": "Crash Mock Drill Batch"
+          },
+          {
+            "t": "p",
+            "v": "Pure exam condition rehearsal for the final month before official exams. Zero introductory lectures\u2014pure timed drills and error rectifications."
+          }
+        ]
+      },
+      {
+        "title": "Unsure Which Exam Track Matches Your Goal?",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Book a free 20-minute diagnostic session with our Head of Academic Planning in Banana Estate / Laara or virtually. We audit past report cards, diagnose weak subject topics, and formulate a realistic path toward university matriculation."
+          },
+          {
+            "t": "h3",
+            "v": "Request Free Consultation"
+          },
+          {
+            "t": "p",
+            "v": "Enter candidate details. Our counseling team calls within 4 business hours."
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "h1": "Built on Academic Rigor, Grounded in Ikorodu Community Trust.",
+    "lead": "Eliminating the punishing two-hour trek to Lagos Island and Ikeja. ADJ Educational Consultants was founded to deliver premier university preparatory instruction, authentic CBT simulation, and structured matriculation stewardship directly to families across Igbe-Laara, Igbogbo, Elepe, and Oreta.",
+    "sections": [
+      {
+        "title": "Four Non-Negotiable Pillars of the ADJ Standard",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "In an educational landscape clouded by transactional promises and quick fixes, our pedagogy rests upon four uncompromising institutional principles designed to produce permanent academic resilience."
+          },
+          {
+            "t": "h3",
+            "v": "Strict Group-Only Learning"
+          },
+          {
+            "t": "p",
+            "v": "We strictly reject isolated 1-on-1 home drills. Candidates advance through rigorous, synchronized syllabus milestones in cohesive cohorts, unlocking mutual peer accountability and healthy intellectual friction."
+          },
+          {
+            "t": "h3",
+            "v": "Coaching Until Matriculation"
+          },
+          {
+            "t": "p",
+            "v": "Our contractual responsibility does not end when JAMB or WAEC results are released. We counsel students through Post-UTME, JAMB CAPS transfers, subject combination blending, and formal clearance."
+          },
+          {
+            "t": "h3",
+            "v": "Honest Scope & Zero Gimmicks"
+          },
+          {
+            "t": "p",
+            "v": "No \"miracle centers\", no illegal leaked materials, and zero false assurances. We teach pure syllabus mastery, time-management techniques, and genuine cognitive preparedness that withstands scrutiny."
+          },
+          {
+            "t": "h3",
+            "v": "Free First Diagnostic"
+          },
+          {
+            "t": "p",
+            "v": "A risk-free evaluation milestone. Prospective candidates and parents receive an empirical breakdown of subject deficits before payment or formal enrollment, ensuring total alignment and transparency."
+          }
+        ]
+      },
+      {
+        "title": "The Greater Heights Tutorial Center Facility",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Academic consultation requires tangible infrastructure. Through our foundational co-location partnership with Greater Heights Tutorial Center at Banana Estate / Laara, ADJ candidates access accredited high-yield physical resources within short transit of Laara Bus Stop and Central Mosque."
+          },
+          {
+            "t": "h4",
+            "v": "50+ Networked CBT Practice Workstations"
+          },
+          {
+            "t": "p",
+            "v": "JAMB UTME and Post-UTME timed exam engines mirroring the authentic interface, question bank randomness, and keyboard navigation."
+          },
+          {
+            "t": "h4",
+            "v": "Uninterrupted Dedicated Power Grid"
+          },
+          {
+            "t": "p",
+            "v": "Dual industrial generators and solar-inverter backup guarantee uninterrupted mock assessments and evening intensive sessions."
+          },
+          {
+            "t": "h4",
+            "v": "Equipped Science Wet-Laboratory"
+          },
+          {
+            "t": "p",
+            "v": "Dedicated titration, specimen analysis, and physics apparatus benches for WAEC/NECO/JUPEB practical mastery."
+          },
+          {
+            "t": "h4",
+            "v": "Acoustic, Climate-Controlled Lecture Halls"
+          },
+          {
+            "t": "p",
+            "v": "Tiered, ergonomic group seating shielded from external noise to optimize intense 3-hour subject immersion blocks."
+          }
+        ]
+      },
+      {
+        "title": "Academic Board & Admissions Counselors",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Our directors and senior tutors bring seasoned familiarity with the stringent intake criteria of premier institutions: UNILAG, LASU, UI, and OAU."
+          },
+          {
+            "t": "h3",
+            "v": "Dr. A. D. Jinadu, Ph.D."
+          },
+          {
+            "t": "p",
+            "v": "Academic Planning & Pedagogy Director"
+          },
+          {
+            "t": "h3",
+            "v": "Mrs. T. F. Oladipo, M.Ed."
+          },
+          {
+            "t": "p",
+            "v": "Head of Tertiary Admissions & CAPS Advisory"
+          },
+          {
+            "t": "h3",
+            "v": "Engr. K. M. Balogun"
+          },
+          {
+            "t": "p",
+            "v": "Chief Science & CBT Testing Coordinator"
+          },
+          {
+            "t": "h4",
+            "v": "Deep Roots Across the Ikorodu Division"
+          },
+          {
+            "t": "p",
+            "v": "Dedicated transport route coordination and group study pick-ups for students from Oriwu College, Government College Ikorodu, and premier private colleges in Igbogbo, Elepe, and Baiyeku."
+          },
+          {
+            "t": "h3",
+            "v": "Walk Into the Laara Center This Week"
+          },
+          {
+            "t": "p",
+            "v": "Bring your previous WAEC/JAMB printouts or baseline notes. Parents and candidates are welcome for face-to-face evaluations with our academic deans with zero high-pressure sales tactics."
+          }
+        ]
+      },
+      {
+        "title": "Meet an Academic Advisor at Laara Center",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Reserve a 30-minute one-on-one session for parent and scholar. We inspect past performance, analyze target faculty cut-off benchmarks, and map the optimal preparation track."
+          }
+        ]
+      }
+    ]
+  },
+  "results": {
+    "h1": "Verifiable Results: From Igbe-Laara to Nigeria's Premier Universities",
+    "lead": "At ADJ Educational Consultants, we measure success not by unverified self-reporting, but by physical matriculation credentials. Every score presented below is documented with official JAMB CAPS placement, validated first-sitting WAEC/NECO certificates, and actual university registration numbers.",
+    "sections": [
+      {
+        "title": "Matriculation Wall of Fame",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Students mentored directly at our Banana Estate / Laara study halls in Ikorodu."
+          },
+          {
+            "t": "h3",
+            "v": "Favour Balogun"
+          },
+          {
+            "t": "h3",
+            "v": "Babatunde Adeleke"
+          },
+          {
+            "t": "h3",
+            "v": "Tunde Oladipupo"
+          },
+          {
+            "t": "h3",
+            "v": "Oluwaseun Enitan"
+          },
+          {
+            "t": "h3",
+            "v": "Chisom Nnamdi"
+          },
+          {
+            "t": "h3",
+            "v": "Mariam Lawal"
+          },
+          {
+            "t": "h3",
+            "v": "Kehinde Bakare"
+          }
+        ]
+      },
+      {
+        "title": "What Ikorodu Parents and Candidates Say",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Real feedback from families in Banana Estate, Igbe-Laara, and Agunfoye regarding our coaching rigor and transparent admissions follow-through."
+          }
+        ]
+      },
+      {
+        "title": "The ADJ Integrity Guarantee: Zero Fabricated Records",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "In an educational climate plagued by altered screenshots and fraudulent marketing, ADJ Educational Consultants stands on physical accountability. Every registration number, JAMB CAPS admission slip, and WAEC certificate displayed on this wall is archived and available for in-person parent inspection at our Laara center."
+          }
+        ]
+      },
+      {
+        "title": "Ready to Write Your Matriculation Success Story?",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Schedule a Free Diagnostic Assessment & Admission Strategy Session at our Igbe-Laara Center."
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "h1": "Book a Free Consultation & Visit Us in Igbe-Laara",
+    "lead": "Take the first decisive step toward academic matriculation. Meet experienced educators, evaluate baseline subject proficiency, and establish an unbroken path to 300+ JAMB or clean WAEC distinctions.",
+    "sections": [
+      {
+        "title": "100% Free First Session",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Diagnostic assessment, curriculum roadmap, and transparent fee schedule with zero obligation. Parents are warmly welcomed to attend together with candidates."
+          },
+          {
+            "t": "h3",
+            "v": "Student Consultation Application"
+          },
+          {
+            "t": "p",
+            "v": "Please provide complete details so our subject matter directors can prepare tailored mock materials for your first meeting."
+          },
+          {
+            "t": "h4",
+            "v": "Physical Address"
+          },
+          {
+            "t": "p",
+            "v": "Off Igbe Road, Banana Estate / Laara, Igbe-Laara, Ikorodu, Lagos State."
+          },
+          {
+            "t": "h4",
+            "v": "Consultation & Office Hours"
+          },
+          {
+            "t": "p",
+            "v": "Monday \u2013 Saturday: 8:00 AM \u2013 6:00 PM"
+          },
+          {
+            "t": "h4",
+            "v": "Nearby Neighborhood Transit"
+          },
+          {
+            "t": "p",
+            "v": "Students regularly commute from surrounding Ikorodu secondary school districts with direct tricycles and shuttle buses:"
+          }
+        ]
+      },
+      {
+        "title": "Frequently Asked Questions & Transit Directions",
+        "blocks": [
+          {
+            "t": "p",
+            "v": "Clear navigation instructions whether you are coming from Ikorodu Central, Benson, or commuting from outlying communities."
+          },
+          {
+            "t": "h3",
+            "v": "How do I get here from Ikorodu Garage / Benson?"
+          },
+          {
+            "t": "p",
+            "v": "From Ikorodu Garage, board a bus or tricycle heading toward Igbogbo / Igbe Road . Alight at Laara Bus Stop . From Laara Bus Stop, enter Banana Estate street opposite the Community Central Mosque; ADJ consultants is hosted within the Greater Heights complex 150 meters inwards."
+          },
+          {
+            "t": "h3",
+            "v": "What should students bring to the Diagnostic Session?"
+          },
+          {
+            "t": "p",
+            "v": "Please bring previous term results, mock reports, or prior JAMB/WAEC slips if available. Candidates should also bring writing materials for the brief 30-minute subject assessment. Calculators are provided inside our CBT Practice Lab."
+          },
+          {
+            "t": "h3",
+            "v": "Can distant or working candidates consult online?"
+          },
+          {
+            "t": "p",
+            "v": "Yes. If you reside outside Ikorodu (or work during daytime hours for IELTS/Direct Entry), select the 'Live Online' radio option above. We will send a secured Google Meet or Zoom appointment link accompanied by our digital diagnostic portal credentials."
+          },
+          {
+            "t": "h3",
+            "v": "Consultation Reserved!"
+          },
+          {
+            "t": "p",
+            "v": "Thank you for trusting ADJ Educational Consultants. Our student admissions desk in Igbe-Laara will confirm your appointment via WhatsApp and SMS shortly."
+          }
+        ]
+      }
+    ]
+  }
+}
