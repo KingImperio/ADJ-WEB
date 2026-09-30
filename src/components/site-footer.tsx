@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@/components/icon";
 import { site } from "@/lib/site";
 
@@ -22,9 +23,13 @@ export function SiteFooter() {
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="space-y-4 lg:col-span-2">
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded bg-secondary-fixed text-primary">
-                <Icon name="school" className="text-2xl font-bold" />
-              </span>
+              <Image
+                src="/adj-logo.png"
+                alt={`${site.name} logo`}
+                width={676}
+                height={369}
+                className="h-10 w-10 rounded-lg border border-white/20 object-cover"
+              />
               <span className="font-display text-headline-md font-bold tracking-tight text-on-primary">
                 {site.name}
               </span>
@@ -111,8 +116,8 @@ export function SiteFooter() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-primary-container pt-8 text-center text-body-sm text-on-primary-container md:flex-row md:text-left">
           <p>
-            © 2024 {site.name}. Off Igbe Road, Banana Estate / Laara, Ikorodu, Lagos. Coaching Until
-            Matriculation. All rights reserved.
+            © {new Date().getFullYear()} {site.name}. Off Igbe Road, Banana Estate / Laara, Ikorodu,
+            Lagos. Coaching Until Matriculation. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-label-sm">
             <span className="inline-flex items-center gap-1 text-secondary-fixed">

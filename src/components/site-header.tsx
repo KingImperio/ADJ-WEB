@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@/components/icon";
 import { site } from "@/lib/site";
 
@@ -46,9 +47,13 @@ export function SiteHeader() {
       <nav className="sticky top-0 z-50 w-full border-b border-outline-variant bg-surface shadow-sm">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded border border-secondary/40 bg-primary text-secondary-fixed shadow-sm">
-              <Icon name="school" className="text-2xl font-bold" />
-            </span>
+            <Image
+              src="/adj-logo.png"
+              alt={`${site.name} logo`}
+              width={676}
+              height={369}
+              className="h-11 w-11 rounded-lg border border-secondary/40 object-cover shadow-sm"
+            />
             <span className="flex flex-col">
               <span className="font-display text-headline-sm leading-none font-bold tracking-tight text-primary">
                 {site.name}
