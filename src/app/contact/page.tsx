@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     "Book a free consultation at ADJ Educational Consultants, Off Igbe Road, Banana Estate / Laara, Igbe-Laara, Ikorodu. Physical and online slots available.",
 };
 
-export default function ContactPage() {
+export const revalidate = 300;
+
+export default async function ContactPage() {
   return (
     <>
       <StitchHero

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@/components/icon";
-import { site } from "@/lib/site";
+import { getContact } from "@/lib/content";
 
 /* Two-tier header per the Stitch system: a dark navy utility strip carrying
    hours/address/phone, then a sticky white nav with the brand crest, section
@@ -13,7 +13,8 @@ const links = [
   { label: "Contact", href: "/contact" },
 ];
 
-export function SiteHeader() {
+export async function SiteHeader() {
+  const site = await getContact();
   return (
     <>
       <div className="w-full border-b border-outline-variant/30 bg-primary px-4 py-2.5 text-label-md text-surface">

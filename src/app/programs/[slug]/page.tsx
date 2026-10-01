@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Icon } from "@/components/icon";
 import { programs } from "@/lib/programs";
 import { site } from "@/lib/site";
-import pages from "@/lib/stitch-programs.json";
+import { getProgramPage } from "@/lib/content";
 
 /* Programme detail pages, rebuilt from the Stitch screens in
    docs/stitch-reference/ (jamb-utme-clinic, waec-neco-intensive,
@@ -14,26 +14,9 @@ type Block = { t: "p" | "h3" | "h4" | "list"; v: string | string[] };
 type Section = { title: string; blocks: Block[] };
 type Page = { h1: string; lead: string; sections: Section[] };
 
-/* NECO shares the WAEC & NECO screen — the reference merges the two exams. */
-const pages_: Record<string, Page> = { ...(pages as unknown as Record<string, Page>), neco: pages.waec as unknown as Page };
-
 const list = ["jamb", "waec", "neco", "jupeb", "international", "admissions", "cbt"];
-const stats: Record<string, string[]> = {
-  jamb: ["342 / 400", "Made Median", "87%"],
-  cbt: ["180 Qs", "Made Median", "120 min"],
-  waec: ["9 A1s", "Made Median", "4.2 hrs"],
-  jupeb: ["14 Pts", "Made Median", "78%"],
-  international: ["Band 8.0+", "Target Median", "1400+"],
-  admissions: ["100%", "CAPS Cleared", "5 Stage"],
-};
-const statLabels: Record<string, string[]> = {
-  jamb: ["Made Median", "Average Improvement", "Pass Rate Benchmarking"],
-  cbt: ["Per Mock Marathon", "Average Improvement", "Timed Conditions"],
-  waec: ["Made Median", "Average Improvement", "Weekly Lab Hours"],
-  jupeb: ["Made Median", "Average Improvement", "Pass Rate Benchmarking"],
-  international: ["Target Band", "Average Improvement", "Target SAT"],
-  admissions: ["Clearance Rate", "Average Improvement", "Lifecycle Stages"],
-};
+
+export const revalidate = 300;
 
 export function generateStaticParams() {
   return list.map((slug) => ({ slug }));
@@ -45,7 +28,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const page = pages_[slug];
+  const page = await getProgramPage(slug);
   if (!page) return { title: "Programme not found" };
   return { title: page.h1, description: page.lead.slice(0, 155) };
 }
@@ -62,11 +45,11 @@ const breadcrumbJsonLd = (name: string, slug: string) => ({
 
 export default async function ProgramPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const page = pages_[slug];
+  const page = await getProgramPage(slug);
   if (!page) notFound();
   const name = programs.find((p) => p.slug === slug)?.name ?? page.h1;
-  const numbers = stats[slug] ?? ["—", "—", "—"];
-  const labels = statLabels[slug] ?? ["", "", ""];
+  const numbers = page.stats.numbers.length === 3 ? page.stats.numbers : ["—", "—", "—"];
+  const labels = page.stats.labels.length === 3 ? page.stats.labels : ["", "", ""];
 
   return (
     <>

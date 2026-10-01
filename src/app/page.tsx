@@ -3,7 +3,14 @@ import Image from "next/image";
 import { ConsultationForm } from "@/components/consultation-form";
 import { Icon } from "@/components/icon";
 import { site } from "@/lib/site";
-import data from "@/lib/stitch-data.json";
+import {
+  getCatchments,
+  getDirections,
+  getHomeTestimonials,
+  getMetrics,
+  getPillars,
+  getTracks,
+} from "@/lib/content";
 
 /* Homepage per the Stitch system (project 4716569519546531997, screen
    "Homepage"). Section order and copy are taken from the generated reference
@@ -24,7 +31,17 @@ const accent: Record<string, string> = {
   tertiary: "border-l-4 border-secondary-container",
 };
 
-export default function Home() {
+export const revalidate = 300;
+
+export default async function Home() {
+  const [tracks, pillars, metrics, catchments, directions, results] = await Promise.all([
+    getTracks(),
+    getPillars(),
+    getMetrics(),
+    getCatchments(),
+    getDirections(),
+    getHomeTestimonials(),
+  ]);
   return (
     <>
       {/* 1 — Hero */}
@@ -65,7 +82,7 @@ export default function Home() {
               </div>
 
               <div className="grid grid-cols-3 gap-4 border-t border-outline-variant/60 pt-6">
-                {data.metrics.map((m) => (
+                {metrics.map((m) => (
                   <div key={m.label} className={`pl-3 ${accent[m.accent]}`}>
                     <span className="block text-2xl font-bold text-primary lg:text-3xl">{m.value}</span>
                     <span className="text-label-sm tracking-wider text-outline uppercase">{m.label}</span>
@@ -143,7 +160,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {data.pillars.map((p) => (
+            {pillars.map((p) => (
               <div
                 key={p.title}
                 className="space-y-4 rounded-xl border border-outline-variant bg-surface p-6 transition-all hover:border-outline"
@@ -201,7 +218,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {data.tracks.map((t) => (
+            {tracks.map((t) => (
               <article
                 key={t.slug}
                 className="flex flex-col justify-between rounded-xl border border-outline-variant bg-surface-container-lowest p-6 transition-all hover:border-outline hover:shadow-md"
@@ -263,7 +280,7 @@ export default function Home() {
                   learners across greater Lagos.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {data.catchments.map((c) => (
+                  {catchments.map((c) => (
                     <span
                       key={c}
                       className="inline-flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container px-3 py-1.5 text-label-sm text-primary"
@@ -280,7 +297,7 @@ export default function Home() {
                   <span>Directions &amp; Landmarks</span>
                 </h3>
                 <ul className="space-y-3 text-body-sm text-on-surface-variant">
-                  {data.directions.map((d) => (
+                  {directions.map((d) => (
                     <li key={d.from} className="flex items-start gap-2">
                       <Icon name="check_circle" className="mt-0.5 text-base text-secondary" />
                       <span>
@@ -311,7 +328,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {data.results.map((r) => (
+            {results.map((r) => (
               <div
                 key={r.name}
                 className="flex flex-col justify-between space-y-4 rounded-xl border border-outline-variant bg-surface p-6"

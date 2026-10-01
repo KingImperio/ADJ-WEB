@@ -10,7 +10,9 @@ export const metadata: Metadata = {
     "ADJ Educational Consultants is an Ikorodu exam-prep consultancy built on academic rigor, in delivery partnership with Greater Heights Tutorial Center.",
 };
 
-export default function AboutPage() {
+export const revalidate = 300;
+
+export default async function AboutPage() {
   return (
     <>
       <StitchHero

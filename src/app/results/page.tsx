@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Icon } from "@/components/icon";
-import { StitchCta, StitchHero, StitchSections, pages } from "@/components/stitch-page";
+import { StitchCta, StitchHero, StitchSections } from "@/components/stitch-page";
+import { getParentTestimonials, getWall } from "@/lib/content";
 
 /* Results — rebuilt from the Stitch screen "results-matriculation-wall".
    The Wall of Fame is 7 profile cards (portrait, exam badge, score breakdown,
@@ -33,9 +34,10 @@ type Entry = {
 };
 type Testi = { quote: string; initials: string; name: string; detail: string; area: string };
 
-export default function ResultsPage() {
-  const wall = (pages.results as unknown as { wall: Entry[] }).wall ?? [];
-  const testis = (pages.results as unknown as { testis: Testi[] }).testis ?? [];
+export const revalidate = 300;
+
+export default async function ResultsPage() {
+  const [wall, testis] = await Promise.all([getWall(), getParentTestimonials()]);
   return (
     <>
       <StitchHero
@@ -70,7 +72,7 @@ export default function ResultsPage() {
                 >
                   <div className="flex items-center gap-4">
                     <Image
-                      src={`/results/candidate-${i + 1}.jpg`}
+                      src={w.photo_url || `/results/candidate-${i + 1}.jpg`}
                       alt={`${w.name}, ADJ candidate`}
                       width={112}
                       height={112}

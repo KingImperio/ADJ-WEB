@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@/components/icon";
-import { site } from "@/lib/site";
+import { getContact } from "@/lib/content";
 
 /* Live programme links only — every href below resolves to a built route.
    (Legacy slugs gce/tutorials redirect; see next.config.ts.) */
@@ -16,7 +16,8 @@ const programmeLinks = [
 
 /* Navy footer per the Stitch system: 5-col grid (brand spans 2) then a legal
    bar. `text-on-primary-container` is Stitch's muted-on-navy text. */
-export function SiteFooter() {
+export async function SiteFooter() {
+  const site = await getContact();
   return (
     <footer className="w-full border-t border-outline-variant bg-primary text-on-primary">
       <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">

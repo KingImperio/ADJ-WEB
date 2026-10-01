@@ -10,7 +10,9 @@ export const metadata: Metadata = {
     "Compare ADJ's JAMB, WAEC, NECO, JUPEB, international and admissions tracks, plus physical and online cohort schedules.",
 };
 
-export default function ProgramsPage() {
+export const revalidate = 300;
+
+export default async function ProgramsPage() {
   return (
     <>
       <StitchHero

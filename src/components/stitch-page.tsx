@@ -1,12 +1,11 @@
 import { Icon } from "@/components/icon";
-import pagesRaw from "@/lib/stitch-pages.json";
+import { getPageSections } from "@/lib/content";
 
 type Table = { head: string[]; rows: string[][] };
 type Block = { t: "p" | "h3" | "h4" | "list" | "table"; v: string | string[] | Table };
 type Section = { title: string; blocks: Block[] };
 type Page = { h1: string; lead: string; sections: Section[] };
 
-export const pages = pagesRaw as unknown as Record<string, Page>;
 
 /* A run of heading+paragraph pairs is a card grid in the reference screens
    (FAQ tiles, pillar cards, wall-of-fame entries). Collapse each run into one
@@ -49,14 +48,14 @@ function group(blocks: Block[]): (Block | Grouped)[] {
    results, contact). Those four screens differ in hero furniture and closing
    CTA but share the same body rhythm, so the sections are rendered here and
    each page only supplies its own hero. */
-export function StitchSections({
+export async function StitchSections({
   slug,
   children,
 }: {
   slug: string;
   children?: React.ReactNode;
 }) {
-  const page = pages[slug];
+  const page = await getPageSections(slug);
   if (!page) return null;
   return (
     <>
@@ -203,7 +202,7 @@ export function StitchCta({
 }
 
 /* Hero used by the four index pages: eyebrow, serif h1, lead, two CTAs. */
-export function StitchHero({
+export async function StitchHero({
   slug,
   eyebrow,
   primary,
@@ -214,7 +213,7 @@ export function StitchHero({
   primary: { label: string; href: string };
   secondary: { label: string; href: string };
 }) {
-  const page = pages[slug];
+  const page = await getPageSections(slug);
   if (!page) return null;
   return (
     <section className="border-b border-outline-variant bg-surface py-16 lg:py-20">
