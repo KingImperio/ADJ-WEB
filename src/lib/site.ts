@@ -7,11 +7,11 @@ export const site = {
   description:
     "JAMB, WAEC, NECO & international exam prep, group tutorials (physical + online), and admission processing in Igbe-Laara, Ikorodu — in partnership with Greater Heights Tutorial Center.",
   url: "https://adjeduconsult.com.ng", // TODO: confirm domain once purchased
-  // TODO: replace with real lines
-  phoneDisplay: "+234 800 000 0000",
-  phoneHref: "tel:+2348000000000",
-  whatsapp: "https://wa.me/2348000000000",
-  email: "hello@adjeduconsult.com.ng",
+  // Owner-confirmed contact lines (2026-10-01)
+  phoneDisplay: "+234 706 169 9019",
+  phoneHref: "tel:+2347061699019",
+  whatsapp: "https://wa.me/2347061699019",
+  email: "adjeduquest@gmail.com",
   address: {
     line1: "Off Igbe Road, Banana Estate / Laara",
     line2: "Igbe-Laara, Ikorodu, Lagos State, Nigeria",

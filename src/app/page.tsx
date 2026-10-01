@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ConsultationForm } from "@/components/consultation-form";
 import { Icon } from "@/components/icon";
 import { site } from "@/lib/site";
 import data from "@/lib/stitch-data.json";
@@ -345,119 +346,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7 — Consultation booking */}
-      <section className="border-t border-outline-variant bg-surface py-16 lg:py-24" id="consultation">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-outline bg-surface-container-lowest p-8 shadow-md sm:p-12">
-            <div className="mb-8 space-y-2 text-center">
-              <span className="text-label-sm font-bold tracking-widest text-secondary uppercase">
-                Start Your Preparation Today
-              </span>
-              <h2 className="font-display text-headline-md text-primary md:text-headline-lg">
-                Book Your Free Diagnostic Assessment
-              </h2>
-              <p className="text-body-md text-on-surface-variant">
-                Meet our academic directors in Laara or schedule an online video consultation. Zero
-                fees, zero obligation.
-              </p>
-            </div>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <Field id="fullName" label="Full Name of Student / Parent *" placeholder="e.g. Adebayo Ibrahim" type="text" />
-                <Field id="phone" label="WhatsApp / Phone Number *" placeholder="e.g. 0801 234 5678" type="tel" />
-              </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-                <Choice
-                  id="targetExam"
-                  label="Target Examination *"
-                  items={["JAMB / UTME Clinic", "WAEC / NECO Intensive", "JUPEB Direct Entry", "IELTS / SAT Prep", "CAPS Admissions Advisory", "CBT Simulator Lab Only"]}
-                />
-                <Choice
-                  id="studentLevel"
-                  label="Current Level *"
-                  items={["Current SS3 Student", "Secondary School Graduate", "Rewriting Exam", "University Aspirant", "Inquiring Parent"]}
-                />
-                <Choice
-                  id="studyMode"
-                  label="Preferred Attendance *"
-                  items={["Physical Center (Laara, Ikorodu)", "Live Interactive Online (Zoom)", "Hybrid (Weekdays + Online)"]}
-                />
-              </div>
-              <div className="space-y-1.5">
-                <label htmlFor="notes" className="block text-label-md text-primary">
-                  Intended Course &amp; First-Choice University (Optional)
-                </label>
-                <textarea
-                  id="notes"
-                  rows={3}
-                  className="w-full rounded border border-outline-variant bg-surface px-3.5 py-2.5 text-body-md text-on-surface focus:border-primary focus:bg-surface-container-lowest focus:outline-none"
-                  placeholder="e.g. Target: Accounting at University of Lagos. Previous UTME: 218. Need help with Economics and Accounts."
-                />
-              </div>
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded bg-secondary px-8 py-4 text-label-lg font-bold text-on-secondary shadow-md transition-all hover:bg-on-secondary-container active:scale-95 sm:w-auto"
-                >
-                  <span>Confirm Diagnostic Booking</span>
-                  <Icon name="arrow_forward" className="text-lg" />
-                </button>
-                <p className="mt-2 text-center text-[12px] text-on-surface-variant sm:text-left">
-                  * Privacy Guarantee: We do not share student contact details. A consultant will
-                  reach out via WhatsApp within 4 working hours.
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
+      <ConsultationForm />
     </>
   );
 }
 
-function Field({
-  id,
-  label,
-  placeholder,
-  type,
-}: {
-  id: string;
-  label: string;
-  placeholder: string;
-  type: string;
-}) {
-  return (
-    <div className="space-y-1.5">
-      <label htmlFor={id} className="block text-label-md text-primary">
-        {label}
-      </label>
-      <input
-        id={id}
-        type={type}
-        required
-        placeholder={placeholder}
-        className="w-full rounded border border-outline-variant bg-surface px-3.5 py-2.5 text-body-md text-on-surface focus:border-primary focus:bg-surface-container-lowest focus:outline-none"
-      />
-    </div>
-  );
-}
-
-function Choice({ id, label, items }: { id: string; label: string; items: string[] }) {
-  return (
-    <div className="space-y-1.5">
-      <label htmlFor={id} className="block text-label-md text-primary">
-        {label}
-      </label>
-      <select
-        id={id}
-        className="w-full rounded border border-outline-variant bg-surface px-3.5 py-2.5 text-body-md text-on-surface focus:border-primary focus:bg-surface-container-lowest focus:outline-none"
-      >
-        {items.map((i) => (
-          <option key={i} value={i}>
-            {i}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-}

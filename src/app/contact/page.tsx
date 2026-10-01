@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ConsultationForm } from "@/components/consultation-form";
 import { StitchCta, StitchHero, StitchSections } from "@/components/stitch-page";
 
 /* Contact — rebuilt from the Stitch screen "contact-free-consultation"
@@ -16,10 +17,11 @@ export default function ContactPage() {
       <StitchHero
         slug="contact"
         eyebrow="Free First Session"
-        primary={{ label: "Book Free Consultation", href: "#consultation" }}
+        primary={{ label: "Book Free Consultation", href: "#apply" }}
         secondary={{ label: "Get Directions", href: "#sections" }}
       />
       <StitchSections slug="contact" />
+      <ConsultationForm id="apply" />
       <StitchCta
         title="100% Free First Session"
         copy="Assessment, programme recommendation and fee confirmation all happen in the free consultation. You commit to nothing until you have seen the plan."
