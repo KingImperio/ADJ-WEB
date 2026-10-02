@@ -56,33 +56,33 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(name, slug)) }} />
 
       {/* Hero */}
-      <section className="border-b border-outline-variant bg-surface py-16 lg:py-20">
+      <section className="bg-[#1a365d] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div className="space-y-6 lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-surface-container px-3 py-1">
-                <span className="size-2 rounded-full bg-secondary" />
-                <span className="text-label-sm tracking-wider text-secondary uppercase">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#98f6c5]/30 bg-white/10 px-3.5 py-1.5">
+                <span className="size-2 rounded-full bg-[#98f6c5]" />
+                <span className="text-[11px] font-bold tracking-[0.14em] text-[#98f6c5] uppercase">
                   Igbe-Laara, Ikorodu &middot; Coaching Until Matriculation
                 </span>
               </div>
-              <h1 className="text-headline-lg-mobile font-display text-primary md:text-headline-lg">
+              <h1 className="text-[40px] leading-[1.05] font-bold tracking-tight text-white md:text-6xl">
                 {page.h1}
               </h1>
-              <p className="max-w-2xl leading-relaxed text-body-md text-on-surface-variant md:text-body-lg">
+              <p className="max-w-2xl text-lg leading-relaxed text-[#adc7f7]">
                 {page.lead}
               </p>
               <div className="flex flex-col gap-4 pt-2 sm:flex-row">
                 <a
                   href="#consultation"
-                  className="inline-flex items-center justify-center gap-2 rounded bg-secondary px-6 py-3.5 text-label-lg font-bold text-on-secondary shadow-sm transition-all hover:bg-on-secondary-container active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#006c48] px-7 py-4 text-label-lg font-bold text-on-secondary shadow-sm transition-all hover:bg-on-secondary-container active:scale-95"
                 >
                   <span>Claim Your Free Diagnostic</span>
                   <Icon name="arrow_forward" className="text-lg" />
                 </a>
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded border border-outline-variant bg-surface-container-lowest px-6 py-3.5 text-label-lg font-bold text-primary transition-all hover:bg-surface-container"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-white/10"
                 >
                   <span>Talk to an Academic Director</span>
                   <Icon name="support_agent" className="text-lg" />
@@ -93,14 +93,14 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
             <div className="lg:col-span-5">
               <div className="grid grid-cols-1 gap-4">
                 {numbers.map((n, i) => (
-                  <div key={labels[i]} className="rounded-xl border border-outline-variant bg-surface-container-lowest p-5">
+                  <div key={labels[i]} className="rounded-2xl border border-[#e2e7ff] bg-white p-5 shadow-[0_14px_34px_-14px_rgba(0,32,69,0.3)]">
                     <div className="flex items-baseline gap-3">
-                      <span className="text-3xl font-bold text-primary">{n}</span>
+                      <span className="text-3xl font-bold text-[#002045]">{n}</span>
                       {i === 0 && (
-                        <span className="text-label-sm tracking-widest text-secondary uppercase">2024 Top Score</span>
+                        <span className="text-[11px] font-bold tracking-widest text-[#006c48] uppercase">2024 Top Score</span>
                       )}
                     </div>
-                    <div className="mt-1 text-label-sm tracking-widest text-outline uppercase">{labels[i]}</div>
+                    <div className="mt-1 text-[11px] font-bold tracking-widest text-[#74777f] uppercase">{labels[i]}</div>
                   </div>
                 ))}
               </div>
@@ -114,7 +114,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
         <section
           key={s.title}
           className={`py-16 lg:py-24 ${
-            si % 2 === 0 ? "bg-surface-container-lowest" : "border-t border-outline-variant bg-surface"
+            si % 2 === 0 ? "bg-[#f7f8fd]" : "bg-white"
           }`}
         >
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -159,9 +159,9 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
       ))}
 
       {/* CTA */}
-      <section className="border-t border-outline-variant bg-surface-container-low py-16 lg:py-24" id="consultation">
+      <section className="border-t border-white/10 bg-[#002045] py-20" id="consultation">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-outline bg-surface-container-lowest p-8 text-center shadow-md sm:p-12">
+          <div className="rounded-3xl border border-[#e2e7ff] bg-white p-8 text-center shadow-[0_28px_64px_-20px_rgba(0,32,69,0.3)] sm:p-12">
             <span className="text-label-sm font-bold tracking-widest text-secondary uppercase">
               Start Your Preparation Today
             </span>

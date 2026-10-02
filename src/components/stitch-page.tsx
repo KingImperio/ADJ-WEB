@@ -78,7 +78,7 @@ export async function StitchSections({
                       {cards.map((c) => (
                         <div
                           key={c.h}
-                          className="rounded-xl border border-outline-variant bg-surface-container-lowest p-6"
+                          className="rounded-3xl border border-[#e2e7ff] bg-white p-6 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)]"
                         >
                           <h3 className="font-display text-headline-sm text-primary">{c.h}</h3>
                           <p className="mt-3 leading-relaxed text-body-sm text-on-surface-variant">{c.p}</p>
@@ -105,7 +105,7 @@ export async function StitchSections({
                 if (b.t === "table") {
                   const t = b.v as Table;
                   return (
-                    <div key={bi} className="overflow-x-auto rounded-xl border border-outline-variant">
+                    <div key={bi} className="overflow-x-auto rounded-3xl border border-[#e2e7ff] shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)]">
                       <table className="w-full min-w-[720px] border-collapse text-left">
                         <thead>
                           <tr className="bg-surface-container-high">
@@ -179,10 +179,7 @@ export function StitchCta({
   label: string;
 }) {
   return (
-    <section
-      className="border-t border-outline-variant bg-surface-container-low py-16 lg:py-24"
-      id="consultation"
-    >
+    <section className="border-t border-white/10 bg-[#002045] py-20" id="consultation">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl border border-outline bg-surface-container-lowest p-8 text-center shadow-md sm:p-12">
           <span className="text-label-sm font-bold tracking-widest text-secondary uppercase">{eyebrow}</span>
@@ -216,18 +213,18 @@ export async function StitchHero({
   const page = await getPageSections(slug);
   if (!page) return null;
   return (
-    <section className="border-b border-outline-variant bg-surface py-16 lg:py-20">
+    <section className="bg-[#1a365d] py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-surface-container px-3 py-1">
-            <span className="size-2 rounded-full bg-secondary" />
-            <span className="text-label-sm tracking-wider text-secondary uppercase">{eyebrow}</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#98f6c5]/30 bg-white/10 px-3.5 py-1.5">
+            <span className="size-2 rounded-full bg-[#98f6c5]" />
+            <span className="text-[11px] font-bold tracking-[0.14em] text-[#98f6c5] uppercase">{eyebrow}</span>
           </div>
-          <h1 className="text-headline-lg-mobile font-display text-primary md:text-headline-lg">
+          <h1 className="text-[40px] leading-[1.05] font-bold tracking-tight text-white md:text-6xl">
             {page.h1}
           </h1>
           {page.lead && (
-            <p className="leading-relaxed text-body-md text-on-surface-variant md:text-body-lg">{page.lead}</p>
+            <p className="text-lg leading-relaxed text-[#adc7f7]">{page.lead}</p>
           )}
           <div className="flex flex-col gap-4 pt-2 sm:flex-row">
             <a
@@ -239,7 +236,7 @@ export async function StitchHero({
             </a>
             <a
               href={secondary.href}
-              className="inline-flex items-center justify-center gap-2 rounded border border-outline-variant bg-surface-container-lowest px-6 py-3.5 text-label-lg font-bold text-primary transition-all hover:bg-surface-container"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-white/10"
             >
               {secondary.label}
             </a>

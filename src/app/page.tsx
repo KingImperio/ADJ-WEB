@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ConsultationForm } from "@/components/consultation-form";
 import { Icon } from "@/components/icon";
+import { Reveal } from "@/components/reveal";
 import { site } from "@/lib/site";
 import {
   getCatchments,
@@ -12,23 +13,16 @@ import {
   getTracks,
 } from "@/lib/content";
 
-/* Homepage per the Stitch system (project 4716569519546531997, screen
-   "Homepage"). Section order and copy are taken from the generated reference
-   HTML in docs/stitch-reference/homepage.html. */
+/* ADJ homepage — round-and-bold modern pass.
+   One serif voice, navy/emerald moments alternating by fold, every card a
+   held, soft-shadowed surface, no hairline separators. Stitch copy intact. */
 
-/* Exam-badge tones are hardcoded in the Stitch source rather than derived from
-   the theme, so they are mapped here. */
-const tones: Record<string, string> = {
-  emerald: "bg-[#ECFDF5] border-secondary text-secondary",
-  navy: "bg-[#EFF6FF] border-primary text-primary",
+const badgeTones: Record<string, string> = {
+  emerald: "bg-[#ECFDF5] border-[#006c48] text-[#006c48]",
+  navy: "bg-[#EFF6FF] border-[#1a365d] text-[#1a365d]",
   indigo: "bg-[#EEF2FF] border-[#3730A3] text-[#3730A3]",
   amber: "bg-[#FEF3C7] border-[#B45309] text-[#B45309]",
-  neutral: "bg-surface-container border-outline-variant text-primary",
-};
-const accent: Record<string, string> = {
-  secondary: "border-l-4 border-secondary",
-  primary: "border-l-4 border-primary",
-  tertiary: "border-l-4 border-secondary-container",
+  neutral: "bg-[#eaedff] border-[#c4c6cf] text-[#1a365d]",
 };
 
 export const revalidate = 300;
@@ -44,82 +38,85 @@ export default async function Home() {
   ]);
   return (
     <>
-      {/* 1 — Hero */}
-      <section className="relative overflow-hidden border-b border-outline-variant bg-surface pt-8 pb-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* 1 — Hero: full navy fold */}
+      <section className="bg-[#1a365d]">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-            <div className="space-y-6 lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-surface-container px-3 py-1">
-                <span className="size-2 rounded-full bg-secondary" />
-                <span className="text-label-sm tracking-wider text-secondary uppercase">
-                  Igbe-Laara, Ikorodu Hub &amp; Interactive Digital Campus
+            <div className="space-y-7 lg:col-span-7">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#98f6c5]/30 bg-white/10 px-3.5 py-1.5">
+                <span className="size-2 rounded-full bg-[#98f6c5]" />
+                <span className="text-[11px] font-bold tracking-[0.14em] text-[#98f6c5] uppercase">
+                  Igbe-Laara, Ikorodu Hub
                 </span>
               </div>
-              <h1 className="text-headline-lg-mobile font-display text-primary tracking-tight md:text-display-lg">
+              <h1 className="text-[40px] leading-[1.05] font-bold tracking-tight text-white md:text-[64px]">
                 Ikorodu&rsquo;s Home for Exam Success &amp; Admission Certainty
               </h1>
-              <p className="max-w-2xl leading-relaxed text-body-md text-on-surface-variant md:text-body-lg">
+              <p className="max-w-2xl text-lg leading-relaxed text-[#adc7f7]">
                 Rigorous, distraction-free physical classrooms in Laara and live group tutorials for
                 students across Lagos. We don&rsquo;t abandon you after scores drop—we mentor
                 candidates until full university matriculation.
               </p>
-
-              <div className="flex flex-col gap-4 pt-2 sm:flex-row">
+              <div className="flex flex-col gap-3 pt-1 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded bg-secondary px-6 py-3.5 text-label-lg font-bold text-on-secondary shadow-sm transition-all hover:bg-on-secondary-container active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#006c48] px-7 py-4 text-base font-bold text-white shadow-[0_18px_40px_-12px_rgba(0,108,72,0.55)] transition-all hover:bg-[#005236] active:scale-95"
                 >
                   <span>Book Free Diagnostic Assessment</span>
                   <Icon name="arrow_forward" className="text-lg" />
                 </Link>
                 <Link
                   href="#programmes"
-                  className="inline-flex items-center justify-center gap-2 rounded border border-outline-variant bg-surface-container-lowest px-6 py-3.5 text-label-lg font-bold text-primary transition-all hover:bg-surface-container"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-4 text-base font-bold text-white transition-colors hover:bg-white/10"
                 >
-                  <span>Explore Our 6 Academic Tracks</span>
-                  <Icon name="menu_book" className="text-lg" />
+                  Explore Our 6 Academic Tracks
                 </Link>
               </div>
-
-              <div className="grid grid-cols-3 gap-4 border-t border-outline-variant/60 pt-6">
+              <div className="grid grid-cols-3 gap-4 border-t border-white/15 pt-7">
                 {metrics.map((m) => (
-                  <div key={m.label} className={`pl-3 ${accent[m.accent]}`}>
-                    <span className="block text-2xl font-bold text-primary lg:text-3xl">{m.value}</span>
-                    <span className="text-label-sm tracking-wider text-outline uppercase">{m.label}</span>
+                  <div key={m.label} className="border-l-4 border-[#98f6c5] pl-3">
+                    <span className="block text-3xl font-bold text-white tabular-nums lg:text-4xl">
+                      {m.value}
+                    </span>
+                    <span className="text-[11px] font-bold tracking-[0.12em] text-[#adc7f7] uppercase">
+                      {m.label}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="relative lg:col-span-5">
-              <div className="relative rounded-xl border border-outline-variant bg-surface-container-lowest p-4 shadow-md">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-primary-container">
+            <div className="lg:col-span-5">
+              <div className="rounded-[2rem] bg-white p-3 shadow-[0_32px_80px_-20px_rgba(0,32,69,0.55)]">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem]">
                   <Image
                     src="/hero-classroom.jpg"
-                    alt="Secondary and post-secondary students studying together in a well-lit tutorial classroom in Ikorodu, Lagos"
+                    alt="Students in a tutorial classroom in Ikorodu, Lagos"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="object-cover opacity-90 mix-blend-luminosity"
+                    className="object-cover"
                   />
-                  <div className="absolute right-3 bottom-3 left-3 flex items-center justify-between rounded border border-outline/30 bg-primary/95 p-3 backdrop-blur">
+                  <div className="absolute right-3 bottom-3 left-3 flex items-center justify-between rounded-xl bg-[#1a365d]/90 p-3 backdrop-blur">
                     <div>
-                      <div className="text-label-sm text-secondary-fixed">2025/2026 Cohort Underway</div>
-                      <div className="text-body-sm font-bold text-surface">Igbe-Laara Main Facility</div>
+                      <div className="text-[11px] font-bold tracking-wider text-[#98f6c5] uppercase">
+                        2025/2026 Cohort Underway
+                      </div>
+                      <div className="text-sm font-bold text-white">Igbe-Laara Main Facility</div>
                     </div>
-                    <span className="rounded bg-secondary px-2 py-0.5 text-[10px] font-bold text-on-secondary">
+                    <span className="rounded-full bg-[#006c48] px-2.5 py-1 text-[10px] font-bold text-white">
                       ADMISSIONS OPEN
                     </span>
                   </div>
                 </div>
-                <div className="mt-4 grid grid-cols-2 gap-3 text-left">
-                  <div className="rounded border border-outline-variant/50 bg-surface-container p-3">
-                    <span className="block text-label-sm text-on-surface-variant">Class Structure</span>
-                    <span className="text-body-sm font-bold text-primary">Strict Small Groups</span>
+                <div className="mt-3 grid grid-cols-2 gap-3">
+                  <div className="rounded-xl bg-[#f2f3ff] p-3">
+                    <span className="block text-[11px] text-[#43474e]">Class Structure</span>
+                    <span className="text-sm font-bold text-[#002045]">Strict Small Groups</span>
                   </div>
-                  <div className="rounded border border-outline-variant/50 bg-surface-container p-3">
-                    <span className="block text-label-sm text-on-surface-variant">CBT Drill Lab</span>
-                    <span className="text-body-sm font-bold text-secondary">Realistic Simulated UI</span>
+                  <div className="rounded-xl bg-[#f2f3ff] p-3">
+                    <span className="block text-[11px] text-[#43474e]">CBT Drill Lab</span>
+                    <span className="text-sm font-bold text-[#006c48]">Realistic Simulated UI</span>
                   </div>
                 </div>
               </div>
@@ -128,243 +125,273 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 2 — Partnership banner */}
-      <aside className="border-y border-outline-variant bg-surface-container-high py-4">
+      {/* Score ticker */}
+      <div className="overflow-hidden border-y border-[#c4c6cf]/40 bg-white py-3.5">
+        <div className="flex w-max animate-[marquee-x_22s_linear_infinite] gap-10 whitespace-nowrap">
+          {[...Array(2)].map((_, k) => (
+            <div key={k} className="flex items-center gap-10">
+              {[
+                "UTME: 326 · Medicine, UNILAG",
+                "WAEC: 8 Distinctions · FUTA",
+                "JUPEB: 15 Points · LASU Law",
+                "UTME: 342 · Mechanical Eng, UNILAG",
+                "100% CAPS Clearance Record",
+                "Direct 200L Entry · OAU Pharmacy",
+              ].map((t) => (
+                <span key={t} className="text-sm font-bold tracking-wide text-[#1a365d]">
+                  {t} <span className="mx-4 text-[#006c48]">◆</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 2 — Partnership */}
+      <section className="bg-[#f7f8fd] py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
           <div className="flex items-center gap-2">
-            <Icon name="verified" className="text-xl text-secondary" />
-            <span className="text-label-md font-bold tracking-wider text-primary uppercase">
-              Institutional Synergy:
+            <Icon name="verified" className="text-xl text-[#006c48]" />
+            <span className="text-sm font-bold tracking-wider text-[#002045] uppercase">
+              Institutional Synergy
             </span>
           </div>
-          <p className="text-body-sm text-on-surface-variant">
+          <p className="max-w-2xl text-sm text-[#43474e]">
             In official academic delivery partnership with{" "}
-            <span className="font-bold text-primary">{site.partner.name}</span> ({site.partner.area}).
+            <span className="font-bold text-[#002045]">{site.partner.name}</span> ({site.partner.area}).
           </p>
         </div>
-      </aside>
+      </section>
 
-      {/* 3 — Core pillars */}
-      <section className="bg-surface-container-lowest py-16 lg:py-24" id="about">
+      {/* 3 — Why ADJ */}
+      <section className="py-20" id="about">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-14 max-w-3xl space-y-3 text-center">
-            <span className="text-label-sm font-bold tracking-widest text-secondary uppercase">
-              Our Pedagogical Code
-            </span>
-            <h2 className="font-display text-headline-md text-primary md:text-headline-lg">
-              Why Ikorodu Families Trust ADJ Over Casual Tutorial Centers
-            </h2>
-            <p className="text-body-md text-on-surface-variant">
-              We combine old-school academic discipline with strategic modern admissions counseling.
-              Zero shortcuts. 100% academic accountability.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {pillars.map((p) => (
-              <div
-                key={p.title}
-                className="space-y-4 rounded-xl border border-outline-variant bg-surface p-6 transition-all hover:border-outline"
-              >
-                <div
-                  className={`flex h-12 w-12 items-center justify-center rounded ${
-                    p.tone === "secondary" ? "bg-secondary/10 text-secondary" : "bg-surface-container-highest text-primary"
-                  }`}
-                >
-                  <Icon name={p.icon} className="text-2xl" />
-                </div>
-                <h3 className="font-display text-headline-sm text-primary">{p.title}</h3>
-                <p className="leading-relaxed text-body-sm text-on-surface-variant">{p.copy}</p>
-                <div className="pt-2">
+          <Reveal>
+            <div className="mx-auto mb-14 max-w-3xl space-y-4 text-center">
+              <span className="text-[11px] font-bold tracking-[0.2em] text-[#006c48] uppercase">
+                Our Pedagogical Code
+              </span>
+              <h2 className="text-4xl font-bold tracking-tight text-[#002045] md:text-5xl">
+                Why Ikorodu Families Trust ADJ Over Casual Tutorial Centers
+              </h2>
+              <p className="text-lg text-[#43474e]">
+                Old-school academic discipline, modern admissions counseling. Zero shortcuts. 100%
+                accountability.
+              </p>
+            </div>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {pillars.map((p, i) => (
+              <Reveal key={p.title} delay={i * 70}>
+                <div className="flex h-full flex-col gap-4 rounded-3xl border border-[#e2e7ff] bg-white p-6 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)] transition-all hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(26,54,93,0.2)]">
                   <span
-                    className={`inline-flex items-center gap-1 text-label-sm font-bold ${
-                      p.tag === "Ethical Integrity" ? "text-outline" : "text-secondary"
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl text-2xl ${
+                      p.tone === "secondary" ? "bg-[#006c48]/10 text-[#006c48]" : "bg-[#e2e7ff] text-[#1a365d]"
                     }`}
                   >
-                    <span>{p.tag}</span>
-                    <Icon name={p.tagIcon} className="text-sm" />
+                    <Icon name={p.icon} />
                   </span>
+                  <h3 className="text-lg font-bold text-[#002045]">{p.title}</h3>
+                  <p className="text-sm leading-relaxed text-[#43474e]">{p.copy}</p>
+                  <p className="mt-auto text-[11px] font-bold tracking-wider text-[#006c48] uppercase">
+                    {p.tag}
+                  </p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4 — Six programme tracks */}
-      <section className="border-t border-outline-variant bg-surface py-16 lg:py-24" id="programmes">
+      {/* 4 — Tracks: varied card sizes */}
+      <section className="bg-[#f7f8fd] py-20" id="programmes">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <span className="text-label-sm font-bold tracking-widest text-secondary uppercase">
-                Academic Syllabus Tracks
-              </span>
-              <h2 className="mt-1 font-display text-headline-md text-primary md:text-headline-lg">
-                Proven Preparatory Frameworks
-              </h2>
-              <p className="mt-2 max-w-xl text-body-md text-on-surface-variant">
-                From secondary school completion to international graduate admissions, select your
-                target examination track.
-              </p>
-            </div>
-            <div>
+          <Reveal>
+            <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+              <div>
+                <span className="text-[11px] font-bold tracking-[0.2em] text-[#006c48] uppercase">
+                  Academic Syllabus Tracks
+                </span>
+                <h2 className="mt-2 text-4xl font-bold tracking-tight text-[#002045] md:text-5xl">
+                  Proven Preparatory Frameworks
+                </h2>
+              </div>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 text-label-lg font-bold text-secondary hover:text-on-secondary-container"
+                className="inline-flex items-center gap-2 font-bold text-[#006c48] hover:underline"
               >
-                <span>Download Detailed Syllabus Outline</span>
+                Download Detailed Syllabus Outline
                 <Icon name="download" className="text-lg" />
               </Link>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {tracks.map((t) => (
-              <article
-                key={t.slug}
-                className="flex flex-col justify-between rounded-xl border border-outline-variant bg-surface-container-lowest p-6 transition-all hover:border-outline hover:shadow-md"
-              >
+          {/* Featured wide card: first track */}
+          {tracks[0] && (
+            <Reveal>
+              <article className="mb-5 grid grid-cols-1 gap-6 rounded-3xl border border-[#e2e7ff] bg-white p-7 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)] md:grid-cols-2">
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span
-                      className={`inline-flex items-center rounded border px-2 py-0.5 text-[11px] font-bold tracking-wider uppercase ${tones[t.tone]}`}
+                  <span className={`inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-bold tracking-wider uppercase ${badgeTones[tracks[0].tone]}`}>
+                    {tracks[0].badge}
+                  </span>
+                  <h3 className="text-2xl font-bold tracking-tight text-[#002045]">{tracks[0].title}</h3>
+                  <p className="text-[15px] leading-relaxed text-[#43474e]">{tracks[0].desc}</p>
+                  <p className="text-xs font-bold tracking-wider text-[#1a365d] uppercase">
+                    {tracks[0].foot}
+                  </p>
+                </div>
+                <ul className="space-y-3 self-center">
+                  {tracks[0].bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2.5 text-sm text-[#131b2e]">
+                      <Icon name="check_circle" className="mt-0.5 shrink-0 text-base text-[#006c48]" />
+                      {b}
+                    </li>
+                  ))}
+                  <li className="pt-2">
+                    <Link
+                      href={`/programs/${tracks[0].slug}`}
+                      className="inline-flex items-center gap-2 rounded-full bg-[#006c48] px-6 py-3 text-sm font-bold text-white transition-all hover:bg-[#005236] active:scale-95"
                     >
+                      {tracks[0].cta}
+                      <Icon name="arrow_forward" className="text-base" />
+                    </Link>
+                  </li>
+                </ul>
+              </article>
+            </Reveal>
+          )}
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {tracks.slice(1).map((t, i) => (
+              <Reveal key={t.slug} delay={i * 60}>
+                <article className="flex h-full flex-col rounded-3xl border border-[#e2e7ff] bg-white p-6 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)] transition-all hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(26,54,93,0.2)]">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className={`inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-bold tracking-wider uppercase ${badgeTones[t.tone]}`}>
                       {t.badge}
                     </span>
-                    <span className="text-label-sm text-on-surface-variant">{t.side}</span>
+                    <span className="text-[11px] text-[#43474e]">{t.side}</span>
                   </div>
-                  <h3 className="font-display text-headline-sm text-primary">{t.title}</h3>
-                  <p className="text-body-sm text-on-surface-variant">{t.desc}</p>
-                  <ul className="space-y-2 border-t border-outline-variant/40 pt-3 text-body-sm text-on-surface">
+                  <h3 className="mt-4 text-xl font-bold tracking-tight text-[#002045]">{t.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#43474e]">{t.desc}</p>
+                  <ul className="mt-4 space-y-2 border-t border-[#e2e7ff]/60 pt-4">
                     {t.bullets.map((b) => (
-                      <li key={b} className="flex items-center gap-2">
-                        <Icon name="check" className="text-sm text-secondary" />
-                        <span>{b}</span>
+                      <li key={b} className="flex items-start gap-2 text-[13px] text-[#131b2e]">
+                        <Icon name="check" className="mt-0.5 shrink-0 text-sm text-[#006c48]" />
+                        {b}
                       </li>
                     ))}
                   </ul>
-                </div>
-                <div className="mt-6 flex items-center justify-between border-t border-outline-variant/60 pt-6">
-                  <span className="text-label-sm font-bold text-primary">{t.foot}</span>
-                  <Link
-                    href={`/programs/${t.slug}`}
-                    className={`rounded px-3 py-1.5 text-label-sm font-bold transition-colors ${
-                      t.cta === "Enroll"
-                        ? "bg-secondary text-on-secondary hover:bg-on-secondary-container"
-                        : "bg-primary text-on-primary hover:bg-primary-container"
-                    }`}
-                  >
-                    {t.cta}
-                  </Link>
-                </div>
-              </article>
+                  <div className="mt-auto flex items-center justify-between pt-5">
+                    <span className="text-[11px] font-bold text-[#1a365d] uppercase">{t.foot}</span>
+                    <Link
+                      href={`/programs/${t.slug}`}
+                      className="rounded-full bg-[#002045] px-4 py-2 text-xs font-bold text-white transition-all hover:bg-[#1a365d] active:scale-95"
+                    >
+                      {t.cta}
+                    </Link>
+                  </div>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5 — Catchment accessibility */}
-      <section className="border-t border-outline-variant bg-surface-container-low py-16" id="catchment">
+      {/* 5 — Catchment: dark fold */}
+      <section className="bg-[#002045] py-20" id="catchment">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-xl border border-outline-variant bg-surface-container-lowest p-8 shadow-sm lg:p-12">
-            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
-              <div className="space-y-4 lg:col-span-6">
-                <span className="text-label-sm font-bold tracking-widest text-secondary uppercase">
-                  Community Roots &amp; Accessibility
-                </span>
-                <h2 className="font-display text-headline-md text-primary">
-                  Easily Accessible Across Ikorodu Division
-                </h2>
-                <p className="text-body-md text-on-surface-variant">
-                  Our campus in Banana Estate / Laara sits at the nexus of major transport arteries.
-                  We welcome daily commuting students and provide synchronous virtual streaming for
-                  learners across greater Lagos.
-                </p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {catchments.map((c) => (
-                    <span
-                      key={c}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container px-3 py-1.5 text-label-sm text-primary"
-                    >
-                      <Icon name="pin_drop" className="text-base text-secondary" />
-                      <span>{c}</span>
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+            <div>
+              <span className="text-[11px] font-bold tracking-[0.2em] text-[#98f6c5] uppercase">
+                Community Roots &amp; Accessibility
+              </span>
+              <h2 className="mt-3 text-4xl font-bold tracking-tight text-white md:text-5xl">
+                Easily Accessible Across Ikorodu Division
+              </h2>
+              <p className="mt-4 max-w-lg text-base text-[#adc7f7]">
+                Our campus in Banana Estate / Laara sits at the nexus of major transport arteries. We
+                welcome daily commuting students and provide synchronous virtual streaming for
+                learners across greater Lagos.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {catchments.map((c) => (
+                  <span
+                    key={c}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold text-white"
+                  >
+                    <Icon name="pin_drop" className="text-sm text-[#98f6c5]" />
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-7">
+              <h3 className="flex items-center gap-2 text-xl font-bold text-white">
+                <Icon name="directions_bus" className="text-[#98f6c5]" />
+                Directions &amp; Landmarks
+              </h3>
+              <ul className="mt-5 space-y-4">
+                {directions.map((d) => (
+                  <li key={d.from} className="flex items-start gap-3">
+                    <Icon name="check_circle" className="mt-0.5 shrink-0 text-base text-[#98f6c5]" />
+                    <span className="text-sm leading-relaxed text-[#adc7f7]">
+                      <strong className="text-white">{d.from}</strong> {d.copy}
                     </span>
-                  ))}
-                </div>
-              </div>
-              <div className="space-y-4 rounded-lg border border-outline-variant bg-surface-container p-6 lg:col-span-6">
-                <h3 className="flex items-center gap-2 font-display text-headline-sm text-primary">
-                  <Icon name="directions_bus" className="text-secondary" />
-                  <span>Directions &amp; Landmarks</span>
-                </h3>
-                <ul className="space-y-3 text-body-sm text-on-surface-variant">
-                  {directions.map((d) => (
-                    <li key={d.from} className="flex items-start gap-2">
-                      <Icon name="check_circle" className="mt-0.5 text-base text-secondary" />
-                      <span>
-                        <strong>{d.from}</strong> {d.copy}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* 6 — Results */}
-      <section className="border-t border-outline-variant bg-surface-container-lowest py-16 lg:py-24" id="results">
+      <section className="py-20" id="results">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-14 max-w-3xl space-y-3 text-center">
-            <span className="text-label-sm font-bold tracking-widest text-secondary uppercase">
-              Documented Verifiable Scores
-            </span>
-            <h2 className="font-display text-headline-md text-primary md:text-headline-lg">
-              From Laara to Nigeria&rsquo;s Premier Universities
-            </h2>
-            <p className="text-body-md text-on-surface-variant">
-              Our candidates do not just score high; their admission letters are officially uploaded
-              and verified on JAMB CAPS.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {results.map((r) => (
-              <div
-                key={r.name}
-                className="flex flex-col justify-between space-y-4 rounded-xl border border-outline-variant bg-surface p-6"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span
-                      className={`inline-flex items-center rounded border px-2 py-0.5 text-[11px] font-bold tracking-wider uppercase ${tones[r.tone]}`}
-                    >
+          <Reveal>
+            <div className="mx-auto mb-14 max-w-3xl space-y-4 text-center">
+              <span className="text-[11px] font-bold tracking-[0.2em] text-[#006c48] uppercase">
+                Documented Verifiable Scores
+              </span>
+              <h2 className="text-4xl font-bold tracking-tight text-[#002045] md:text-5xl">
+                From Laara to Nigeria&rsquo;s Premier Universities
+              </h2>
+              <p className="text-lg text-[#43474e]">
+                Our candidates do not just score high; their admission letters are officially
+                uploaded and verified on JAMB CAPS.
+              </p>
+            </div>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {results.map((r, i) => (
+              <Reveal key={r.name} delay={i * 80}>
+                <figure className="flex h-full flex-col justify-between gap-4 rounded-3xl border border-[#e2e7ff] bg-white p-6 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)]">
+                  <div>
+                    <span className={`inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-bold tracking-wider uppercase ${badgeTones[r.tone] ?? badgeTones.emerald}`}>
                       {r.badge}
                     </span>
-                    <span className="text-label-sm text-outline">{r.tag}</span>
+                    <blockquote className="mt-4 text-[15px] leading-relaxed text-[#43474e] italic">
+                      &ldquo;{r.quote}&rdquo;
+                    </blockquote>
                   </div>
-                  <p className="text-body-sm text-on-surface-variant italic">&ldquo;{r.quote}&rdquo;</p>
-                </div>
-                <div className="flex items-center gap-3 border-t border-outline-variant pt-4">
-                  <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-full font-bold text-surface ${
-                      r.tone === "emerald" ? "bg-secondary" : r.tone === "indigo" ? "bg-primary-container" : "bg-primary"
-                    }`}
-                  >
-                    {r.initials}
-                  </div>
-                  <div>
-                    <div className="text-label-lg font-bold text-primary">{r.name}</div>
-                    <div className="text-label-sm text-on-surface-variant">{r.detail}</div>
-                  </div>
-                </div>
-              </div>
+                  <figcaption className="flex items-center gap-3 border-t border-[#e2e7ff]/60 pt-4">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1a365d] text-xs font-bold text-white">
+                      {r.initials}
+                    </span>
+                    <span>
+                      <span className="block font-bold text-[#002045]">{r.name}</span>
+                      <span className="block text-xs text-[#43474e]">{r.detail}</span>
+                    </span>
+                  </figcaption>
+                </figure>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
+      {/* 7 — Booking */}
       <ConsultationForm />
     </>
   );
 }
-

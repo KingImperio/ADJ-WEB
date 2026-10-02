@@ -49,7 +49,7 @@ export default async function ResultsPage() {
 
       {/* Wall of Fame — profile cards, not bare names */}
       {wall.length > 0 && (
-        <section className="bg-surface-container-lowest py-16 lg:py-24">
+        <section className="bg-[#f7f8fd] py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-8 flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
               <div>
@@ -68,7 +68,7 @@ export default async function ResultsPage() {
               {wall.map((w, i) => (
                 <article
                   key={w.name}
-                  className="flex flex-col gap-4 rounded-xl border border-outline-variant bg-surface p-6"
+                  className="flex flex-col gap-4 rounded-3xl border border-[#e2e7ff] bg-white p-6 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)]"
                 >
                   <div className="flex items-center gap-4">
                     <Image
@@ -111,7 +111,7 @@ export default async function ResultsPage() {
 
       {/* Parent testimonials */}
       {testis.length > 0 && (
-        <section className="border-t border-outline-variant bg-surface py-16 lg:py-24" id="parents">
+        <section className="bg-white py-20" id="parents">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <h2 className="font-display text-headline-md text-primary md:text-headline-lg">
               What Ikorodu Parents and Candidates Say
@@ -124,7 +124,7 @@ export default async function ResultsPage() {
               {testis.map((t) => (
                 <figure
                   key={t.name}
-                  className="flex flex-col justify-between gap-4 rounded-xl border border-outline-variant bg-surface-container-lowest p-6"
+                  className="flex flex-col justify-between gap-4 rounded-3xl border border-[#e2e7ff] bg-white p-6 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)]"
                 >
                   <div>
                     <div className="flex gap-0.5 text-secondary" aria-label="5 out of 5 stars">

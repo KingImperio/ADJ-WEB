@@ -62,9 +62,9 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
   };
 
   return (
-    <section className="border-t border-outline-variant bg-surface py-16 lg:py-24" id={id}>
+    <section className="border-t border-white/10 bg-[#002045] py-20" id={id}>
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-outline bg-surface-container-lowest p-8 shadow-md sm:p-12">
+        <div className="rounded-3xl border border-white/10 bg-white p-8 shadow-[0_28px_64px_-20px_rgba(0,32,69,0.3)] sm:p-12">
           <div className="mb-8 space-y-2 text-center">
             <span className="text-label-sm font-bold tracking-widest text-secondary uppercase">
               Start Your Preparation Today
