@@ -10,9 +10,6 @@ import { getProgramPage } from "@/lib/content";
    jupeb-direct-entry, international-exams, admissions-processing-caps).
    Body content lives in stitch-programs.json; only the shell is hand-built. */
 
-type Block = { t: "p" | "h3" | "h4" | "list"; v: string | string[] };
-type Section = { title: string; blocks: Block[] };
-type Page = { h1: string; lead: string; sections: Section[] };
 
 const list = ["jamb", "waec", "neco", "jupeb", "international", "admissions", "cbt"];
 

@@ -3,8 +3,6 @@ import { getPageSections } from "@/lib/content";
 
 type Table = { head: string[]; rows: string[][] };
 type Block = { t: "p" | "h3" | "h4" | "list" | "table"; v: string | string[] | Table };
-type Section = { title: string; blocks: Block[] };
-type Page = { h1: string; lead: string; sections: Section[] };
 
 
 /* A run of heading+paragraph pairs is a card grid in the reference screens

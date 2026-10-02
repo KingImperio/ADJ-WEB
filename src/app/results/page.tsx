@@ -23,16 +23,6 @@ const tones: Record<string, string> = {
   neutral: "bg-surface-container border-outline-variant text-primary",
 };
 
-type Entry = {
-  name: string;
-  badge: string;
-  tone: string;
-  area: string;
-  perf: string;
-  place: string;
-  reg: string;
-};
-type Testi = { quote: string; initials: string; name: string; detail: string; area: string };
 
 export const revalidate = 300;
 
