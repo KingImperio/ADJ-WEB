@@ -4,8 +4,9 @@ import { useState } from "react";
 import { Icon } from "@/components/icon";
 import { site } from "@/lib/site";
 
-/* Consultation booking form. No backend — submit opens WhatsApp with a
-   pre-structured booking message addressed to the ADJ line. */
+/* Consultation booking form — polished two-pane card: benefit panel in deep
+   navy on the left, form on white on the right. Submit opens WhatsApp with a
+   pre-structured booking message. */
 const exams = [
   "JAMB / UTME Clinic",
   "WAEC / NECO Intensive",
@@ -28,7 +29,7 @@ const modes = [
 ];
 
 const input =
-  "w-full rounded border border-outline-variant bg-surface px-3.5 py-2.5 text-body-md text-on-surface focus:border-primary focus:bg-surface-container-lowest focus:outline-none";
+  "w-full rounded-xl border border-[#e2e7ff] bg-[#faf8ff] px-4 py-3 text-sm text-[#131b2e] placeholder:text-[#74777f]/70 transition-all focus:border-[#1a365d] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1a365d]/10";
 
 export function ConsultationForm({ id = "consultation" }: { id?: string }) {
   const [name, setName] = useState("");
@@ -54,7 +55,7 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
       `Target exam: ${exam}`,
       `Current level: ${level}`,
       `Attendance: ${mode}`,
-      `Course / school: ${notes.trim() || "-"}`,
+      `Course / school: ${notes.trim() || "–"}`,
       "",
       "Please confirm my free diagnostic slot. Thank you!",
     ].join("\n");
@@ -62,27 +63,53 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
   };
 
   return (
-    <section className="border-t border-white/10 bg-[#002045] py-20" id={id}>
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-white/10 bg-white p-8 shadow-[0_28px_64px_-20px_rgba(0,32,69,0.3)] sm:p-12">
-          <div className="mb-8 space-y-2 text-center">
-            <span className="text-label-sm font-bold tracking-widest text-secondary uppercase">
-              Start Your Preparation Today
+    <section className="bg-[#002045] py-20" id={id}>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-[2.5rem] bg-white shadow-[0_32px_80px_-24px_rgba(0,32,69,0.55)] lg:grid-cols-5">
+          {/* Benefit panel */}
+          <div className="bg-[#1a365d] p-8 lg:col-span-2 lg:p-10">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold tracking-[0.14em] text-[#98f6c5] uppercase">
+              <Icon name="verified" className="text-[14px]" />
+              Free First Session
             </span>
-            <h2 className="font-display text-headline-md text-primary md:text-headline-lg">
+            <h2 className="mt-5 text-3xl leading-tight font-bold tracking-tight text-white">
               Book Your Free Diagnostic Assessment
             </h2>
-            <p className="text-body-md text-on-surface-variant">
-              Meet our academic directors in Laara or schedule an online video consultation. Zero
-              fees, zero obligation.
+            <p className="mt-3 text-[15px] leading-relaxed text-[#adc7f7]">
+              A short, no-pressure profiling session so the right cohort is recommended from
+              evidence, not guesswork.
+            </p>
+            <ul className="mt-7 space-y-4">
+              {[
+                { icon: "quiz", text: "Quick assessment of your current standing" },
+                { icon: "route", text: "A recommended programme + cohort" },
+                { icon: "payments", text: "Fees confirmed before any commitment" },
+              ].map((b) => (
+                <li key={b.text} className="flex items-start gap-3.5">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#006c48] text-white">
+                    <Icon name={b.icon} className="text-lg" />
+                  </span>
+                  <span className="text-sm text-white/90">{b.text}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-xs text-[#adc7f7]">
+              Limit: 22 students per physical room. Submitting opens WhatsApp with your booking
+              ready to send — nothing is stored by the site.
             </p>
           </div>
-          <form className="space-y-6" onSubmit={send}>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div className="space-y-1.5">
-                <label htmlFor={`${id}-name`} className="block text-label-md text-primary">
-                  Full Name of Student / Parent *
-                </label>
+
+          {/* Form */}
+          <form onSubmit={send} className="space-y-6 p-8 lg:col-span-3 lg:p-10">
+            <div className="flex items-center gap-2">
+              <span className="size-2 rounded-full bg-[#006c48]" />
+              <span className="text-[11px] font-bold tracking-[0.14em] text-[#006c48] uppercase">
+                Start Your Preparation
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <Field label="Full Name of Student / Parent" id={`${id}-name`}>
                 <input
                   id={`${id}-name`}
                   type="text"
@@ -91,11 +118,8 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
                   placeholder="e.g. Adebayo Ibrahim"
                   className={input}
                 />
-              </div>
-              <div className="space-y-1.5">
-                <label htmlFor={`${id}-phone`} className="block text-label-md text-primary">
-                  WhatsApp / Phone Number *
-                </label>
+              </Field>
+              <Field label="WhatsApp / Phone Number" id={`${id}-phone`}>
                 <input
                   id={`${id}-phone`}
                   type="tel"
@@ -104,80 +128,110 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
                   placeholder="e.g. 0801 234 5678"
                   className={input}
                 />
-              </div>
+              </Field>
             </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-              <div className="space-y-1.5">
-                <label htmlFor={`${id}-exam`} className="block text-label-md text-primary">
-                  Target Examination *
-                </label>
-                <select id={`${id}-exam`} value={exam} onChange={(e) => setExam(e.target.value)} className={input}>
-                  {exams.map((o) => (
-                    <option key={o} value={o}>
-                      {o}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="space-y-1.5">
-                <label htmlFor={`${id}-level`} className="block text-label-md text-primary">
-                  Current Level *
-                </label>
-                <select id={`${id}-level`} value={level} onChange={(e) => setLevel(e.target.value)} className={input}>
-                  {levels.map((o) => (
-                    <option key={o} value={o}>
-                      {o}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="space-y-1.5">
-                <label htmlFor={`${id}-mode`} className="block text-label-md text-primary">
-                  Preferred Attendance *
-                </label>
-                <select id={`${id}-mode`} value={mode} onChange={(e) => setMode(e.target.value)} className={input}>
-                  {modes.map((o) => (
-                    <option key={o} value={o}>
-                      {o}
-                    </option>
-                  ))}
-                </select>
-              </div>
+
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+              <Field label="Target Exam" id={`${id}-exam`}>
+                <Select
+                  id={`${id}-exam`}
+                  value={exam}
+                  onChange={setExam}
+                  options={exams}
+                />
+              </Field>
+              <Field label="Current Level" id={`${id}-level`}>
+                <Select id={`${id}-level`} value={level} onChange={setLevel} options={levels} />
+              </Field>
+              <Field label="Attendance" id={`${id}-mode`}>
+                <Select id={`${id}-mode`} value={mode} onChange={setMode} options={modes} />
+              </Field>
             </div>
-            <div className="space-y-1.5">
-              <label htmlFor={`${id}-notes`} className="block text-label-md text-primary">
-                Intended Course &amp; First-Choice University (Optional)
-              </label>
+
+            <Field label="Intended Course &amp; First-Choice University (optional)" id={`${id}-notes`}>
               <textarea
                 id={`${id}-notes`}
                 rows={3}
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className={input}
-                placeholder="e.g. Target: Accounting at University of Lagos. Previous UTME: 218. Need help with Economics and Accounts."
+                placeholder="e.g. Target: Accounting at UNILAG. Previous UTME: 218."
+                className={`${input} resize-none`}
               />
-            </div>
-            <div className="pt-2">
+            </Field>
+
+            <div className="pt-1">
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded bg-secondary px-8 py-4 text-label-lg font-bold text-on-secondary shadow-md transition-all hover:bg-on-secondary-container active:scale-95 sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#006c48] px-8 py-4 text-base font-bold text-white shadow-[0_16px_36px_-10px_rgba(0,108,72,0.55)] transition-all hover:bg-[#005236] active:scale-[0.99]"
               >
                 <span>Confirm Diagnostic Booking</span>
                 <Icon name="arrow_forward" className="text-lg" />
               </button>
               {warn && (
-                <p className="mt-2 text-body-sm font-semibold text-error">
+                <p className="mt-3 text-sm font-semibold text-[#ba1a1a]">
                   Please add your name and phone number so the counsellor can reach you.
                 </p>
               )}
-              <p className="mt-2 text-center text-[12px] text-on-surface-variant sm:text-left">
-                * Submitting opens WhatsApp with your booking ready to send to {site.phoneDisplay}.
-                We do not share student contact details.
+              <p className="mt-4 text-center text-[11px] text-[#74777f] sm:text-left">
+                Privacy guarantee: we do not share student contact details, and nothing is stored by
+                this site.
               </p>
             </div>
           </form>
         </div>
       </div>
     </section>
+  );
+}
+
+function Field({
+  label,
+  id,
+  children,
+}: {
+  label: string;
+  id: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="mb-1.5 block text-[11px] font-bold tracking-[0.1em] text-[#002045] uppercase">
+        {label}
+      </label>
+      {children}
+    </div>
+  );
+}
+
+function Select({
+  id,
+  value,
+  onChange,
+  options,
+}: {
+  id: string;
+  value: string;
+  onChange: (v: string) => void;
+  options: string[];
+}) {
+  return (
+    <div className="relative">
+      <select
+        id={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={`${input} appearance-none pr-10`}
+      >
+        {options.map((o) => (
+          <option key={o} value={o}>
+            {o}
+          </option>
+        ))}
+      </select>
+      <Icon
+        name="expand_more"
+        className="pointer-events-none absolute top-1/2 right-3.5 -translate-y-1/2 text-lg text-[#74777f]"
+      />
+    </div>
   );
 }

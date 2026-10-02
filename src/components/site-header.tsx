@@ -3,9 +3,9 @@ import Image from "next/image";
 import { Icon } from "@/components/icon";
 import { getContact } from "@/lib/content";
 
-/* Two-tier header per the Stitch system: a dark navy utility strip carrying
-   hours/address/phone, then a sticky white nav with the brand crest, section
-   links and the two conversion CTAs. */
+/* Floating stacked header: a dark utility pill carrying hours/address/phone,
+   then a floating frosted-white nav island with logo, links, and the two
+   conversion actions. The whole stack floats with rounded-full geometry. */
 const links = [
   { label: "Programmes", href: "/programs" },
   { label: "Results", href: "/results" },
@@ -16,84 +16,77 @@ const links = [
 export async function SiteHeader() {
   const site = await getContact();
   return (
-    <>
-      <div className="w-full border-b border-outline-variant/30 bg-primary px-4 py-2.5 text-label-md text-surface">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 md:flex-row">
-          <div className="flex min-w-0 flex-wrap items-center gap-x-2 text-center md:flex-nowrap md:text-left">
-            <span className="inline-flex shrink-0 items-center gap-1 text-secondary-fixed">
-              <Icon name="schedule" className="text-[16px]" />
-              <span>{site.hours}</span>
-            </span>
-            <span className="hidden text-outline-variant sm:inline">|</span>
-            <span className="inline-flex min-w-0 items-center gap-1 text-surface-variant">
-              <Icon name="location_on" className="shrink-0 text-[16px] text-secondary-fixed" />
-              <span>
-                {site.address.line1} / Laara, Ikorodu (Walking distance from Laara Bus Stop &amp;
-                Central Mosque)
-              </span>
-            </span>
-          </div>
-          <div className="flex shrink-0 items-center gap-4">
-            <span className="hidden items-center gap-1.5 font-semibold text-secondary-fixed sm:inline-flex">
-              <Icon name="call" className="animate-pulse text-[16px]" />
-              <span>WhatsApp &amp; Calls: Active</span>
-            </span>
-            <a href={site.phoneHref} className="text-xs font-bold text-surface hover:underline">
-              {site.phoneDisplay}
-            </a>
-          </div>
-        </div>
+    <header className="sticky top-3 z-50 mx-auto w-full max-w-6xl px-3 sm:px-4">
+      {/* Utility pill */}
+      <div className="flex items-center justify-between gap-4 overflow-x-auto rounded-full bg-[#002045] px-5 py-2.5 text-[11px] text-[#adc7f7] shadow-lg">
+        <span className="inline-flex shrink-0 items-center gap-1.5 font-semibold text-[#98f6c5]">
+          <Icon name="schedule" className="text-[15px]" />
+          {site.hours}
+        </span>
+        <span className="hidden min-w-0 items-center gap-1.5 truncate md:inline-flex">
+          <Icon name="location_on" className="text-[15px] text-[#98f6c5]" />
+          {site.address.line1} / Laara, Ikorodu
+        </span>
+        <span className="inline-flex shrink-0 items-center gap-4">
+          <span className="hidden font-semibold text-[#98f6c5] sm:inline-flex">
+            WhatsApp &amp; Calls: Active
+          </span>
+          <a href={site.phoneHref} className="font-bold text-white">
+            {site.phoneDisplay}
+          </a>
+        </span>
       </div>
 
-      <nav className="sticky top-0 z-50 w-full border-b border-outline-variant bg-surface shadow-sm">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center gap-3">
+      {/* Floating nav island */}
+      <nav className="mt-2 rounded-full border border-[#e2e7ff] bg-white/85 shadow-[0_18px_44px_-18px_rgba(0,32,69,0.35)] backdrop-blur-md">
+        <div className="flex h-16 items-center justify-between px-4 sm:px-5">
+          <Link href="/" className="flex items-center gap-2.5">
             <Image
               src="/adj-logo.png"
               alt={`${site.name} logo`}
               width={676}
               height={369}
-              className="h-11 w-11 rounded-lg border border-secondary/40 object-cover shadow-sm"
+              className="h-10 w-10 rounded-xl border border-[#e2e7ff] object-cover"
             />
             <span className="flex flex-col">
-              <span className="font-display text-headline-sm leading-none font-bold tracking-tight text-primary">
+              <span className="font-display text-[15px] leading-tight font-bold tracking-tight text-[#002045]">
                 {site.name}
               </span>
-              <span className="mt-0.5 text-label-sm tracking-widest text-secondary uppercase">
-                Ikorodu Center of Academic Excellence
+              <span className="text-[9px] font-bold tracking-[0.2em] text-[#006c48] uppercase">
+                Center of Academic Excellence
               </span>
             </span>
           </Link>
 
-          <div className="hidden items-center gap-8 lg:flex">
+          <div className="hidden items-center gap-7 lg:flex">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="font-medium text-label-lg text-on-surface-variant transition-colors hover:text-primary"
+                className="text-[13px] font-semibold text-[#43474e] transition-colors hover:text-[#002045]"
               >
                 {l.label}
               </Link>
             ))}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <a
               href={site.whatsapp}
-              className="hidden items-center gap-1.5 rounded bg-surface-container-high px-3 py-2 text-label-md text-primary transition-colors hover:bg-surface-container-highest sm:inline-flex"
+              className="hidden items-center gap-1.5 rounded-full border border-[#e2e7ff] px-3.5 py-2 text-xs font-bold text-[#002045] transition-colors hover:bg-[#f2f3ff] sm:inline-flex"
             >
-              <Icon name="chat" className="text-[18px]" />
-              <span>Call / WhatsApp</span>
+              <Icon name="chat" className="text-[16px]" />
+              <span className="hidden sm:inline">Call / WhatsApp</span>
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded bg-primary px-4 py-2.5 text-label-md font-semibold text-on-primary shadow-sm transition-all hover:bg-primary-container active:scale-95"
+              className="inline-flex items-center justify-center rounded-full bg-[#006c48] px-4 py-2.5 text-xs font-bold text-white shadow-[0_12px_28px_-10px_rgba(0,108,72,0.6)] transition-all hover:bg-[#005236] active:scale-95"
             >
               Book Free Consultation
             </Link>
           </div>
         </div>
       </nav>
-    </>
+    </header>
   );
 }
