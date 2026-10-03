@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { BottomBar } from "@/components/bottom-bar";
 import { site } from "@/lib/site";
 
 /* Fonts per the Stitch design system: Source Serif 4 for every heading,
@@ -70,8 +71,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <SiteHeader />
-        <main>{children}</main>
+        <main className="pb-24 md:pb-0">{children}</main>
         <SiteFooter />
+        <BottomBar />
       </body>
     </html>
   );
