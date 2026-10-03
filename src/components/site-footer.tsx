@@ -19,8 +19,9 @@ const programmeLinks = [
 export async function SiteFooter() {
   const site = await getContact();
   return (
-    <footer className="w-full border-t border-outline-variant bg-primary text-on-primary">
-      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <footer className="px-3 pb-4 sm:px-4">
+    <div className="rounded-[2rem] bg-[#1a365d] text-white shadow-[0_24px_64px_-24px_rgba(0,32,69,0.45)]">
+      <div className="mx-auto w-full max-w-7xl px-6 py-12 sm:px-10 lg:py-16">
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="space-y-4 lg:col-span-2">
             <div className="flex items-center gap-3">
@@ -128,6 +129,7 @@ export async function SiteFooter() {
           </div>
         </div>
       </div>
+        </div>
     </footer>
   );
 }

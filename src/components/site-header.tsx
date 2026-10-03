@@ -17,26 +17,6 @@ export async function SiteHeader() {
   const site = await getContact();
   return (
     <header className="sticky top-3 z-50 mx-auto w-full max-w-6xl px-3 sm:px-4">
-      {/* Utility pill */}
-      <div className="flex items-center justify-between gap-4 overflow-x-auto rounded-full bg-[#002045] px-5 py-2.5 text-[11px] text-[#adc7f7] shadow-lg">
-        <span className="inline-flex shrink-0 items-center gap-1.5 font-semibold text-[#98f6c5]">
-          <Icon name="schedule" className="text-[15px]" />
-          {site.hours}
-        </span>
-        <span className="hidden min-w-0 items-center gap-1.5 truncate md:inline-flex">
-          <Icon name="location_on" className="text-[15px] text-[#98f6c5]" />
-          {site.address.line1} / Laara, Ikorodu
-        </span>
-        <span className="inline-flex shrink-0 items-center gap-4">
-          <span className="hidden font-semibold text-[#98f6c5] sm:inline-flex">
-            WhatsApp &amp; Calls: Active
-          </span>
-          <a href={site.phoneHref} className="font-bold text-white">
-            {site.phoneDisplay}
-          </a>
-        </span>
-      </div>
-
       {/* Floating nav island */}
       <nav className="mt-2 rounded-full border border-[#e2e7ff] bg-white/85 shadow-[0_18px_44px_-18px_rgba(0,32,69,0.35)] backdrop-blur-md">
         <div className="flex h-16 items-center justify-between px-4 sm:px-5">

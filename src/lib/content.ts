@@ -37,6 +37,25 @@ async function one<T>(t: string, col: string, val: string): Promise<T | null> {
 }
 
 /* Revalidate window for content reads (seconds). */
+/* Store a new booking request. Fire-and-forget from the client; never rejects
+   the WhatsApp handoff. Public insert-only RLS on the table. */
+export async function insertSubmission(row: {
+  name: string;
+  phone: string;
+  exam: string;
+  level: string;
+  mode: string;
+  notes: string;
+  source: string;
+}) {
+  if (!live) return;
+  try {
+    await live.from("consultation_submissions").insert(row);
+  } catch {
+    /* swallow — booking must always continue to WhatsApp */
+  }
+}
+
 export const CONTENT_REVALIDATE = 300;
 
 interface Track {

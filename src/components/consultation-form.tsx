@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Icon } from "@/components/icon";
 import { site } from "@/lib/site";
+import { insertSubmission } from "@/lib/content";
 
 /* Consultation booking form — polished two-pane card: benefit panel in deep
    navy on the left, form on white on the right. Submit opens WhatsApp with a
@@ -47,7 +48,7 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
       return;
     }
     setWarn(false);
-    const msg = [
+    const webMessage = [
       "*New Diagnostic Booking — ADJ Website*",
       "",
       `Name: ${name.trim()}`,
@@ -59,7 +60,18 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
       "",
       "Please confirm my free diagnostic slot. Thank you!",
     ].join("\n");
-    window.open(`${site.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+
+    // Persist to the backend + open WhatsApp handoff in parallel.
+    void insertSubmission({
+      name: name.trim(),
+      phone: phone.trim(),
+      exam,
+      level,
+      mode,
+      notes: notes.trim(),
+      source: window.location.pathname,
+    });
+    window.open(`${site.whatsapp}?text=${encodeURIComponent(webMessage)}`, "_blank", "noopener");
   };
 
   return (
