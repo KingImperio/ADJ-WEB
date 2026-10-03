@@ -19,9 +19,27 @@ const programmeLinks = [
 export async function SiteFooter() {
   const site = await getContact();
   return (
-    <footer className="px-3 pb-4 sm:px-4">
-    <div className="rounded-[2rem] bg-[#1a365d] text-white shadow-[0_24px_64px_-24px_rgba(0,32,69,0.45)]">
-      <div className="mx-auto w-full max-w-7xl px-6 py-12 sm:px-10 lg:py-16">
+    <footer className="w-full bg-[#1a365d] text-white">
+      <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        {/* Top invitation strip */}
+        <div className="mb-12 flex flex-col items-start justify-between gap-5 rounded-3xl border border-white/10 bg-white/5 p-8 md:flex-row md:items-center">
+          <div>
+            <span className="text-[11px] font-bold tracking-[0.2em] text-[#98f6c5] uppercase">
+              Ready to get exam-ready?
+            </span>
+            <h3 className="mt-2 max-w-xl text-2xl leading-tight font-bold tracking-tight text-white md:text-3xl">
+              Book a free diagnostic and walk into the right cohort.
+            </h3>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#006c48] px-7 py-4 text-base font-bold text-white shadow-[0_18px_40px_-12px_rgba(0,108,72,0.5)] transition-all hover:bg-[#005236] active:scale-95"
+          >
+            Book Free Diagnostic
+            <Icon name="arrow_forward" className="text-lg" />
+          </Link>
+        </div>
+
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="space-y-4 lg:col-span-2">
             <div className="flex items-center gap-3">
@@ -129,7 +147,6 @@ export async function SiteFooter() {
           </div>
         </div>
       </div>
-        </div>
     </footer>
   );
 }
