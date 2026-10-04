@@ -39,15 +39,20 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
   const [level, setLevel] = useState(levels[0]);
   const [mode, setMode] = useState(modes[0]);
   const [notes, setNotes] = useState("");
-  const [warn, setWarn] = useState(false);
+  const [consent, setConsent] = useState(false);
+  const [warn, setWarn] = useState("");
 
   const send = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) {
-      setWarn(true);
+      setWarn("Please add your name and phone number so the counsellor can reach you.");
       return;
     }
-    setWarn(false);
+    if (!consent) {
+      setWarn("Please agree to secure storage of your details for consultation follow-up.");
+      return;
+    }
+    setWarn("");
     const webMessage = [
       "*New Diagnostic Booking — ADJ Website*",
       "",
@@ -107,7 +112,7 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
             </ul>
             <p className="mt-8 text-xs text-[#adc7f7]">
               Limit: 22 students per physical room. Submitting opens WhatsApp with your booking
-              ready to send — nothing is stored by the site.
+              ready to send, and saves your request securely so our counsellor can follow up.
             </p>
           </div>
 
@@ -172,6 +177,18 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
             </Field>
 
             <div className="pt-1">
+              <label className="mb-4 flex items-start gap-2.5 text-xs leading-relaxed text-[#43474e]">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="mt-0.5 h-4 w-4 shrink-0 accent-[#006c48]"
+                />
+                <span>
+                  I agree that ADJ may securely store these details to follow up about my
+                  consultation request.
+                </span>
+              </label>
               <button
                 type="submit"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#006c48] px-8 py-4 text-base font-bold text-white shadow-[0_16px_36px_-10px_rgba(0,108,72,0.55)] transition-all hover:bg-[#005236] active:scale-[0.99]"
@@ -179,14 +196,10 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
                 <span>Confirm Diagnostic Booking</span>
                 <Icon name="arrow_forward" className="text-lg" />
               </button>
-              {warn && (
-                <p className="mt-3 text-sm font-semibold text-[#ba1a1a]">
-                  Please add your name and phone number so the counsellor can reach you.
-                </p>
-              )}
+              {warn && <p className="mt-3 text-sm font-semibold text-[#ba1a1a]">{warn}</p>}
               <p className="mt-4 text-center text-[11px] text-[#74777f] sm:text-left">
-                Privacy guarantee: we do not share student contact details, and nothing is stored by
-                this site.
+                We only use your details to respond to this request. WhatsApp opens with the
+                booking summary when you confirm.
               </p>
             </div>
           </form>
