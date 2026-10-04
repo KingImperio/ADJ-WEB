@@ -45,8 +45,9 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
   const page = await getProgramPage(slug);
   if (!page) notFound();
   const name = programs.find((p) => p.slug === slug)?.name ?? page.h1;
-  const numbers = page.stats.numbers.length === 3 ? page.stats.numbers : ["—", "—", "—"];
-  const labels = page.stats.labels.length === 3 ? page.stats.labels : ["", "", ""];
+  const stats = page.stats ?? { numbers: [], labels: [] };
+  const numbers = stats.numbers.length === 3 ? stats.numbers : ["—", "—", "—"];
+  const labels = stats.labels.length === 3 ? stats.labels : ["", "", ""];
 
   return (
     <>
