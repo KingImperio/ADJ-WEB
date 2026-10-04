@@ -6,7 +6,8 @@ export const site = {
   tagline: "Ikorodu's home for exam success",
   description:
     "JAMB, WAEC, NECO & international exam prep, group tutorials (physical + online), and admission processing in Igbe-Laara, Ikorodu — in partnership with Greater Heights Tutorial Center.",
-  url: "https://adjeduconsult.com.ng", // TODO: confirm domain once purchased
+  // Use the verified production host until adjeduconsult.com.ng is attached to Vercel.
+  url: "https://adjeduconsult.vercel.app",
   // Owner-confirmed contact lines (2026-10-01)
   phoneDisplay: "+234 706 169 9019",
   phoneHref: "tel:+2347061699019",
