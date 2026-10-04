@@ -22,6 +22,7 @@ export function ScrollNav({
   name: string;
 }) {
   const [float, setFloat] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   useEffect(() => {
     const on = () => setFloat(window.scrollY > 24);
     on();
@@ -99,8 +100,34 @@ export function ScrollNav({
             >
               Book Free Consultation
             </Link>
+            <button
+              type="button"
+              aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
+              onClick={() => setMobileOpen((open) => !open)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#e2e7ff] text-[#002045] transition-colors hover:bg-[#f2f3ff] lg:hidden"
+            >
+              <Icon name={mobileOpen ? "close" : "menu"} className="text-xl" />
+            </button>
           </div>
         </div>
+        {mobileOpen && (
+          <div id="mobile-navigation" className="border-t border-[#e2e7ff] px-4 pb-4 lg:hidden">
+            <div className="grid gap-1 pt-3">
+              {links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-xl px-3 py-3 text-sm font-semibold text-[#002045] transition-colors hover:bg-[#f2f3ff]"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );
