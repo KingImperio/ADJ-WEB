@@ -54,7 +54,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(name, slug)) }} />
 
       {/* Hero */}
-      <section className="bg-[#1a365d] py-20">
+      <section className="bg-[#1a365d] py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div className="space-y-6 lg:col-span-7">
@@ -64,10 +64,10 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                   Igbe-Laara, Ikorodu &middot; Coaching Until Matriculation
                 </span>
               </div>
-              <h1 className="text-[40px] leading-[1.05] font-bold tracking-tight text-white md:text-6xl">
+              <h1 className="text-[32px] leading-[1.08] font-bold tracking-tight text-white sm:text-[40px] md:text-6xl">
                 {page.h1}
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-[#adc7f7]">
+              <p className="max-w-2xl text-[15px] leading-relaxed text-[#adc7f7] sm:text-lg">
                 {page.lead}
               </p>
               <div className="flex flex-col gap-4 pt-2 sm:flex-row">

@@ -76,16 +76,16 @@ export async function StitchSections({
       {page.sections.map((s, si) => (
         <section
           key={s.title}
-          className={`py-16 lg:py-24 ${
+          className={`py-12 sm:py-16 lg:py-24 ${
             `${palette[si % palette.length]} ${si > 0 ? "border-t border-[#dce2f2]" : ""}`
           }`}
         >
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-7 flex items-end justify-between gap-6">
-              <h2 className={`font-display text-headline-md md:text-headline-lg ${slug === "results" && si % 2 === 0 ? "text-white" : "text-[#0B237F]"}`}>{s.title}</h2>
+            <div className="mb-6 flex items-end justify-between gap-4 sm:mb-7 sm:gap-6">
+              <h2 className={`max-w-[18ch] font-display text-[25px] leading-tight sm:text-headline-md md:text-headline-lg ${slug === "results" && si % 2 === 0 ? "text-white" : "text-[#0B237F]"}`}>{s.title}</h2>
               <span className="hidden h-px flex-1 bg-[#D5A11E]/40 sm:block" aria-hidden="true" />
             </div>
-            <div className="mt-8 space-y-8">
+            <div className="mt-6 space-y-6 sm:mt-8 sm:space-y-8">
               {group(s.blocks).map((b, bi) => {
                 if (b.t === "cards") {
                   const cards = b.v as { h: string; p: string }[];
@@ -94,7 +94,7 @@ export async function StitchSections({
                       {cards.map((c) => (
                         <div
                           key={c.h}
-                          className={`rounded-3xl border p-6 transition-transform duration-300 hover:-translate-y-1 ${cardStyles[slug] ?? cardStyles.programmes}`}
+                          className={`rounded-3xl border p-5 sm:p-6 transition-transform duration-300 hover:-translate-y-1 ${cardStyles[slug] ?? cardStyles.programmes}`}
                         >
                           <h3 className="font-display text-headline-sm text-primary">{c.h}</h3>
                           <p className={`mt-3 leading-relaxed text-body-sm ${slug === "results" && si % 2 === 0 ? "text-white/75" : "text-[#48516c]"}`}>{c.p}</p>
@@ -121,7 +121,7 @@ export async function StitchSections({
                 if (b.t === "table") {
                   const t = b.v as Table;
                   return (
-                    <div key={bi} className="overflow-x-auto rounded-3xl border border-[#e2e7ff] shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)]">
+                    <div key={bi} className="-mx-4 overflow-x-auto rounded-2xl border-y border-[#e2e7ff] shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)] sm:mx-0 sm:rounded-3xl sm:border">
                       <table className="w-full min-w-[720px] border-collapse text-left">
                         <thead>
                           <tr className="bg-surface-container-high">
@@ -229,21 +229,21 @@ export async function StitchHero({
   const page = await getPageSections(slug);
   if (!page) return null;
   return (
-    <section className={`relative overflow-hidden py-20 ${slug === "results" ? "bg-[#071858]" : slug === "contact" ? "bg-[#0B237F]" : "bg-[#0B237F]"}`}>
+    <section className={`relative overflow-hidden py-10 sm:py-20 ${slug === "results" ? "bg-[#071858]" : slug === "contact" ? "bg-[#0B237F]" : "bg-[#0B237F]"}`}>
       <BrandMotionBackdrop compact />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <MotionCascade className="max-w-3xl space-y-6">
+        <MotionCascade className="max-w-3xl space-y-5 sm:space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#D5A11E]/35 bg-white/10 px-3.5 py-1.5">
             <span className="size-2 rounded-full bg-[#D5A11E]" />
             <span className="text-[11px] font-bold tracking-[0.14em] text-[#F5E5B5] uppercase">{eyebrow}</span>
           </div>
-          <h1 className="text-[40px] leading-[1.05] font-bold tracking-tight text-white md:text-6xl">
+          <h1 className="text-[32px] leading-[1.08] font-bold tracking-tight text-white sm:text-[40px] md:text-6xl">
             {page.h1}
           </h1>
           {page.lead && (
-            <p className="text-lg leading-relaxed text-white/75">{page.lead}</p>
+            <p className="text-[15px] leading-relaxed text-white/75 sm:text-lg">{page.lead}</p>
           )}
-          <div className="flex flex-col gap-4 pt-2 sm:flex-row">
+          <div className="flex flex-col gap-2.5 pt-1 sm:flex-row sm:gap-4">
             <a
               href={primary.href}
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#D5A11E] px-6 py-3.5 text-label-lg font-bold text-[#101A3D] shadow-[0_10px_30px_-12px_rgba(213,161,30,.9)] transition-all hover:bg-[#e5b532] active:scale-95"

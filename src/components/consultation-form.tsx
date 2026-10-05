@@ -80,16 +80,16 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
   };
 
   return (
-    <section className="bg-[#002045] py-20" id={id}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-[2.5rem] bg-white shadow-[0_32px_80px_-24px_rgba(0,32,69,0.55)] lg:grid-cols-5">
+    <section className="bg-[#002045] py-12 sm:py-20" id={id}>
+      <div className="mx-auto max-w-6xl px-3 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-[1.75rem] bg-white shadow-[0_32px_80px_-24px_rgba(0,32,69,0.55)] sm:rounded-[2.5rem] lg:grid-cols-5">
           {/* Benefit panel */}
-          <div className="bg-[#1a365d] p-8 lg:col-span-2 lg:p-10">
+          <div className="bg-[#1a365d] p-6 sm:p-8 lg:col-span-2 lg:p-10">
             <span className="inline-flex items-center gap-2 rounded-full border border-[#D5A11E]/30 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold tracking-[0.14em] text-[#F5E5B5] uppercase">
               <Icon name="verified" className="text-[14px]" />
               Free First Session
             </span>
-            <h2 className="mt-5 text-3xl leading-tight font-bold tracking-tight text-white">
+            <h2 className="mt-5 text-[28px] leading-tight font-bold tracking-tight text-white sm:text-3xl">
               Book Your Free Diagnostic Assessment
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-[#adc7f7]">
@@ -117,7 +117,7 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
           </div>
 
           {/* Form */}
-          <form onSubmit={send} className="space-y-6 p-8 lg:col-span-3 lg:p-10">
+          <form onSubmit={send} className="space-y-5 p-6 sm:space-y-6 sm:p-8 lg:col-span-3 lg:p-10">
             <div className="flex items-center gap-2">
               <span className="size-2 rounded-full bg-[#D5A11E]" />
               <span className="text-[11px] font-bold tracking-[0.14em] text-[#8A6400] uppercase">

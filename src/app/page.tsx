@@ -43,8 +43,8 @@ export default async function Home() {
       {/* 1 — Hero: full navy fold */}
       <section className="relative overflow-hidden bg-[#0B237F]">
         <BrandMotionBackdrop />
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+        <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
+          <div className="grid grid-cols-1 items-center gap-8 sm:gap-12 lg:grid-cols-12">
             <MotionCascade className="space-y-7 lg:col-span-7">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#D5A11E]/35 bg-white/10 px-3.5 py-1.5 backdrop-blur-sm">
                 <span className="size-2 rounded-full bg-[#D5A11E] shadow-[0_0_14px_rgba(213,161,30,.75)]" />
@@ -52,10 +52,10 @@ export default async function Home() {
                   Igbe-Laara, Ikorodu Hub
                 </span>
               </div>
-              <h1 className="text-[40px] leading-[1.05] font-bold tracking-tight text-white md:text-[64px]">
+              <h1 className="text-[32px] leading-[1.08] font-bold tracking-tight text-white sm:text-[40px] md:text-[64px]">
                 Ikorodu&rsquo;s Home for Exam Success &amp; Admission Certainty
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-white/75">
+              <p className="max-w-2xl text-[15px] leading-relaxed text-white/75 sm:text-lg">
                 Rigorous, distraction-free physical classrooms in Laara and live group tutorials for
                 students across Lagos. We don&rsquo;t abandon you after scores drop—we mentor
                 candidates until full university matriculation.
@@ -100,7 +100,7 @@ export default async function Home() {
                     sizes="(max-width: 1024px) 100vw, 42vw"
                     className="object-cover"
                   />
-                  <div className="absolute right-3 bottom-3 left-3 flex items-center justify-between rounded-xl bg-[#1a365d]/90 p-3 backdrop-blur">
+                  <div className="absolute right-3 bottom-3 left-3 flex flex-col items-start gap-2 rounded-xl bg-[#1a365d]/90 p-3 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <div className="text-[11px] font-bold tracking-wider text-[#F5E5B5] uppercase">
                         2025/2026 Cohort Underway
@@ -174,7 +174,7 @@ export default async function Home() {
               <span className="text-[11px] font-bold tracking-[0.2em] text-[#A87909] uppercase">
                 Our Pedagogical Code
               </span>
-              <h2 className="text-4xl font-bold tracking-tight text-[#002045] md:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tight text-[#002045] sm:text-4xl md:text-5xl">
                 Why Ikorodu Families Trust ADJ Over Casual Tutorial Centers
               </h2>
               <p className="text-lg text-[#43474e]">
@@ -215,7 +215,7 @@ export default async function Home() {
                 <span className="text-[11px] font-bold tracking-[0.2em] text-[#A87909] uppercase">
                   Academic Syllabus Tracks
                 </span>
-                <h2 className="mt-2 text-4xl font-bold tracking-tight text-[#002045] md:text-5xl">
+                <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#002045] sm:text-4xl md:text-5xl">
                   Proven Preparatory Frameworks
                 </h2>
               </div>
@@ -310,7 +310,7 @@ export default async function Home() {
               <span className="text-[11px] font-bold tracking-[0.2em] text-[#F5E5B5] uppercase">
                 Community Roots &amp; Accessibility
               </span>
-              <h2 className="mt-3 text-4xl font-bold tracking-tight text-white md:text-5xl">
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
                 Easily Accessible Across Ikorodu Division
               </h2>
               <p className="mt-4 max-w-lg text-base text-[#adc7f7]">
@@ -358,7 +358,7 @@ export default async function Home() {
               <span className="text-[11px] font-bold tracking-[0.2em] text-[#A87909] uppercase">
                 Documented Verifiable Scores
               </span>
-              <h2 className="text-4xl font-bold tracking-tight text-[#002045] md:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tight text-[#002045] sm:text-4xl md:text-5xl">
                 From Laara to Nigeria&rsquo;s Premier Universities
               </h2>
               <p className="text-lg text-[#43474e]">

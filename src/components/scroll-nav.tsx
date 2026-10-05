@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Icon } from "@/components/icon";
 
 /* Sticky, and morphs: flush full-width bar at the top of the page; once you
@@ -23,6 +24,8 @@ export function ScrollNav({
 }) {
   const [float, setFloat] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isBookingPage = pathname === "/contact";
   useEffect(() => {
     const on = () => setFloat(window.scrollY > 24);
     on();
@@ -33,19 +36,21 @@ export function ScrollNav({
   return (
     <header
       className={`sticky z-50 transition-all duration-300 ${
-        float ? "top-3 mx-auto w-[calc(100%-1.5rem)] max-w-5xl" : "top-0 w-full"
+        float ? "top-2 mx-auto w-[calc(100%-1rem)] max-w-5xl sm:top-3 sm:w-[calc(100%-1.5rem)]" : "top-0 w-full"
       }`}
     >
       <nav
-        className={`mx-auto transition-all duration-300 ${
-          float
+        className={`mx-auto overflow-hidden transition-all duration-300 ${
+          float && !mobileOpen
             ? "rounded-full border border-[#e2e7ff] bg-white/85 shadow-[0_18px_44px_-18px_rgba(0,32,69,0.35)] backdrop-blur-md"
-            : "border-b border-[#e2e7ff] bg-white"
+            : float
+              ? "rounded-2xl border border-[#e2e7ff] bg-white/95 shadow-[0_18px_44px_-18px_rgba(0,32,69,0.35)] backdrop-blur-md"
+              : "border-b border-[#e2e7ff] bg-white"
         }`}
       >
         <div
-          className={`flex items-center justify-between px-4 transition-all duration-300 sm:px-5 ${
-            float ? "h-14" : "h-[72px]"
+          className={`flex items-center justify-between gap-3 px-3 transition-all duration-300 sm:px-5 ${
+            float ? "h-14" : "h-16 sm:h-[72px]"
           }`}
         >
           <Link href="/" className="flex items-center gap-2.5">
@@ -58,8 +63,8 @@ export function ScrollNav({
                 float ? "h-9 w-9" : "h-10 w-10"
               }`}
             />
-            <span className="flex flex-col">
-              <span className="font-display text-[15px] leading-tight font-bold tracking-tight text-[#002045]">
+            <span className="flex min-w-0 flex-col">
+              <span className="truncate font-display text-[14px] leading-tight font-bold tracking-tight text-[#002045] sm:text-[15px]">
                 {name}
               </span>
               <span
@@ -94,37 +99,48 @@ export function ScrollNav({
               <Icon name="chat" className="text-[16px]" />
               <span className="hidden sm:inline">Call / WhatsApp</span>
             </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-[#D5A11E] px-4 py-2.5 text-xs font-bold text-[#101A3D] shadow-[0_12px_28px_-10px_rgba(213,161,30,.65)] transition-all hover:-translate-y-0.5 hover:bg-[#e5b532] active:scale-95"
-            >
-              Book Free Consultation
-            </Link>
+            {!isBookingPage && (
+              <Link
+                href="/contact"
+                className="hidden items-center justify-center rounded-xl bg-[#D5A11E] px-4 py-2.5 text-xs font-bold text-[#101A3D] shadow-[0_12px_28px_-10px_rgba(213,161,30,.65)] transition-all hover:-translate-y-0.5 hover:bg-[#e5b532] active:scale-95 sm:inline-flex"
+              >
+                Book Free Consultation
+              </Link>
+            )}
             <button
               type="button"
               aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileOpen}
               aria-controls="mobile-navigation"
               onClick={() => setMobileOpen((open) => !open)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#e2e7ff] text-[#002045] transition-colors hover:bg-[#f2f3ff] lg:hidden"
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#e2e7ff] text-[#002045] transition-colors hover:bg-[#f2f3ff] lg:hidden"
             >
               <Icon name={mobileOpen ? "close" : "menu"} className="text-xl" />
             </button>
           </div>
         </div>
         {mobileOpen && (
-          <div id="mobile-navigation" className="border-t border-[#e2e7ff] px-4 pb-4 lg:hidden">
-            <div className="grid gap-1 pt-3">
+          <div id="mobile-navigation" className="border-t border-[#e2e7ff] bg-white/90 px-3 pb-3 lg:hidden">
+            <div className="grid gap-1 pt-2">
               {links.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-xl px-3 py-3 text-sm font-semibold text-[#002045] transition-colors hover:bg-[#f2f3ff]"
+                  className="rounded-xl px-3 py-3.5 text-[15px] font-semibold text-[#002045] transition-colors hover:bg-[#f2f3ff]"
                 >
                   {l.label}
                 </Link>
               ))}
+              {!isBookingPage && (
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-1 inline-flex min-h-12 items-center justify-center rounded-xl bg-[#D5A11E] px-4 text-sm font-bold text-[#101A3D] shadow-[0_10px_24px_-12px_rgba(213,161,30,.8)]"
+                >
+                  Book Free Consultation
+                </Link>
+              )}
             </div>
           </div>
         )}

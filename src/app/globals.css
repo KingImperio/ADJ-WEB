@@ -338,6 +338,7 @@
 
 @layer base {
   * {
+    min-width: 0;
     @apply border-border outline-ring/50;
   }
   body {
