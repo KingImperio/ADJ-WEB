@@ -46,9 +46,9 @@ export async function SiteFooter() {
               <Image
                 src="/adj-logo.png"
                 alt={`${site.name} logo`}
-                width={676}
-                height={369}
-                className="h-10 w-10 rounded-lg border border-white/20 object-cover"
+                width={512}
+                height={512}
+                className="h-10 w-10 rounded-full border border-white/20 object-cover"
               />
               <span className="font-display text-headline-md font-bold tracking-tight text-on-primary">
                 {site.name}

@@ -52,8 +52,8 @@ export function ScrollNav({
             <Image
               src="/adj-logo.png"
               alt={`${name} logo`}
-              width={1536}
-              height={1536}
+              width={512}
+              height={512}
                 className={`rounded-full border border-[#D5A11E]/35 bg-white object-cover p-0.5 transition-all duration-300 ${
                 float ? "h-9 w-9" : "h-10 w-10"
               }`}
