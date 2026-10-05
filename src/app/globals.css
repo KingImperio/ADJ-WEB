@@ -133,18 +133,18 @@
    Full rationale: docs/STITCH-DESIGN-SYSTEM.md                             */
 :root {
   /* Material 3 ramp */
-  --primary: #002045;
+  --primary: #0B237F;
   --primary-foreground: #ffffff;
-  --primary-container: #1a365d;
+  --primary-container: #17359A;
   --on-primary: #ffffff;
   --on-primary-container: #86a0cd;
   --primary-fixed: #d6e3ff;
   --primary-fixed-dim: #adc7f7;
   --on-primary-fixed: #001b3c;
   --on-primary-fixed-variant: #2d476f;
-  --secondary: #006c48;
+  --secondary: #D5A11E;
   --secondary-foreground: #ffffff;
-  --secondary-container: #98f6c5;
+  --secondary-container: #F5E5B5;
   --on-secondary: #ffffff;
   --on-secondary-container: #00734d;
   --secondary-fixed: #98f6c5;
@@ -170,10 +170,10 @@
   --surface-tint: #455f88;
 
   /* Surfaces — lavender-tinted, not neutral gray */
-  --background: #faf8ff;
-  --foreground: #131b2e;
-  --surface: #faf8ff;
-  --on-surface: #131b2e;
+  --background: #FBFCFF;
+  --foreground: #101A3D;
+  --surface: #FBFCFF;
+  --on-surface: #101A3D;
   --surface-lowest: #ffffff;
   --surface-low: #f2f3ff;
   --surface-container: #eaedff;
@@ -208,10 +208,10 @@
      navy/emerald/gold ramp so old sections stay on-brand mid-migration. */
   --ink: #131b2e;
   --panel: #ffffff;
-  --cobalt: #002045;
-  --cobalt-deep: #1a365d;
-  --gold: #eb851c;
-  --gold-soft: #ffdcc3;
+  --cobalt: #0B237F;
+  --cobalt-deep: #071858;
+  --gold: #D5A11E;
+  --gold-soft: #F5E5B5;
   --rust: #552b00;
   --espresso: #361900;
 
@@ -233,6 +233,21 @@
   --sidebar-border: #c4c6cf;
   --sidebar-ring: #1a365d;
 }
+
+/* Brand patterns: quiet enough for content, distinctive enough to stop
+   every route feeling like the same card template. */
+.adj-wave-field {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse at 12% 0%, rgba(213,161,30,.12), transparent 42%),
+    radial-gradient(ellipse at 92% 18%, rgba(11,35,127,.10), transparent 44%),
+    linear-gradient(120deg, transparent 0 48%, rgba(11,35,127,.035) 48.5% 49%, transparent 49.5% 100%);
+}
+.adj-path-pattern {
+  background-color: var(--primary);
+  background-image: repeating-radial-gradient(ellipse at 100% 100%, transparent 0 34px, rgba(213,161,30,.14) 35px 36px, transparent 37px 70px);
+}
+.adj-section-rule { border-image: linear-gradient(90deg, transparent, var(--gold), transparent) 1; }
 
 /* Compound type scale. Stitch writes `text-headline-lg font-headline-lg`;
    Tailwind v4 wants the size in the font-size namespace, so declare each

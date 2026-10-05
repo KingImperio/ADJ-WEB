@@ -1,5 +1,7 @@
 import { Icon } from "@/components/icon";
 import { getPageSections } from "@/lib/content";
+import { BrandMotionBackdrop } from "@/components/brand-motion-backdrop";
+import { MotionCascade } from "@/components/motion-cascade";
 
 type Table = { head: string[]; rows: string[][] };
 type Block = { t: "p" | "h3" | "h4" | "list" | "table"; v: string | string[] | Table };
@@ -55,6 +57,19 @@ export async function StitchSections({
 }) {
   const page = await getPageSections(slug);
   if (!page) return null;
+  const sectionStyles: Record<string, string[]> = {
+    programmes: ["bg-white", "bg-[#f4f6fc]"],
+    about: ["bg-[#f7f9ff]", "bg-white"],
+    results: ["bg-[#0B237F] text-white", "bg-[#fbfcff]"],
+    contact: ["bg-[#fffaf0]", "bg-white"],
+  };
+  const cardStyles: Record<string, string> = {
+    programmes: "border-[#dce2f2] bg-white shadow-[0_18px_45px_-26px_rgba(11,35,127,.35)]",
+    about: "border-[#e7e1d0] bg-[#fffdf7] shadow-[0_18px_45px_-28px_rgba(120,88,10,.25)]",
+    results: "border-white/15 bg-white/10 backdrop-blur-sm",
+    contact: "border-[#eadfbf] bg-white shadow-[0_18px_45px_-28px_rgba(120,88,10,.22)]",
+  };
+  const palette = sectionStyles[slug] ?? sectionStyles.programmes;
   return (
     <>
       {children}
@@ -62,11 +77,14 @@ export async function StitchSections({
         <section
           key={s.title}
           className={`py-16 lg:py-24 ${
-            si % 2 === 0 ? "bg-surface-container-lowest" : "border-t border-outline-variant bg-surface"
+            `${palette[si % palette.length]} ${si > 0 ? "border-t border-[#dce2f2]" : ""}`
           }`}
         >
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display text-headline-md text-primary md:text-headline-lg">{s.title}</h2>
+            <div className="mb-7 flex items-end justify-between gap-6">
+              <h2 className={`font-display text-headline-md md:text-headline-lg ${slug === "results" && si % 2 === 0 ? "text-white" : "text-[#0B237F]"}`}>{s.title}</h2>
+              <span className="hidden h-px flex-1 bg-[#D5A11E]/40 sm:block" aria-hidden="true" />
+            </div>
             <div className="mt-8 space-y-8">
               {group(s.blocks).map((b, bi) => {
                 if (b.t === "cards") {
@@ -76,10 +94,10 @@ export async function StitchSections({
                       {cards.map((c) => (
                         <div
                           key={c.h}
-                          className="rounded-3xl border border-[#e2e7ff] bg-white p-6 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)]"
+                          className={`rounded-3xl border p-6 transition-transform duration-300 hover:-translate-y-1 ${cardStyles[slug] ?? cardStyles.programmes}`}
                         >
                           <h3 className="font-display text-headline-sm text-primary">{c.h}</h3>
-                          <p className="mt-3 leading-relaxed text-body-sm text-on-surface-variant">{c.p}</p>
+                          <p className={`mt-3 leading-relaxed text-body-sm ${slug === "results" && si % 2 === 0 ? "text-white/75" : "text-[#48516c]"}`}>{c.p}</p>
                         </div>
                       ))}
                     </div>
@@ -151,7 +169,7 @@ export async function StitchSections({
                     </ul>
                   );
                 return (
-                  <p key={bi} className="leading-relaxed text-body-md text-on-surface-variant">
+                    <p key={bi} className={`leading-relaxed text-body-md ${slug === "results" && si % 2 === 0 ? "text-white/80" : "text-[#48516c]"}`}>
                     {b.v as string}
                   </p>
                 );
@@ -211,35 +229,36 @@ export async function StitchHero({
   const page = await getPageSections(slug);
   if (!page) return null;
   return (
-    <section className="bg-[#1a365d] py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl space-y-6">
+    <section className={`relative overflow-hidden py-20 ${slug === "results" ? "bg-[#071858]" : slug === "contact" ? "bg-[#0B237F]" : "bg-[#0B237F]"}`}>
+      <BrandMotionBackdrop compact />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <MotionCascade className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#98f6c5]/30 bg-white/10 px-3.5 py-1.5">
-            <span className="size-2 rounded-full bg-[#98f6c5]" />
-            <span className="text-[11px] font-bold tracking-[0.14em] text-[#98f6c5] uppercase">{eyebrow}</span>
+            <span className="size-2 rounded-full bg-[#D5A11E]" />
+            <span className="text-[11px] font-bold tracking-[0.14em] text-[#F5E5B5] uppercase">{eyebrow}</span>
           </div>
           <h1 className="text-[40px] leading-[1.05] font-bold tracking-tight text-white md:text-6xl">
             {page.h1}
           </h1>
           {page.lead && (
-            <p className="text-lg leading-relaxed text-[#adc7f7]">{page.lead}</p>
+            <p className="text-lg leading-relaxed text-white/75">{page.lead}</p>
           )}
           <div className="flex flex-col gap-4 pt-2 sm:flex-row">
             <a
               href={primary.href}
-              className="inline-flex items-center justify-center gap-2 rounded bg-secondary px-6 py-3.5 text-label-lg font-bold text-on-secondary shadow-sm transition-all hover:bg-on-secondary-container active:scale-95"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#D5A11E] px-6 py-3.5 text-label-lg font-bold text-[#101A3D] shadow-[0_10px_30px_-12px_rgba(213,161,30,.9)] transition-all hover:bg-[#e5b532] active:scale-95"
             >
               <span>{primary.label}</span>
               <Icon name="arrow_forward" className="text-lg" />
             </a>
             <a
               href={secondary.href}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/5 px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-white/10"
             >
               {secondary.label}
             </a>
           </div>
-        </div>
+        </MotionCascade>
       </div>
     </section>
   );

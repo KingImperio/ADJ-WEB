@@ -3,6 +3,8 @@ import Image from "next/image";
 import { ConsultationForm } from "@/components/consultation-form";
 import { Icon } from "@/components/icon";
 import { Reveal } from "@/components/reveal";
+import { BrandMotionBackdrop } from "@/components/brand-motion-backdrop";
+import { MotionCascade } from "@/components/motion-cascade";
 import { site } from "@/lib/site";
 import {
   getCatchments,
@@ -39,20 +41,21 @@ export default async function Home() {
   return (
     <>
       {/* 1 — Hero: full navy fold */}
-      <section className="bg-[#1a365d]">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <section className="relative overflow-hidden bg-[#0B237F]">
+        <BrandMotionBackdrop />
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-            <div className="space-y-7 lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#98f6c5]/30 bg-white/10 px-3.5 py-1.5">
-                <span className="size-2 rounded-full bg-[#98f6c5]" />
-                <span className="text-[11px] font-bold tracking-[0.14em] text-[#98f6c5] uppercase">
+            <MotionCascade className="space-y-7 lg:col-span-7">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#D5A11E]/35 bg-white/10 px-3.5 py-1.5 backdrop-blur-sm">
+                <span className="size-2 rounded-full bg-[#D5A11E] shadow-[0_0_14px_rgba(213,161,30,.75)]" />
+                <span className="text-[11px] font-bold tracking-[0.14em] text-[#F5E5B5] uppercase">
                   Igbe-Laara, Ikorodu Hub
                 </span>
               </div>
               <h1 className="text-[40px] leading-[1.05] font-bold tracking-tight text-white md:text-[64px]">
                 Ikorodu&rsquo;s Home for Exam Success &amp; Admission Certainty
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-[#adc7f7]">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/75">
                 Rigorous, distraction-free physical classrooms in Laara and live group tutorials for
                 students across Lagos. We don&rsquo;t abandon you after scores drop—we mentor
                 candidates until full university matriculation.
@@ -60,31 +63,31 @@ export default async function Home() {
               <div className="flex flex-col gap-3 pt-1 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#006c48] px-7 py-4 text-base font-bold text-white shadow-[0_18px_40px_-12px_rgba(0,108,72,0.55)] transition-all hover:bg-[#005236] active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#D5A11E] px-7 py-4 text-base font-bold text-[#101A3D] shadow-[0_18px_40px_-12px_rgba(213,161,30,.62)] transition-all hover:-translate-y-0.5 hover:bg-[#e5b532] active:scale-95"
                 >
                   <span>Book Free Diagnostic Assessment</span>
                   <Icon name="arrow_forward" className="text-lg" />
                 </Link>
                 <Link
                   href="#programmes"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-4 text-base font-bold text-white transition-colors hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/5 px-7 py-4 text-base font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
                 >
                   Explore Our 6 Academic Tracks
                 </Link>
               </div>
               <div className="grid grid-cols-3 gap-4 border-t border-white/15 pt-7">
                 {metrics.map((m) => (
-                  <div key={m.label} className="border-l-4 border-[#98f6c5] pl-3">
+                  <div key={m.label} className="border-l-4 border-[#D5A11E] pl-3">
                     <span className="block text-3xl font-bold text-white tabular-nums lg:text-4xl">
                       {m.value}
                     </span>
-                    <span className="text-[11px] font-bold tracking-[0.12em] text-[#adc7f7] uppercase">
+                    <span className="text-[11px] font-bold tracking-[0.12em] text-white/65 uppercase">
                       {m.label}
                     </span>
                   </div>
                 ))}
               </div>
-            </div>
+            </MotionCascade>
 
             <div className="lg:col-span-5">
               <div className="rounded-[2rem] bg-white p-3 shadow-[0_32px_80px_-20px_rgba(0,32,69,0.55)]">
@@ -229,7 +232,8 @@ export default async function Home() {
           {/* Featured wide card: first track */}
           {tracks[0] && (
             <Reveal>
-              <article className="mb-5 grid grid-cols-1 gap-6 rounded-3xl border border-[#e2e7ff] bg-white p-7 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)] md:grid-cols-2">
+              <article className="group relative mb-5 grid grid-cols-1 gap-6 overflow-hidden rounded-3xl border border-[#dce2f2] bg-white p-7 shadow-[0_14px_34px_-14px_rgba(11,35,127,.16)] transition-all duration-300 hover:-translate-y-1 hover:border-[#D5A11E]/55 hover:shadow-[0_26px_60px_-22px_rgba(11,35,127,.28)] md:grid-cols-2">
+                <span className="pointer-events-none absolute -right-24 -top-28 h-56 w-56 rounded-full bg-[#D5A11E]/10 transition-transform duration-700 group-hover:scale-150" aria-hidden="true" />
                 <div className="space-y-4">
                   <span className={`inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-bold tracking-wider uppercase ${badgeTones[tracks[0].tone]}`}>
                     {tracks[0].badge}
@@ -264,7 +268,8 @@ export default async function Home() {
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {tracks.slice(1).map((t, i) => (
               <Reveal key={t.slug} delay={i * 60}>
-                <article className="flex h-full flex-col rounded-3xl border border-[#e2e7ff] bg-white p-6 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)] transition-all hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(26,54,93,0.2)]">
+                <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-[#dce2f2] bg-white p-6 shadow-[0_14px_34px_-14px_rgba(11,35,127,.16)] transition-all duration-300 hover:-translate-y-1 hover:border-[#D5A11E]/55 hover:shadow-[0_24px_48px_-16px_rgba(11,35,127,.24)]">
+                  <span className="pointer-events-none absolute -right-12 -top-14 h-28 w-28 rounded-full bg-[#D5A11E]/0 transition-all duration-500 group-hover:scale-150 group-hover:bg-[#D5A11E]/10" aria-hidden="true" />
                   <div className="flex items-center justify-between gap-2">
                     <span className={`inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-bold tracking-wider uppercase ${badgeTones[t.tone]}`}>
                       {t.badge}

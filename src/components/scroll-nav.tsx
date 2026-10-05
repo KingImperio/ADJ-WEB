@@ -52,9 +52,9 @@ export function ScrollNav({
             <Image
               src="/adj-logo.png"
               alt={`${name} logo`}
-              width={676}
-              height={369}
-              className={`rounded-xl border border-[#e2e7ff] object-cover transition-all duration-300 ${
+              width={1536}
+              height={1536}
+                className={`rounded-full border border-[#D5A11E]/35 bg-white object-cover p-0.5 transition-all duration-300 ${
                 float ? "h-9 w-9" : "h-10 w-10"
               }`}
             />
@@ -63,7 +63,7 @@ export function ScrollNav({
                 {name}
               </span>
               <span
-                className={`text-[9px] font-bold tracking-[0.2em] text-[#006c48] uppercase transition-all duration-300 ${
+                className={`text-[9px] font-bold tracking-[0.2em] text-[#A87909] uppercase transition-all duration-300 ${
                   float ? "hidden" : ""
                 }`}
               >
@@ -96,7 +96,7 @@ export function ScrollNav({
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#006c48] px-4 py-2.5 text-xs font-bold text-white shadow-[0_12px_28px_-10px_rgba(0,108,72,0.6)] transition-all hover:bg-[#005236] active:scale-95"
+              className="inline-flex items-center justify-center rounded-xl bg-[#D5A11E] px-4 py-2.5 text-xs font-bold text-[#101A3D] shadow-[0_12px_28px_-10px_rgba(213,161,30,.65)] transition-all hover:-translate-y-0.5 hover:bg-[#e5b532] active:scale-95"
             >
               Book Free Consultation
             </Link>
