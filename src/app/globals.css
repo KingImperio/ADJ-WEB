@@ -143,14 +143,14 @@
   --on-primary-fixed: #001b3c;
   --on-primary-fixed-variant: #2d476f;
   --secondary: #D5A11E;
-  --secondary-foreground: #ffffff;
+  --secondary-foreground: #101A3D;
   --secondary-container: #F5E5B5;
-  --on-secondary: #ffffff;
-  --on-secondary-container: #00734d;
-  --secondary-fixed: #98f6c5;
-  --secondary-fixed-dim: #7cd9aa;
-  --on-secondary-fixed: #002113;
-  --on-secondary-fixed-variant: #005236;
+  --on-secondary: #101A3D;
+  --on-secondary-container: #6A4B00;
+  --secondary-fixed: #F5E5B5;
+  --secondary-fixed-dim: #E7C768;
+  --on-secondary-fixed: #271A00;
+  --on-secondary-fixed-variant: #6A4B00;
   --tertiary: #361900;
   --tertiary-foreground: #ffffff;
   --tertiary-container: #552b00;
@@ -204,8 +204,8 @@
   --popover: #ffffff;
   --popover-foreground: #131b2e;
 
-  /* Legacy aliases — pre-Stitch pages still reference these. Pointed at the
-     navy/emerald/gold ramp so old sections stay on-brand mid-migration. */
+  /* Legacy aliases — pre-Stitch pages still reference these, but all aliases
+     now resolve into the final navy, gold and ivory identity. */
   --ink: #131b2e;
   --panel: #ffffff;
   --cobalt: #0B237F;
@@ -216,9 +216,9 @@
   --espresso: #361900;
 
   --chart-1: #1a365d;
-  --chart-2: #006c48;
+  --chart-2: #D5A11E;
   --chart-3: #eb851c;
-  --chart-4: #98f6c5;
+  --chart-4: #E7C768;
   --chart-5: #74777f;
 
   /* Stitch specifies flat 2/4/8px corners — deliberately not pills. */

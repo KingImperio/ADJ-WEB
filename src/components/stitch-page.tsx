@@ -233,7 +233,7 @@ export async function StitchHero({
       <BrandMotionBackdrop compact />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <MotionCascade className="max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#98f6c5]/30 bg-white/10 px-3.5 py-1.5">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#D5A11E]/35 bg-white/10 px-3.5 py-1.5">
             <span className="size-2 rounded-full bg-[#D5A11E]" />
             <span className="text-[11px] font-bold tracking-[0.14em] text-[#F5E5B5] uppercase">{eyebrow}</span>
           </div>

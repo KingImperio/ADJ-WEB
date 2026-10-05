@@ -14,18 +14,18 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          background: "#1a365d",
+          background: "#0B237F",
           color: "white",
           padding: 80,
         }}
       >
-        <div style={{ fontSize: 28, letterSpacing: 6, color: "#98f6c5", textTransform: "uppercase" }}>
+        <div style={{ fontSize: 28, letterSpacing: 6, color: "#D5A11E", textTransform: "uppercase" }}>
           ADJ EDUCATIONAL CONSULTANTS
         </div>
         <div style={{ fontSize: 68, fontWeight: 700, marginTop: 20, lineHeight: 1.1 }}>
           Ikorodu&apos;s Home for Exam Success
         </div>
-        <div style={{ fontSize: 30, color: "#adc7f7", marginTop: 18 }}>
+        <div style={{ fontSize: 30, color: "#DCE4FF", marginTop: 18 }}>
           JAMB · WAEC · NECO · JUPEB · IELTS — + admission processing
         </div>
       </div>

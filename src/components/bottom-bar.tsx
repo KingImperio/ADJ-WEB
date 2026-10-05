@@ -11,7 +11,7 @@ export async function BottomBar() {
         <a
           href={contact.whatsapp}
           aria-label="WhatsApp"
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#006c48] text-white transition-all active:scale-90"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#D5A11E] text-[#101A3D] transition-all active:scale-90"
         >
           <Icon name="chat" className="text-xl" />
         </a>

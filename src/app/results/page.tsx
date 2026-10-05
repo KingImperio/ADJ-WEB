@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const tones: Record<string, string> = {
-  emerald: "bg-[#ECFDF5] border-secondary text-secondary",
+  emerald: "bg-[#FFF8E8] border-secondary text-[#7A5700]",
   navy: "bg-[#EFF6FF] border-primary text-primary",
   indigo: "bg-[#EEF2FF] border-[#3730A3] text-[#3730A3]",
   amber: "bg-[#FEF3C7] border-[#B45309] text-[#B45309]",

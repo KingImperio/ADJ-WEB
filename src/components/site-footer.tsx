@@ -24,7 +24,7 @@ export async function SiteFooter() {
         {/* Top invitation strip */}
         <div className="mb-12 flex flex-col items-start justify-between gap-5 rounded-3xl border border-white/10 bg-white/5 p-8 md:flex-row md:items-center">
           <div>
-            <span className="text-[11px] font-bold tracking-[0.2em] text-[#98f6c5] uppercase">
+            <span className="text-[11px] font-bold tracking-[0.2em] text-[#F5E5B5] uppercase">
               Ready to get exam-ready?
             </span>
             <h3 className="mt-2 max-w-xl text-2xl leading-tight font-bold tracking-tight text-white md:text-3xl">
@@ -33,7 +33,7 @@ export async function SiteFooter() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#006c48] px-7 py-4 text-base font-bold text-white shadow-[0_18px_40px_-12px_rgba(0,108,72,0.5)] transition-all hover:bg-[#005236] active:scale-95"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#D5A11E] px-7 py-4 text-base font-bold text-[#101A3D] shadow-[0_18px_40px_-12px_rgba(213,161,30,.55)] transition-all hover:bg-[#e5b532] active:scale-95"
           >
             Book Free Diagnostic
             <Icon name="arrow_forward" className="text-lg" />

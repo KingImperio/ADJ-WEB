@@ -85,7 +85,7 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
         <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-[2.5rem] bg-white shadow-[0_32px_80px_-24px_rgba(0,32,69,0.55)] lg:grid-cols-5">
           {/* Benefit panel */}
           <div className="bg-[#1a365d] p-8 lg:col-span-2 lg:p-10">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold tracking-[0.14em] text-[#98f6c5] uppercase">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#D5A11E]/30 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold tracking-[0.14em] text-[#F5E5B5] uppercase">
               <Icon name="verified" className="text-[14px]" />
               Free First Session
             </span>
@@ -103,7 +103,7 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
                 { icon: "payments", text: "Fees confirmed before any commitment" },
               ].map((b) => (
                 <li key={b.text} className="flex items-start gap-3.5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#006c48] text-white">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#D5A11E] text-[#101A3D]">
                     <Icon name={b.icon} className="text-lg" />
                   </span>
                   <span className="text-sm text-white/90">{b.text}</span>
@@ -119,8 +119,8 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
           {/* Form */}
           <form onSubmit={send} className="space-y-6 p-8 lg:col-span-3 lg:p-10">
             <div className="flex items-center gap-2">
-              <span className="size-2 rounded-full bg-[#006c48]" />
-              <span className="text-[11px] font-bold tracking-[0.14em] text-[#006c48] uppercase">
+              <span className="size-2 rounded-full bg-[#D5A11E]" />
+              <span className="text-[11px] font-bold tracking-[0.14em] text-[#8A6400] uppercase">
                 Start Your Preparation
               </span>
             </div>
@@ -182,7 +182,7 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
                   type="checkbox"
                   checked={consent}
                   onChange={(e) => setConsent(e.target.checked)}
-                  className="mt-0.5 h-4 w-4 shrink-0 accent-[#006c48]"
+                  className="mt-0.5 h-4 w-4 shrink-0 accent-[#0B237F]"
                 />
                 <span>
                   I agree that ADJ may securely store these details to follow up about my
@@ -191,7 +191,7 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
               </label>
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#006c48] px-8 py-4 text-base font-bold text-white shadow-[0_16px_36px_-10px_rgba(0,108,72,0.55)] transition-all hover:bg-[#005236] active:scale-[0.99]"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#D5A11E] px-8 py-4 text-base font-bold text-[#101A3D] shadow-[0_16px_36px_-10px_rgba(213,161,30,.65)] transition-all hover:bg-[#e5b532] active:scale-[0.99]"
               >
                 <span>Confirm Diagnostic Booking</span>
                 <Icon name="arrow_forward" className="text-lg" />

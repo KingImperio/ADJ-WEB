@@ -15,12 +15,12 @@ import {
   getTracks,
 } from "@/lib/content";
 
-/* ADJ homepage — round-and-bold modern pass.
-   One serif voice, navy/emerald moments alternating by fold, every card a
-   held, soft-shadowed surface, no hairline separators. Stitch copy intact. */
+/* ADJ homepage — one premium navy-and-gold system. Legacy CMS tone names are
+   intentionally mapped onto this brand palette so editors do not need a data
+   migration just to keep the public experience visually coherent. */
 
 const badgeTones: Record<string, string> = {
-  emerald: "bg-[#ECFDF5] border-[#006c48] text-[#006c48]",
+  emerald: "bg-[#FFF8E8] border-[#D5A11E] text-[#7A5700]",
   navy: "bg-[#EFF6FF] border-[#1a365d] text-[#1a365d]",
   indigo: "bg-[#EEF2FF] border-[#3730A3] text-[#3730A3]",
   amber: "bg-[#FEF3C7] border-[#B45309] text-[#B45309]",
@@ -102,12 +102,12 @@ export default async function Home() {
                   />
                   <div className="absolute right-3 bottom-3 left-3 flex items-center justify-between rounded-xl bg-[#1a365d]/90 p-3 backdrop-blur">
                     <div>
-                      <div className="text-[11px] font-bold tracking-wider text-[#98f6c5] uppercase">
+                      <div className="text-[11px] font-bold tracking-wider text-[#F5E5B5] uppercase">
                         2025/2026 Cohort Underway
                       </div>
                       <div className="text-sm font-bold text-white">Igbe-Laara Main Facility</div>
                     </div>
-                    <span className="rounded-full bg-[#006c48] px-2.5 py-1 text-[10px] font-bold text-white">
+                    <span className="rounded-full bg-[#D5A11E] px-2.5 py-1 text-[10px] font-bold text-[#101A3D]">
                       ADMISSIONS OPEN
                     </span>
                   </div>
@@ -119,7 +119,7 @@ export default async function Home() {
                   </div>
                   <div className="rounded-xl bg-[#f2f3ff] p-3">
                     <span className="block text-[11px] text-[#43474e]">CBT Drill Lab</span>
-                    <span className="text-sm font-bold text-[#006c48]">Realistic Simulated UI</span>
+                    <span className="text-sm font-bold text-[#8A6400]">Realistic Simulated UI</span>
                   </div>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export default async function Home() {
                 "Direct 200L Entry · OAU Pharmacy",
               ].map((t) => (
                 <span key={t} className="text-sm font-bold tracking-wide text-[#1a365d]">
-                  {t} <span className="mx-4 text-[#006c48]">◆</span>
+                  {t} <span className="mx-4 text-[#D5A11E]">◆</span>
                 </span>
               ))}
             </div>
@@ -154,7 +154,7 @@ export default async function Home() {
       <section className="bg-[#f7f8fd] py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
           <div className="flex items-center gap-2">
-            <Icon name="verified" className="text-xl text-[#006c48]" />
+            <Icon name="verified" className="text-xl text-[#A87909]" />
             <span className="text-sm font-bold tracking-wider text-[#002045] uppercase">
               Institutional Synergy
             </span>
@@ -171,7 +171,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="mx-auto mb-14 max-w-3xl space-y-4 text-center">
-              <span className="text-[11px] font-bold tracking-[0.2em] text-[#006c48] uppercase">
+              <span className="text-[11px] font-bold tracking-[0.2em] text-[#A87909] uppercase">
                 Our Pedagogical Code
               </span>
               <h2 className="text-4xl font-bold tracking-tight text-[#002045] md:text-5xl">
@@ -189,14 +189,14 @@ export default async function Home() {
                 <div className="flex h-full flex-col gap-4 rounded-3xl border border-[#e2e7ff] bg-white p-6 shadow-[0_14px_34px_-14px_rgba(26,54,93,0.16)] transition-all hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(26,54,93,0.2)]">
                   <span
                     className={`flex h-12 w-12 items-center justify-center rounded-2xl text-2xl ${
-                      p.tone === "secondary" ? "bg-[#006c48]/10 text-[#006c48]" : "bg-[#e2e7ff] text-[#1a365d]"
+                      p.tone === "secondary" ? "bg-[#FFF3CF] text-[#8A6400]" : "bg-[#e2e7ff] text-[#1a365d]"
                     }`}
                   >
                     <Icon name={p.icon} />
                   </span>
                   <h3 className="text-lg font-bold text-[#002045]">{p.title}</h3>
                   <p className="text-sm leading-relaxed text-[#43474e]">{p.copy}</p>
-                  <p className="mt-auto text-[11px] font-bold tracking-wider text-[#006c48] uppercase">
+                  <p className="mt-auto text-[11px] font-bold tracking-wider text-[#A87909] uppercase">
                     {p.tag}
                   </p>
                 </div>
@@ -212,7 +212,7 @@ export default async function Home() {
           <Reveal>
             <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
               <div>
-                <span className="text-[11px] font-bold tracking-[0.2em] text-[#006c48] uppercase">
+                <span className="text-[11px] font-bold tracking-[0.2em] text-[#A87909] uppercase">
                   Academic Syllabus Tracks
                 </span>
                 <h2 className="mt-2 text-4xl font-bold tracking-tight text-[#002045] md:text-5xl">
@@ -221,7 +221,7 @@ export default async function Home() {
               </div>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 font-bold text-[#006c48] hover:underline"
+                className="inline-flex items-center gap-2 font-bold text-[#8A6400] hover:underline"
               >
                 Download Detailed Syllabus Outline
                 <Icon name="download" className="text-lg" />
@@ -247,14 +247,14 @@ export default async function Home() {
                 <ul className="space-y-3 self-center">
                   {tracks[0].bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2.5 text-sm text-[#131b2e]">
-                      <Icon name="check_circle" className="mt-0.5 shrink-0 text-base text-[#006c48]" />
+                      <Icon name="check_circle" className="mt-0.5 shrink-0 text-base text-[#A87909]" />
                       {b}
                     </li>
                   ))}
                   <li className="pt-2">
                     <Link
                       href={`/programs/${tracks[0].slug}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-[#006c48] px-6 py-3 text-sm font-bold text-white transition-all hover:bg-[#005236] active:scale-95"
+                      className="inline-flex items-center gap-2 rounded-full bg-[#D5A11E] px-6 py-3 text-sm font-bold text-[#101A3D] shadow-[0_14px_30px_-12px_rgba(213,161,30,.7)] transition-all hover:bg-[#e5b532] active:scale-95"
                     >
                       {tracks[0].cta}
                       <Icon name="arrow_forward" className="text-base" />
@@ -281,7 +281,7 @@ export default async function Home() {
                   <ul className="mt-4 space-y-2 border-t border-[#e2e7ff]/60 pt-4">
                     {t.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-2 text-[13px] text-[#131b2e]">
-                        <Icon name="check" className="mt-0.5 shrink-0 text-sm text-[#006c48]" />
+                        <Icon name="check" className="mt-0.5 shrink-0 text-sm text-[#A87909]" />
                         {b}
                       </li>
                     ))}
@@ -307,7 +307,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
             <div>
-              <span className="text-[11px] font-bold tracking-[0.2em] text-[#98f6c5] uppercase">
+              <span className="text-[11px] font-bold tracking-[0.2em] text-[#F5E5B5] uppercase">
                 Community Roots &amp; Accessibility
               </span>
               <h2 className="mt-3 text-4xl font-bold tracking-tight text-white md:text-5xl">
@@ -324,7 +324,7 @@ export default async function Home() {
                     key={c}
                     className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold text-white"
                   >
-                    <Icon name="pin_drop" className="text-sm text-[#98f6c5]" />
+                    <Icon name="pin_drop" className="text-sm text-[#D5A11E]" />
                     {c}
                   </span>
                 ))}
@@ -332,13 +332,13 @@ export default async function Home() {
             </div>
             <div className="rounded-3xl border border-white/10 bg-white/5 p-7">
               <h3 className="flex items-center gap-2 text-xl font-bold text-white">
-                <Icon name="directions_bus" className="text-[#98f6c5]" />
+                <Icon name="directions_bus" className="text-[#D5A11E]" />
                 Directions &amp; Landmarks
               </h3>
               <ul className="mt-5 space-y-4">
                 {directions.map((d) => (
                   <li key={d.from} className="flex items-start gap-3">
-                    <Icon name="check_circle" className="mt-0.5 shrink-0 text-base text-[#98f6c5]" />
+                    <Icon name="check_circle" className="mt-0.5 shrink-0 text-base text-[#D5A11E]" />
                     <span className="text-sm leading-relaxed text-[#adc7f7]">
                       <strong className="text-white">{d.from}</strong> {d.copy}
                     </span>
@@ -355,7 +355,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="mx-auto mb-14 max-w-3xl space-y-4 text-center">
-              <span className="text-[11px] font-bold tracking-[0.2em] text-[#006c48] uppercase">
+              <span className="text-[11px] font-bold tracking-[0.2em] text-[#A87909] uppercase">
                 Documented Verifiable Scores
               </span>
               <h2 className="text-4xl font-bold tracking-tight text-[#002045] md:text-5xl">
