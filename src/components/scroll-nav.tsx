@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Icon } from "@/components/icon";
-import { exams, site } from "@/lib/site";
 
 /* Sticky, and morphs: flush full-width bar at the top of the page; once you
    scroll, it slides up and rounds into the floating pill island. */
@@ -43,7 +42,7 @@ export function ScrollNav({
       }`}
     >
       <nav
-        className={`relative mx-auto overflow-hidden transition-[background-color,border-color,box-shadow,border-radius] duration-300 ${
+        className={`relative mx-auto overflow-hidden transition-[background-color,border-color,box-shadow] duration-300 ${
           float
             ? `${mobileOpen ? "rounded-2xl" : "rounded-full"} border border-[#e2e7ff] bg-white/90 shadow-[0_18px_44px_-18px_rgba(0,32,69,0.35)] backdrop-blur-md`
             : "border-b border-[#e2e7ff] bg-white"
@@ -124,71 +123,37 @@ export function ScrollNav({
           id="mobile-navigation"
           aria-hidden={!mobileOpen}
           inert={!mobileOpen}
-          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none lg:hidden ${
-            mobileOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+          style={{ maxHeight: mobileOpen ? "min(70dvh, 34rem)" : "0px" }}
+          className={`overflow-hidden transition-[max-height,opacity,transform] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none lg:hidden ${
+            mobileOpen ? "translate-y-0 opacity-100" : "-translate-y-1 opacity-0"
           }`}
         >
-          <div className="min-h-0 overflow-y-auto overscroll-contain">
-            <div className="border-t border-[#e2e7ff] bg-white px-4 pb-5">
-            <div className="grid gap-1 pt-2">
+          <div className="max-h-[70dvh] overflow-y-auto overscroll-contain border-t border-[#e2e7ff] bg-white px-4 pb-4">
+            <div className="grid gap-0.5 pt-2">
               {mobileLinks.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-xl px-3 py-3.5 text-[15px] font-semibold text-[#002045] transition-colors hover:bg-[#f2f3ff]"
+                  className="rounded-lg px-3 py-2.5 text-sm font-semibold text-[#002045] transition-colors hover:bg-[#f2f3ff]"
                 >
                   {l.label}
                 </Link>
               ))}
-              <a
-                href={whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => setMobileOpen(false)}
-                className="inline-flex min-h-12 items-center gap-2 rounded-xl px-3 py-3 text-[15px] font-semibold text-[#002045] transition-colors hover:bg-[#f2f3ff]"
-              >
-                <Icon name="chat" className="text-lg" />
-                Call / WhatsApp
-              </a>
               {!isBookingPage && (
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
-                  className="mt-1 inline-flex min-h-12 items-center justify-center rounded-xl bg-[#D5A11E] px-4 text-sm font-bold text-[#101A3D] shadow-[0_10px_24px_-12px_rgba(213,161,30,.8)]"
+                  className="mt-2 inline-flex min-h-11 items-center justify-center rounded-xl bg-[#D5A11E] px-4 text-sm font-bold text-[#101A3D] shadow-[0_10px_24px_-12px_rgba(213,161,30,.8)]"
                 >
                   Book Free Consultation
                 </Link>
               )}
             </div>
 
-            <div className="mt-5 border-t border-[#e2e7ff] pt-4">
-              <p className="text-[11px] font-bold tracking-[0.16em] text-[#A87909] uppercase">What ADJ offers</p>
-              <p className="mt-2 text-sm leading-6 text-[#43474e]">
-                Exam preparation, live group tutorials, and admissions guidance from preparation through matriculation.
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {exams.map((exam) => (
-                  <span key={exam} className="rounded-full bg-[#f2f3ff] px-2.5 py-1 text-xs font-medium text-[#002045]">
-                    {exam}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-5 grid gap-3 border-t border-[#e2e7ff] pt-4 text-sm text-[#43474e]">
-              <div className="flex items-start gap-2.5">
-                <Icon name="location_on" className="mt-0.5 text-base text-[#A87909]" />
-                <p>{site.address.line1}, {site.address.line2}<br /><span className="text-xs text-[#74777f]">{site.address.landmark}</span></p>
-              </div>
-              <a href={site.phoneHref} className="flex items-center gap-2.5 font-medium text-[#002045]">
-                <Icon name="call" className="text-base text-[#A87909]" />{site.phoneDisplay}
-              </a>
-              <a href={`mailto:${site.email}`} className="flex items-center gap-2.5 font-medium text-[#002045]">
-                <Icon name="mail" className="text-base text-[#A87909]" />{site.email}
-              </a>
-            </div>
-            </div>
+            <p className="px-3 pt-3 text-xs leading-5 text-[#74777f]">
+              Exam preparation and admissions guidance through matriculation.
+            </p>
           </div>
         </div>
       </nav>
