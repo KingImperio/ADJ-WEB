@@ -8,7 +8,7 @@ import { StitchHero, StitchSections } from "@/components/stitch-page";
 export const metadata: Metadata = {
   title: "Contact & Free Consultation",
   description:
-    "Book a free consultation at ADJ Educational Consultants, Off Igbe Road, Banana Estate / Laara, Igbe-Laara, Ikorodu. Physical and online slots available.",
+    "Book a free consultation with ADJ Educational Consultants in Lagos, Nigeria. Physical and online sessions are available; see the address and directions below.",
 };
 
 export const revalidate = 300;

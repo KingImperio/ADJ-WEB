@@ -49,15 +49,15 @@ export default async function Home() {
               <div className="inline-flex items-center gap-2 rounded-full border border-[#D5A11E]/35 bg-white/10 px-3.5 py-1.5 backdrop-blur-sm">
                 <span className="size-2 rounded-full bg-[#D5A11E] shadow-[0_0_14px_rgba(213,161,30,.75)]" />
                 <span className="text-[11px] font-bold tracking-[0.14em] text-[#F5E5B5] uppercase">
-                  Igbe-Laara, Ikorodu Hub
+                  Lagos, Nigeria
                 </span>
               </div>
               <h1 className="text-[32px] leading-[1.08] font-bold tracking-tight text-white sm:text-[40px] md:text-[64px]">
-                Ikorodu&rsquo;s Home for Exam Success &amp; Admission Certainty
+                Exam Success &amp; Admission Guidance in Lagos, Nigeria
               </h1>
               <p className="max-w-2xl text-[15px] leading-relaxed text-white/75 sm:text-lg">
-                Rigorous, distraction-free physical classrooms in Laara and live group tutorials for
-                students across Lagos. We don&rsquo;t abandon you after scores drop—we mentor
+                Rigorous, distraction-free in-person classes in Lagos and live group tutorials for
+                students across the state. We don&rsquo;t abandon you after scores drop—we mentor
                 candidates until full university matriculation.
               </p>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row">
@@ -94,7 +94,7 @@ export default async function Home() {
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem]">
                   <Image
                     src="/hero-classroom.jpg"
-                    alt="Students in a tutorial classroom in Ikorodu, Lagos"
+                    alt="Students in a tutorial classroom in Lagos, Nigeria"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 42vw"
@@ -105,7 +105,7 @@ export default async function Home() {
                       <div className="text-[11px] font-bold tracking-wider text-[#F5E5B5] uppercase">
                         2025/2026 Cohort Underway
                       </div>
-                      <div className="text-sm font-bold text-white">Igbe-Laara Main Facility</div>
+                      <div className="text-sm font-bold text-white">Lagos, Nigeria</div>
                     </div>
                     <span className="rounded-full bg-[#D5A11E] px-2.5 py-1 text-[10px] font-bold text-[#101A3D]">
                       ADMISSIONS OPEN
@@ -175,7 +175,7 @@ export default async function Home() {
                 Our Pedagogical Code
               </span>
               <h2 className="text-3xl font-bold tracking-tight text-[#002045] sm:text-4xl md:text-5xl">
-                Why Ikorodu Families Trust ADJ Over Casual Tutorial Centers
+                Why Families Choose ADJ
               </h2>
               <p className="text-lg text-[#43474e]">
                 Old-school academic discipline, modern admissions counseling. Zero shortcuts. 100%
@@ -311,12 +311,10 @@ export default async function Home() {
                 Community Roots &amp; Accessibility
               </span>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-                Easily Accessible Across Ikorodu Division
+                In-Person and Online Learning in Lagos
               </h2>
               <p className="mt-4 max-w-lg text-base text-[#adc7f7]">
-                Our campus in Banana Estate / Laara sits at the nexus of major transport arteries. We
-                welcome daily commuting students and provide synchronous virtual streaming for
-                learners across greater Lagos.
+                Join in-person group classes at our Lagos centre, or learn online with live group tutorials from anywhere.
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {catchments.map((c) => (
@@ -359,7 +357,7 @@ export default async function Home() {
                 Documented Verifiable Scores
               </span>
               <h2 className="text-3xl font-bold tracking-tight text-[#002045] sm:text-4xl md:text-5xl">
-                From Laara to Nigeria&rsquo;s Premier Universities
+                From Exam Preparation to University Matriculation
               </h2>
               <p className="text-lg text-[#43474e]">
                 Our candidates do not just score high; their admission letters are officially

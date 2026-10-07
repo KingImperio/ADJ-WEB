@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "ADJ Educational Consultants — Ikorodu's home for exam success";
+export const alt = "ADJ Educational Consultants — exam success in Lagos, Nigeria";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -23,7 +23,7 @@ export default function OpengraphImage() {
           ADJ EDUCATIONAL CONSULTANTS
         </div>
         <div style={{ fontSize: 68, fontWeight: 700, marginTop: 20, lineHeight: 1.1 }}>
-          Ikorodu&apos;s Home for Exam Success
+          Exam Success in Lagos, Nigeria
         </div>
         <div style={{ fontSize: 30, color: "#DCE4FF", marginTop: 18 }}>
           JAMB · WAEC · NECO · JUPEB · IELTS — + admission processing

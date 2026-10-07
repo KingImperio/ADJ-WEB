@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Icon } from "@/components/icon";
+import { exams, site } from "@/lib/site";
 
 /* Sticky, and morphs: flush full-width bar at the top of the page; once you
    scroll, it slides up and rounds into the floating pill island. */
@@ -14,6 +15,8 @@ const links = [
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
+
+const mobileLinks = [{ label: "Home", href: "/" }, ...links];
 
 export function ScrollNav({
   whatsapp,
@@ -40,12 +43,10 @@ export function ScrollNav({
       }`}
     >
       <nav
-        className={`mx-auto overflow-hidden transition-all duration-300 ${
-          float && !mobileOpen
+        className={`relative mx-auto overflow-visible transition-[background-color,border-color,box-shadow] duration-300 ${
+          float
             ? "rounded-full border border-[#e2e7ff] bg-white/85 shadow-[0_18px_44px_-18px_rgba(0,32,69,0.35)] backdrop-blur-md"
-            : float
-              ? "rounded-2xl border border-[#e2e7ff] bg-white/95 shadow-[0_18px_44px_-18px_rgba(0,32,69,0.35)] backdrop-blur-md"
-              : "border-b border-[#e2e7ff] bg-white"
+            : "border-b border-[#e2e7ff] bg-white"
         }`}
       >
         <div
@@ -120,9 +121,9 @@ export function ScrollNav({
           </div>
         </div>
         {mobileOpen && (
-          <div id="mobile-navigation" className="border-t border-[#e2e7ff] bg-white/90 px-3 pb-3 lg:hidden">
+          <div id="mobile-navigation" className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border border-t-0 border-[#e2e7ff] bg-white px-4 pb-5 shadow-[0_20px_38px_-20px_rgba(0,32,69,0.38)] lg:hidden">
             <div className="grid gap-1 pt-2">
-              {links.map((l) => (
+              {mobileLinks.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
@@ -132,6 +133,16 @@ export function ScrollNav({
                   {l.label}
                 </Link>
               ))}
+              <a
+                href={whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex min-h-12 items-center gap-2 rounded-xl px-3 py-3 text-[15px] font-semibold text-[#002045] transition-colors hover:bg-[#f2f3ff]"
+              >
+                <Icon name="chat" className="text-lg" />
+                Call / WhatsApp
+              </a>
               {!isBookingPage && (
                 <Link
                   href="/contact"
@@ -141,6 +152,33 @@ export function ScrollNav({
                   Book Free Consultation
                 </Link>
               )}
+            </div>
+
+            <div className="mt-5 border-t border-[#e2e7ff] pt-4">
+              <p className="text-[11px] font-bold tracking-[0.16em] text-[#A87909] uppercase">What ADJ offers</p>
+              <p className="mt-2 text-sm leading-6 text-[#43474e]">
+                Exam preparation, live group tutorials, and admissions guidance from preparation through matriculation.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {exams.map((exam) => (
+                  <span key={exam} className="rounded-full bg-[#f2f3ff] px-2.5 py-1 text-xs font-medium text-[#002045]">
+                    {exam}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-5 grid gap-3 border-t border-[#e2e7ff] pt-4 text-sm text-[#43474e]">
+              <div className="flex items-start gap-2.5">
+                <Icon name="location_on" className="mt-0.5 text-base text-[#A87909]" />
+                <p>{site.address.line1}, {site.address.line2}<br /><span className="text-xs text-[#74777f]">{site.address.landmark}</span></p>
+              </div>
+              <a href={site.phoneHref} className="flex items-center gap-2.5 font-medium text-[#002045]">
+                <Icon name="call" className="text-base text-[#A87909]" />{site.phoneDisplay}
+              </a>
+              <a href={`mailto:${site.email}`} className="flex items-center gap-2.5 font-medium text-[#002045]">
+                <Icon name="mail" className="text-base text-[#A87909]" />{site.email}
+              </a>
             </div>
           </div>
         )}

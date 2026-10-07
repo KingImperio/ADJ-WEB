@@ -55,7 +55,7 @@ export async function SiteFooter() {
               </span>
             </div>
             <p className="max-w-sm text-body-sm text-on-primary-container">
-              Ikorodu&rsquo;s premier preparatory academy for high-stakes examinations. Academic rigor,
+              A Lagos, Nigeria preparatory academy for high-stakes examinations. Academic rigor,
               ethical clarity, and steadfast admissions mentorship until matriculation.
             </p>
             <div className="space-y-1 pt-2 text-body-sm text-surface-container-high">
@@ -91,7 +91,7 @@ export async function SiteFooter() {
             <ul className="space-y-2 text-body-sm">
               <li>
                 <Link href="/contact" className="text-on-primary-container transition-colors hover:text-on-primary hover:underline">
-                  Catchment: Igbe-Laara
+                  Catchment: Lagos, Nigeria
                 </Link>
               </li>
               <li>

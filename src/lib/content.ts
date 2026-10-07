@@ -113,7 +113,10 @@ export async function getMetrics() {
 
 export async function getCatchments(): Promise<string[]> {
   const r = await rows<{ name: string }>("catchments", "sort");
-  return r ? r.map((c) => c.name) : (base.catchments as string[]);
+  const names = r ? r.map((c) => c.name) : (base.catchments as string[]);
+  return names.map((name) =>
+    /^Igbe[- ]Laara Main Hub$/i.test(name) ? "Lagos, Nigeria" : name,
+  );
 }
 
 export async function getDirections() {
@@ -199,12 +202,30 @@ interface ProgramPage {
   sections: Blocks[];
   stats: { numbers: string[]; labels: string[] };
 }
+
+function broadenLocationCopy<T>(value: T): T {
+  if (typeof value === "string") {
+    return value
+      .replace(/Igbe[- ]Laara(?:,\s*Ikorodu)?/gi, "Lagos, Nigeria")
+      .replace(/Ikorodu\s+Division/gi, "Lagos") as T;
+  }
+  if (Array.isArray(value)) return value.map(broadenLocationCopy) as T;
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, entry]) => [key, broadenLocationCopy(entry)]),
+    ) as T;
+  }
+  return value;
+}
+
 export async function getProgramPage(slug: string): Promise<ProgramPage | null> {
   const key_ = slug === "neco" ? "waec" : slug;
   const r = await one<ProgramPage>("program_pages", "slug", key_);
-  if (r) return r as unknown as ProgramPage;
   const all = programBase as unknown as Record<string, ProgramPage>;
-  return all[key_] ?? null;
+  const page = r ? (r as unknown as ProgramPage) : (all[key_] ?? null);
+  return page
+    ? { ...page, h1: broadenLocationCopy(page.h1), lead: broadenLocationCopy(page.lead) }
+    : null;
 }
 
 export async function getPageSections(page: string) {
@@ -213,9 +234,18 @@ export async function getPageSections(page: string) {
     "page",
     page,
   );
-  if (r) return r as unknown as { h1: string; lead: string; sections: Blocks[] };
   const all = pageBase as unknown as Record<string, { h1: string; lead: string; sections: Blocks[] }>;
-  return all[page] ?? null;
+  const content = r
+    ? (r as unknown as { h1: string; lead: string; sections: Blocks[] })
+    : (all[page] ?? null);
+  if (!content) return null;
+
+  return {
+    ...content,
+    h1: broadenLocationCopy(content.h1),
+    lead: broadenLocationCopy(content.lead),
+    sections: page === "contact" ? content.sections : broadenLocationCopy(content.sections),
+  };
 }
 
 /* Contact lines. The admin edits values; the site keeps working if the DB

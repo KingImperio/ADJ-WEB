@@ -3,9 +3,9 @@
 export const site = {
   name: "ADJ Educational Consultants",
   short: "ADJ",
-  tagline: "Ikorodu's home for exam success",
+  tagline: "Exam success and admissions guidance in Lagos, Nigeria",
   description:
-    "JAMB, WAEC, NECO & international exam prep, group tutorials (physical + online), and admission processing in Igbe-Laara, Ikorodu — in partnership with Greater Heights Tutorial Center.",
+    "JAMB, WAEC, NECO and international exam preparation, group tutorials, and admissions guidance in Lagos, Nigeria — in partnership with Greater Heights Tutorial Center.",
   // Use the verified production host until adjeduconsult.com.ng is attached to Vercel.
   url: "https://adjeduconsult.vercel.app",
   // Owner-confirmed contact lines (2026-10-01)
