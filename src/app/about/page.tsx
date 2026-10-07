@@ -7,7 +7,7 @@ import { StitchHero, StitchSections } from "@/components/stitch-page";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "ADJ Educational Consultants is an Ikorodu exam-prep consultancy built on academic rigor, in delivery partnership with Greater Heights Tutorial Center.",
+    "ADJ Educational Consultants provides exam preparation and admissions guidance in Lagos, Nigeria, in delivery partnership with Greater Heights Tutorial Center.",
 };
 
 export const revalidate = 300;

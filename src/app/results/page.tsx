@@ -12,7 +12,7 @@ import { getParentTestimonials, getWall } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Results",
   description:
-    "Documented, verifiable admissions outcomes from Igbe-Laara candidates — admission letters uploaded and confirmed on JAMB CAPS.",
+    "Documented admissions outcomes from ADJ candidates in Lagos, Nigeria, with results and placements verified through official records.",
 };
 
 const tones: Record<string, string> = {
@@ -104,11 +104,10 @@ export default async function ResultsPage() {
         <section className="bg-white py-20" id="parents">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <h2 className="font-display text-headline-md text-primary md:text-headline-lg">
-              What Ikorodu Parents and Candidates Say
+              What ADJ Families and Candidates Say
             </h2>
             <p className="mt-3 max-w-2xl text-body-md text-on-surface-variant">
-              Real feedback from families in Banana Estate, Igbe-Laara, and Agunfoye regarding our
-              coaching rigor and transparent admissions follow-through.
+              Feedback from families about our coaching and admissions support.
             </p>
             <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
               {testis.map((t) => (
@@ -146,7 +145,7 @@ export default async function ResultsPage() {
       <StitchSections slug="results" />
       <StitchCta
         title="Ready to Write Your Matriculation Success Story?"
-        copy="Schedule a free diagnostic assessment and admission strategy session at our Igbe-Laara center."
+        copy="Schedule a free diagnostic assessment and admissions guidance session in Lagos, Nigeria."
         label="Book Free Diagnostic Assessment"
       />
     </>

@@ -61,7 +61,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
               <div className="inline-flex items-center gap-2 rounded-full border border-[#D5A11E]/35 bg-white/10 px-3.5 py-1.5">
                 <span className="size-2 rounded-full bg-[#D5A11E]" />
                 <span className="text-[11px] font-bold tracking-[0.14em] text-[#F5E5B5] uppercase">
-                  Igbe-Laara, Ikorodu &middot; Coaching Until Matriculation
+                  Lagos, Nigeria &middot; Coaching Until Matriculation
                 </span>
               </div>
               <h1 className="text-[32px] leading-[1.08] font-bold tracking-tight text-white sm:text-[40px] md:text-6xl">
