@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Icon } from "@/components/icon";
+import { exams, site } from "@/lib/site";
 
 /* Sticky, and morphs: flush full-width bar at the top of the page; once you
    scroll, it slides up and rounds into the floating pill island. */
@@ -151,9 +152,47 @@ export function ScrollNav({
               )}
             </div>
 
-            <p className="px-3 pt-3 text-xs leading-5 text-[#74777f]">
-              Exam preparation and admissions guidance through matriculation.
-            </p>
+            <div className="mt-3 divide-y divide-[#e2e7ff] border-y border-[#e2e7ff]">
+              <details className="group">
+                <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-3 text-sm font-semibold text-[#002045] [&::-webkit-details-marker]:hidden">
+                  <span className="flex items-center gap-2.5"><Icon name="school" className="text-lg text-[#A87909]" />Programmes & exams</span>
+                  <Icon name="expand_more" className="text-xl text-[#74777f] transition-transform duration-200 group-open:rotate-180" />
+                </summary>
+                <div className="px-3 pb-4 pl-10">
+                  <p className="text-xs leading-5 text-[#555b65]">
+                    Focused exam preparation, live group tutorials, and admissions guidance through matriculation.
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {exams.map((exam) => (
+                      <span key={exam} className="rounded-full bg-[#f2f3ff] px-2.5 py-1 text-[11px] font-medium text-[#002045]">{exam}</span>
+                    ))}
+                  </div>
+                </div>
+              </details>
+
+              <details className="group">
+                <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-3 text-sm font-semibold text-[#002045] [&::-webkit-details-marker]:hidden">
+                  <span className="flex items-center gap-2.5"><Icon name="call" className="text-lg text-[#A87909]" />Contact ADJ</span>
+                  <Icon name="expand_more" className="text-xl text-[#74777f] transition-transform duration-200 group-open:rotate-180" />
+                </summary>
+                <div className="grid gap-3 px-3 pb-4 pl-10 text-sm">
+                  <a href={site.phoneHref} className="font-medium text-[#002045]">{site.phoneDisplay}</a>
+                  <a href={whatsapp} target="_blank" rel="noreferrer" className="font-medium text-[#002045]">Chat on WhatsApp</a>
+                  <a href={`mailto:${site.email}`} className="break-all font-medium text-[#002045]">{site.email}</a>
+                </div>
+              </details>
+
+              <details className="group">
+                <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-3 text-sm font-semibold text-[#002045] [&::-webkit-details-marker]:hidden">
+                  <span className="flex items-center gap-2.5"><Icon name="location_on" className="text-lg text-[#A87909]" />Our Ikorodu centre</span>
+                  <Icon name="expand_more" className="text-xl text-[#74777f] transition-transform duration-200 group-open:rotate-180" />
+                </summary>
+                <div className="px-3 pb-4 pl-10 text-xs leading-5 text-[#555b65]">
+                  <p>{site.address.line1}<br />{site.address.line2}</p>
+                  <p className="mt-1 text-[#74777f]">{site.address.landmark}</p>
+                </div>
+              </details>
+            </div>
           </div>
         </div>
       </nav>
