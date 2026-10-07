@@ -43,9 +43,9 @@ export function ScrollNav({
       }`}
     >
       <nav
-        className={`relative mx-auto overflow-visible transition-[background-color,border-color,box-shadow] duration-300 ${
+        className={`relative mx-auto overflow-hidden transition-[background-color,border-color,box-shadow,border-radius] duration-300 ${
           float
-            ? "rounded-full border border-[#e2e7ff] bg-white/85 shadow-[0_18px_44px_-18px_rgba(0,32,69,0.35)] backdrop-blur-md"
+            ? `${mobileOpen ? "rounded-2xl" : "rounded-full"} border border-[#e2e7ff] bg-white/90 shadow-[0_18px_44px_-18px_rgba(0,32,69,0.35)] backdrop-blur-md`
             : "border-b border-[#e2e7ff] bg-white"
         }`}
       >
@@ -120,8 +120,16 @@ export function ScrollNav({
             </button>
           </div>
         </div>
-        {mobileOpen && (
-          <div id="mobile-navigation" className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border border-t-0 border-[#e2e7ff] bg-white px-4 pb-5 shadow-[0_20px_38px_-20px_rgba(0,32,69,0.38)] lg:hidden">
+        <div
+          id="mobile-navigation"
+          aria-hidden={!mobileOpen}
+          inert={!mobileOpen}
+          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none lg:hidden ${
+            mobileOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="min-h-0 overflow-y-auto overscroll-contain">
+            <div className="border-t border-[#e2e7ff] bg-white px-4 pb-5">
             <div className="grid gap-1 pt-2">
               {mobileLinks.map((l) => (
                 <Link
@@ -180,8 +188,9 @@ export function ScrollNav({
                 <Icon name="mail" className="text-base text-[#A87909]" />{site.email}
               </a>
             </div>
+            </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );
