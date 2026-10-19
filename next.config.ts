@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["127.0.0.1"],
+  // Avoid child-process spawning for static-path workers on restricted Windows hosts.
+  experimental: { workerThreads: true },
   async redirects() {
     return [
       /* Legacy slugs with no Stitch screen. GCE is an O-level exam, so it

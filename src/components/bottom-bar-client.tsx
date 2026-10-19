@@ -9,20 +9,20 @@ export function BottomBarClient({ whatsapp }: { whatsapp: string }) {
   if (pathname === "/contact") return null;
 
   return (
-    <nav className="fixed inset-x-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-50 md:hidden">
-      <div className="flex items-center gap-2 rounded-[1.35rem] border border-[#e2e7ff] bg-white/95 p-1.5 shadow-[0_18px_44px_-16px_rgba(0,32,69,0.45)] backdrop-blur-md">
+    <nav aria-label="Contact shortcuts" className="fixed right-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-50 md:hidden">
+      <div className="flex items-center gap-1 rounded-lg border border-[#b5c4b6] bg-white/95 p-1 shadow-[0_8px_24px_-12px_rgba(0,32,69,0.4)] backdrop-blur-md">
         <a
           href={whatsapp}
           aria-label="WhatsApp"
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#D5A11E] text-[#101A3D] transition-all active:scale-90"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-[#efbc52] text-[#101A3D] transition-all active:scale-95"
         >
           <Icon name="chat" className="text-xl" />
         </a>
         <Link
           href="/contact"
-          className="flex h-12 min-w-0 flex-1 items-center justify-center rounded-full bg-[#1a365d] px-3 text-center text-[13px] font-bold text-white transition-all active:scale-[0.99]"
+          className="flex h-11 items-center justify-center rounded-md bg-[#174e3f] px-4 text-center text-[13px] font-bold text-white transition-all active:scale-[0.99]"
         >
-          Book Free Consultation
+          Contact ADJ
         </Link>
       </div>
     </nav>

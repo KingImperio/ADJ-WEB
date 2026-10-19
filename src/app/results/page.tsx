@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Icon } from "@/components/icon";
-import { StitchCta, StitchHero, StitchSections } from "@/components/stitch-page";
+import { StitchHero, StitchSections } from "@/components/stitch-page";
 import { getParentTestimonials, getWall } from "@/lib/content";
 
 /* Results — rebuilt from the Stitch screen "results-matriculation-wall".
@@ -143,11 +143,6 @@ export default async function ResultsPage() {
       )}
 
       <StitchSections slug="results" />
-      <StitchCta
-        title="Ready to Write Your Matriculation Success Story?"
-        copy="Schedule a free diagnostic assessment and admissions guidance session in Lagos, Nigeria."
-        label="Book Free Diagnostic Assessment"
-      />
     </>
   );
 }

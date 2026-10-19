@@ -22,7 +22,7 @@ export default async function ContactPage() {
         primary={{ label: "Start Your Application", href: "#apply" }}
         secondary={{ label: "Get Directions", href: "#sections" }}
       />
-      <StitchSections slug="contact" />
+      <div id="sections"><StitchSections slug="contact" /></div>
       <ConsultationForm id="apply" />
     </>
   );

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@/components/icon";
 import { getContact } from "@/lib/content";
+import { FooterInvitation } from "@/components/footer-invitation";
 
 /* Live programme links only — every href below resolves to a built route.
    (Legacy slugs gce/tutorials redirect; see next.config.ts.) */
@@ -19,10 +20,10 @@ const programmeLinks = [
 export async function SiteFooter() {
   const site = await getContact();
   return (
-    <footer className="w-full bg-[#1a365d] text-white">
+    <footer className="textile-footer w-full bg-[#061a32] text-white">
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Top invitation strip */}
-        <div className="mb-12 flex flex-col items-start justify-between gap-5 rounded-3xl border border-white/10 bg-white/5 p-8 md:flex-row md:items-center">
+        <FooterInvitation><div className="footer-booking-invitation mb-12 flex flex-col items-start justify-between gap-5 rounded-br-[2.5rem] rounded-tl-[2.5rem] border border-white/15 bg-[#09264d] p-8 md:flex-row md:items-center">
           <div>
             <span className="text-[11px] font-bold tracking-[0.2em] text-[#F5E5B5] uppercase">
               Ready to get exam-ready?
@@ -33,12 +34,12 @@ export async function SiteFooter() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#D5A11E] px-7 py-4 text-base font-bold text-[#101A3D] shadow-[0_18px_40px_-12px_rgba(213,161,30,.55)] transition-all hover:bg-[#e5b532] active:scale-95"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-br-xl rounded-tl-xl bg-[#bd851d] px-7 py-4 text-base font-bold text-[#10213b] transition-colors hover:bg-[#d39b32]"
           >
             Book Free Diagnostic
             <Icon name="arrow_forward" className="text-lg" />
           </Link>
-        </div>
+        </div></FooterInvitation>
 
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="space-y-4 lg:col-span-2">

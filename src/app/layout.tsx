@@ -21,11 +21,6 @@ const serif = localFont({
   weight: "400 700",
   display: "swap",
 });
-const symbols = localFont({
-  src: "../../public/fonts/material-symbols-outlined.woff2",
-  variable: "--font-symbols",
-  display: "block",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -67,8 +62,8 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${serif.variable} ${symbols.variable}`}>
-      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+    <html lang="en" className={`${jakarta.variable} ${serif.variable}`}>
+      <body className="adj-soft-bold min-h-screen bg-background font-sans text-foreground antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <SiteHeader />
         <main className="pb-24 md:pb-0">{children}</main>

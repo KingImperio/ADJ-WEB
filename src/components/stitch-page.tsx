@@ -1,7 +1,5 @@
 import { Icon } from "@/components/icon";
 import { getPageSections } from "@/lib/content";
-import { BrandMotionBackdrop } from "@/components/brand-motion-backdrop";
-import { MotionCascade } from "@/components/motion-cascade";
 
 type Table = { head: string[]; rows: string[][] };
 type Block = { t: "p" | "h3" | "h4" | "list" | "table"; v: string | string[] | Table };
@@ -58,25 +56,25 @@ export async function StitchSections({
   const page = await getPageSections(slug);
   if (!page) return null;
   const sectionStyles: Record<string, string[]> = {
-    programmes: ["bg-white", "bg-[#f4f6fc]"],
-    about: ["bg-[#f7f9ff]", "bg-white"],
-    results: ["bg-[#0B237F] text-white", "bg-[#fbfcff]"],
-    contact: ["bg-[#fffaf0]", "bg-white"],
+    programmes: ["bg-[#faf9f5]", "bg-[#f2f0e8]"],
+    about: ["bg-[#f2f0e8]", "bg-[#faf9f5]"],
+    results: ["bg-[#09264d] text-white", "bg-[#faf9f5]"],
+    contact: ["bg-[#f2f0e8]", "bg-[#faf9f5]"],
   };
   const cardStyles: Record<string, string> = {
-    programmes: "border-[#dce2f2] bg-white shadow-[0_18px_45px_-26px_rgba(11,35,127,.35)]",
-    about: "border-[#e7e1d0] bg-[#fffdf7] shadow-[0_18px_45px_-28px_rgba(120,88,10,.25)]",
+    programmes: "border-[#c9c7bf] bg-white",
+    about: "border-[#c9c7bf] bg-[#fffefa]",
     results: "border-white/15 bg-white/10 backdrop-blur-sm",
-    contact: "border-[#eadfbf] bg-white shadow-[0_18px_45px_-28px_rgba(120,88,10,.22)]",
+    contact: "border-[#c9c7bf] bg-white",
   };
   const palette = sectionStyles[slug] ?? sectionStyles.programmes;
   return (
     <>
       {children}
-      {page.sections.map((s, si) => (
+      {page.sections.filter(s => slug === "contact" || !s.blocks.some(b => /request free consultation/i.test(typeof b.v === "string" ? b.v : ""))).map((s, si) => (
         <section
           key={s.title}
-          className={`py-12 sm:py-16 lg:py-24 ${
+          className={`textile-body-section py-12 sm:py-16 lg:py-24 ${
             `${palette[si % palette.length]} ${si > 0 ? "border-t border-[#dce2f2]" : ""}`
           }`}
         >
@@ -195,15 +193,15 @@ export function StitchCta({
   label: string;
 }) {
   return (
-    <section className="border-t border-white/10 bg-[#002045] py-20" id="consultation">
+    <section className="border-t border-white/10 bg-[#061a32] py-16" id="consultation">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-outline bg-surface-container-lowest p-8 text-center shadow-md sm:p-12">
+        <div className="rounded-br-[3rem] rounded-tl-[3rem] border border-white/20 bg-[#09264d] p-8 text-center sm:p-12">
           <span className="text-label-sm font-bold tracking-widest text-secondary uppercase">{eyebrow}</span>
-          <h2 className="mt-2 font-display text-headline-md text-primary md:text-headline-lg">{title}</h2>
-          <p className="mx-auto mt-3 max-w-xl text-body-md text-on-surface-variant">{copy}</p>
+          <h2 className="mt-2 font-display text-headline-md text-white md:text-headline-lg">{title}</h2>
+          <p className="mx-auto mt-3 max-w-xl text-body-md text-white/75">{copy}</p>
           <a
             href="/contact"
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded bg-secondary px-8 py-4 text-label-lg font-bold text-on-secondary shadow-md transition-all hover:bg-on-secondary-container active:scale-95"
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-br-xl rounded-tl-xl bg-[#bd851d] px-8 py-4 text-label-lg font-bold text-[#10213b] transition-colors hover:bg-[#d39b32]"
           >
             <span>{label}</span>
             <Icon name="arrow_forward" className="text-lg" />
@@ -229,36 +227,35 @@ export async function StitchHero({
   const page = await getPageSections(slug);
   if (!page) return null;
   return (
-    <section className={`relative overflow-hidden py-10 sm:py-20 ${slug === "results" ? "bg-[#071858]" : slug === "contact" ? "bg-[#0B237F]" : "bg-[#0B237F]"}`}>
-      <BrandMotionBackdrop compact />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <MotionCascade className="max-w-3xl space-y-5 sm:space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#D5A11E]/35 bg-white/10 px-3.5 py-1.5">
-            <span className="size-2 rounded-full bg-[#D5A11E]" />
-            <span className="text-[11px] font-bold tracking-[0.14em] text-[#F5E5B5] uppercase">{eyebrow}</span>
+    <section className="textile-page-hero relative overflow-hidden py-10 sm:py-16" data-textile={slug === "about" ? "adire" : slug === "results" ? "kente" : "akwete"}>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="textile-page-copy max-w-3xl space-y-5 sm:space-y-6">
+          <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.14em] text-[#075b49] uppercase">
+            <span className="h-px w-8 bg-[#bd851d]" />
+            {eyebrow}
           </div>
-          <h1 className="text-[32px] leading-[1.08] font-bold tracking-tight text-white sm:text-[40px] md:text-6xl">
+          <h1 className="font-display text-[32px] leading-[1.08] font-bold text-[#09264d] sm:text-[40px] md:text-6xl">
             {page.h1}
           </h1>
           {page.lead && (
-            <p className="text-[15px] leading-relaxed text-white/75 sm:text-lg">{page.lead}</p>
+            <p className="text-[15px] leading-relaxed text-[#46566a] sm:text-lg">{page.lead}</p>
           )}
           <div className="flex flex-col gap-2.5 pt-1 sm:flex-row sm:gap-4">
             <a
               href={primary.href}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#D5A11E] px-6 py-3.5 text-label-lg font-bold text-[#101A3D] shadow-[0_10px_30px_-12px_rgba(213,161,30,.9)] transition-all hover:bg-[#e5b532] active:scale-95"
+              className="inline-flex items-center justify-center gap-2 rounded-br-xl rounded-tl-xl bg-[#bd851d] px-6 py-3.5 text-label-lg font-bold text-[#10213b] transition-colors hover:bg-[#d39b32]"
             >
               <span>{primary.label}</span>
               <Icon name="arrow_forward" className="text-lg" />
             </a>
             <a
               href={secondary.href}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/5 px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 border-b-2 border-[#075b49] px-6 py-3.5 text-base font-bold text-[#075b49] transition-colors hover:text-[#09264d]"
             >
               {secondary.label}
             </a>
           </div>
-        </MotionCascade>
+        </div>
       </div>
     </section>
   );

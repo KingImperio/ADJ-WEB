@@ -30,7 +30,7 @@ const modes = [
 ];
 
 const input =
-  "w-full rounded-xl border border-[#e2e7ff] bg-[#faf8ff] px-4 py-3 text-sm text-[#131b2e] placeholder:text-[#74777f]/70 transition-all focus:border-[#1a365d] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#1a365d]/10";
+  "w-full rounded-md border border-[#b5c4b6] bg-[#f5f4ed] px-4 py-3 text-sm text-[#10213b] placeholder:text-[#596577] transition-all focus:border-[#075b49] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#075b49]/20";
 
 export function ConsultationForm({ id = "consultation" }: { id?: string }) {
   const [name, setName] = useState("");
@@ -80,11 +80,11 @@ export function ConsultationForm({ id = "consultation" }: { id?: string }) {
   };
 
   return (
-    <section className="bg-[#002045] py-12 sm:py-20" id={id}>
+    <section className="bg-[#f5f4ed] py-12 sm:py-20" id={id}>
       <div className="mx-auto max-w-6xl px-3 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-[1.75rem] bg-white shadow-[0_32px_80px_-24px_rgba(0,32,69,0.55)] sm:rounded-[2.5rem] lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-0 overflow-hidden bg-white lg:grid-cols-5">
           {/* Benefit panel */}
-          <div className="bg-[#1a365d] p-6 sm:p-8 lg:col-span-2 lg:p-10">
+          <div className="textile-consultation bg-[#09264d] p-6 sm:p-8 lg:col-span-2 lg:p-10 border-b-[12px] border-[#efbc52]">
             <span className="inline-flex items-center gap-2 rounded-full border border-[#D5A11E]/30 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold tracking-[0.14em] text-[#F5E5B5] uppercase">
               <Icon name="verified" className="text-[14px]" />
               Free First Session
