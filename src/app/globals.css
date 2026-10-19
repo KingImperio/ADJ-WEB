@@ -669,8 +669,10 @@
 
 /* Let distinct textile references read beneath the page palette. */
 .adj-soft-bold .weave-hero::before { background: #133f3ba6; }
-.adj-soft-bold .weave-method::before { background: #ffffffe0; }
-.adj-soft-bold .weave-community::before { background: #061a32a8; }
+.adj-soft-bold .weave-method::before { background: #ffffffc8; }
+.adj-soft-bold .weave-community::before { background: #061a3280; }
+.adj-soft-bold .prep-page .prep-jamb-hero::before { background: #174b4dc2; }
+.adj-soft-bold .textile-page-hero[data-textile='adire']::before { background: #22475aa3; }
 .adj-soft-bold .weave-programmes {
   background-image: linear-gradient(#f3f8f3e8, #f3f8f3e8), url('/akwete-weave.png');
   background-size: auto, 1100px auto;
