@@ -287,8 +287,8 @@
 .weave-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 34px; }
 .weave-section-heading h2, .weave-stories h2 { font-size: 42px; line-height: 1.12; margin-top: 16px; font-weight: 600; }
 .weave-section-heading .weave-eyebrow { color: #075b49; }
-.programme-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid #9aaea3; gap: 4px; padding-bottom: 4px; }
-.programme-tabs button { display: flex; flex-shrink: 0; gap: 12px; align-items: center; white-space: nowrap; padding: 15px 20px; min-height: 55px; cursor: pointer; font-size: 13px; font-weight: 700; border-radius: 4px 4px 0 0; }
+.programme-tabs { display: flex; flex-wrap: wrap; overflow: visible; border-bottom: 1px solid #9aaea3; gap: 4px; padding-bottom: 4px; }
+.programme-tabs button { display: flex; flex: 1 1 175px; min-width: 0; gap: 12px; align-items: center; white-space: normal; padding: 15px 20px; min-height: 55px; cursor: pointer; font-size: 13px; font-weight: 700; border-radius: 4px 4px 0 0; text-align: left; }
 .programme-tabs button span { font-size: 11px; opacity: .65; }
 .programme-tabs button[aria-selected='true'] { background: #075b49; color: #fff; }
 .programme-tabs button:hover:not([aria-selected='true']) { background: #e1e9e0; }
